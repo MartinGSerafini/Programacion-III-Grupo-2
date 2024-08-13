@@ -62,6 +62,7 @@
             this.Btnadd.TabIndex = 2;
             this.Btnadd.Text = ">";
             this.Btnadd.UseVisualStyleBackColor = true;
+            this.Btnadd.Click += new System.EventHandler(this.Btnadd_Click);
             // 
             // Btnaddall
             // 
