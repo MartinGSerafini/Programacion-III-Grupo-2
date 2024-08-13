@@ -1,0 +1,13 @@
+C:\Users\guill\OneDrive\UTN\Cuatrimestre 3\2.Programacion III\1.UNIDAD 1 - APLICACIONES DE ESCRITORIO\6.TAREA 1\TP1_Grupo_Nro_02\bin\Debug\TP1_Grupo_Nro_02.exe.config
+C:\Users\guill\OneDrive\UTN\Cuatrimestre 3\2.Programacion III\1.UNIDAD 1 - APLICACIONES DE ESCRITORIO\6.TAREA 1\TP1_Grupo_Nro_02\bin\Debug\TP1_Grupo_Nro_02.exe
+C:\Users\guill\OneDrive\UTN\Cuatrimestre 3\2.Programacion III\1.UNIDAD 1 - APLICACIONES DE ESCRITORIO\6.TAREA 1\TP1_Grupo_Nro_02\bin\Debug\TP1_Grupo_Nro_02.pdb
+C:\Users\guill\OneDrive\UTN\Cuatrimestre 3\2.Programacion III\1.UNIDAD 1 - APLICACIONES DE ESCRITORIO\6.TAREA 1\TP1_Grupo_Nro_02\obj\Debug\TP1_Grupo_Nro_02.csproj.AssemblyReference.cache
+C:\Users\guill\OneDrive\UTN\Cuatrimestre 3\2.Programacion III\1.UNIDAD 1 - APLICACIONES DE ESCRITORIO\6.TAREA 1\TP1_Grupo_Nro_02\obj\Debug\TP1_Grupo_Nro_02.Properties.Resources.resources
+C:\Users\guill\OneDrive\UTN\Cuatrimestre 3\2.Programacion III\1.UNIDAD 1 - APLICACIONES DE ESCRITORIO\6.TAREA 1\TP1_Grupo_Nro_02\obj\Debug\TP1_Grupo_Nro_02.csproj.GenerateResource.cache
+C:\Users\guill\OneDrive\UTN\Cuatrimestre 3\2.Programacion III\1.UNIDAD 1 - APLICACIONES DE ESCRITORIO\6.TAREA 1\TP1_Grupo_Nro_02\obj\Debug\TP1_Grupo_Nro_02.csproj.CoreCompileInputs.cache
+C:\Users\guill\OneDrive\UTN\Cuatrimestre 3\2.Programacion III\1.UNIDAD 1 - APLICACIONES DE ESCRITORIO\6.TAREA 1\TP1_Grupo_Nro_02\obj\Debug\TP1_Grupo_Nro_02.exe
+C:\Users\guill\OneDrive\UTN\Cuatrimestre 3\2.Programacion III\1.UNIDAD 1 - APLICACIONES DE ESCRITORIO\6.TAREA 1\TP1_Grupo_Nro_02\obj\Debug\TP1_Grupo_Nro_02.pdb
+C:\Users\guill\OneDrive\UTN\Cuatrimestre 3\2.Programacion III\1.UNIDAD 1 - APLICACIONES DE ESCRITORIO\6.TAREA 1\TP1_Grupo_Nro_02\obj\Debug\TP1_Grupo_Nro_02.FormPrincipal.resources
+C:\Users\guill\OneDrive\UTN\Cuatrimestre 3\2.Programacion III\1.UNIDAD 1 - APLICACIONES DE ESCRITORIO\6.TAREA 1\TP1_Grupo_Nro_02\obj\Debug\TP1_Grupo_Nro_02.FormEjercicio1.resources
+C:\Users\guill\OneDrive\UTN\Cuatrimestre 3\2.Programacion III\1.UNIDAD 1 - APLICACIONES DE ESCRITORIO\6.TAREA 1\TP1_Grupo_Nro_02\obj\Debug\TP1_Grupo_Nro_02.FormEjercicio2.resources
+C:\Users\guill\OneDrive\UTN\Cuatrimestre 3\2.Programacion III\1.UNIDAD 1 - APLICACIONES DE ESCRITORIO\6.TAREA 1\TP1_Grupo_Nro_02\obj\Debug\TP1_Grupo_Nro_02.FormEjercicio3.resources
