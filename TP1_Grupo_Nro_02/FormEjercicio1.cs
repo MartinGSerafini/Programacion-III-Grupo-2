@@ -36,13 +36,14 @@ namespace TP1_Grupo_Nro_02
                 ListBox1.Items.Add(TextBox1.Text.Trim()); ///Copia lo del txtbox1 a la listbox
                 TextBox1.Clear();
             }
-
+            else
+                MessageBox.Show("El nombre ingresado es repetido o el campo está vacío", "Nombre no válido", MessageBoxButtons.OK, MessageBoxIcon.Error); //Muestra un cartel de error cuando el campo de nombre esta vacio o repetido
         }
 
         private void Btnadd_Click(object sender, EventArgs e)
         {
             if(ListBox1.SelectedItems.Count < 1)    ///ListBox1.SelectedItems.Count devuelve una coleccion de  objetos de la lista
-                MessageBox.Show("Debe seleccionar por lo menos 1 nombre de la lista.", "Error al pasar nombres");
+                MessageBox.Show("Debe seleccionar por lo menos 1 nombre de la lista.", "Error al pasar nombres", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
             for (int i = ListBox1.SelectedItems.Count - 1; i>=0; i--) ///ListBox1.SelectedItems devuelve una coleccion de objetos de la lista que esten seleccionados
             {
@@ -55,7 +56,7 @@ namespace TP1_Grupo_Nro_02
         private void Btnaddall_Click(object sender, EventArgs e)
         {
             if (ListBox1.Items.Count < 1)   ///ListBox1.SelectedItems.Count DEVUELVE LA CANTIDAD DE NOMBRES EN LA LISTA
-                MessageBox.Show("No hay nombres cargados para pasar de una lista a la otra.", "Error al pasar nombres");
+                MessageBox.Show("No hay nombres cargados para pasar de una lista a la otra.", "Error al pasar nombres", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
             foreach (string item in ListBox1.Items) ///RECORRE LA LISTA
                 ListBox2.Items.Add(item);    ///AGREGA LOS NOMBRES DE LA LISTA RECORRIDA A LA LISTA 2
@@ -73,6 +74,11 @@ namespace TP1_Grupo_Nro_02
         {
             if (!char.IsLetter(e.KeyChar) && e.KeyChar != (char)Keys.Back && e.KeyChar != ' ') ///Controla si la tecla presionada es una letra, es un espacio o es la de retroceso
                 e.Handled = true;
+        }
+
+        private void ListBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
