@@ -16,5 +16,15 @@ namespace TP1_Grupo_Nro_02
         {
             InitializeComponent();
         }
+
+        private void DeleteBtn_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void AddBtn_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
