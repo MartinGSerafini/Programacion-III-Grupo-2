@@ -88,7 +88,7 @@
             this.Btnagregar.TabIndex = 4;
             this.Btnagregar.Text = "Agregar";
             this.Btnagregar.UseVisualStyleBackColor = true;
-            this.Btnagregar.Click += new System.EventHandler(this.btnagregar_Click);
+            this.Btnagregar.Click += new System.EventHandler(this.Btnagregar_Click);
             // 
             // Lblnombre
             // 
@@ -109,7 +109,7 @@
             this.TextBox1.Name = "TextBox1";
             this.TextBox1.Size = new System.Drawing.Size(337, 24);
             this.TextBox1.TabIndex = 6;
-            this.TextBox1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
+            this.TextBox1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBox1_KeyPress);
             // 
             // FormEjercicio1
             // 

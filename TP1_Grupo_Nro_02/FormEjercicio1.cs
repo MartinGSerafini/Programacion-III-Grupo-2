@@ -17,12 +17,6 @@ namespace TP1_Grupo_Nro_02
             InitializeComponent();
         }
 
-        private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (!char.IsLetter(e.KeyChar) && e.KeyChar != (char)Keys.Back && e.KeyChar != ' ') ///Controla si la tecla presionada es una letra, es un espacio o es la de retroceso
-                e.Handled = true;
-        }
-
         private void NombreValido() ///Valida que el nombre ingresado sea valido
         {
             bool repetido = false;
@@ -32,16 +26,17 @@ namespace TP1_Grupo_Nro_02
                 if (nombreaux == ListBox1.Items[i].ToString().ToUpper()) ///compara todas las cadenas de la lstbox pasandolas a mayusculas
                     repetido = true;    ///si se repite alguno, el bool repetido pasa a true
             }
+            for (int i = 0; i < ListBox2.Items.Count; i++)
+            {
+                string nombreaux = TextBox1.Text.ToUpper(); ///crea una cadena auxiliar igual al txtbox pero en mayusculas
+                if (nombreaux == ListBox2.Items[i].ToString().ToUpper()) ///compara todas las cadenas de la lstbox2 pasandolas a mayusculas
+                    repetido = true;    ///si se repite alguno, el bool repetido pasa a true
+            }
             if (!string.IsNullOrWhiteSpace(TextBox1.Text) && repetido == false){    ///IsNullOrWhiteSpace controla que no haya solo un espacio en blanco.
                 ListBox1.Items.Add(TextBox1.Text.Trim()); ///Copia lo del txtbox1 a la listbox
                 TextBox1.Clear();
             }
 
-        }
-
-        private void btnagregar_Click(object sender, EventArgs e)
-        {
-            NombreValido(); ///llama a la funcion que se encarga de validar el nombre
         }
 
         private void Btnadd_Click(object sender, EventArgs e)
@@ -67,6 +62,17 @@ namespace TP1_Grupo_Nro_02
 
             ListBox1.Items.Clear(); ///BORRA LA LISTA 1
 
+        }
+
+        private void Btnagregar_Click(object sender, EventArgs e)
+        {
+            NombreValido(); ///llama a la funcion que se encarga de validar el nombre
+        }
+
+        private void TextBox1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsLetter(e.KeyChar) && e.KeyChar != (char)Keys.Back && e.KeyChar != ' ') ///Controla si la tecla presionada es una letra, es un espacio o es la de retroceso
+                e.Handled = true;
         }
     }
 }

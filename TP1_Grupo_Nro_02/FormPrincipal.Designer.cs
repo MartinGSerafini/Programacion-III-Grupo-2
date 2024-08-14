@@ -101,7 +101,7 @@
             this.Controls.Add(this.Btnejercicio1);
             this.Name = "FormPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Form1";
+            this.Text = "Formulario Principal";
             this.ResumeLayout(false);
             this.PerformLayout();
 
