@@ -39,18 +39,23 @@
             // 
             // ListBox1
             // 
+            this.ListBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ListBox1.FormattingEnabled = true;
+            this.ListBox1.ItemHeight = 20;
             this.ListBox1.Location = new System.Drawing.Point(12, 95);
             this.ListBox1.Name = "ListBox1";
-            this.ListBox1.Size = new System.Drawing.Size(258, 329);
+            this.ListBox1.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple;
+            this.ListBox1.Size = new System.Drawing.Size(258, 324);
             this.ListBox1.TabIndex = 0;
             // 
             // ListBox2
             // 
+            this.ListBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ListBox2.FormattingEnabled = true;
+            this.ListBox2.ItemHeight = 20;
             this.ListBox2.Location = new System.Drawing.Point(378, 95);
             this.ListBox2.Name = "ListBox2";
-            this.ListBox2.Size = new System.Drawing.Size(258, 329);
+            this.ListBox2.Size = new System.Drawing.Size(258, 324);
             this.ListBox2.TabIndex = 1;
             // 
             // Btnadd
@@ -73,6 +78,7 @@
             this.Btnaddall.TabIndex = 3;
             this.Btnaddall.Text = ">>";
             this.Btnaddall.UseVisualStyleBackColor = true;
+            this.Btnaddall.Click += new System.EventHandler(this.Btnaddall_Click);
             // 
             // Btnagregar
             // 
