@@ -16,5 +16,21 @@ namespace TP1_Grupo_Nro_02
         {
             InitializeComponent();
         }
+
+        private void Btn_Click(object sender, EventArgs e)
+        {
+            string sexoSeleccionado;
+
+            if (Rabmasculino.Checked)
+            {
+                sexoSeleccionado = "Masculino";
+            }
+            else
+            {
+                sexoSeleccionado = "Femenino";
+            }
+
+            lblSeleccionSexo.Text = "Sexo: " + sexoSeleccionado;
+        }
     }
 }
