@@ -17,20 +17,33 @@ namespace TP1_Grupo_Nro_02
             InitializeComponent();
         }
 
-        private void Btn_Click(object sender, EventArgs e)
+        private string Sexo()
         {
-            string sexoSeleccionado;
-
             if (Rabmasculino.Checked)
             {
-                sexoSeleccionado = "Masculino";
+                return "Masculino";
             }
             else
             {
-                sexoSeleccionado = "Femenino";
+                return "Femenino";
             }
+        }
 
-            lblSeleccionSexo.Text = "Sexo: " + sexoSeleccionado;
+        private string EstadoCivil()
+        {
+            if (Rabcasado.Checked)
+            {
+                return "Casado";
+            }
+            else
+            {
+                return "Soltero";
+            }
+        }
+        private void Btn_Click(object sender, EventArgs e)
+        {
+            labelSeleccion.Text += "\r\n" + "Sexo: " + Sexo();
+            labelSeleccion.Text += "\r\n" + "Estado Civil: " + EstadoCivil();
         }
     }
 }
