@@ -37,7 +37,6 @@
             this.Clbox = new System.Windows.Forms.CheckedListBox();
             this.Btn = new System.Windows.Forms.Button();
             this.labelSeleccion = new System.Windows.Forms.Label();
-            this.lblSeleccionSexo = new System.Windows.Forms.Label();
             this.Grbsexo.SuspendLayout();
             this.Grbestadocivil.SuspendLayout();
             this.SuspendLayout();
@@ -149,21 +148,11 @@
             this.labelSeleccion.TabIndex = 4;
             this.labelSeleccion.Text = "Usted selecciono los siguientes elementos:";
             // 
-            // lblSeleccionSexo
-            // 
-            this.lblSeleccionSexo.AutoSize = true;
-            this.lblSeleccionSexo.Location = new System.Drawing.Point(126, 424);
-            this.lblSeleccionSexo.Name = "lblSeleccionSexo";
-            this.lblSeleccionSexo.Size = new System.Drawing.Size(37, 13);
-            this.lblSeleccionSexo.TabIndex = 5;
-            this.lblSeleccionSexo.Text = "Sexo: ";
-            // 
             // FormEjercicio3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(468, 529);
-            this.Controls.Add(this.lblSeleccionSexo);
             this.Controls.Add(this.labelSeleccion);
             this.Controls.Add(this.Btn);
             this.Controls.Add(this.Clbox);
@@ -192,6 +181,5 @@
         private System.Windows.Forms.CheckedListBox Clbox;
         private System.Windows.Forms.Button Btn;
         private System.Windows.Forms.Label labelSeleccion;
-        private System.Windows.Forms.Label lblSeleccionSexo;
     }
 }

@@ -40,10 +40,23 @@ namespace TP1_Grupo_Nro_02
                 return "Soltero";
             }
         }
+
+        private string Oficio()
+        {
+            string job="";
+            foreach(string strngOficio in Clbox.CheckedItems)
+            {
+                job += "- " + strngOficio + "\r\n";
+            }
+            return job;
+        }
+        
+
         private void Btn_Click(object sender, EventArgs e)
         {
             labelSeleccion.Text += "\r\n" + "Sexo: " + Sexo();
             labelSeleccion.Text += "\r\n" + "Estado Civil: " + EstadoCivil();
+            labelSeleccion.Text += "\r\n" + "Oficio: " + "\r\n" + Oficio();
         }
     }
 }
