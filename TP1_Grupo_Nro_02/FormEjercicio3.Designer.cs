@@ -36,7 +36,8 @@
             this.Rabcasado = new System.Windows.Forms.RadioButton();
             this.Clbox = new System.Windows.Forms.CheckedListBox();
             this.Btn = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
+            this.labelSeleccion = new System.Windows.Forms.Label();
+            this.lblSeleccionSexo = new System.Windows.Forms.Label();
             this.Grbsexo.SuspendLayout();
             this.Grbestadocivil.SuspendLayout();
             this.SuspendLayout();
@@ -136,23 +137,34 @@
             this.Btn.TabIndex = 3;
             this.Btn.Text = "Monstrar lo que se selecciono";
             this.Btn.UseVisualStyleBackColor = true;
+            this.Btn.Click += new System.EventHandler(this.Btn_Click);
             // 
-            // label1
+            // labelSeleccion
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(65, 384);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(355, 20);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "Usted selecciono los siguientes elementos:";
+            this.labelSeleccion.AutoSize = true;
+            this.labelSeleccion.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelSeleccion.Location = new System.Drawing.Point(65, 384);
+            this.labelSeleccion.Name = "labelSeleccion";
+            this.labelSeleccion.Size = new System.Drawing.Size(355, 20);
+            this.labelSeleccion.TabIndex = 4;
+            this.labelSeleccion.Text = "Usted selecciono los siguientes elementos:";
+            // 
+            // lblSeleccionSexo
+            // 
+            this.lblSeleccionSexo.AutoSize = true;
+            this.lblSeleccionSexo.Location = new System.Drawing.Point(126, 424);
+            this.lblSeleccionSexo.Name = "lblSeleccionSexo";
+            this.lblSeleccionSexo.Size = new System.Drawing.Size(37, 13);
+            this.lblSeleccionSexo.TabIndex = 5;
+            this.lblSeleccionSexo.Text = "Sexo: ";
             // 
             // FormEjercicio3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(468, 529);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lblSeleccionSexo);
+            this.Controls.Add(this.labelSeleccion);
             this.Controls.Add(this.Btn);
             this.Controls.Add(this.Clbox);
             this.Controls.Add(this.Grbestadocivil);
@@ -179,6 +191,7 @@
         private System.Windows.Forms.RadioButton Rabcasado;
         private System.Windows.Forms.CheckedListBox Clbox;
         private System.Windows.Forms.Button Btn;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label labelSeleccion;
+        private System.Windows.Forms.Label lblSeleccionSexo;
     }
 }
