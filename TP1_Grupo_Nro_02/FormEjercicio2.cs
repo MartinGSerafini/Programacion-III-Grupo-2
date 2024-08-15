@@ -18,17 +18,6 @@ namespace TP1_Grupo_Nro_02
             InitializeComponent();
         }
 
-<<<<<<< HEAD
-        private void DeleteBtn_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void AddBtn_Click(object sender, EventArgs e)
-        {
-
-        }
-=======
         private void NombreValido() //Funcion para validar que el nombre y apellido sean validos y no esten repetidos
         {
             for (int i = 0; i < Lstbox.Items.Count; i++) ///recorre los elementos de la list box
@@ -90,6 +79,5 @@ namespace TP1_Grupo_Nro_02
                 //Muestra un cartel de error cuando el campo de nombre esta vacio o repetido
         }
 
->>>>>>> 49f3d0347ee37673df08166126abb3fb7039eb98
     }
 }
