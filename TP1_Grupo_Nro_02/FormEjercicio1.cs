@@ -38,6 +38,7 @@ namespace TP1_Grupo_Nro_02
             }
             else
                 MessageBox.Show("El nombre ingresado es repetido o el campo está vacío", "Nombre no válido", MessageBoxButtons.OK, MessageBoxIcon.Error); //Muestra un cartel de error cuando el campo de nombre esta vacio o repetido
+                TextBox1.Clear();
         }
 
         private void Btnadd_Click(object sender, EventArgs e)
