@@ -36,7 +36,7 @@
             this.Rabcasado = new System.Windows.Forms.RadioButton();
             this.Clbox = new System.Windows.Forms.CheckedListBox();
             this.Btn = new System.Windows.Forms.Button();
-            this.labelSeleccion = new System.Windows.Forms.Label();
+            this.Label1 = new System.Windows.Forms.Label();
             this.Grbsexo.SuspendLayout();
             this.Grbestadocivil.SuspendLayout();
             this.SuspendLayout();
@@ -138,22 +138,21 @@
             this.Btn.UseVisualStyleBackColor = true;
             this.Btn.Click += new System.EventHandler(this.Btn_Click);
             // 
-            // labelSeleccion
+            // Label1
             // 
-            this.labelSeleccion.AutoSize = true;
-            this.labelSeleccion.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelSeleccion.Location = new System.Drawing.Point(65, 384);
-            this.labelSeleccion.Name = "labelSeleccion";
-            this.labelSeleccion.Size = new System.Drawing.Size(355, 20);
-            this.labelSeleccion.TabIndex = 4;
-            this.labelSeleccion.Text = "Usted selecciono los siguientes elementos:";
+            this.Label1.AutoSize = true;
+            this.Label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Label1.Location = new System.Drawing.Point(65, 384);
+            this.Label1.Name = "Label1";
+            this.Label1.Size = new System.Drawing.Size(0, 20);
+            this.Label1.TabIndex = 4;
             // 
             // FormEjercicio3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(468, 529);
-            this.Controls.Add(this.labelSeleccion);
+            this.ClientSize = new System.Drawing.Size(468, 606);
+            this.Controls.Add(this.Label1);
             this.Controls.Add(this.Btn);
             this.Controls.Add(this.Clbox);
             this.Controls.Add(this.Grbestadocivil);
@@ -180,6 +179,6 @@
         private System.Windows.Forms.RadioButton Rabcasado;
         private System.Windows.Forms.CheckedListBox Clbox;
         private System.Windows.Forms.Button Btn;
-        private System.Windows.Forms.Label labelSeleccion;
+        private System.Windows.Forms.Label Label1;
     }
 }

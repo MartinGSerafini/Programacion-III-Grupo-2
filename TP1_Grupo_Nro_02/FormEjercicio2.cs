@@ -79,5 +79,9 @@ namespace TP1_Grupo_Nro_02
                 //Muestra un cartel de error cuando el campo de nombre esta vacio o repetido
         }
 
+        private void Lstbox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

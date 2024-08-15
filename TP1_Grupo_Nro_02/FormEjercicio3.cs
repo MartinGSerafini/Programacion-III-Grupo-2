@@ -19,44 +19,40 @@ namespace TP1_Grupo_Nro_02
 
         private string Sexo()
         {
-            if (Rabmasculino.Checked)
-            {
-                return "Masculino";
-            }
-            else
-            {
+            if (Rabfemenino.Checked == true)
                 return "Femenino";
-            }
-        }
 
-        private string EstadoCivil()
-        {
-            if (Rabcasado.Checked)
-            {
-                return "Casado";
-            }
+
             else
-            {
-                return "Soltero";
-            }
+                return "Masculino";
         }
 
-        private string Oficio()
+        private string EstCivil()
         {
-            string job="";
-            foreach(string strngOficio in Clbox.CheckedItems)
-            {
-                job += "- " + strngOficio + "\r\n";
-            }
-            return job;
+            if (Rabcasado.Checked == true)
+                return "Casado";
+
+            else
+                return "Soltero";
         }
-        
+
+        private void Oficios()
+        {
+            for (int i = Clbox.CheckedItems.Count - 1; i >= 0; i--) ///Clbox.SelectedItems devuelve una coleccion de objetos de la lista que esten seleccionados
+            {
+                string Aux = Clbox.CheckedItems[i].ToString(); // Obtiene el elemento seleccionado
+                Label1.Text += "\r\n" + "   -" + Aux;  //Lo muestra 
+            }
+        }
 
         private void Btn_Click(object sender, EventArgs e)
         {
-            labelSeleccion.Text += "\r\n" + "Sexo: " + Sexo();
-            labelSeleccion.Text += "\r\n" + "Estado Civil: " + EstadoCivil();
-            labelSeleccion.Text += "\r\n" + "Oficio: " + "\r\n" + Oficio();
+            Label1.Text = "";
+            Label1.Text += "Usted selecciono los siguientes elementos:";
+            Label1.Text += "\r\n" + "Sexo: " + Sexo();
+            Label1.Text += "\r\n" + "Estado Civil: " + EstCivil();
+            Label1.Text += "\r\n" + "Oficios: ";
+            Oficios();
         }
     }
 }
