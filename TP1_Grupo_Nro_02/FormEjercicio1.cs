@@ -67,18 +67,13 @@ namespace TP1_Grupo_Nro_02
 
         private void Btnagregar_Click(object sender, EventArgs e)
         {
-            NombreValido(); ///llama a la funcion que se encarga de validar el nombre
+            NombreValido(); ///llama a la funcion que se encarga que la tecla sea valida
         }
 
         private void TextBox1_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsLetter(e.KeyChar) && e.KeyChar != (char)Keys.Back && e.KeyChar != ' ') ///Controla si la tecla presionada es una letra, es un espacio o es la de retroceso
                 e.Handled = true;
-        }
-
-        private void ListBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }

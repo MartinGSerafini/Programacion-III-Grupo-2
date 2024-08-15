@@ -47,7 +47,6 @@
             this.ListBox1.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple;
             this.ListBox1.Size = new System.Drawing.Size(258, 324);
             this.ListBox1.TabIndex = 0;
-            this.ListBox1.SelectedIndexChanged += new System.EventHandler(this.ListBox1_SelectedIndexChanged);
             // 
             // ListBox2
             // 
