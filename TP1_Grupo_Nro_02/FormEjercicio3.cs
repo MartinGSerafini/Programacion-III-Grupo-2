@@ -16,5 +16,20 @@ namespace TP1_Grupo_Nro_02
         {
             InitializeComponent();
         }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void FormEjercicio3_Load(object sender, EventArgs e)
+        {
+            SelecteItems.Hide();
+        }
     }
 }
