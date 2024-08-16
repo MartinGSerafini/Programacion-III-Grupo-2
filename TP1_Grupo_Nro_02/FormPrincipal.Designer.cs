@@ -37,6 +37,7 @@
             // 
             // Btnejercicio1
             // 
+            this.Btnejercicio1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.Btnejercicio1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Btnejercicio1.Location = new System.Drawing.Point(25, 51);
             this.Btnejercicio1.Name = "Btnejercicio1";
@@ -48,8 +49,10 @@
             // 
             // Btnejercicio2
             // 
+            this.Btnejercicio2.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.Btnejercicio2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Btnejercicio2.Location = new System.Drawing.Point(151, 51);
+            this.Btnejercicio2.MinimumSize = new System.Drawing.Size(20, 20);
             this.Btnejercicio2.Name = "Btnejercicio2";
             this.Btnejercicio2.Size = new System.Drawing.Size(120, 42);
             this.Btnejercicio2.TabIndex = 1;
@@ -59,6 +62,7 @@
             // 
             // Btnejercicio3
             // 
+            this.Btnejercicio3.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.Btnejercicio3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Btnejercicio3.Location = new System.Drawing.Point(277, 51);
             this.Btnejercicio3.Name = "Btnejercicio3";
@@ -70,6 +74,7 @@
             // 
             // Lblintegrantes
             // 
+            this.Lblintegrantes.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.Lblintegrantes.AutoSize = true;
             this.Lblintegrantes.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Lblintegrantes.Location = new System.Drawing.Point(27, 122);
@@ -80,9 +85,10 @@
             // 
             // Lblintegrantes2
             // 
+            this.Lblintegrantes2.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.Lblintegrantes2.AutoSize = true;
             this.Lblintegrantes2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Lblintegrantes2.Location = new System.Drawing.Point(97, 152);
+            this.Lblintegrantes2.Location = new System.Drawing.Point(97, 148);
             this.Lblintegrantes2.Name = "Lblintegrantes2";
             this.Lblintegrantes2.Size = new System.Drawing.Size(246, 120);
             this.Lblintegrantes2.TabIndex = 4;
@@ -93,12 +99,13 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(417, 321);
+            this.ClientSize = new System.Drawing.Size(417, 317);
             this.Controls.Add(this.Lblintegrantes2);
             this.Controls.Add(this.Lblintegrantes);
             this.Controls.Add(this.Btnejercicio3);
             this.Controls.Add(this.Btnejercicio2);
             this.Controls.Add(this.Btnejercicio1);
+            this.MinimumSize = new System.Drawing.Size(433, 356);
             this.Name = "FormPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Formulario Principal";
