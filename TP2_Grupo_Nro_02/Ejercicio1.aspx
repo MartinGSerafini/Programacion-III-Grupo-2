@@ -23,6 +23,7 @@
             </p>
             <p>
                 <asp:Button ID="Btntabla" runat="server" OnClick="Btntabla_Click" Text="Generar Tabla" />
+                <asp:Label ID="LabelError" runat="server"></asp:Label>
             </p>
             <p>
                 <asp:Label ID="Lbltabla" runat="server"></asp:Label>
