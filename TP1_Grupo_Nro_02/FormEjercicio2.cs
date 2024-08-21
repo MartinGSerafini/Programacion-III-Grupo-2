@@ -22,7 +22,7 @@ namespace TP1_Grupo_Nro_02
         {
             for (int i = 0; i < Lstbox.Items.Count; i++) ///recorre los elementos de la list box
             {
-                string nombreyapellido = Tbxnombre.Text.ToUpper() + " " + Tbxapellido.Text.ToUpper(); ///crea una cadena auxiliar igual al txtbox pero en mayusculas
+                string nombreyapellido = Tbxnombre.Text.ToUpper().Trim() + " " + Tbxapellido.Text.ToUpper().Trim(); ///crea una cadena auxiliar igual al txtbox pero en mayusculas
                 if (nombreyapellido == Lstbox.Items[i].ToString().ToUpper())    ///compara todas las cadenas de la lstbox pasandolas a mayusculas
                 {
                     ///si se repite alguno, muestra un mensaje de error y detiene el buclem
@@ -79,9 +79,5 @@ namespace TP1_Grupo_Nro_02
                 //Muestra un cartel de error cuando el campo de nombre esta vacio o repetido
         }
 
-        private void Lstbox_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
     }
 }

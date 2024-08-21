@@ -22,13 +22,13 @@ namespace TP1_Grupo_Nro_02
             bool repetido = false;
 
             for (int i = 0; i < ListBox1.Items.Count; i++){
-                string nombreaux = TextBox1.Text.ToUpper(); ///crea una cadena auxiliar igual al txtbox pero en mayusculas
+                string nombreaux = TextBox1.Text.ToUpper().Trim(); ///crea una cadena auxiliar igual al txtbox pero en mayusculas
                 if (nombreaux == ListBox1.Items[i].ToString().ToUpper()) ///compara todas las cadenas de la lstbox pasandolas a mayusculas
                     repetido = true;    ///si se repite alguno, el bool repetido pasa a true
             }
             for (int i = 0; i < ListBox2.Items.Count; i++)
             {
-                string nombreaux = TextBox1.Text.ToUpper(); ///crea una cadena auxiliar igual al txtbox pero en mayusculas
+                string nombreaux = TextBox1.Text.ToUpper().Trim(); ///crea una cadena auxiliar igual al txtbox pero en mayusculas
                 if (nombreaux == ListBox2.Items[i].ToString().ToUpper()) ///compara todas las cadenas de la lstbox2 pasandolas a mayusculas
                     repetido = true;    ///si se repite alguno, el bool repetido pasa a true
             }
@@ -38,6 +38,7 @@ namespace TP1_Grupo_Nro_02
             }
             else
                 MessageBox.Show("El nombre ingresado es repetido o el campo está vacío", "Nombre no válido", MessageBoxButtons.OK, MessageBoxIcon.Error); //Muestra un cartel de error cuando el campo de nombre esta vacio o repetido
+                TextBox1.Clear();
         }
 
         private void Btnadd_Click(object sender, EventArgs e)

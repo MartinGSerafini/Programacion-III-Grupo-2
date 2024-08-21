@@ -136,7 +136,6 @@
             this.Lstbox.Size = new System.Drawing.Size(266, 304);
             this.Lstbox.Sorted = true;
             this.Lstbox.TabIndex = 5;
-            this.Lstbox.SelectedIndexChanged += new System.EventHandler(this.Lstbox_SelectedIndexChanged);
             // 
             // FormEjercicio2
             // 
