@@ -31,9 +31,24 @@ namespace TP2_Grupo_Nro_XX
             return false;
         }
 
+        protected bool NumeroEnCantidad(TextBox Txbcant1, TextBox Txbcant2)
+         {
+             bool a = Char.IsNumber(Txbcant1.Text, 0);
+             bool b = Char.IsNumber(Txbcant2.Text, 0);
+             if (!a || !b)
+             {
+                 string Msgerror = "alert('Debe ingresar sólo números en cantidad');"; 
+                 ClientScript.RegisterStartupScript(this.GetType(), "Ingreso Incorrecto", Msgerror, true); 
+                 return true;                                                                            
+            }
+            return false;
+        }
+
         protected void Btntabla_Click(object sender, EventArgs e) ///Genera la tabla con los productos y el total
         {
             if (CamposVacios(Txbcant1, Txbnombre1, Txbcant2, Txbnombre2))  ///Si algun Txtbox esta vacio, no muestra la tabla
+                return;
+            if (NumeroEnCantidad(Txbcant1, Txbcant2))
                 return;
 
             int numero1 = int.Parse(Txbcant1.Text);
