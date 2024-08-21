@@ -3,12 +3,20 @@
   "WorkspaceRootPath": "C:\\Users\\guill\\OneDrive\\Documentos\\GitHub\\Programacion-III-Grupo-2\\TP2_Grupo_Nro_02\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{AC9EE776-6197-43D6-AEE9-4954B787A505}|TP2_Grupo_Nro_02.csproj|c:\\users\\guill\\onedrive\\documentos\\github\\programacion-iii-grupo-2\\tp2_grupo_nro_02\\ejercicio1.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{AC9EE776-6197-43D6-AEE9-4954B787A505}|TP2_Grupo_Nro_02.csproj|C:\\Users\\guill\\OneDrive\\Documentos\\GitHub\\Programacion-III-Grupo-2\\TP2_Grupo_Nro_02\\ejercicio1.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{AC9EE776-6197-43D6-AEE9-4954B787A505}|TP2_Grupo_Nro_02.csproj|solutionrelative:ejercicio1.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{AC9EE776-6197-43D6-AEE9-4954B787A505}|TP2_Grupo_Nro_02.csproj|C:\\Users\\guill\\OneDrive\\Documentos\\GitHub\\Programacion-III-Grupo-2\\TP2_Grupo_Nro_02\\ejercicio1.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
       "RelativeMoniker": "D:0:0:{AC9EE776-6197-43D6-AEE9-4954B787A505}|TP2_Grupo_Nro_02.csproj|solutionrelative:ejercicio1.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AC9EE776-6197-43D6-AEE9-4954B787A505}|TP2_Grupo_Nro_02.csproj|c:\\users\\guill\\onedrive\\documentos\\github\\programacion-iii-grupo-2\\tp2_grupo_nro_02\\ejercicio2a.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{AC9EE776-6197-43D6-AEE9-4954B787A505}|TP2_Grupo_Nro_02.csproj|solutionrelative:ejercicio2a.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AC9EE776-6197-43D6-AEE9-4954B787A505}|TP2_Grupo_Nro_02.csproj|C:\\Users\\guill\\OneDrive\\Documentos\\GitHub\\Programacion-III-Grupo-2\\TP2_Grupo_Nro_02\\ejercicio2a.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AC9EE776-6197-43D6-AEE9-4954B787A505}|TP2_Grupo_Nro_02.csproj|solutionrelative:ejercicio2a.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,8 +26,34 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 2,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Ejercicio2A.aspx.cs",
+              "DocumentMoniker": "C:\\Users\\guill\\OneDrive\\Documentos\\GitHub\\Programacion-III-Grupo-2\\TP2_Grupo_Nro_02\\Ejercicio2A.aspx.cs",
+              "RelativeDocumentMoniker": "Ejercicio2A.aspx.cs",
+              "ToolTip": "C:\\Users\\guill\\OneDrive\\Documentos\\GitHub\\Programacion-III-Grupo-2\\TP2_Grupo_Nro_02\\Ejercicio2A.aspx.cs",
+              "RelativeToolTip": "Ejercicio2A.aspx.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-21T21:30:59.556Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Ejercicio2A.aspx",
+              "DocumentMoniker": "C:\\Users\\guill\\OneDrive\\Documentos\\GitHub\\Programacion-III-Grupo-2\\TP2_Grupo_Nro_02\\Ejercicio2A.aspx",
+              "RelativeDocumentMoniker": "Ejercicio2A.aspx",
+              "ToolTip": "C:\\Users\\guill\\OneDrive\\Documentos\\GitHub\\Programacion-III-Grupo-2\\TP2_Grupo_Nro_02\\Ejercicio2A.aspx",
+              "RelativeToolTip": "Ejercicio2A.aspx",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2024-08-21T21:30:40.967Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
@@ -28,7 +62,7 @@
               "RelativeDocumentMoniker": "Ejercicio1.aspx.cs",
               "ToolTip": "C:\\Users\\guill\\OneDrive\\Documentos\\GitHub\\Programacion-III-Grupo-2\\TP2_Grupo_Nro_02\\Ejercicio1.aspx.cs",
               "RelativeToolTip": "Ejercicio1.aspx.cs",
-              "ViewState": "AgIAAA4AAAAAAAAAAAAkwBQAAAAfAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAD8AAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-08-20T17:47:53.074Z",
               "EditorCaption": ""
@@ -43,7 +77,8 @@
               "RelativeToolTip": "Ejercicio1.aspx",
               "LogicalView": "7651a702-06e5-11d1-8ebd-00a0c90f26ea",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
-              "WhenOpened": "2024-08-20T17:44:11.363Z"
+              "WhenOpened": "2024-08-20T17:44:11.363Z",
+              "EditorCaption": ""
             }
           ]
         }
