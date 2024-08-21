@@ -18,6 +18,8 @@ namespace TP2_Grupo_Nro_XX
         {
             if (!string.IsNullOrWhiteSpace(Txbcant1.Text) && !string.IsNullOrWhiteSpace(Txbcant2.Text) && !string.IsNullOrWhiteSpace(Txbnombre1.Text) && !string.IsNullOrWhiteSpace(Txbnombre2.Text))
             {
+
+                LabelError.Text = "";
                 int numero1 = int.Parse(Txbcant1.Text);
                 int numero2 = int.Parse(Txbcant2.Text);
                 
