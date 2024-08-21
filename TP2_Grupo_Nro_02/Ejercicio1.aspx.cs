@@ -48,6 +48,8 @@ namespace TP2_Grupo_Nro_XX
         {
             if (CamposVacios(Txbcant1, Txbnombre1, Txbcant2, Txbnombre2))  ///Si algun Txtbox esta vacio, no muestra la tabla
                 return;
+            if (NumeroEnCantidad(Txbcant1, Txbcant2))
+                return;
 
             int numero1 = int.Parse(Txbcant1.Text);
             int numero2 = int.Parse(Txbcant2.Text);
