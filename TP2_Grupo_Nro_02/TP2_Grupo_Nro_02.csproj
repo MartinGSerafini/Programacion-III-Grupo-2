@@ -69,6 +69,8 @@
   <ItemGroup>
     <Content Include="Ejercicio2B.aspx" />
     <Content Include="normalize.css" />
+    <Content Include="StyleSheet2a.css" />
+    <Content Include="StyleSheet2b.css" />
     <Content Include="Web.config" />
     <Content Include="Ejercicio1.aspx" />
     <Content Include="Ejercicio2A.aspx" />
