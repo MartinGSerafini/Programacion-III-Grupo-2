@@ -7,7 +7,7 @@
       "RelativeMoniker": "D:0:0:{AC9EE776-6197-43D6-AEE9-4954B787A505}|TP2_Grupo_Nro_02.csproj|solutionrelative:ejercicio2b.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{AC9EE776-6197-43D6-AEE9-4954B787A505}|TP2_Grupo_Nro_02.csproj|c:\\users\\guill\\onedrive\\documentos\\github\\programacion-iii-grupo-2\\tp2_grupo_nro_02\\ejercicio2a.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{AC9EE776-6197-43D6-AEE9-4954B787A505}|TP2_Grupo_Nro_02.csproj|C:\\Users\\guill\\OneDrive\\Documentos\\GitHub\\Programacion-III-Grupo-2\\TP2_Grupo_Nro_02\\ejercicio2a.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{AC9EE776-6197-43D6-AEE9-4954B787A505}|TP2_Grupo_Nro_02.csproj|solutionrelative:ejercicio2a.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -53,7 +53,7 @@
               "RelativeDocumentMoniker": "Ejercicio2A.aspx.cs",
               "ToolTip": "C:\\Users\\guill\\OneDrive\\Documentos\\GitHub\\Programacion-III-Grupo-2\\TP2_Grupo_Nro_02\\Ejercicio2A.aspx.cs",
               "RelativeToolTip": "Ejercicio2A.aspx.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAABIAAABoAAAAAAAAAA==",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAqwBIAAABoAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-08-21T21:30:59.556Z",
               "EditorCaption": ""
@@ -68,8 +68,7 @@
               "RelativeToolTip": "Ejercicio2A.aspx",
               "LogicalView": "7651a702-06e5-11d1-8ebd-00a0c90f26ea",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
-              "WhenOpened": "2024-08-21T21:30:40.967Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-08-21T21:30:40.967Z"
             },
             {
               "$type": "Document",
@@ -81,8 +80,7 @@
               "RelativeToolTip": "Ejercicio1.aspx.cs",
               "ViewState": "AgIAAB4AAAAAAAAAAAAowCoAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-20T17:47:53.074Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-08-20T17:47:53.074Z"
             },
             {
               "$type": "Document",
@@ -94,8 +92,7 @@
               "RelativeToolTip": "Ejercicio1.aspx",
               "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
-              "WhenOpened": "2024-08-20T17:44:11.363Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-08-20T17:44:11.363Z"
             }
           ]
         }
