@@ -6,18 +6,18 @@ Inherits="TP2_Grupo_Nro_XX.WebForm2" %>
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head runat="server">
     <link rel="stylesheet" type="text/css" href="normalize.css" />
-    <link rel="stylesheet" type="text/css" href="StyleSheet2a.css" />
     <title>Ejercicio 2, Formulario de resumen</title>
   </head>
   <body>
     <form id="form1" runat="server">
       <div class="layout">
-        <div class="container input">
+        <div class="container input poppins-bold">
           <asp:Label
             ID="Lblnombre"
             runat="server"
             Text="Nombre:"
             Font-Size="12pt"
+              
           ></asp:Label>
           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
           <asp:TextBox
@@ -25,12 +25,10 @@ Inherits="TP2_Grupo_Nro_XX.WebForm2" %>
             runat="server"
             Width="150px"
             Height="19px"
-            Style="position: relative; left: 10px;"
+
           ></asp:TextBox>
         </div>
-        <br />
-        <br />
-        <div class="container input">
+        <div class="container input poppins-bold">
           <asp:Label
             ID="Lblapellido"
             runat="server"
@@ -43,11 +41,10 @@ Inherits="TP2_Grupo_Nro_XX.WebForm2" %>
             Height="19px"
           ></asp:TextBox>
         </div>
-        <br />
-        <br />
-        <div class="container list">
+        <div class="container list poppins-bold">
             <asp:Label ID="Lblciudad" runat="server" Text="Ciudad:"></asp:Label>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;<asp:DropDownList
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;
+            <asp:DropDownList
               ID="Ddlzona"
               runat="server"
               AutoPostBack="True"
@@ -57,10 +54,8 @@ Inherits="TP2_Grupo_Nro_XX.WebForm2" %>
               <asp:ListItem Value="zona norte">Gral. Pacheco</asp:ListItem>
               <asp:ListItem Value="zona oeste">San Miguel</asp:ListItem>
               <asp:ListItem Value="zona sur">Boedo</asp:ListItem>
-        </div>
         </asp:DropDownList>
-        <br />
-        <br />
+        </div>
         <div class="container list">
           <asp:Label ID="Lbltemas" runat="server" Text="Temas"></asp:Label>
           <asp:CheckBoxList
@@ -74,7 +69,7 @@ Inherits="TP2_Grupo_Nro_XX.WebForm2" %>
             ValidateRequestMode="Enabled"
             Width="150px"
             OnSelectedIndexChanged="CheckBoxList1_SelectedIndexChanged1"
-          >
+          CssClass="cList">
             <asp:ListItem Value="0">Ciencias</asp:ListItem>
             <asp:ListItem Value="1">Literatura</asp:ListItem>
             <asp:ListItem Value="3">Historia</asp:ListItem>
@@ -82,14 +77,15 @@ Inherits="TP2_Grupo_Nro_XX.WebForm2" %>
         </div>
         <br />
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <asp:Button
+        <div class="btn">
+          <asp:Button
           ID="Btnverresumen"
           runat="server"
           Font-Size="12pt"
           Text="Ver resumen"
           OnClick="Btnverresumen_Click"
-        />
-        <br />
+        CssClass="resumeBtn" />
+        </div>
       </div>
     </form>
   </body>
