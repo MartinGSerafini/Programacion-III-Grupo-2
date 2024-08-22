@@ -23,5 +23,10 @@ namespace TP2_Grupo_Nro_XX
         {
 
         }
+
+        protected void Btnverresumen_Click(object sender, EventArgs e)
+        {
+            Server.Transfer("Ejercicio2B.aspx");
+        }
     }
 }

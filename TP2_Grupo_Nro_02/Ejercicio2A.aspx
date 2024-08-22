@@ -11,15 +11,15 @@
         <div style="margin-left: 20px">
             <asp:Label ID="Lblnombre" runat="server" Text="Nombre:" Font-Size="12pt"></asp:Label>
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <asp:TextBox ID="Txbnombre1" runat="server" Width="150px" Height="19px" Style="position: relative; left: 10px;"></asp:TextBox>
+            <asp:TextBox ID="Txbnombre" runat="server" Width="150px" Height="19px" Style="position: relative; left: 10px;"></asp:TextBox>
             <br />
             <br />
             <asp:Label ID="Lblapellido" runat="server" Text="Apellido:"></asp:Label>
-            &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;<asp:TextBox ID="Txbnombre2" runat="server" Width="150px" Height="19px" Style="position: relative; left: 10px;"></asp:TextBox>
+            &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;<asp:TextBox ID="Txbapellido" runat="server" Width="150px" Height="19px" Style="position: relative; left: 10px;"></asp:TextBox>
             <br />
             <br />
             <asp:Label ID="Lblciudad" runat="server" Text="Ciudad:"></asp:Label>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;<asp:DropDownList ID="Ddlist" runat="server" AutoPostBack="True" Height="19px" Width="150px" Style="position: relative; left: 10px;">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;<asp:DropDownList ID="Ddlzona" runat="server" AutoPostBack="True" Height="19px" Width="150px" Style="position: relative; left: 10px;">
                 <asp:ListItem Value="zona norte">Gral. Pacheco</asp:ListItem>
                 <asp:ListItem Value="zona oeste">San Miguel</asp:ListItem>
                 <asp:ListItem Value="zona sur">Boedo</asp:ListItem>
@@ -36,7 +36,7 @@
             </asp:CheckBoxList>
             <br />
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <asp:Button ID="Btnverresumen" runat="server" Font-Size="12pt" Text="Ver resumen" />
+            <asp:Button ID="Btnverresumen" runat="server" Font-Size="12pt" Text="Ver resumen" OnClick="Btnverresumen_Click" />
             <br />
         </div>
     </form>
