@@ -74,6 +74,11 @@ namespace TP2_Grupo_Nro_XX
             tabla += "</tr>";
             tabla += "</table>";
             Lbltabla.Text = tabla; ///Asigna la tabla al Lbltabla
+
+            Txbnombre1.Text = "";
+            Txbnombre2.Text = "";
+            Txbcant1.Text = "";
+            Txbcant2.Text = "";
         }
     }
 }
