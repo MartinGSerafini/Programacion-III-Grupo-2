@@ -25,7 +25,7 @@ namespace TP2_Grupo_Nro_XX
             lblNombre.Text = "Nombre: " + Nombre;
             lblApellido.Text = "Apellido: " + Apellido;
             lblZona.Text = "Zona: " + Zona;
-            lblTemas.Text = "Temas seleccionados: " + "<br />" + selectedItems;
+            lblTemas.Text = "Los temas elegidos son: " + "<br />" + selectedItems;
         }
     }
 }
