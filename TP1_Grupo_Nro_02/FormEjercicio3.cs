@@ -38,7 +38,7 @@ namespace TP1_Grupo_Nro_02
 
         private void Oficios()
         {
-            for (int i = Clbox.CheckedItems.Count - 1; i >= 0; i--) ///Clbox.SelectedItems devuelve una coleccion de objetos de la lista que esten seleccionados
+            for (int i = 0; i < Clbox.CheckedItems.Count; i++) ///Clbox.SelectedItems devuelve una coleccion de objetos de la lista que esten seleccionados
             {
                 string Aux = Clbox.CheckedItems[i].ToString(); // Obtiene el elemento seleccionado
                 Label1.Text += "\r\n" + "   -" + Aux;  //Lo muestra 
@@ -70,3 +70,4 @@ namespace TP1_Grupo_Nro_02
         }
     }
 }
+//SI

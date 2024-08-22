@@ -16,7 +16,17 @@ namespace TP2_Grupo_Nro_XX
 
         protected void lbtnRojo_Click(object sender, EventArgs e)
         {
+            lblTextoColoreado.ForeColor = System.Drawing.Color.Red;
+        }
 
+        protected void lbtnAzul_Click(object sender, EventArgs e)
+        {
+            lblTextoColoreado.ForeColor = System.Drawing.Color.Blue;
+        }
+
+        protected void lbtnVerde_Click(object sender, EventArgs e)
+        {
+            lblTextoColoreado.ForeColor = System.Drawing.Color.Green;
         }
     }
 }

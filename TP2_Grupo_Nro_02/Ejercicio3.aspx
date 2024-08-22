@@ -10,16 +10,14 @@
 <body>
     <form id="form1" runat="server">
         <div>
-        &nbsp;&nbsp;
+            &nbsp;
             <asp:LinkButton ID="lbtnRojo" runat="server" OnClick="lbtnRojo_Click">Rojo</asp:LinkButton>
             <br />
 &nbsp;
-            <asp:LinkButton ID="lbtnAzul" runat="server">Azul</asp:LinkButton>
+            <asp:LinkButton ID="lbtnAzul" runat="server" OnClick="lbtnAzul_Click">Azul</asp:LinkButton>
             <br />
 &nbsp;
-            <asp:LinkButton ID="lbtnVerde" runat="server">Verde</asp:LinkButton>
-            <br />
-            <br />
+            <asp:LinkButton ID="lbtnVerde" runat="server" OnClick="lbtnVerde_Click">Verde</asp:LinkButton>
             <br />
             <br />
             <br />
