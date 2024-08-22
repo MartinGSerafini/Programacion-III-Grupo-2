@@ -20,8 +20,7 @@ namespace TP2_Grupo_Nro_XX
             Apellido = Request["Txbapellido"].ToString();
             Zona = Request["Ddlzona"].ToString();
 
-            
-
+    
             lblNombre.Text = "Nombre: " + Nombre;
             lblApellido.Text = "Apellido: " + Apellido;
             lblZona.Text = "Zona: " + Zona;

@@ -19,6 +19,9 @@
         <p>
             <asp:Label ID="lblZona" runat="server"></asp:Label>
         </p>
+        <p>
+            <asp:Label ID="lblTemas" runat="server"></asp:Label>
+        </p>
     </form>
 </body>
 </html>
