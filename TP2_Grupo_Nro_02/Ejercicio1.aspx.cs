@@ -37,7 +37,7 @@ namespace TP2_Grupo_Nro_XX
              bool b = Char.IsNumber(Txbcant2.Text, 0);
              if (!a || !b)
              {
-                 string Msgerror = "alert('Debe ingresar sólo números en cantidad');"; 
+                 string Msgerror = "alert('Debe ingresar sólalmente números en las secciones de cantidad');"; 
                  ClientScript.RegisterStartupScript(this.GetType(), "Ingreso Incorrecto", Msgerror, true); 
                  return true;                                                                            
             }
