@@ -11,20 +11,21 @@ namespace TP2_Grupo_Nro_XX
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            string Nombre;
-            string Apellido;
-            string Zona;
+            if (Session["SelectedItems"] == null || Request["Txbnombre"] == null || Request["Txbapellido"] == null || Request["Ddlzona"] == null)
+            {
+                Response.Redirect("Ejercicio2A.aspx");
+                return;
+            }
+            string Nombre = Request["Txbnombre"].ToString();
+            string Apellido = Request["Txbapellido"].ToString();
+            string Zona = Request["Ddlzona"].ToString();
             string selectedItems = Session["SelectedItems"] as string;
 
-            Nombre = Request["Txbnombre"].ToString();
-            Apellido = Request["Txbapellido"].ToString();
-            Zona = Request["Ddlzona"].ToString();
-
-    
             lblNombre.Text = "Nombre: " + Nombre;
             lblApellido.Text = "Apellido: " + Apellido;
             lblZona.Text = "Zona: " + Zona;
             lblTemas.Text = "Los temas elegidos son: " + "<br />" + selectedItems;
+
         }
     }
 }

@@ -28,8 +28,8 @@
             <br />
             <asp:Label ID="Lbltemas" runat="server" Text="Temas"></asp:Label>
             <br />
-            <asp:CheckBoxList ID="CheckBoxList1" runat="server" 
-                 Style="position: relative; left: 90px;" AutoPostBack="True" Font-Bold="True" Font-Italic="True" Font-Overline="False" Font-Size="12pt" ValidateRequestMode="Enabled" Width="150px" OnSelectedIndexChanged="CheckBoxList1_SelectedIndexChanged1">
+            <asp:CheckBoxList ID="CheckBoxList" runat="server" 
+                 Style="position: relative; left: 90px; top: 0px;" AutoPostBack="True" Font-Bold="True" Font-Italic="True" Font-Overline="False" Font-Size="12pt" ValidateRequestMode="Enabled" Width="150px">
                 <asp:ListItem Value="0">Ciencias</asp:ListItem>
                 <asp:ListItem Value="1">Literatura</asp:ListItem>
                 <asp:ListItem Value="3">Historia</asp:ListItem>
