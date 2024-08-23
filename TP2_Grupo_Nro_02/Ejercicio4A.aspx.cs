@@ -13,5 +13,25 @@ namespace TP2_Grupo_Nro_XX
         {
 
         }
+
+        protected void Btnvalidar_Click(object sender, EventArgs e)
+        {
+            if(!string.IsNullOrWhiteSpace(Txbnombre.Text) && !string.IsNullOrWhiteSpace(TxbClave.Text))
+            {
+                if(Txbnombre.Text == "claudio" &&  TxbClave.Text == "casas")
+                {
+                    Server.Transfer("Ejercicio4B.aspx");
+                }
+                else
+                {
+                    Server.Transfer("Ejercicio4c.aspx");
+                }
+            }
+            else
+            {
+                string Msgerror = "alert('Debe completar todos los campos');";
+                ClientScript.RegisterStartupScript(this.GetType(), "Ingreso Incorrecto", Msgerror, true);
+            }
+        }
     }
 }

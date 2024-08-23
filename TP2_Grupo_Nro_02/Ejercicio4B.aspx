@@ -10,6 +10,11 @@
     <form id="form1" runat="server">
         <div>
         </div>
+        <p>
+            &nbsp;</p>
+        <p>
+            <asp:Label ID="LblBienvenida" runat="server" Text="&lt;b&gt;Bienvenido a mi página Sr/a Claudio&lt;/b&gt;"></asp:Label>
+        </p>
     </form>
 </body>
 </html>
