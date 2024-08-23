@@ -16,24 +16,17 @@ namespace TP2_Grupo_Nro_XX
 
         protected decimal CalcularMemoria()
         {
-            decimal dosgb = 200;
-            decimal cuatrogb = 375;
-            decimal seisgb = 500;
-            decimal memoria = 0;
-
             switch (Ddlist.SelectedValue)
             {
                 case "0":
-                    memoria = dosgb;
-                    break;
+                    return 200;
                 case "1":
-                    memoria = cuatrogb;
-                    break;
+                    return 375;
                 case "2":
-                    memoria = seisgb;
-                    break;
+                    return 500;
+                default:
+                    return 0;
             }
-            return memoria;
         }
         protected decimal CalcularAccesorios()
         {
