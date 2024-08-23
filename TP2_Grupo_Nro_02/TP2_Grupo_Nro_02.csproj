@@ -75,6 +75,7 @@
     <Content Include="Ejercicio4A.aspx" />
     <Content Include="Ejercicio4B.aspx" />
     <Content Include="Ejercicio4C.aspx" />
+    <Content Include="WebForm6.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Ejercicio2B.aspx.cs">
@@ -126,6 +127,13 @@
     </Compile>
     <Compile Include="Ejercicio4C.aspx.designer.cs">
       <DependentUpon>Ejercicio4C.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebForm6.aspx.cs">
+      <DependentUpon>WebForm6.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForm6.aspx.designer.cs">
+      <DependentUpon>WebForm6.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
