@@ -13,7 +13,11 @@
         <p>
             &nbsp;</p>
         <p>
-             <asp:Label ID="LblBienvenida" runat="server" Text="&lt;b&gt;USUARIO INVBALIDO INGRESO NO PERMITIDO&lt;/b&gt;"></asp:Label>
+            &nbsp;</p>
+        <p>
+            &nbsp;</p>
+        <p>
+             <asp:Label ID="LblBienvenida" runat="server" Text="&lt;b&gt;USUARIO INVALIDO INGRESO NO PERMITIDO&lt;/b&gt;"></asp:Label>
         </p>
     </form>
 </body>

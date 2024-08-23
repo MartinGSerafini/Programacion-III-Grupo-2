@@ -11,6 +11,11 @@ namespace TP2_Grupo_Nro_XX
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            LblBienvenida.Width = Unit.Pixel(2000);
+            LblBienvenida.Height = Unit.Pixel(50); 
+            LblBienvenida.Font.Size = FontUnit.Point(50);
+
+            LblBienvenida.Style["text-align"] = "center"; 
 
         }
     }
