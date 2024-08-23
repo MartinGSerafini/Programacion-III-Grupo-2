@@ -76,7 +76,7 @@
     <Content Include="Ejercicio4B.aspx" />
     <Content Include="Ejercicio4C.aspx" />
     <Content Include="Ejercicio5.aspx">
-      <BrowseToURL>~/WebForm6.aspx</BrowseToURL>
+      <BrowseToURL>~/Ejercicio5.aspx</BrowseToURL>
     </Content>
   </ItemGroup>
   <ItemGroup>

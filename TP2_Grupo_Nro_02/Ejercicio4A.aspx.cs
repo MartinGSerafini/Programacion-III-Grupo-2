@@ -21,12 +21,12 @@ namespace TP2_Grupo_Nro_XX
                 if (Txbnombre.Text == "claudio" && TxbClave.Text == "casas")
                 {
                     Session["Origen"] = true;
-                    Server.Transfer("Ejercicio4B.aspx");
+                    Response.Redirect("Ejercicio4B.aspx");
                 }
                 else
                 {
-                    Session["Origen"] = true;
-                    Server.Transfer("Ejercicio4C.aspx");
+                    Session["Origen"] = false;
+                    Response.Redirect("Ejercicio4C.aspx");
                 }
             }
             else

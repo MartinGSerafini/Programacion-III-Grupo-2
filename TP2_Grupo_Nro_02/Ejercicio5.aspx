@@ -18,28 +18,25 @@
             Seleccione cantidad de memoria:<br />
             <br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <asp:DropDownList ID="DropDownList1" runat="server" AutoPostBack="True">
-                <asp:ListItem Value="200">2GB</asp:ListItem>
-                <asp:ListItem Value="375">4GB</asp:ListItem>
-                <asp:ListItem Value="500">6GB</asp:ListItem>
+            <asp:DropDownList ID="Ddlist" runat="server" AutoPostBack="True">
+                <asp:ListItem Value="0">2GB</asp:ListItem>
+                <asp:ListItem Value="1">4GB</asp:ListItem>
+                <asp:ListItem Value="2">6GB</asp:ListItem>
             </asp:DropDownList>
-            <br />
             <br />
             <br />
             <br />
 &nbsp; Selecioone accesorios:<br />
             <br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <asp:RadioButtonList ID="RadioButtonList1" runat="server" AutoPostBack="True">
-                <asp:ListItem Value="2000,50">MonitorLCD</asp:ListItem>
-                <asp:ListItem Value="550,50">HD 500GB</asp:ListItem>
-                <asp:ListItem Value="1200">Grabador DVD</asp:ListItem>
-            </asp:RadioButtonList>
-            <br />
-            <br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<asp:CheckBoxList ID="Cblist" runat="server" AutoPostBack="True">
+                <asp:ListItem Value="0">Monitor LCD</asp:ListItem>
+                <asp:ListItem Value="1">HD 500GB</asp:ListItem>
+                <asp:ListItem Value="2">Grabador DVD</asp:ListItem>
+            </asp:CheckBoxList>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <br />
 &nbsp;
-            <asp:Button ID="lblCalcularPrecio" runat="server" Text="Calcular Precio" />
+            <asp:Button ID="Btncalcular" runat="server" Text="Calcular Precio" OnClick="Btncalcular_Click" />
             <br />
             <br />
             <br />
