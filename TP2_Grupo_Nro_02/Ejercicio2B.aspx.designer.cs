@@ -42,6 +42,15 @@ namespace TP2_Grupo_Nro_XX
         protected global::System.Web.UI.WebControls.Label lblNombre;
 
         /// <summary>
+        /// Control lblNombreNegrita.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblNombreNegrita;
+
+        /// <summary>
         /// Control lblApellido.
         /// </summary>
         /// <remarks>
@@ -49,6 +58,15 @@ namespace TP2_Grupo_Nro_XX
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblApellido;
+
+        /// <summary>
+        /// Control lblApellidoNegrita.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblApellidoNegrita;
 
         /// <summary>
         /// Control lblZona.
@@ -60,6 +78,15 @@ namespace TP2_Grupo_Nro_XX
         protected global::System.Web.UI.WebControls.Label lblZona;
 
         /// <summary>
+        /// Control lblZonaNegrita.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblZonaNegrita;
+
+        /// <summary>
         /// Control lblTemas.
         /// </summary>
         /// <remarks>
@@ -67,5 +94,14 @@ namespace TP2_Grupo_Nro_XX
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblTemas;
+
+        /// <summary>
+        /// Control lblTemasNegrita.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblTemasNegrita;
     }
 }

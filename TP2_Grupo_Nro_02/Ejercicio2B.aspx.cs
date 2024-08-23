@@ -21,10 +21,14 @@ namespace TP2_Grupo_Nro_XX
             string Zona = Request["Ddlzona"].ToString();
             string selectedItems = Session["SelectedItems"] as string;
 
-            lblNombre.Text = "Nombre: " + Nombre;
-            lblApellido.Text = "Apellido: " + Apellido;
-            lblZona.Text = "Zona: " + Zona;
-            lblTemas.Text = "Los temas elegidos son: " + "<br />" + selectedItems;
+            lblNombre.Text = "Nombre: ";
+            lblNombreNegrita.Text = Nombre;
+            lblApellido.Text = "Apellido: ";
+            lblApellidoNegrita.Text = Apellido;
+            lblZona.Text = "Zona: ";
+            lblZonaNegrita.Text = Zona;
+            lblTemas.Text = "Los temas elegidos son: ";
+            lblTemasNegrita.Text = "<br />" + selectedItems;
 
         }
     }
