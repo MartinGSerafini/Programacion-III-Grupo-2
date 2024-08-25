@@ -67,8 +67,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Colors.css" />
+    <Content Include="components.css" />
     <Content Include="Ejercicio2B.aspx" />
     <Content Include="Ejercicio3.aspx" />
+    <Content Include="fonts.css" />
+    <Content Include="main.css" />
+    <Content Include="normalize.css" />
     <Content Include="Web.config" />
     <Content Include="Ejercicio1.aspx" />
     <Content Include="Ejercicio2A.aspx" />

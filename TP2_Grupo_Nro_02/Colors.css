@@ -1,0 +1,12 @@
+﻿:root {
+    --bg-color: #f3f3f3;
+    --color-text: #333;
+    --color-border: #333;
+    --color-hover-bg: #333;
+    --color-hover-text: #fff;
+    --color-header-bg: #f4f4f4;
+    --color-border-table: #ddd;
+    --color-row-even-bg: #f9f9f9;
+    --color-row-hover-bg: #f1f1f1;
+    --color-link: #007bff;
+}

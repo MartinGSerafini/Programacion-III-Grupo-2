@@ -4,7 +4,8 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title></title>
+    <title>Ejercicio 1, creador de tablas</title>
+    <link rel="stylesheet" type="text/css" href="main.css" />
 </head>
 <body>
     <form id="form1" runat="server">
@@ -22,7 +23,7 @@
                 <asp:TextBox ID="Txbcant2" runat="server" Width="230px"></asp:TextBox>
             </p>
             <p>
-                <asp:Button ID="Btntabla" runat="server" OnClick="Btntabla_Click" Text="Generar Tabla" />
+                <asp:Button ID="Btntabla" runat="server" OnClick="Btntabla_Click" Text="Generar Tabla" CssClass="btn" />
             </p>
             <p>
                 <asp:Label ID="Lbltabla" runat="server"></asp:Label>

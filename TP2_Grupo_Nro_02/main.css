@@ -1,0 +1,55 @@
+﻿@import "normalize.css";
+@import "fonts.css";
+@import "Colors.css";
+@import "components.css";
+
+:root {
+    --tenue-box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+body {
+    background-color: var(--bg-color);
+    font-family: "Roboto", sans-serif;
+    font-size: 16px;
+}
+
+table {
+    width: 80%;
+    border-collapse: collapse;
+    border-spacing: 0;
+    color: var(--color-text);
+    margin: 2rem auto;
+}
+
+    table th {
+        background-color: var(--color-header-bg);
+        color: var(--color-text);
+        font-family: "Roboto", sans-serif;
+        font-weight: 700;
+        text-align: left;
+        padding: 1rem;
+        border-bottom: 2px solid var(--color-border-table);
+    }
+
+    table td {
+        padding: 12px;
+        border-bottom: 1px solid var(--color-border-table);
+        text-align: left;
+    }
+
+    table tr:nth-child(even) {
+        background-color: var(--color-row-even-bg);
+    }
+
+    table tr:hover {
+        background-color: var(--color-row-hover-bg);
+    }
+
+    table a {
+        color: var(--color-link);
+        text-decoration: none;
+    }
+
+        table a:hover {
+            text-decoration: underline;
+        }

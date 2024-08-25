@@ -1,0 +1,67 @@
+﻿/* Normalizer.css - Versión optimizada */
+
+/* Eliminar márgenes y padding predeterminados, y establecer box-sizing */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Configurar elementos de bloque y tablas */
+html {
+    line-height: 1.15; /* Mejora la legibilidad */
+    -webkit-text-size-adjust: 100%; /* Evitar ajuste de texto en dispositivos móviles */
+}
+
+body {
+    margin: 0;
+    font-family: sans-serif;
+}
+
+main {
+    display: block;
+}
+
+ol, ul {
+    list-style: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+img, video {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Asegurar que enlaces y botones hereden el estilo de fuente */
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+button, input, select, textarea {
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+    color: inherit;
+    background: none;
+    border: none;
+    padding: 0;
+    margin: 0;
+    outline: none;
+}
+
+/* Estilos adicionales de compatibilidad */
+blockquote, q {
+    quotes: none;
+}
+
+    blockquote::before, blockquote::after,
+    q::before, q::after {
+        content: '';
+    }
