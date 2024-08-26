@@ -9,4 +9,18 @@
     --color-row-even-bg: #f9f9f9;
     --color-row-hover-bg: #f1f1f1;
     --color-link: #007bff;
+    --color-focus-border: #007bff;
+    --color-focus-shadow: rgba(0, 123, 255, 0.25);
+    --padding: 10px 15px;
+    --border-radius: 4px;
+    --input-bg-color: #fff;
+    --input-border-color: #d1d5db;
+    --input-text-color: #333;
+    --input-placeholder-color: #9ca3af;
+    --input-focus-border-color: #2563eb;
+    --input-focus-shadow-color: rgba(37, 99, 235, 0.2);
+    --input-padding: 12px 16px;
+    --input-font-size: 16px;
+    --input-border-radius: 4px;
+    --input-transition-duration: 0.3s;
 }

@@ -55,10 +55,10 @@ namespace TP2_Grupo_Nro_XX
             int numero2 = int.Parse(Txbcant2.Text);
                 
             int suma = numero1 + numero2;
-            string tabla = "<table border = '1'>";
+            string tabla = "<table><caption>Resultados</caption>";
             tabla += "<tr>";
-            tabla += "<td>" + "Producto" + "</td>";
-            tabla += "<td>" + "Cantidad" + "</td>";
+            tabla += "<th>" + "Producto" + "</th>";
+            tabla += "<th>" + "Cantidad" + "</th>";
             tabla += "</tr>";
             tabla += "<tr>";
             tabla += "<td>" + Txbnombre1.Text + "</td>";

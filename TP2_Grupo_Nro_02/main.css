@@ -10,46 +10,70 @@
 body {
     background-color: var(--bg-color);
     font-family: "Roboto", sans-serif;
-    font-size: 16px;
+    font-size: 1.125rem;
+    line-height: 1.5;
+}
+
+.wrapper {
+    margin: 1rem;
+    padding: 1rem;
+    display: grid;
+    grid-template-areas: area area
+        area area buton;
+    place-content: center;
+    align-items: center;
+    width: min(900px, 100% - 3rem);
+}
+
+
+.data-box {
+    display: flex;
+    align-items: center;
+    justify-content: right;
+    padding: .5rem;
+    flex-direction: column;
+}
+
+#Btntabla {
+    font-size: .8rem;
+}
+
+.btn-container {
+    width: 100%;
+    text-align: center;
 }
 
 table {
-    width: 80%;
+    width: max-content;
+    background-color: #FAFAFA;
     border-collapse: collapse;
-    border-spacing: 0;
-    color: var(--color-text);
-    margin: 2rem auto;
+    margin: auto;
 }
 
-    table th {
-        background-color: var(--color-header-bg);
-        color: var(--color-text);
-        font-family: "Roboto", sans-serif;
-        font-weight: 700;
-        text-align: left;
-        padding: 1rem;
-        border-bottom: 2px solid var(--color-border-table);
-    }
+th, td, caption {
+    padding: 1rem;
+}
 
-    table td {
-        padding: 12px;
-        border-bottom: 1px solid var(--color-border-table);
-        text-align: left;
-    }
+table caption, table th {
+    text-align: left;
+}
 
-    table tr:nth-child(even) {
-        background-color: var(--color-row-even-bg);
-    }
+table caption {
+    background: hsl(0, 0%, 40%);
+    color:#fafafa;
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-transform: uppercase;
+}
 
-    table tr:hover {
-        background-color: var(--color-row-hover-bg);
-    }
+table th {
+    background: hsl(0 0% 40% / 0.5);
+}
 
-    table a {
-        color: var(--color-link);
-        text-decoration: none;
-    }
+table tr:has(td):hover {
+    background-color: hsl(0 0% 80%);
+}
 
-        table a:hover {
-            text-decoration: underline;
-        }
+table tr:nth-child(even) {
+    background: hsl(0 0% 40% / 0.1);
+}
