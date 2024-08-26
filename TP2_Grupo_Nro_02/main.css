@@ -14,15 +14,26 @@ body {
     line-height: 1.5;
 }
 
+h1{
+    font-size: 1.5rem;
+    text-align: center;
+    padding-top:1rem;
+}
+
+#form1 {
+    background-color: #fefefe;
+    width:60%;
+    padding:.5rem ;
+    margin: 1rem auto;
+    border-radius: 1rem;
+    box-shadow:var(--tenue-box-shadow);
+}
 .wrapper {
     margin: 1rem;
     padding: 1rem;
     display: grid;
-    grid-template-areas: area area
-        area area buton;
     place-content: center;
     align-items: center;
-    width: min(900px, 100% - 3rem);
 }
 
 
@@ -31,6 +42,7 @@ body {
     align-items: center;
     justify-content: right;
     padding: .5rem;
+    gap:.5rem;
     flex-direction: column;
 }
 
@@ -41,13 +53,15 @@ body {
 .btn-container {
     width: 100%;
     text-align: center;
+    margin-top: 1rem;
 }
 
 table {
-    width: max-content;
+    width: 60%;
     background-color: #FAFAFA;
     border-collapse: collapse;
     margin: auto;
+    border-radius: 1rem;
 }
 
 th, td, caption {
@@ -68,6 +82,11 @@ table caption {
 
 table th {
     background: hsl(0 0% 40% / 0.5);
+    color: #fafafa;
+}
+
+table tr{
+    transition:all 500ms ease;
 }
 
 table tr:has(td):hover {
