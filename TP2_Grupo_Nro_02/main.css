@@ -1,0 +1,98 @@
+﻿@import "normalize.css";
+@import "fonts.css";
+@import "Colors.css";
+@import "components.css";
+
+:root {
+    --tenue-box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+body {
+    background-color: var(--bg-color);
+    font-family: "Roboto", sans-serif;
+    font-size: 1.125rem;
+    line-height: 1.5;
+}
+
+h1{
+    font-size: 1.5rem;
+    text-align: center;
+    padding-top:1rem;
+}
+
+#form1 {
+    background-color: #fefefe;
+    width:60%;
+    padding:.5rem ;
+    margin: 1rem auto;
+    border-radius: 1rem;
+    box-shadow:var(--tenue-box-shadow);
+}
+.wrapper {
+    margin: 1rem;
+    padding: 1rem;
+    display: grid;
+    place-content: center;
+    align-items: center;
+}
+
+
+.data-box {
+    display: flex;
+    align-items: center;
+    justify-content: right;
+    padding: .5rem;
+    gap:.5rem;
+    flex-direction: column;
+}
+
+#Btntabla {
+    font-size: .8rem;
+}
+
+.btn-container {
+    width: 100%;
+    text-align: center;
+    margin-top: 1rem;
+}
+
+table {
+    width: 60%;
+    background-color: #FAFAFA;
+    border-collapse: collapse;
+    margin: auto;
+    border-radius: 1rem;
+}
+
+th, td, caption {
+    padding: 1rem;
+}
+
+table caption, table th {
+    text-align: left;
+}
+
+table caption {
+    background: hsl(0, 0%, 40%);
+    color:#fafafa;
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+table th {
+    background: hsl(0 0% 40% / 0.5);
+    color: #fafafa;
+}
+
+table tr{
+    transition:all 500ms ease;
+}
+
+table tr:has(td):hover {
+    background-color: hsl(0 0% 80%);
+}
+
+table tr:nth-child(even) {
+    background: hsl(0 0% 40% / 0.1);
+}
