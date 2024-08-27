@@ -20,6 +20,16 @@ h1{
     padding-top:1rem;
 }
 
+.title{
+    font-weight: 900;
+    font-size: 1.5rem;
+}
+
+.subtitle {
+    font-weight: 700;
+    font-size: 1rem;
+}
+
 #form1 {
     background-color: #fefefe;
     width:60%;
@@ -56,43 +66,11 @@ h1{
     margin-top: 1rem;
 }
 
-table {
-    width: 60%;
-    background-color: #FAFAFA;
-    border-collapse: collapse;
-    margin: auto;
-    border-radius: 1rem;
+.size2A{
+    width:10%;
+    padding-bottom:2rem;
 }
 
-th, td, caption {
-    padding: 1rem;
-}
-
-table caption, table th {
-    text-align: left;
-}
-
-table caption {
-    background: hsl(0, 0%, 40%);
-    color:#fafafa;
-    font-size: 1.5rem;
-    font-weight: 700;
-    text-transform: uppercase;
-}
-
-table th {
-    background: hsl(0 0% 40% / 0.5);
-    color: #fafafa;
-}
-
-table tr{
-    transition:all 500ms ease;
-}
-
-table tr:has(td):hover {
-    background-color: hsl(0 0% 80%);
-}
-
-table tr:nth-child(even) {
-    background: hsl(0 0% 40% / 0.1);
+.size2A .layout .data-box .input{
+    width: 70%;
 }

@@ -1,4 +1,5 @@
 ﻿:root {
+    /* Colores generales */
     --bg-color: #f3f3f3;
     --color-text: #333;
     --color-border: #333;
@@ -11,8 +12,12 @@
     --color-link: #007bff;
     --color-focus-border: #007bff;
     --color-focus-shadow: rgba(0, 123, 255, 0.25);
+
+    /* Espaciado y bordes generales */
     --padding: 10px 15px;
     --border-radius: 4px;
+
+    /* Estilos de input */
     --input-bg-color: #fff;
     --input-border-color: #d1d5db;
     --input-text-color: #333;
@@ -23,4 +28,11 @@
     --input-font-size: 16px;
     --input-border-radius: 4px;
     --input-transition-duration: 0.3s;
+
+    /* Estilos de dropdown */
+    --dropdown-bg-color: #333;
+    --dropdown-border-color: #ccc;
+    --dropdown-hover-border-color: #007bff;
+    --dropdown-text-color: #333;
+    --dropdown-shadow: rgba(0, 0, 0, 0.1);
 }
