@@ -32,7 +32,7 @@
             <div class="data-box">
                 <asp:Label ID="Lbltemas" runat="server" Text="Temas" CssClass="subtitle roboto-bold"></asp:Label>
                 <asp:CheckBoxList ID="CheckBoxList" runat="server"
-                    AutoPostBack="True" Font-Bold="True" Font-Italic="True" Font-Overline="False" Font-Size="12pt" ValidateRequestMode="Enabled">
+                    AutoPostBack="True" Font-Bold="True" Font-Overline="False" Font-Size="12pt" ValidateRequestMode="Enabled">
                     <asp:ListItem Value="0">Ciencias</asp:ListItem>
                     <asp:ListItem Value="1">Literatura</asp:ListItem>
                     <asp:ListItem Value="3">Historia</asp:ListItem>
