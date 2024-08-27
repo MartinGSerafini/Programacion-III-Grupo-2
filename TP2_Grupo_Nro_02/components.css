@@ -9,6 +9,7 @@
     font-weight: 500;
     cursor: pointer;
     transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+    display: inline-block;
 }
 
     .btn:hover {
@@ -30,7 +31,84 @@ input {
     transition: border-color var(--input-transition-duration), box-shadow var(--input-transition-duration);
 }
 
-input:focus {
-    border-color: var(--input-focus-border-color);
-    box-shadow: 0 0 0 4px var(--input-focus-shadow-color);
+    input:focus {
+        border-color: var(--input-focus-border-color);
+        box-shadow: 0 0 0 4px var(--input-focus-shadow-color);
+    }
+
+.dropdown {
+    appearance: none;
+    background-color: var(--dropdown-bg-color);
+    border: 1px solid var(--dropdown-border-color);
+    border-radius: 4px;
+    color: var(--dropdown-text-color);
+    padding: 8px 12px;
+    font-size: 16px;
+    font-family: inherit;
+    cursor: pointer;
+    width: 100%;
+    max-width: 300px;
+    box-shadow: 0 2px 4px var(--dropdown-shadow);
+    text-align:center;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+    .dropdown:focus {
+        outline: none;
+        border-color: var(--dropdown-hover-border-color);
+        box-shadow: 0 0 0 2px var(--dropdown-hover-border-color);
+        transform: scale(1.02);
+    }
+
+    .dropdown:hover {
+        border-color: var(--dropdown-hover-border-color);
+        transform: scale(1.02);
+    }
+
+    .dropdown option {
+        padding: 8px 12px;
+    }
+
+table {
+    width: 60%;
+    background-color: #FAFAFA;
+    border-collapse: collapse;
+    margin: auto;
+    border-radius: 1rem;
+}
+
+th, td, caption {
+    padding: 1rem;
+}
+
+table caption, table th {
+    text-align: left;
+}
+
+table caption {
+    background: hsl(0, 0%, 40%);
+    color: #fafafa;
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+table th {
+    background: hsl(0 0% 40% / 0.5);
+    color: #fafafa;
+}
+
+table tr {
+    transition: all 500ms ease;
+}
+
+    table tr:has(td):hover {
+        background-color: hsl(0 0% 80%);
+    }
+
+    table tr:nth-child(even) {
+        background: hsl(0 0% 40% / 0.1);
+    }
+.dropdown table tr:nth-child(even) {
+    background-color: #FAFAFA;
 }
