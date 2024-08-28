@@ -33,6 +33,15 @@ namespace TP2_Grupo_Nro_XX
         protected global::System.Web.UI.WebControls.Label lblElijaConfiguración;
 
         /// <summary>
+        /// Control lblSelecMemoria.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblSelecMemoria;
+
+        /// <summary>
         /// Control Ddlist.
         /// </summary>
         /// <remarks>
@@ -40,6 +49,15 @@ namespace TP2_Grupo_Nro_XX
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList Ddlist;
+
+        /// <summary>
+        /// Control lblSelecAccesorios.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblSelecAccesorios;
 
         /// <summary>
         /// Control Cblist.
