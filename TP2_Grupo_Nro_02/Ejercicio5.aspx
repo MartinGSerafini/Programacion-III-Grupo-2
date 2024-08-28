@@ -17,9 +17,10 @@
 &nbsp;
             <br />
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            Seleccione cantidad de memoria:<br />
+            <asp:Label ID="lblSelecMemoria" runat="server" Font-Bold="True" Text="Seleccione cantidad de memoria:"></asp:Label>
+            <br />
             &nbsp;<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;
             <asp:DropDownList ID="Ddlist" runat="server" AutoPostBack="True" Height="18px" Width="92px">
                 <asp:ListItem Value="0">2GB</asp:ListItem>
                 <asp:ListItem Value="1">4GB</asp:ListItem>
@@ -28,21 +29,28 @@
             <br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Selecioone accesorios:<br />
-            &nbsp;<asp:CheckBoxList ID="Cblist" runat="server" AutoPostBack="True">
+            <br />
+            <br />
+            &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;<asp:Label ID="lblSelecAccesorios" runat="server" Font-Bold="True" Text="Seleccione accesorios:"></asp:Label>
+            <br />
+            <br />
+            <br />
+            &nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; <asp:CheckBoxList ID="Cblist" runat="server" AutoPostBack="True" RepeatLayout="Flow" Width="183px">
                 <asp:ListItem Value="0">Monitor LCD</asp:ListItem>
                 <asp:ListItem Value="1">HD 500GB</asp:ListItem>
                 <asp:ListItem Value="2">Grabador DVD</asp:ListItem>
             </asp:CheckBoxList>
-            &nbsp;
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <br />
+            <br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
             <asp:Button ID="Btncalcular" runat="server" Text="Calcular Precio" OnClick="Btncalcular_Click" />
             <br />
+            &nbsp;<br />
             <br />
+            &nbsp;&nbsp; &nbsp;&nbsp;<asp:Label ID="lblPrecioFinal" runat="server" Font-Bold="True"></asp:Label>
             <br />
-            <asp:Label ID="lblPrecioFinal" runat="server"></asp:Label>
         </div>
     </form>
 </body>
