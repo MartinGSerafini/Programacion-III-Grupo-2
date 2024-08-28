@@ -10,6 +10,7 @@
     cursor: pointer;
     transition: background-color 0.3s, color 0.3s, border-color 0.3s;
     display: inline-block;
+    width: min-content;
 }
 
     .btn:hover {
@@ -49,7 +50,7 @@ input {
     width: 100%;
     max-width: 300px;
     box-shadow: 0 2px 4px var(--dropdown-shadow);
-    text-align:center;
+    text-align: center;
     transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
 }
 
@@ -68,6 +69,41 @@ input {
     .dropdown option {
         padding: 8px 12px;
     }
+
+
+#CheckBoxList {
+    font-size: 12pt;
+    font-weight: bold;
+    text-decoration: none;
+    border-collapse: collapse;
+    width: 70%;
+    margin:auto;
+}
+
+    #CheckBoxList td {
+        padding: 8px 12px;
+        vertical-align: middle;
+    }
+
+    #CheckBoxList input[type="checkbox"] {
+        width: 18px;
+        height: 18px;
+        accent-color: var(--color-link);
+        margin-right: 8px;
+        cursor: pointer;
+    }
+
+    #CheckBoxList label {
+        font-size: 16px;
+        color: var(--color-text);
+        cursor: pointer;
+    }
+
+    #CheckBoxList td:hover {
+        background-color: var(--color-row-hover-bg);
+        border-radius: 4px;
+    }
+
 
 table {
     width: 60%;
@@ -109,6 +145,7 @@ table tr {
     table tr:nth-child(even) {
         background: hsl(0 0% 40% / 0.1);
     }
+
 .dropdown table tr:nth-child(even) {
     background-color: #FAFAFA;
 }
