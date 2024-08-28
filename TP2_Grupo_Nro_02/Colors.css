@@ -30,7 +30,7 @@
     --input-transition-duration: 0.3s;
 
     /* Estilos de dropdown */
-    --dropdown-bg-color: #333;
+    --dropdown-bg-color: #fafafa;
     --dropdown-border-color: #ccc;
     --dropdown-hover-border-color: #007bff;
     --dropdown-text-color: #333;

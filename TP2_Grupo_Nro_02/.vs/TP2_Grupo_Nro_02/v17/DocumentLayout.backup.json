@@ -3,7 +3,11 @@
   "WorkspaceRootPath": "C:\\Users\\juanm\\OneDrive\\Desktop\\UTN\\Programacion 3\\Programacion-III-Grupo-2\\TP2_Grupo_Nro_02\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{AC9EE776-6197-43D6-AEE9-4954B787A505}|TP2_Grupo_Nro_02.csproj|c:\\users\\juanm\\onedrive\\desktop\\utn\\programacion 3\\programacion-iii-grupo-2\\tp2_grupo_nro_02\\ejercicio2a.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "AbsoluteMoniker": "D:0:0:{AC9EE776-6197-43D6-AEE9-4954B787A505}|TP2_Grupo_Nro_02.csproj|c:\\users\\juanm\\onedrive\\desktop\\utn\\programacion 3\\programacion-iii-grupo-2\\tp2_grupo_nro_02\\colors.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{AC9EE776-6197-43D6-AEE9-4954B787A505}|TP2_Grupo_Nro_02.csproj|solutionrelative:colors.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AC9EE776-6197-43D6-AEE9-4954B787A505}|TP2_Grupo_Nro_02.csproj|C:\\Users\\juanm\\OneDrive\\Desktop\\UTN\\Programacion 3\\Programacion-III-Grupo-2\\TP2_Grupo_Nro_02\\ejercicio2a.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
       "RelativeMoniker": "D:0:0:{AC9EE776-6197-43D6-AEE9-4954B787A505}|TP2_Grupo_Nro_02.csproj|solutionrelative:ejercicio2a.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
     },
     {
@@ -19,10 +23,6 @@
       "RelativeMoniker": "D:0:0:{AC9EE776-6197-43D6-AEE9-4954B787A505}|TP2_Grupo_Nro_02.csproj|solutionrelative:fonts.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{AC9EE776-6197-43D6-AEE9-4954B787A505}|TP2_Grupo_Nro_02.csproj|C:\\Users\\juanm\\OneDrive\\Desktop\\UTN\\Programacion 3\\Programacion-III-Grupo-2\\TP2_Grupo_Nro_02\\colors.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{AC9EE776-6197-43D6-AEE9-4954B787A505}|TP2_Grupo_Nro_02.csproj|solutionrelative:colors.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{AC9EE776-6197-43D6-AEE9-4954B787A505}|TP2_Grupo_Nro_02.csproj|C:\\Users\\juanm\\OneDrive\\Desktop\\UTN\\Programacion 3\\Programacion-III-Grupo-2\\TP2_Grupo_Nro_02\\web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
       "RelativeMoniker": "D:0:0:{AC9EE776-6197-43D6-AEE9-4954B787A505}|TP2_Grupo_Nro_02.csproj|solutionrelative:web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
     }
@@ -34,24 +34,25 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 0,
               "Title": "Colors.css",
               "DocumentMoniker": "C:\\Users\\juanm\\OneDrive\\Desktop\\UTN\\Programacion 3\\Programacion-III-Grupo-2\\TP2_Grupo_Nro_02\\Colors.css",
               "RelativeDocumentMoniker": "Colors.css",
               "ToolTip": "C:\\Users\\juanm\\OneDrive\\Desktop\\UTN\\Programacion 3\\Programacion-III-Grupo-2\\TP2_Grupo_Nro_02\\Colors.css",
               "RelativeToolTip": "Colors.css",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACAAAAAdAAAAAAAAAA==",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAACAAAAAgAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
               "WhenOpened": "2024-08-25T16:39:38.231Z",
-              "IsPinned": true
+              "IsPinned": true,
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "main.css",
               "DocumentMoniker": "C:\\Users\\juanm\\OneDrive\\Desktop\\UTN\\Programacion 3\\Programacion-III-Grupo-2\\TP2_Grupo_Nro_02\\main.css",
               "RelativeDocumentMoniker": "main.css",
@@ -60,8 +61,7 @@
               "ViewState": "AgIAAAYAAAAAAAAAAAAkwBsAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
               "WhenOpened": "2024-08-25T16:38:08.147Z",
-              "IsPinned": true,
-              "EditorCaption": ""
+              "IsPinned": true
             },
             {
               "$type": "Bookmark",
@@ -69,20 +69,19 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "components.css",
               "DocumentMoniker": "C:\\Users\\juanm\\OneDrive\\Desktop\\UTN\\Programacion 3\\Programacion-III-Grupo-2\\TP2_Grupo_Nro_02\\components.css",
               "RelativeDocumentMoniker": "components.css",
               "ToolTip": "C:\\Users\\juanm\\OneDrive\\Desktop\\UTN\\Programacion 3\\Programacion-III-Grupo-2\\TP2_Grupo_Nro_02\\components.css",
               "RelativeToolTip": "components.css",
-              "ViewState": "AgIAAFEAAAAAAAAAAAAAAGcAAAAtAAAAAAAAAA==",
+              "ViewState": "AgIAABcAAAAAAAAAAAAqwJQAAAAaAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2024-08-25T16:49:02.133Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-08-25T16:49:02.133Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "Ejercicio2A.aspx",
               "DocumentMoniker": "C:\\Users\\juanm\\OneDrive\\Desktop\\UTN\\Programacion 3\\Programacion-III-Grupo-2\\TP2_Grupo_Nro_02\\Ejercicio2A.aspx",
               "RelativeDocumentMoniker": "Ejercicio2A.aspx",
@@ -90,8 +89,7 @@
               "RelativeToolTip": "Ejercicio2A.aspx",
               "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
-              "WhenOpened": "2024-08-27T15:07:06.848Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-08-27T15:07:06.848Z"
             },
             {
               "$type": "Document",
@@ -108,7 +106,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "fonts.css",
               "DocumentMoniker": "C:\\Users\\juanm\\OneDrive\\Desktop\\UTN\\Programacion 3\\Programacion-III-Grupo-2\\TP2_Grupo_Nro_02\\fonts.css",
               "RelativeDocumentMoniker": "fonts.css",
