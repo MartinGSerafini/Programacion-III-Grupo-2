@@ -144,7 +144,7 @@
         <tr>
             <td class="auto-style25">Localidades:</td>
             <td class="auto-style26">
-                <asp:DropDownList ID="DropDownList1" runat="server" AutoPostBack="True" Height="16px" Width="126px">
+                <asp:DropDownList ID="ddlLocality" runat="server" AutoPostBack="True" Height="16px" Width="126px">
                 </asp:DropDownList>
             </td>
             <td>&nbsp;</td>

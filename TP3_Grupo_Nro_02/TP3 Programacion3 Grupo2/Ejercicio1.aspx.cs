@@ -14,17 +14,38 @@ namespace TP3_Programacion3_Grupo2
 
         }
 
+        protected bool Locality_Repeat(string locality)
+        {
+            foreach(var item in ddlLocality.Items)
+            {
+                if(locality.ToLower() == item.ToString().ToLower())
+                {
+                    return false;
+                }
+            }
+            return true;
+        }
+
         protected void btnGuardarLoc_Click(object sender, EventArgs e)
         {
             if (!string.IsNullOrWhiteSpace(Txtboxlocalidad.Text))
             {
-                DropDownList1.Items.Add(Txtboxlocalidad.Text);
-                Txtboxlocalidad.Text = "";
+                if (Locality_Repeat(Txtboxlocalidad.Text))
+                {
+                    ddlLocality.Items.Add(Txtboxlocalidad.Text);
+                    Txtboxlocalidad.Text = "";
+                }
+                else
+                {
+                    Lblerrorlocalidad.Text = "Localidad repetida.";
+                    Lblerrorlocalidad.ForeColor = System.Drawing.Color.Red;
+                }
             }
-
             else
+            {
                 Lblerrorlocalidad.Text = "Por favor, ingresa una localidad.";
                 Lblerrorlocalidad.ForeColor = System.Drawing.Color.Red;
+            }
         }
     }
 }
