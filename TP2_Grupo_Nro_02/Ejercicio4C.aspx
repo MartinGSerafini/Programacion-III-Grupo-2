@@ -4,21 +4,17 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title></title>
+    <link rel="stylesheet" type="text/css" href="main.css" />
+    <title>Err</title>
 </head>
-<body>
+<body class="body">
     <form id="form1" runat="server">
         <div>
-        </div>
-        <p>
-            &nbsp;</p>
-        <p>
-            &nbsp;</p>
-        <p>
-            &nbsp;</p>
-        <p>
+        <h1 class="title">
              <asp:Label ID="LblBienvenida" runat="server" Text="&lt;b&gt;USUARIO INVALIDO INGRESO NO PERMITIDO&lt;/b&gt;"></asp:Label>
-        </p>
+        </h1>
+        </div>
+        
     </form>
 </body>
 </html>
