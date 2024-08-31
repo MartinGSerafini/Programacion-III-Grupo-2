@@ -1,4 +1,11 @@
 ﻿
+.body{
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    place-content: center;
+}
+
 .btn {
     background-color: transparent;
     color: var(--color-text);
