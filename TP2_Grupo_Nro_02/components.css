@@ -149,3 +149,17 @@ table tr {
 .dropdown table tr:nth-child(even) {
     background-color: #FAFAFA;
 }
+
+.list-collapse{
+    display:inline;
+}
+
+.red:hover{
+    background-color: #f00;
+}
+.blue:hover{
+    background-color: #00f;
+}
+ .green:hover{
+    background-color: #0f0;
+}

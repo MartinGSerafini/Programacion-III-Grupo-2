@@ -46,6 +46,25 @@ h1{
     align-items: center;
 }
 
+.w-btn{
+    width: 100%;
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    gap:1rem;
+}
+
+.lblContainer{
+    width: fit-content!important;
+    font-size: 40px;
+    padding:.2rem 1rem 2rem 1rem!important;
+}
+
+.colorize{
+    width: fit-content;
+    padding: .5rem;
+    border: 2px solid #222;
+}
 
 .data-box {
     display: flex;
