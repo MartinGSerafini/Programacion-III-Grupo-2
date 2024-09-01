@@ -78,7 +78,7 @@ input {
     }
 
 
-#CheckBoxList {
+.cList {
     font-size: 12pt;
     font-weight: bold;
     text-decoration: none;
@@ -87,12 +87,12 @@ input {
     margin:auto;
 }
 
-    #CheckBoxList td {
+    .cList td {
         padding: 8px 12px;
         vertical-align: middle;
     }
 
-    #CheckBoxList input[type="checkbox"] {
+    .cList input[type="checkbox"] {
         width: 18px;
         height: 18px;
         accent-color: var(--color-link);
@@ -100,13 +100,13 @@ input {
         cursor: pointer;
     }
 
-    #CheckBoxList label {
+    .cList label {
         font-size: 16px;
         color: var(--color-text);
         cursor: pointer;
     }
 
-    #CheckBoxList td:hover {
+    .cList td:hover {
         background-color: var(--color-row-hover-bg);
         border-radius: 4px;
     }
