@@ -69,13 +69,13 @@ namespace TP3_Programacion3_Grupo2
         protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvUsuario;
 
         /// <summary>
-        /// Control TextBox2.
+        /// Control txtbContra.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox2;
+        protected global::System.Web.UI.WebControls.TextBox txtbContra;
 
         /// <summary>
         /// Control rfvContraseña.
@@ -87,13 +87,13 @@ namespace TP3_Programacion3_Grupo2
         protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvContraseña;
 
         /// <summary>
-        /// Control TextBox3.
+        /// Control txtbRepeContra.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox3;
+        protected global::System.Web.UI.WebControls.TextBox txtbRepeContra;
 
         /// <summary>
         /// Control rfvRepetirContraseña.
@@ -103,6 +103,15 @@ namespace TP3_Programacion3_Grupo2
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvRepetirContraseña;
+
+        /// <summary>
+        /// Control CVContrasenia.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CompareValidator CVContrasenia;
 
         /// <summary>
         /// Control TextBox4.

@@ -122,19 +122,22 @@
         <tr>
             <td class="auto-style15">Contraseña:</td>
             <td class="auto-style16">
-                <asp:TextBox ID="TextBox2" runat="server" ValidationGroup="Grupo2"></asp:TextBox>
+                <asp:TextBox ID="txtbContra" runat="server" ValidationGroup="Grupo2" TextMode="Password"></asp:TextBox>
+            &nbsp;&nbsp;
             </td>
             <td class="auto-style17">
-                <asp:RequiredFieldValidator ID="rfvContraseña" runat="server" ControlToValidate="TextBox2" ErrorMessage="*" ValidationGroup="Grupo2"></asp:RequiredFieldValidator>
+                <asp:RequiredFieldValidator ID="rfvContraseña" runat="server" ControlToValidate="txtbContra" ErrorMessage="*" ValidationGroup="Grupo2"></asp:RequiredFieldValidator>
             </td>
         </tr>
         <tr>
             <td class="auto-style21">Repetir contraseña:</td>
             <td class="auto-style22">
-                <asp:TextBox ID="TextBox3" runat="server" ValidationGroup="Grupo2"></asp:TextBox>
+                <asp:TextBox ID="txtbRepeContra" runat="server" ValidationGroup="Grupo2" TextMode="Password"></asp:TextBox>
+            &nbsp;&nbsp;
             </td>
             <td class="auto-style23">
-                <asp:RequiredFieldValidator ID="rfvRepetirContraseña" runat="server" ControlToValidate="TextBox3" ErrorMessage="*" ValidationGroup="Grupo2"></asp:RequiredFieldValidator>
+                <asp:RequiredFieldValidator ID="rfvRepetirContraseña" runat="server" ControlToValidate="txtbRepeContra" ErrorMessage="*" ValidationGroup="Grupo2"></asp:RequiredFieldValidator>
+            &nbsp;<asp:CompareValidator ID="CVContrasenia" runat="server" ControlToCompare="txtbContra" ControlToValidate="txtbRepeContra" ForeColor="Red">Contraseña diferente</asp:CompareValidator>
             </td>
         </tr>
         <tr>
