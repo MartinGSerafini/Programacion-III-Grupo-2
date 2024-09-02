@@ -85,7 +85,9 @@
                     <asp:TextBox ID="Txtboxlocalidad" runat="server" Width="205px" ValidationGroup="Grupo1"></asp:TextBox>
                 </td>
                 <td>
-                    <asp:Label ID="Lblerrorlocalidad" runat="server"></asp:Label>
+                    <asp:RequiredFieldValidator ID="Rfvlocalidad" runat="server" ControlToValidate="Txtboxlocalidad" ErrorMessage="Debe ingresar una localidad" ForeColor="Red" InitialValue=" " ValidationGroup="ValidationGroup1">*</asp:RequiredFieldValidator>
+                    <br />
+                    <asp:CustomValidator ID="CvLocalidad" runat="server" ErrorMessage="Localidad ya existente" ForeColor="Red" OnServerValidate="CvLocalidad_ServerValidate" ValidationGroup="ValidationGroup1">*</asp:CustomValidator>
                 </td>
             </tr>
             <tr>
@@ -96,13 +98,12 @@
             <tr>
                 <td class="auto-style12">&nbsp;</td>
                 <td class="auto-style14">
-                    <asp:Button ID="btnGuardarLoc" runat="server" Text="Guardar Localidad" Width="216px" OnClick="btnGuardarLoc_Click" ValidationGroup="Grupo1" />
+                    <asp:Button ID="btnGuardarLoc" runat="server" Text="Guardar Localidad" Width="216px" OnClick="btnGuardarLoc_Click" ValidationGroup="ValidationGroup1" />
                 </td>
                 <td>&nbsp;</td>
             </tr>
         </table>
-    <p>
-        &nbsp;</p>
+        <br />
     <table class="auto-style1">
         <tr>
             <td class="auto-style18"></td>
@@ -165,7 +166,7 @@
                 </asp:DropDownList>
             </td>
             <td>
-                <asp:RequiredFieldValidator ID="rfvLocalidad" runat="server" ControlToValidate="ddlLocality" ErrorMessage="*" ValidationGroup="Grupo2"></asp:RequiredFieldValidator>
+                <asp:RequiredFieldValidator ID="RfvLocalidades" runat="server" ControlToValidate="ddlLocality" ErrorMessage="*" ValidationGroup="Grupo2"></asp:RequiredFieldValidator>
             </td>
         </tr>
          <tr>
@@ -183,6 +184,9 @@
         <br />
         <br />
         <asp:Button ID="Btninicio" runat="server" Text="Ir a inicio.aspx" ValidationGroup="Grupo3" />
+        <br />
+        <br />
+        <asp:ValidationSummary ID="ValidationSummary" runat="server" HeaderText="Errores:" ValidationGroup="ValidationGroup1" />
     </form>
     </body>
 </html>

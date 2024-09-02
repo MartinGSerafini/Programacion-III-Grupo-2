@@ -28,24 +28,20 @@ namespace TP3_Programacion3_Grupo2
 
         protected void btnGuardarLoc_Click(object sender, EventArgs e)
         {
-            if (!string.IsNullOrWhiteSpace(Txtboxlocalidad.Text))
+
+            if (Locality_Repeat(Txtboxlocalidad.Text))
             {
-                if (Locality_Repeat(Txtboxlocalidad.Text))
-                {
-                    ddlLocality.Items.Add(Txtboxlocalidad.Text);
-                    Txtboxlocalidad.Text = "";
-                }
-                else
-                {
-                    Lblerrorlocalidad.Text = "Localidad repetida.";
-                    Lblerrorlocalidad.ForeColor = System.Drawing.Color.Red;
-                }
+                ddlLocality.Items.Add(Txtboxlocalidad.Text);
+                Txtboxlocalidad.Text = "";
             }
+        }
+
+        protected void CvLocalidad_ServerValidate(object source, ServerValidateEventArgs args)
+        {
+            if (Locality_Repeat(Txtboxlocalidad.Text))
+                args.IsValid = true;
             else
-            {
-                Lblerrorlocalidad.Text = "Por favor, ingresa una localidad.";
-                Lblerrorlocalidad.ForeColor = System.Drawing.Color.Red;
-            }
+                args.IsValid = false;
         }
     }
 }
