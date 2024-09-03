@@ -85,9 +85,9 @@
                     <asp:TextBox ID="Txtboxlocalidad" runat="server" Width="205px" ValidationGroup="Grupo1"></asp:TextBox>
                 </td>
                 <td>
-                    <asp:RequiredFieldValidator ID="Rfvlocalidad" runat="server" ControlToValidate="Txtboxlocalidad" ErrorMessage="Debe ingresar una localidad" ForeColor="Red" InitialValue=" " ValidationGroup="ValidationGroup1">*</asp:RequiredFieldValidator>
+                    <asp:RequiredFieldValidator ID="Rfvlocalidad" runat="server" ControlToValidate="Txtboxlocalidad" ErrorMessage="Debe ingresar una localidad" ForeColor="Red" InitialValue=" " ValidationGroup="Grupo1">*</asp:RequiredFieldValidator>
                     <br />
-                    <asp:CustomValidator ID="CvLocalidad" runat="server" ErrorMessage="Localidad ya existente" ForeColor="Red" OnServerValidate="CvLocalidad_ServerValidate" ValidationGroup="ValidationGroup1">*</asp:CustomValidator>
+                    <asp:CustomValidator ID="CvLocalidad" runat="server" ErrorMessage="Localidad ya existente" ForeColor="Red" OnServerValidate="CvLocalidad_ServerValidate" ValidationGroup="Grupo1">*</asp:CustomValidator>
                 </td>
             </tr>
             <tr>
@@ -98,7 +98,7 @@
             <tr>
                 <td class="auto-style12">&nbsp;</td>
                 <td class="auto-style14">
-                    <asp:Button ID="btnGuardarLoc" runat="server" Text="Guardar Localidad" Width="216px" OnClick="btnGuardarLoc_Click" ValidationGroup="ValidationGroup1" />
+                    <asp:Button ID="btnGuardarLoc" runat="server" Text="Guardar Localidad" Width="216px" OnClick="btnGuardarLoc_Click" ValidationGroup="Grupo1" />
                 </td>
                 <td>&nbsp;</td>
             </tr>
@@ -148,6 +148,7 @@
             </td>
             <td class="auto-style26">
                 <asp:RequiredFieldValidator ID="rfvCorreo" runat="server" ControlToValidate="txtMail" ErrorMessage="*" ValidationGroup="Grupo2"></asp:RequiredFieldValidator>
+                <asp:RegularExpressionValidator ID="revEmail" runat="server" ControlToValidate="txtMail" ForeColor="Red" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*" ValidationGroup="Grupo2">Email incorrecto</asp:RegularExpressionValidator>
             </td>
         </tr>
         <tr>
@@ -157,7 +158,7 @@
             </td>
             <td class="auto-style26">
                 <asp:RequiredFieldValidator ID="rfvCP" runat="server" ControlToValidate="txtCP" ErrorMessage="*" ValidationGroup="Grupo2"></asp:RequiredFieldValidator>
-                &nbsp;<asp:RegularExpressionValidator ID="revCP" runat="server" ControlToValidate="txtCP" ForeColor="Red" ValidationExpression="^\d+$">Solo numeros</asp:RegularExpressionValidator>
+                &nbsp;<asp:RegularExpressionValidator ID="revCP" runat="server" ControlToValidate="txtCP" ForeColor="Red" ValidationExpression="^\d+$" ValidationGroup="Grupo2">Solo numeros</asp:RegularExpressionValidator>
             </td>
         </tr>
         <tr>
@@ -189,7 +190,7 @@
         <asp:Button ID="Btninicio" runat="server" Text="Ir a inicio.aspx" OnClick="Btninicio_Click" />
         <br />
         <br />
-        <asp:ValidationSummary ID="ValidationSummary" runat="server" HeaderText="Errores:" ValidationGroup="ValidationGroup1" />
+        <asp:ValidationSummary ID="ValidationSummary" runat="server" HeaderText="Errores:" ValidationGroup="Grupo1" />
     </form>
     </body>
 </html>
