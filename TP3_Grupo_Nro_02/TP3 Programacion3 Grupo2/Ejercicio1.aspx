@@ -138,7 +138,7 @@
             </td>
             <td class="auto-style23">
                 <asp:RequiredFieldValidator ID="rfvRepetirContraseña" runat="server" ControlToValidate="txtbRepeContra" ErrorMessage="*" ValidationGroup="Grupo2"></asp:RequiredFieldValidator>
-            &nbsp;<asp:CompareValidator ID="CVContrasenia" runat="server" ControlToCompare="txtbContra" ControlToValidate="txtbRepeContra" ForeColor="Red">Contraseña diferente</asp:CompareValidator>
+            &nbsp;<asp:CompareValidator ID="CVContrasenia" runat="server" ControlToCompare="txtbContra" ControlToValidate="txtbRepeContra" ForeColor="Red" ValidationGroup="Grupo2">Contraseña diferente</asp:CompareValidator>
             </td>
         </tr>
         <tr>
@@ -177,14 +177,16 @@
              </td>
      <td class="auto-style128">
          <br />
-         <asp:Button ID="Btnguardarusuario" runat="server" Height="20px" Text="Guardar Usuario" Width="126px" ValidationGroup="Grupo2" />
+         <asp:Button ID="Btnguardarusuario" runat="server" Height="20px" Text="Guardar Usuario" Width="126px" ValidationGroup="Grupo2" OnClick="Btnguardarusuario_Click" />
      </td>
-     <td>&nbsp;</td>
+     <td>
+         <asp:Label ID="lblBienvenido" runat="server"></asp:Label>
+             </td>
  </tr>
     </table>
         <br />
         <br />
-        <asp:Button ID="Btninicio" runat="server" Text="Ir a inicio.aspx" ValidationGroup="Grupo3" OnClick="Btninicio_Click" />
+        <asp:Button ID="Btninicio" runat="server" Text="Ir a inicio.aspx" OnClick="Btninicio_Click" />
         <br />
         <br />
         <asp:ValidationSummary ID="ValidationSummary" runat="server" HeaderText="Errores:" ValidationGroup="ValidationGroup1" />

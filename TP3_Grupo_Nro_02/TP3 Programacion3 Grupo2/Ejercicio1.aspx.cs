@@ -49,5 +49,10 @@ namespace TP3_Programacion3_Grupo2
         {
             Response.Redirect("Inicio.aspx");
         }
+
+        protected void Btnguardarusuario_Click(object sender, EventArgs e)
+        {
+            lblBienvenido.Text = "Bienvenido " + TextBox1.Text;
+        }
     }
 }
