@@ -184,7 +184,7 @@
     </table>
         <br />
         <br />
-        <asp:Button ID="Btninicio" runat="server" Text="Ir a inicio.aspx" ValidationGroup="Grupo3" />
+        <asp:Button ID="Btninicio" runat="server" Text="Ir a inicio.aspx" ValidationGroup="Grupo3" OnClick="Btninicio_Click" />
         <br />
         <br />
         <asp:ValidationSummary ID="ValidationSummary" runat="server" HeaderText="Errores:" ValidationGroup="ValidationGroup1" />

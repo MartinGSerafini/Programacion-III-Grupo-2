@@ -16,10 +16,11 @@ namespace TP3_Programacion3_Grupo2
 
         protected bool Locality_Repeat(string locality)
         {
-            foreach(var item in ddlLocality.Items)
+            foreach (var item in ddlLocality.Items)
             {
                 if(locality.ToLower() == item.ToString().ToLower())
                 {
+                    Txtboxlocalidad.Text = "";
                     return false;
                 }
             }
@@ -42,6 +43,11 @@ namespace TP3_Programacion3_Grupo2
                 args.IsValid = true;
             else
                 args.IsValid = false;
+        }
+
+        protected void Btninicio_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Inicio.aspx");
         }
     }
 }
