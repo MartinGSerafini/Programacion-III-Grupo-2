@@ -142,21 +142,22 @@
             </td>
         </tr>
         <tr>
-            <td class="auto-style12">Correo electrónico:</td>
-            <td class="auto-style14">
-                <asp:TextBox ID="TextBox4" runat="server" ValidationGroup="Grupo2"></asp:TextBox>
+            <td class="auto-style24">Correo electrónico:</td>
+            <td class="auto-style25">
+                <asp:TextBox type="email" ID="txtMail" runat="server" ValidationGroup="Grupo2"></asp:TextBox>
             </td>
-            <td>
-                <asp:RequiredFieldValidator ID="rfvCorreo" runat="server" ControlToValidate="TextBox4" ErrorMessage="*" ValidationGroup="Grupo2"></asp:RequiredFieldValidator>
+            <td class="auto-style26">
+                <asp:RequiredFieldValidator ID="rfvCorreo" runat="server" ControlToValidate="txtMail" ErrorMessage="*" ValidationGroup="Grupo2"></asp:RequiredFieldValidator>
             </td>
         </tr>
         <tr>
             <td class="auto-style24">CP:</td>
             <td class="auto-style25">
-                <asp:TextBox ID="TextBox5" runat="server" ValidationGroup="Grupo2"></asp:TextBox>
+                <asp:TextBox ID="txtCP" runat="server" ValidationGroup="Grupo2" MaxLength="4"></asp:TextBox>
             </td>
             <td class="auto-style26">
-                <asp:RequiredFieldValidator ID="rfvCP" runat="server" ControlToValidate="TextBox5" ErrorMessage="*" ValidationGroup="Grupo2"></asp:RequiredFieldValidator>
+                <asp:RequiredFieldValidator ID="rfvCP" runat="server" ControlToValidate="txtCP" ErrorMessage="*" ValidationGroup="Grupo2"></asp:RequiredFieldValidator>
+                &nbsp;<asp:RegularExpressionValidator ID="revCP" runat="server" ControlToValidate="txtCP" ForeColor="Red" ValidationExpression="^\d+$">Solo numeros</asp:RegularExpressionValidator>
             </td>
         </tr>
         <tr>
