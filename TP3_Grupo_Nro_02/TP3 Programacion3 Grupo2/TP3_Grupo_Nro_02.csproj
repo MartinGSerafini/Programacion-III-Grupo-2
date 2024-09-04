@@ -67,6 +67,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="main.css" />
+    <Content Include="normalize.css" />
     <Content Include="Web.config" />
     <Content Include="Ejercicio1.aspx" />
     <Content Include="Inicio.aspx" />
