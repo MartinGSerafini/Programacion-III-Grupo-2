@@ -27,6 +27,31 @@
 
 body {
     font-family: 'Poppins', sans-serif;
+    background-color: #ddd;
+    display: grid;
+    place-content:center;
+    align-items: center;
+}
+
+legend{
+    font-weight: 700;
+    text-align: center;
+
+}
+
+fieldset {
+    background-color: #eee;
+    width: 400px;
+    border-radius: 1rem;
+    padding: 1rem;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1); /* Sombra suave */
+    padding: 1rem;
+
+}
+
+.error-message{
+    display:block;
+    text-align:right;
 }
 
 .form-group {
@@ -38,13 +63,15 @@ body {
     .form-group > label {
         font-weight: 700;
     }
-
-.form-control {
-    padding: .2rem;
-    border: 1px solid #ccc;
-    border-radius: .3rem;
-    text-indent: 5px;
-}
+    .form-group:last-child{
+        margin-block: 1rem;
+    }
+    .form-control {
+        padding: .2rem;
+        border: 1px solid #ccc;
+        border-radius: .3rem;
+        text-indent: 5px;
+    }
 
 .dropdown {
     width: 100%;
@@ -119,3 +146,13 @@ asp:DropDownList {
         border-color: var(--dropdown-focus-border-color);
         box-shadow: 0 0 5px var(--dropdown-focus-border-color);
     }
+
+    input[type="text"], input[type="password"], input[type="email"], select {
+    width: 100%; /* Ocupa el ancho completo */
+    padding: 10px;
+    margin-block: 10px;
+    border-radius: 5px;
+    border: 1px solid var(--color-border); 
+}
+
+

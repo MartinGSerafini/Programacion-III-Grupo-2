@@ -60,12 +60,12 @@
                     <asp:TextBox placeholder="Código postal" ID="txtCP" runat="server" CssClass="form-control" MaxLength="4" ValidationGroup="Grupo2"></asp:TextBox>
                     <asp:RequiredFieldValidator ID="rfvCP" runat="server" ControlToValidate="txtCP" CssClass="error-message" ValidationGroup="Grupo2">*</asp:RequiredFieldValidator>
                     <asp:RegularExpressionValidator ID="revCP" runat="server" ControlToValidate="txtCP" ValidationExpression="^\d+$" CssClass="error-message" ValidationGroup="Grupo2">Solo números</asp:RegularExpressionValidator>
-                </div>
                 <div class="form-group dropdown">
                     <label for="ddlLocality">Localidades:</label>
                     <asp:DropDownList ID="ddlLocality" runat="server" CssClass="form-control" AutoPostBack="True" ValidationGroup="Grupo2"></asp:DropDownList>
                     <asp:RequiredFieldValidator ID="RfvLocalidades" runat="server" ControlToValidate="ddlLocality" CssClass="error-message" ValidationGroup="Grupo2"></asp:RequiredFieldValidator>
-                </div>
+                </div> </div>
+               
                 <div class="form-group">
                     <asp:Button ID="Btnguardarusuario" runat="server" Text="Guardar Usuario" CssClass="btn-submit" ValidationGroup="Grupo2" />
                 </div>
