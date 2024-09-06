@@ -141,11 +141,27 @@ namespace TP3_Programacion3_Grupo2
         protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvCorreo;
 
         /// <summary>
+<<<<<<< HEAD
+        /// txtCP control.
+=======
+        /// revEmail control.
+>>>>>>> 275d69e04723fc0e8502c9790c1aebf8ed9299c1
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+<<<<<<< HEAD
+=======
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator revEmail;
+
+        /// <summary>
         /// txtCP control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
+>>>>>>> 275d69e04723fc0e8502c9790c1aebf8ed9299c1
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtCP;
 
