@@ -177,17 +177,18 @@
              </td>
      <td class="auto-style128">
          <br />
-         <asp:Button ID="Btnguardarusuario" runat="server" Height="20px" Text="Guardar Usuario" Width="126px" ValidationGroup="Grupo2" />
+         <asp:Button ID="Btnguardarusuario" runat="server" Height="30px" Text="Guardar Usuario" Width="126px" ValidationGroup="Grupo2" />
      </td>
      <td>&nbsp;</td>
  </tr>
     </table>
         <br />
         <br />
-        <asp:Button ID="Btninicio" runat="server" Text="Ir a inicio.aspx" ValidationGroup="Grupo3" OnClick="Btninicio_Click" />
+        <asp:Button ID="Btninicio" runat="server" Text="Ir a inicio.aspx" OnClick="Btninicio_Click" />
         <br />
         <br />
-        <asp:ValidationSummary ID="ValidationSummary" runat="server" HeaderText="Errores:" ValidationGroup="ValidationGroup1" />
+        <asp:ValidationSummary ID="ValidationSummary" runat="server" HeaderText="Errores Localidad:" ValidationGroup="ValidationGroup1" />
+        <asp:ValidationSummary ID="ValidationSummary2" runat="server" HeaderText="Errores Usuario:" ValidationGroup="ValidationGroup2" />
     </form>
     </body>
 </html>
