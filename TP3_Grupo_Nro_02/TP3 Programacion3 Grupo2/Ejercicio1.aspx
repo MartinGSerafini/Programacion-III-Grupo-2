@@ -86,7 +86,6 @@
                 </td>
                 <td>
                     <asp:RequiredFieldValidator ID="Rfvlocalidad" runat="server" ControlToValidate="Txtboxlocalidad" ErrorMessage="Debe ingresar una localidad" ForeColor="Red" InitialValue=" " ValidationGroup="VgLocalidad">*</asp:RequiredFieldValidator>
-                    <br />
                     <asp:CustomValidator ID="CvLocalidad" runat="server" ErrorMessage="Localidad ya existente" ForeColor="Red" OnServerValidate="CvLocalidad_ServerValidate" ValidationGroup="VgLocalidad">*</asp:CustomValidator>
                 </td>
             </tr>
@@ -138,7 +137,6 @@
             </td>
             <td class="auto-style23">
                     <asp:RequiredFieldValidator ID="Rfvrepecontra" runat="server" ControlToValidate="txtbRepeContra" ErrorMessage="Debe ingresar una Contraseña" ForeColor="Red" InitialValue=" " ValidationGroup="VgUsuario">*</asp:RequiredFieldValidator>
-                    <br />
                 <asp:CompareValidator ID="CVContrasenia" runat="server" ControlToCompare="txtboxContra" ControlToValidate="txtbRepeContra" ForeColor="Red" ValidationGroup="VgUsuario" ErrorMessage="Las Contraseñas no coinciden">*</asp:CompareValidator>
             </td>
         </tr>
@@ -157,9 +155,9 @@
                 <asp:TextBox ID="txtCP" runat="server" ValidationGroup="Grupo2" MaxLength="4"></asp:TextBox>
             </td>
             <td class="auto-style26">
-                    <asp:RequiredFieldValidator ID="RfvCP" runat="server" ControlToValidate="TxbNombre" ErrorMessage="Debe ingresar un Codigo Postal" ForeColor="Red" InitialValue=" " ValidationGroup="VgUsuario">*</asp:RequiredFieldValidator>
-                    <br />
-                <asp:RegularExpressionValidator ID="revCP" runat="server" ControlToValidate="txtCP" ForeColor="Red" ValidationExpression="^\d+$" ErrorMessage="Solo debe ingresar Numeros" ValidationGroup="VgUsuario">*</asp:RegularExpressionValidator>
+                    <asp:RequiredFieldValidator ID="Rfvcp" runat="server" ControlToValidate="txtCP" ErrorMessage="Debe ingresar un CP" ForeColor="Red" InitialValue=" " ValidationGroup="VgUsuario">*</asp:RequiredFieldValidator>
+                <asp:RegularExpressionValidator ID="revCP" runat="server" ControlToValidate="txtCP" ForeColor="Red" ValidationExpression="^\d+$" ErrorMessage="Solo debe ingresar Numeros en el CP" ValidationGroup="VgUsuario">*</asp:RegularExpressionValidator>
+                    <asp:RangeValidator ID="RvCP" runat="server" ControlToValidate="txtCP" ErrorMessage="El CP debe tener 4 digitos y ser Mayor que 999" ForeColor="Red" MaximumValue="9999" MinimumValue="1000" SetFocusOnError="True" Type="Integer" ValidationGroup="VgUsuario">*</asp:RangeValidator>
             </td>
         </tr>
         <tr>

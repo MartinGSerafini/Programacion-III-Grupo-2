@@ -150,13 +150,13 @@ namespace TP3_Programacion3_Grupo2
         protected global::System.Web.UI.WebControls.TextBox txtCP;
 
         /// <summary>
-        /// RfvCP control.
+        /// Rfvcp control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RfvCP;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator Rfvcp;
 
         /// <summary>
         /// revCP control.
@@ -166,6 +166,15 @@ namespace TP3_Programacion3_Grupo2
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RegularExpressionValidator revCP;
+
+        /// <summary>
+        /// RvCP control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RangeValidator RvCP;
 
         /// <summary>
         /// ddlLocality control.
