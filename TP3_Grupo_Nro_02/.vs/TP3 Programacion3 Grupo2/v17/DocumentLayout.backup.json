@@ -3,12 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\guill\\OneDrive\\Documentos\\GitHub\\Programacion-III-Grupo-2\\TP3_Grupo_Nro_02\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{4E0128F9-4E1B-41D0-AE59-BBED0DB37AB1}|TP3 Programacion3 Grupo2\\TP3_Grupo_Nro_02.csproj|c:\\users\\guill\\onedrive\\documentos\\github\\programacion-iii-grupo-2\\tp3_grupo_nro_02\\tp3 programacion3 grupo2\\ejercicio1.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
-      "RelativeMoniker": "D:0:0:{4E0128F9-4E1B-41D0-AE59-BBED0DB37AB1}|TP3 Programacion3 Grupo2\\TP3_Grupo_Nro_02.csproj|solutionrelative:tp3 programacion3 grupo2\\ejercicio1.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{4E0128F9-4E1B-41D0-AE59-BBED0DB37AB1}|TP3 Programacion3 Grupo2\\TP3_Grupo_Nro_02.csproj|C:\\Users\\guill\\OneDrive\\Documentos\\GitHub\\Programacion-III-Grupo-2\\TP3_Grupo_Nro_02\\tp3 programacion3 grupo2\\ejercicio1.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{4E0128F9-4E1B-41D0-AE59-BBED0DB37AB1}|TP3 Programacion3 Grupo2\\TP3_Grupo_Nro_02.csproj|solutionrelative:tp3 programacion3 grupo2\\ejercicio1.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4E0128F9-4E1B-41D0-AE59-BBED0DB37AB1}|TP3 Programacion3 Grupo2\\TP3_Grupo_Nro_02.csproj|c:\\users\\guill\\onedrive\\documentos\\github\\programacion-iii-grupo-2\\tp3_grupo_nro_02\\tp3 programacion3 grupo2\\ejercicio1.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{4E0128F9-4E1B-41D0-AE59-BBED0DB37AB1}|TP3 Programacion3 Grupo2\\TP3_Grupo_Nro_02.csproj|solutionrelative:tp3 programacion3 grupo2\\ejercicio1.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,11 +18,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "Ejercicio1.aspx.cs",
               "DocumentMoniker": "C:\\Users\\guill\\OneDrive\\Documentos\\GitHub\\Programacion-III-Grupo-2\\TP3_Grupo_Nro_02\\TP3 Programacion3 Grupo2\\Ejercicio1.aspx.cs",
               "RelativeDocumentMoniker": "TP3 Programacion3 Grupo2\\Ejercicio1.aspx.cs",
@@ -35,13 +35,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "Ejercicio1.aspx",
               "DocumentMoniker": "C:\\Users\\guill\\OneDrive\\Documentos\\GitHub\\Programacion-III-Grupo-2\\TP3_Grupo_Nro_02\\TP3 Programacion3 Grupo2\\Ejercicio1.aspx",
               "RelativeDocumentMoniker": "TP3 Programacion3 Grupo2\\Ejercicio1.aspx",
               "ToolTip": "C:\\Users\\guill\\OneDrive\\Documentos\\GitHub\\Programacion-III-Grupo-2\\TP3_Grupo_Nro_02\\TP3 Programacion3 Grupo2\\Ejercicio1.aspx",
               "RelativeToolTip": "TP3 Programacion3 Grupo2\\Ejercicio1.aspx",
-              "LogicalView": "7651a702-06e5-11d1-8ebd-00a0c90f26ea",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
               "WhenOpened": "2024-09-02T20:08:03.376Z",
               "EditorCaption": ""
