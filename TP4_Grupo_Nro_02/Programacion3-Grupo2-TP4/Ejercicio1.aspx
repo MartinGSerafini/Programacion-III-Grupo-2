@@ -35,6 +35,17 @@
         .auto-style8 {
             height: 31px;
         }
+        .auto-style9 {
+            width: 102px;
+            height: 30px;
+        }
+        .auto-style10 {
+            width: 157px;
+            height: 30px;
+        }
+        .auto-style11 {
+            height: 30px;
+        }
     </style>
 </head>
 <body>
@@ -54,16 +65,17 @@
                 <td class="auto-style6"></td>
                 <td class="auto-style7">PROVINCIA:</td>
                 <td class="auto-style8">
-                    <asp:DropDownList ID="DdlProvinciainicio" runat="server" Height="16px" Width="148px">
+                    <asp:DropDownList ID="DdlProvinciainicio" runat="server" Height="16px" Width="148px" OnSelectedIndexChanged="DdlProvinciainicio_SelectedIndexChanged" AutoPostBack="True">
                     </asp:DropDownList>
                 </td>
             </tr>
             <tr>
-                <td class="auto-style2">&nbsp;</td>
-                <td class="auto-style5">LOCALIDAD:</td>
-                <td>
-                    <asp:DropDownList ID="DropDownList2" runat="server" Height="16px" Width="148px">
+                <td class="auto-style9"></td>
+                <td class="auto-style10">LOCALIDAD:</td>
+                <td class="auto-style11">
+                    <asp:DropDownList ID="DdlLocalidadInicio" runat="server" Height="16px" Width="148px">
                     </asp:DropDownList>
+                    <asp:Label ID="Label1" runat="server"></asp:Label>
                 </td>
             </tr>
             <tr>
