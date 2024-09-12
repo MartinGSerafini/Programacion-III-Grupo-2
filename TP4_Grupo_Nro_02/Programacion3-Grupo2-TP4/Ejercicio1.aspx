@@ -99,7 +99,7 @@
                 <td class="auto-style2">&nbsp;</td>
                 <td class="auto-style5">PROVINCIA:</td>
                 <td>
-                    <asp:DropDownList ID="DropDownList3" runat="server" Height="16px" Width="148px">
+                    <asp:DropDownList ID="DdlProvinicaFinal" runat="server" Height="16px" Width="148px">
                     </asp:DropDownList>
                 </td>
             </tr>
@@ -107,7 +107,7 @@
                 <td class="auto-style2">&nbsp;</td>
                 <td class="auto-style5">LOCALIDAD:</td>
                 <td>
-                    <asp:DropDownList ID="DropDownList4" runat="server" Height="16px" Width="148px">
+                    <asp:DropDownList ID="DdlLocalidadFinal" runat="server" Height="16px" Width="148px">
                     </asp:DropDownList>
                 </td>
             </tr>

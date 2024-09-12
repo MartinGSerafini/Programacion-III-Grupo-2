@@ -51,22 +51,22 @@ namespace Programacion3_Grupo2_TP4
         protected global::System.Web.UI.WebControls.Label Label1;
 
         /// <summary>
-        /// Control DropDownList3.
+        /// Control DdlProvinicaFinal.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownList3;
+        protected global::System.Web.UI.WebControls.DropDownList DdlProvinicaFinal;
 
         /// <summary>
-        /// Control DropDownList4.
+        /// Control DdlLocalidadFinal.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownList4;
+        protected global::System.Web.UI.WebControls.DropDownList DdlLocalidadFinal;
 
         /// <summary>
         /// Control Grdviajes.

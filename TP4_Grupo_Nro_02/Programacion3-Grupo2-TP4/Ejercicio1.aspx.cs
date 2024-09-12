@@ -29,7 +29,7 @@ namespace Programacion3_Grupo2_TP4
                     DdlProvinciainicio.DataTextField = "NombreProvincia";
                     DdlProvinciainicio.DataValueField = "idProvincia";
                     DdlProvinciainicio.DataBind();
-
+                    
                     DdlProvinciainicio.Items.Insert(0, new ListItem("Seleccione una provincia", ""));
                 }
 
@@ -52,6 +52,23 @@ namespace Programacion3_Grupo2_TP4
                 DdlLocalidadInicio.DataBind();
 
                 DdlLocalidadInicio.Items.Insert(0, new ListItem("Seleccione una localidad", ""));
+            }
+
+            using (SqlConnection bdViajes = new SqlConnection("Data Source = localhost\\sqlexpress; Initial Catalog = Viajes; Integrated Security = True"))
+            {
+                bdViajes.Open();
+
+                string ProvInicio = DdlProvinciainicio.SelectedValue;
+
+                SqlCommand cmd = new SqlCommand("SELECT idProvincia, Nombreprovincia FROM PROVINCIAS WHERE NOT idProvincia = " + ProvInicio, bdViajes);
+                SqlDataReader reader = cmd.ExecuteReader();
+
+                DdlProvinicaFinal.DataSource = reader;
+                DdlProvinicaFinal.DataTextField = "NombreProvincia";
+                DdlProvinicaFinal.DataValueField = "idProvincia";
+                DdlProvinicaFinal.DataBind();
+
+                DdlProvinicaFinal.Items.Insert(0, new ListItem("Seleccione una provincia", ""));
             }
         }
     }
