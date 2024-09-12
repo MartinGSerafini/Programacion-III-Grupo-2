@@ -65,7 +65,7 @@
                 <td class="auto-style6"></td>
                 <td class="auto-style7">PROVINCIA:</td>
                 <td class="auto-style8">
-                    <asp:DropDownList ID="DdlProvinciainicio" runat="server" Height="16px" Width="148px" OnSelectedIndexChanged="DdlProvinciainicio_SelectedIndexChanged" AutoPostBack="True">
+                    <asp:DropDownList ID="DdlProvinciainicio" runat="server" Height="16px" Width="201px" OnSelectedIndexChanged="DdlProvinciainicio_SelectedIndexChanged" AutoPostBack="True">
                     </asp:DropDownList>
                 </td>
             </tr>
@@ -73,9 +73,8 @@
                 <td class="auto-style9"></td>
                 <td class="auto-style10">LOCALIDAD:</td>
                 <td class="auto-style11">
-                    <asp:DropDownList ID="DdlLocalidadInicio" runat="server" Height="16px" Width="148px">
+                    <asp:DropDownList ID="DdlLocalidadInicio" runat="server" Height="16px" Width="199px" AutoPostBack="True">
                     </asp:DropDownList>
-                    <asp:Label ID="Label1" runat="server"></asp:Label>
                 </td>
             </tr>
             <tr>
@@ -99,7 +98,7 @@
                 <td class="auto-style2">&nbsp;</td>
                 <td class="auto-style5">PROVINCIA:</td>
                 <td>
-                    <asp:DropDownList ID="DdlProvinicaFinal" runat="server" Height="16px" Width="148px">
+                    <asp:DropDownList ID="DdlProvinciaFinal" runat="server" Height="16px" Width="200px" OnSelectedIndexChanged="DdlProvinicaFinal_SelectedIndexChanged" AutoPostBack="True">
                     </asp:DropDownList>
                 </td>
             </tr>
@@ -107,7 +106,7 @@
                 <td class="auto-style2">&nbsp;</td>
                 <td class="auto-style5">LOCALIDAD:</td>
                 <td>
-                    <asp:DropDownList ID="DdlLocalidadFinal" runat="server" Height="16px" Width="148px">
+                    <asp:DropDownList ID="DdlLocalidadFinal" runat="server" Height="16px" Width="201px" AutoPostBack="True">
                     </asp:DropDownList>
                 </td>
             </tr>
@@ -119,10 +118,6 @@
         </table>
         <br />
         <br />
-        <br />
-        <br />
-        <asp:GridView ID="Grdviajes" runat="server">
-        </asp:GridView>
     </form>
 </body>
 </html>

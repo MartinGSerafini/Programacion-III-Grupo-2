@@ -32,18 +32,20 @@ namespace Programacion3_Grupo2_TP4
                     
                     DdlProvinciainicio.Items.Insert(0, new ListItem("Seleccione una provincia", ""));
                 }
-
-
             }
         }
 
         protected void DdlProvinciainicio_SelectedIndexChanged(object sender, EventArgs e)
         {
+            DdlLocalidadInicio.Items.Clear();
+            DdlProvinciaFinal.Items.Clear();
+            DdlLocalidadFinal.Items.Clear();
+
             using (SqlConnection bdViajes = new SqlConnection("Data Source=localhost\\sqlexpress;Initial Catalog=Viajes;Integrated Security=True"))
             {
                 bdViajes.Open();
                 SqlCommand cmd = new SqlCommand("select IdLocalidad, NombreLocalidad from localidades where IdProvincia = @IdProvincia", bdViajes);
-                cmd.Parameters.AddWithValue("@IdProvincia", DdlProvinciainicio.SelectedIndex);
+                cmd.Parameters.AddWithValue("@IdProvincia", DdlProvinciainicio.SelectedValue);
                 SqlDataReader reader = cmd.ExecuteReader();
 
                 DdlLocalidadInicio.DataSource = reader;
@@ -61,14 +63,33 @@ namespace Programacion3_Grupo2_TP4
                 string ProvInicio = DdlProvinciainicio.SelectedValue;
 
                 SqlCommand cmd = new SqlCommand("SELECT idProvincia, Nombreprovincia FROM PROVINCIAS WHERE NOT idProvincia = " + ProvInicio, bdViajes);
+                cmd.Parameters.AddWithValue("@IdProvincia", DdlProvinciainicio.SelectedValue);
                 SqlDataReader reader = cmd.ExecuteReader();
 
-                DdlProvinicaFinal.DataSource = reader;
-                DdlProvinicaFinal.DataTextField = "NombreProvincia";
-                DdlProvinicaFinal.DataValueField = "idProvincia";
-                DdlProvinicaFinal.DataBind();
+                DdlProvinciaFinal.DataSource = reader;
+                DdlProvinciaFinal.DataTextField = "NombreProvincia";
+                DdlProvinciaFinal.DataValueField = "idProvincia";
+                DdlProvinciaFinal.DataBind();
 
-                DdlProvinicaFinal.Items.Insert(0, new ListItem("Seleccione una provincia", ""));
+                DdlProvinciaFinal.Items.Insert(0, new ListItem("Seleccione una provincia", ""));
+            }
+        }
+
+        protected void DdlProvinicaFinal_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            using (SqlConnection bdViajes = new SqlConnection("Data Source=localhost\\sqlexpress;Initial Catalog=Viajes;Integrated Security=True"))
+            {
+                bdViajes.Open();
+                SqlCommand cmd = new SqlCommand("select IdLocalidad, NombreLocalidad from localidades where IdProvincia = @IdProvincia", bdViajes);
+                cmd.Parameters.AddWithValue("@IdProvincia", DdlProvinciaFinal.SelectedValue);
+                SqlDataReader reader = cmd.ExecuteReader();
+
+                DdlLocalidadFinal.DataSource = reader;
+                DdlLocalidadFinal.DataTextField = "NombreLocalidad";
+                DdlLocalidadFinal.DataValueField = "IdLocalidad";
+                DdlLocalidadFinal.DataBind();
+                
+                DdlLocalidadFinal.Items.Insert(0, new ListItem("Seleccione una localidad", ""));
             }
         }
     }
