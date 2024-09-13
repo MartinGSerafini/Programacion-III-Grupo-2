@@ -48,6 +48,8 @@ namespace Programacion3_Grupo2_TP4
                     grdProductos.DataSource = dr;
                     grdProductos.DataBind();
                     LblIDVacio.Visible = false;
+                    TxbProducto.Text = "";
+                    TxbCategoria.Text = "";
                 }
                 else if (TxbProducto.Text != "")
                 {
@@ -56,6 +58,7 @@ namespace Programacion3_Grupo2_TP4
                     grdProductos.DataSource = dr;
                     grdProductos.DataBind();
                     LblIDVacio.Visible = false;
+                    TxbProducto.Text = "";
                 }
                 else if (TxbCategoria.Text != "")
                 {
@@ -64,6 +67,7 @@ namespace Programacion3_Grupo2_TP4
                     grdProductos.DataSource = dr;
                     grdProductos.DataBind();
                     LblIDVacio.Visible = false;
+                    TxbCategoria.Text = "";
                 }
             }
         }
