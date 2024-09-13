@@ -10,7 +10,7 @@ using System.Web.ModelBinding;
 
 namespace Programacion3_Grupo2_TP4
 {
-    public partial class WebForm2 : System.Web.UI.Page
+    public partial class Ejercicio2 : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -26,6 +26,23 @@ namespace Programacion3_Grupo2_TP4
                     SqlDataReader dr = cmd.ExecuteReader();
                     grdProductos.DataSource = dr;
                     grdProductos.DataBind();
+                }
+            }
+        }
+
+        protected void btnFiltrar_Click(object sender, EventArgs e)
+        {
+            using (SqlConnection bdNeptuno = new SqlConnection("Data Source = localhost\\sqlexpress; Initial Catalog = Neptuno; Integrated Security = True"))
+            {
+                bdNeptuno.Open();
+                if (TxbProducto.Text != "")
+                {
+                    SqlCommand cmd = new SqlCommand("SELECT * FROM Productos WHERE idProducto" + DdlProducto.SelectedValue + TxbProducto.Text, bdNeptuno);
+                    SqlDataReader dr = cmd.ExecuteReader();
+                    grdProductos.DataSource = dr;
+                    grdProductos.DataBind();
+
+                    TxbProducto.Text = "";
                 }
             }
         }

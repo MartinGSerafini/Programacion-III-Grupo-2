@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Ejercicio2.aspx.cs" Inherits="Programacion3_Grupo2_TP4.WebForm2" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Ejercicio2.aspx.cs" Inherits="Programacion3_Grupo2_TP4.Ejercicio2" %>
 
 <!DOCTYPE html>
 
@@ -25,9 +25,9 @@
                 </td>
                 <td class="auto-style3">
                     <asp:DropDownList ID="DdlProducto" runat="server" AutoPostBack="True" Width="141px">
-                        <asp:ListItem>Igual a:</asp:ListItem>
-                        <asp:ListItem>Mayor a:</asp:ListItem>
-                        <asp:ListItem>Menor a:</asp:ListItem>
+                        <asp:ListItem Value="=">Igual a:</asp:ListItem>
+                        <asp:ListItem Value="&gt;">Mayor a:</asp:ListItem>
+                        <asp:ListItem Value="&lt;">Menor a:</asp:ListItem>
                     </asp:DropDownList>
                     <br />
                 </td>
@@ -61,7 +61,7 @@
                 <td class="auto-style2">&nbsp;</td>
                 <td class="auto-style3">&nbsp;</td>
                 <td>
-                    <asp:Button ID="btnFiltrar" runat="server" Text="Filtrar" />
+                    <asp:Button ID="btnFiltrar" runat="server" Text="Filtrar" OnClick="btnFiltrar_Click" />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     <asp:Button ID="btnQuitar" runat="server" Text="Quitar filtro" />
                 </td>

@@ -11,7 +11,7 @@ namespace Programacion3_Grupo2_TP4
 {
 
 
-    public partial class WebForm2
+    public partial class Ejercicio2
     {
 
         /// <summary>
