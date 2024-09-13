@@ -33,6 +33,8 @@
                 </td>
                 <td>
                     <asp:TextBox ID="TxbProducto" runat="server" Width="240px"></asp:TextBox>
+                    &nbsp;&nbsp;&nbsp;
+                    <asp:Label ID="LblIDVacio" runat="server" ForeColor="Red" Text="Debe Ingresar un ID de Producto o Categoria" Visible="False"></asp:Label>
                     <br />
                 </td>
             </tr>
@@ -49,6 +51,7 @@
                 </td>
                 <td>
                     <asp:TextBox ID="TxbCategoria" runat="server" Width="240px"></asp:TextBox>
+                    &nbsp;&nbsp;&nbsp;
                     <br />
                 </td>
             </tr>
@@ -63,7 +66,7 @@
                 <td>
                     <asp:Button ID="btnFiltrar" runat="server" Text="Filtrar" OnClick="btnFiltrar_Click" />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <asp:Button ID="btnQuitar" runat="server" Text="Quitar filtro" />
+                    <asp:Button ID="btnQuitar" runat="server" Text="Quitar filtro" OnClick="btnQuitar_Click" />
                 </td>
             </tr>
         </table>

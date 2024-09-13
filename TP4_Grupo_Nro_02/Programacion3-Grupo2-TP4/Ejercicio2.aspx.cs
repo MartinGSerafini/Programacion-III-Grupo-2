@@ -32,6 +32,12 @@ namespace Programacion3_Grupo2_TP4
 
         protected void btnFiltrar_Click(object sender, EventArgs e)
         {
+            if (string.IsNullOrEmpty(TxbProducto.Text) && string.IsNullOrEmpty(TxbCategoria.Text))
+            {
+                LblIDVacio.Visible = true;
+                return;
+            }
+
             using (SqlConnection bdNeptuno = new SqlConnection("Data Source = localhost\\sqlexpress; Initial Catalog = Neptuno; Integrated Security = True"))
             {
                 bdNeptuno.Open();
@@ -41,9 +47,25 @@ namespace Programacion3_Grupo2_TP4
                     SqlDataReader dr = cmd.ExecuteReader();
                     grdProductos.DataSource = dr;
                     grdProductos.DataBind();
-
-                    TxbProducto.Text = "";
+                    LblIDVacio.Visible = false;
                 }
+            }
+        }
+
+        protected void btnQuitar_Click(object sender, EventArgs e)
+        {
+
+            TxbProducto.Text = "";
+            TxbCategoria.Text = "";
+
+            using (SqlConnection bdNeptuno = new SqlConnection("Data Source = localhost\\sqlexpress; Initial Catalog = Neptuno; Integrated Security = True"))
+            {
+                bdNeptuno.Open();
+                SqlCommand cmd = new SqlCommand("SELECT * FROM Productos", bdNeptuno);
+                SqlDataReader dr = cmd.ExecuteReader();
+                grdProductos.DataSource = dr;
+                grdProductos.DataBind();
+                LblIDVacio.Visible = false;
             }
         }
     }
