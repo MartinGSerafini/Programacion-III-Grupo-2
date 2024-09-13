@@ -43,9 +43,9 @@
                 </td>
                 <td class="auto-style3">
                     <asp:DropDownList ID="DdlCategoria" runat="server" AutoPostBack="True" Width="141px">
-                        <asp:ListItem>Igual a:</asp:ListItem>
-                        <asp:ListItem>Mayor a:</asp:ListItem>
-                        <asp:ListItem>Menor a:</asp:ListItem>
+                        <asp:ListItem Value="=">Igual a:</asp:ListItem>
+                        <asp:ListItem Value="&gt;">Mayor a:</asp:ListItem>
+                        <asp:ListItem Value="&lt;">Menor a:</asp:ListItem>
                     </asp:DropDownList>
                     <br />
                 </td>

@@ -49,6 +49,14 @@ namespace Programacion3_Grupo2_TP4
                     grdProductos.DataBind();
                     LblIDVacio.Visible = false;
                 }
+                else if (TxbCategoria.Text != "")
+                {
+                    SqlCommand cmd = new SqlCommand("SELECT * FROM Productos WHERE IdCategoría" + DdlCategoria.SelectedValue + TxbCategoria.Text, bdNeptuno);
+                    SqlDataReader dr = cmd.ExecuteReader();
+                    grdProductos.DataSource = dr;
+                    grdProductos.DataBind();
+                    LblIDVacio.Visible = false;
+                }
             }
         }
 
