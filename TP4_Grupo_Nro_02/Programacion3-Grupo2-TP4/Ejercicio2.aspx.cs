@@ -41,7 +41,15 @@ namespace Programacion3_Grupo2_TP4
             using (SqlConnection bdNeptuno = new SqlConnection("Data Source = localhost\\sqlexpress; Initial Catalog = Neptuno; Integrated Security = True"))
             {
                 bdNeptuno.Open();
-                if (TxbProducto.Text != "")
+                if(TxbProducto.Text != "" && TxbCategoria.Text != "")
+                {
+                    SqlCommand cmd = new SqlCommand("SELECT * FROM Productos WHERE idProducto" + DdlProducto.SelectedValue + TxbProducto.Text + " AND idCategoría" + DdlCategoria.SelectedValue + TxbCategoria.Text, bdNeptuno);
+                    SqlDataReader dr = cmd.ExecuteReader();
+                    grdProductos.DataSource = dr;
+                    grdProductos.DataBind();
+                    LblIDVacio.Visible = false;
+                }
+                else if (TxbProducto.Text != "")
                 {
                     SqlCommand cmd = new SqlCommand("SELECT * FROM Productos WHERE idProducto" + DdlProducto.SelectedValue + TxbProducto.Text, bdNeptuno);
                     SqlDataReader dr = cmd.ExecuteReader();
