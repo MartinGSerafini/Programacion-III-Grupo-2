@@ -14,6 +14,9 @@ namespace Programacion3_Grupo2_TP4
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            TxbProducto.Attributes["type"] = "number";
+            TxbCategoria.Attributes["type"] = "number";
+
             if (IsPostBack == false)
             {
                 using (SqlConnection bdNeptuno = new SqlConnection("Data Source = localhost\\sqlexpress; Initial Catalog = Neptuno; Integrated Security = True"))
