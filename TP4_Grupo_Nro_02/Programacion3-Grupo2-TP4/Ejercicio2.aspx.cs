@@ -4,6 +4,9 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Data;
+using System.Data.SqlClient;
+using System.Web.ModelBinding;
 
 namespace Programacion3_Grupo2_TP4
 {
@@ -11,7 +14,17 @@ namespace Programacion3_Grupo2_TP4
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (IsPostBack == false)
+            {
+                using (SqlConnection bdNeptuno = new SqlConnection("Data Source = localhost\\sqlexpress; Initial Catalog = Neptuno; Integrated Security = True"))
+                {
+                    bdNeptuno.Open();
+                    SqlCommand cmd = new SqlCommand("SELECT * FROM Productos", bdNeptuno);
+                    SqlDataReader dr = cmd.ExecuteReader();
+                    grdProductos.DataSource = dr;
+                    grdProductos.DataBind();
+                }
+            }
         }
     }
 }

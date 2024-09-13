@@ -25,6 +25,9 @@
                 </td>
                 <td class="auto-style3">
                     <asp:DropDownList ID="DdlProducto" runat="server" AutoPostBack="True" Width="141px">
+                        <asp:ListItem>Igual a:</asp:ListItem>
+                        <asp:ListItem>Mayor a:</asp:ListItem>
+                        <asp:ListItem>Menor a:</asp:ListItem>
                     </asp:DropDownList>
                     <br />
                 </td>
@@ -38,6 +41,9 @@
                 </td>
                 <td class="auto-style3">
                     <asp:DropDownList ID="DdlCategoria" runat="server" AutoPostBack="True" Width="141px">
+                        <asp:ListItem>Igual a:</asp:ListItem>
+                        <asp:ListItem>Mayor a:</asp:ListItem>
+                        <asp:ListItem>Menor a:</asp:ListItem>
                     </asp:DropDownList>
                     <br />
                 </td>
@@ -54,9 +60,15 @@
             <tr>
                 <td class="auto-style2">&nbsp;</td>
                 <td class="auto-style3">&nbsp;</td>
-                <td>&nbsp;</td>
+                <td>
+                    <asp:Button ID="btnFiltrar" runat="server" Text="Filtrar" />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <asp:Button ID="btnQuitar" runat="server" Text="Quitar filtro" />
+                </td>
             </tr>
         </table>
+        <asp:GridView ID="grdProductos" runat="server">
+        </asp:GridView>
     </form>
 </body>
 </html>
