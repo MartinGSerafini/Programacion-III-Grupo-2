@@ -13,7 +13,7 @@
             <asp:Label ID="lblLibros" runat="server" Font-Bold="True" Text="Listado de Libros:"></asp:Label>
             <br />
         </div>
-        <asp:GridView ID="GridView1" runat="server">
+        <asp:GridView ID="grdLibros" runat="server">
         </asp:GridView>
         <br />
         <asp:LinkButton ID="lbtnConsultar" runat="server" OnClick="lbtnConsultar_Click">Consultar otro tema</asp:LinkButton>
