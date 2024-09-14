@@ -24,6 +24,8 @@
                     <td>
                         <asp:DropDownList ID="ddlTemas" runat="server" Width="157px">
                         </asp:DropDownList>
+                    &nbsp;&nbsp;&nbsp;&nbsp;
+                        <asp:Label ID="Lblerror" runat="server" ForeColor="Red" Text="Debe seleccionar un Tema" Visible="False"></asp:Label>
                     </td>
                 </tr>
                 <tr>
@@ -36,7 +38,7 @@
                 </tr>
                 <tr>
                     <td class="auto-style2">
-                        <asp:LinkButton ID="lbtnVerLibros" runat="server">Ver Libros</asp:LinkButton>
+                        <asp:LinkButton ID="lbtnVerLibros" runat="server" OnClick="lbtnVerLibros_Click">Ver Libros</asp:LinkButton>
                     </td>
                     <td>&nbsp;</td>
                 </tr>

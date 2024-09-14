@@ -16,7 +16,7 @@ namespace Programacion3_Grupo2_TP4
         {
             if(IsPostBack == false)
             {
-                using (SqlConnection bdLibreria = new SqlConnection("Data Source=PILY\\SQLEXPRESS;Initial Catalog=Libreria;Integrated Security=True"))
+                using (SqlConnection bdLibreria = new SqlConnection("Data Source=localhost\\sqlexpress;Initial Catalog=Libreria;Integrated Security=True"))
                 {
                     bdLibreria.Open();
 
@@ -31,6 +31,19 @@ namespace Programacion3_Grupo2_TP4
                     ddlTemas.Items.Insert(0, new ListItem("Seleccione un tema", ""));
                 }
             }
+        }
+
+        protected void lbtnVerLibros_Click(object sender, EventArgs e)
+        {
+            Lblerror.Visible = false;
+            if (string.IsNullOrEmpty(ddlTemas.Text))
+            {
+                Lblerror.Visible = true;
+                return;
+
+            }
+            string TemaSeleccionado = ddlTemas.SelectedValue;
+            Response.Redirect("Ejercicio3b.aspx?TemaId=" + TemaSeleccionado);
         }
     }
 }

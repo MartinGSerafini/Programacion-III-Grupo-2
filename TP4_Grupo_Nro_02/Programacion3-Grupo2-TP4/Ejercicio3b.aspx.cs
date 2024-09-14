@@ -13,5 +13,10 @@ namespace Programacion3_Grupo2_TP4
         {
 
         }
+
+        protected void lbtnConsultar_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Ejercicio3a.aspx?TemaId=");
+        }
     }
 }
