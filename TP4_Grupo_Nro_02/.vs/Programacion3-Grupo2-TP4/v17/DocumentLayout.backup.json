@@ -3,12 +3,8 @@
   "WorkspaceRootPath": "C:\\Users\\guill\\OneDrive\\Documentos\\GitHub\\Programacion-III-Grupo-2\\TP4_Grupo_Nro_02\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{1CAFD24F-6CBD-49F9-88C6-EEC09DF2628C}|Programacion3-Grupo2-TP4\\Programacion3-Grupo2-TP4.csproj|C:\\Users\\guill\\OneDrive\\Documentos\\GitHub\\Programacion-III-Grupo-2\\TP4_Grupo_Nro_02\\programacion3-grupo2-tp4\\ejercicio3b.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
-      "RelativeMoniker": "D:0:0:{1CAFD24F-6CBD-49F9-88C6-EEC09DF2628C}|Programacion3-Grupo2-TP4\\Programacion3-Grupo2-TP4.csproj|solutionrelative:programacion3-grupo2-tp4\\ejercicio3b.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1CAFD24F-6CBD-49F9-88C6-EEC09DF2628C}|Programacion3-Grupo2-TP4\\Programacion3-Grupo2-TP4.csproj|C:\\Users\\guill\\OneDrive\\Documentos\\GitHub\\Programacion-III-Grupo-2\\TP4_Grupo_Nro_02\\programacion3-grupo2-tp4\\ejercicio3a.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
-      "RelativeMoniker": "D:0:0:{1CAFD24F-6CBD-49F9-88C6-EEC09DF2628C}|Programacion3-Grupo2-TP4\\Programacion3-Grupo2-TP4.csproj|solutionrelative:programacion3-grupo2-tp4\\ejercicio3a.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+      "AbsoluteMoniker": "D:0:0:{1CAFD24F-6CBD-49F9-88C6-EEC09DF2628C}|Programacion3-Grupo2-TP4\\Programacion3-Grupo2-TP4.csproj|c:\\users\\guill\\onedrive\\documentos\\github\\programacion-iii-grupo-2\\tp4_grupo_nro_02\\programacion3-grupo2-tp4\\ejercicio2.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{1CAFD24F-6CBD-49F9-88C6-EEC09DF2628C}|Programacion3-Grupo2-TP4\\Programacion3-Grupo2-TP4.csproj|solutionrelative:programacion3-grupo2-tp4\\ejercicio2.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,32 +14,19 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Ejercicio3a.aspx",
-              "DocumentMoniker": "C:\\Users\\guill\\OneDrive\\Documentos\\GitHub\\Programacion-III-Grupo-2\\TP4_Grupo_Nro_02\\Programacion3-Grupo2-TP4\\Ejercicio3a.aspx",
-              "RelativeDocumentMoniker": "Programacion3-Grupo2-TP4\\Ejercicio3a.aspx",
-              "ToolTip": "C:\\Users\\guill\\OneDrive\\Documentos\\GitHub\\Programacion-III-Grupo-2\\TP4_Grupo_Nro_02\\Programacion3-Grupo2-TP4\\Ejercicio3a.aspx",
-              "RelativeToolTip": "Programacion3-Grupo2-TP4\\Ejercicio3a.aspx",
-              "LogicalView": "7651a702-06e5-11d1-8ebd-00a0c90f26ea",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
-              "WhenOpened": "2024-09-14T21:30:35.527Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Ejercicio3b.aspx",
-              "DocumentMoniker": "C:\\Users\\guill\\OneDrive\\Documentos\\GitHub\\Programacion-III-Grupo-2\\TP4_Grupo_Nro_02\\Programacion3-Grupo2-TP4\\Ejercicio3b.aspx",
-              "RelativeDocumentMoniker": "Programacion3-Grupo2-TP4\\Ejercicio3b.aspx",
-              "ToolTip": "C:\\Users\\guill\\OneDrive\\Documentos\\GitHub\\Programacion-III-Grupo-2\\TP4_Grupo_Nro_02\\Programacion3-Grupo2-TP4\\Ejercicio3b.aspx",
-              "RelativeToolTip": "Programacion3-Grupo2-TP4\\Ejercicio3b.aspx",
-              "LogicalView": "7651a702-06e5-11d1-8ebd-00a0c90f26ea",
+              "Title": "Ejercicio2.aspx",
+              "DocumentMoniker": "C:\\Users\\guill\\OneDrive\\Documentos\\GitHub\\Programacion-III-Grupo-2\\TP4_Grupo_Nro_02\\Programacion3-Grupo2-TP4\\Ejercicio2.aspx",
+              "RelativeDocumentMoniker": "Programacion3-Grupo2-TP4\\Ejercicio2.aspx",
+              "ToolTip": "C:\\Users\\guill\\OneDrive\\Documentos\\GitHub\\Programacion-III-Grupo-2\\TP4_Grupo_Nro_02\\Programacion3-Grupo2-TP4\\Ejercicio2.aspx",
+              "RelativeToolTip": "Programacion3-Grupo2-TP4\\Ejercicio2.aspx",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
-              "WhenOpened": "2024-09-14T21:30:38.534Z",
+              "WhenOpened": "2024-09-16T02:55:10.274Z",
               "EditorCaption": ""
             }
           ]
