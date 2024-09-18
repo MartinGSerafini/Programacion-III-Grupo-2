@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Ejercicio1.aspx.cs" Inherits="TP5_Grupo_Nro_02.WebForm1" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="AgregarSucursal.aspx.cs" Inherits="TP5_Grupo_Nro_02.WebForm1" %>
 
 <!DOCTYPE html>
 
@@ -10,7 +10,7 @@
             width: 100%;
         }
         .auto-style2 {
-            width: 135px;
+            width: 190px;
         }
     </style>
 </head>
@@ -19,14 +19,23 @@
         <div>
             <table class="auto-style1">
                 <tr>
-                    <td class="auto-style2">&nbsp;</td>
                     <td>
-                        <asp:HyperLink ID="Hlink1" runat="server">Agregar Sucursal</asp:HyperLink>
-&nbsp;&nbsp;&nbsp;&nbsp;
-                        <asp:HyperLink ID="Hlink2" runat="server">Listado de Sucursales</asp:HyperLink>
-&nbsp;&nbsp;&nbsp;&nbsp;
-                        <asp:HyperLink ID="Hlink3" runat="server">Eliminar Sucursal</asp:HyperLink>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <asp:HyperLink ID="Hlink1" runat="server" NavigateUrl="~/AgregarSucursal.aspx">Agregar Sucursal</asp:HyperLink>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <asp:HyperLink ID="Hlink2" runat="server" NavigateUrl="~/ListarSucursal.aspx">Listado de Sucursales</asp:HyperLink>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <asp:HyperLink ID="Hlink3" runat="server" NavigateUrl="~/EliminarSucursal.aspx">Eliminar Sucursal</asp:HyperLink>
                     </td>
+                </tr>
+            </table>
+            <br /
+            <br />
+            <table class="auto-style1">
+                <tr>
+                    <td class="auto-style2" style="font-size: 37px;"><strong>GRUPO N2</strong></td>
+                    <td>&nbsp;</td>
                     <td>&nbsp;</td>
                 </tr>
                 <tr>
@@ -35,17 +44,7 @@
                     <td>&nbsp;</td>
                 </tr>
                 <tr>
-                    <td class="auto-style2">GRUPO N2</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                </tr>
-                <tr>
-                    <td class="auto-style2">&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                </tr>
-                <tr>
-                    <td class="auto-style2">Agregar Sucursal</td>
+                    <td class="auto-style2" style="font-size: 24px;"><strong>Agregar Sucursal</strong></td>
                     <td>&nbsp;</td>
                     <td>&nbsp;</td>
                 </tr>
@@ -56,25 +55,31 @@
                 </tr>
                 <tr>
                     <td class="auto-style2">Nombre Sucursal</td>
-                    <td>&nbsp;</td>
+                    <td>
+                        <asp:TextBox ID="TextBox1" runat="server" Width="250px"></asp:TextBox>
+                    </td>
                     <td>&nbsp;</td>
                 </tr>
                 <tr>
                     <td class="auto-style2">Descripcion</td>
-                    <td>&nbsp;</td>
+                    <td>
+                        <asp:TextBox ID="TextBox2" runat="server" Width="250px" Height="36px"></asp:TextBox>
+                    </td>
                     <td>&nbsp;</td>
                 </tr>
                 <tr>
                     <td class="auto-style2">Provincia</td>
                     <td>
-                        <asp:DropDownList ID="DdlProvincias" runat="server" AutoPostBack="True" Width="230px">
+                        <asp:DropDownList ID="DdlProvincias" runat="server" AutoPostBack="True" Width="260px">
                         </asp:DropDownList>
                     </td>
                     <td>&nbsp;</td>
                 </tr>
                 <tr>
                     <td class="auto-style2">Direccion</td>
-                    <td>&nbsp;</td>
+                    <td>
+                        <asp:TextBox ID="TextBox3" runat="server" Width="250px"></asp:TextBox>
+                    </td>
                     <td>&nbsp;</td>
                 </tr>
                 <tr>
