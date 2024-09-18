@@ -67,9 +67,7 @@
                 <tr>
                     <td class="auto-style2">Provincia</td>
                     <td>
-                        <asp:DropDownList ID="DdlProvincias" runat="server" AutoPostBack="True" Width="230px">
-                        </asp:DropDownList>
-                    </td>
+                        &nbsp;</td>
                     <td>&nbsp;</td>
                 </tr>
                 <tr>
@@ -81,7 +79,6 @@
                     <td class="auto-style2">&nbsp;</td>
                     <td>
                         <br />
-                        <asp:Button ID="BtnAceptar" runat="server" Text="Aceptar" />
                     </td>
                     <td>&nbsp;</td>
                 </tr>
