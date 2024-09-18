@@ -17,7 +17,7 @@
 <body>
     <form id="form1" runat="server">
         <div>
-            <table class="auto-style1">
+            <table class="LINKS">
                 <tr>
                     <td>
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -29,9 +29,8 @@
                         <asp:HyperLink ID="Hlink3" runat="server" NavigateUrl="~/EliminarSucursal.aspx">Eliminar Sucursal</asp:HyperLink>
                     </td>
                 </tr>
+
             </table>
-            <br /
-            <br />
             <table class="auto-style1">
                 <tr>
                     <td class="auto-style2" style="font-size: 37px;"><strong>GRUPO N2</strong></td>
