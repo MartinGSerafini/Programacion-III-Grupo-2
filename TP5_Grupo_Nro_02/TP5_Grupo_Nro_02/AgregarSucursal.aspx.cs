@@ -31,6 +31,7 @@ namespace TP5_Grupo_Nro_02
             if (fila > 0)
             {
                 lblMensaje.Text = "Sucursal agregada correctamente";
+                limpiarAgregarSucursal();
             }
             else
             {
@@ -50,6 +51,14 @@ namespace TP5_Grupo_Nro_02
             DdlProvincias.DataBind();
             DdlProvincias.Items.Insert(0, new ListItem("Seleccione una provincia", ""));
             BDSucursales.Close();
+        }
+
+        protected void limpiarAgregarSucursal()
+        {
+            txtNombreSuc.Text = "";
+            txtDescripcionSuc.Text = "";
+            DdlProvincias.SelectedIndex = 0;
+            txtDireccionSuc.Text = "";
         }
 
     }
