@@ -44,7 +44,7 @@ CodeBehind="ListarSucursal.aspx.cs" Inherits="TP5_Grupo_Nro_02.WebForm2" %>
       <label>Busqueda ingrese ID de sucursal: </label>
       <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
       <asp:Button ID="filtro" runat="server" Text="Filtrar" />
-      <asp:Button ID="Mostrar" runat="server" Text="Mostrar todo" />
+      <asp:Button ID="Mostrar" runat="server" Text="Mostrar todo" OnClick="Mostrar_Click" />
 
       <asp:GridView ID="GrdSucursales" runat="server"></asp:GridView>
     </form>

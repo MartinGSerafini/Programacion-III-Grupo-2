@@ -4,6 +4,8 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Data.Sql;
+using System.Data;
 
 namespace TP5_Grupo_Nro_02
 {
@@ -11,7 +13,19 @@ namespace TP5_Grupo_Nro_02
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if(IsPostBack == false)
+            {
+                string consulta = "SELECT Id_Sucursal,NombreSucursal AS Nombre,DescripcionSucursal AS Descripcion,DescripcionProvincia AS Provincia,DireccionSucursal AS Direccion FROM Sucursal INNER JOIN Provincia ON Sucursal.Id_ProvinciaSucursal = Provincia.Id_Provincia";
+                ConexionSQL Sucursal = new ConexionSQL();
+                Sucursal.consultaGrd(consulta, GrdSucursales);
+            }
+        }
 
+        protected void Mostrar_Click(object sender, EventArgs e)
+        {
+            string consulta = "SELECT Id_Sucursal,NombreSucursal AS Nombre,DescripcionSucursal AS Descripcion,DescripcionProvincia AS Provincia,DireccionSucursal AS Direccion FROM Sucursal INNER JOIN Provincia ON Sucursal.Id_ProvinciaSucursal = Provincia.Id_Provincia";
+            ConexionSQL Sucursal = new ConexionSQL();
+            Sucursal.consultaGrd(consulta, GrdSucursales);
         }
     }
 }
