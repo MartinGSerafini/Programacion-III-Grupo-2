@@ -48,9 +48,6 @@ namespace TP5_Grupo_Nro_02
             grd.DataSource = dr;
             grd.DataBind();
             conexion.Close();
-
         }
-
-
     }
 }

@@ -15,7 +15,10 @@ namespace TP5_Grupo_Nro_02
         {
             if(IsPostBack == false)
             {
-                string consulta = "SELECT Id_Sucursal,NombreSucursal AS Nombre,DescripcionSucursal AS Descripcion,DescripcionProvincia AS Provincia,DireccionSucursal AS Direccion FROM Sucursal INNER JOIN Provincia ON Sucursal.Id_ProvinciaSucursal = Provincia.Id_Provincia";
+                string consulta = "SELECT Id_Sucursal,NombreSucursal AS Nombre,DescripcionSucursal " +
+                                  "AS Descripcion,DescripcionProvincia AS Provincia,DireccionSucursal " +
+                                  "AS Direccion FROM Sucursal " +
+                                  "INNER JOIN Provincia ON Sucursal.Id_ProvinciaSucursal = Provincia.Id_Provincia";
                 ConexionSQL Sucursal = new ConexionSQL();
                 Sucursal.consultaGrd(consulta, GrdSucursales);
             }
@@ -23,9 +26,22 @@ namespace TP5_Grupo_Nro_02
 
         protected void Mostrar_Click(object sender, EventArgs e)
         {
-            string consulta = "SELECT Id_Sucursal,NombreSucursal AS Nombre,DescripcionSucursal AS Descripcion,DescripcionProvincia AS Provincia,DireccionSucursal AS Direccion FROM Sucursal INNER JOIN Provincia ON Sucursal.Id_ProvinciaSucursal = Provincia.Id_Provincia";
+            string consulta = "SELECT Id_Sucursal,NombreSucursal AS Nombre,DescripcionSucursal AS Descripcion,DescripcionProvincia " +
+                              "AS Provincia,DireccionSucursal AS Direccion FROM Sucursal " +
+                              "INNER JOIN Provincia ON Sucursal.Id_ProvinciaSucursal = Provincia.Id_Provincia";
             ConexionSQL Sucursal = new ConexionSQL();
             Sucursal.consultaGrd(consulta, GrdSucursales);
+        }
+
+        protected void filtro_Click(object sender, EventArgs e)
+        {
+            int ID = int.Parse(TxtID.Text);
+
+            string consulta = $"SELECT S.Id_Sucursal, S.NombreSucursal AS Nombre, S.DescripcionSucursal AS Descripcion, " + "P.DescripcionProvincia AS Provincia, S.DireccionSucursal AS Direccion " +
+                              $"FROM Sucursal S INNER JOIN Provincia " + "P ON S.Id_ProvinciaSucursal = P.Id_Provincia " +
+                              $"WHERE S.Id_Sucursal = {ID}";
+
+            new ConexionSQL().consultaGrd(consulta, GrdSucursales);
         }
     }
 }
