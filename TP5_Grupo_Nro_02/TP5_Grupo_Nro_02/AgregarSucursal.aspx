@@ -12,6 +12,13 @@
         .auto-style2 {
             width: 190px;
         }
+        .auto-style3 {
+            width: 190px;
+            height: 33px;
+        }
+        .auto-style4 {
+            height: 33px;
+        }
     </style>
 </head>
 <body>
@@ -55,14 +62,14 @@
                 <tr>
                     <td class="auto-style2">Nombre Sucursal</td>
                     <td>
-                        <asp:TextBox ID="TextBox1" runat="server" Width="250px"></asp:TextBox>
+                        <asp:TextBox ID="txtNombreSuc" runat="server" Width="250px"></asp:TextBox>
                     </td>
                     <td>&nbsp;</td>
                 </tr>
                 <tr>
                     <td class="auto-style2">Descripcion</td>
                     <td>
-                        <asp:TextBox ID="TextBox2" runat="server" Width="250px" Height="36px"></asp:TextBox>
+                        <asp:TextBox ID="txtDescripcionSuc" runat="server" Width="250px" Height="36px"></asp:TextBox>
                     </td>
                     <td>&nbsp;</td>
                 </tr>
@@ -77,20 +84,23 @@
                 <tr>
                     <td class="auto-style2">Direccion</td>
                     <td>
-                        <asp:TextBox ID="TextBox3" runat="server" Width="250px"></asp:TextBox>
+                        <asp:TextBox ID="txtDireccionSuc" runat="server" Width="250px"></asp:TextBox>
                     </td>
                     <td>&nbsp;</td>
                 </tr>
                 <tr>
-                    <td class="auto-style2">&nbsp;</td>
-                    <td>
+                    <td class="auto-style3"></td>
+                    <td class="auto-style4">
                         <br />
-                        <asp:Button ID="BtnAceptar" runat="server" Text="Aceptar" />
+                        <asp:Button ID="BtnAceptar" runat="server" Text="Aceptar" OnClick="BtnAceptar_Click" />
+                        <asp:Label ID="lblMensaje" runat="server"></asp:Label>
                     </td>
-                    <td>&nbsp;</td>
+                    <td class="auto-style4"></td>
                 </tr>
             </table>
         </div>
+        <p>
+            &nbsp;</p>
     </form>
 </body>
 </html>
