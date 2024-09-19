@@ -63,6 +63,7 @@
                     <td class="auto-style2">Nombre Sucursal</td>
                     <td>
                         <asp:TextBox ID="txtNombreSuc" runat="server" Width="250px"></asp:TextBox>
+                        <asp:RequiredFieldValidator ID="RfvNombre" runat="server" ControlToValidate="txtNombreSuc" ErrorMessage="Debe Ingresar un Nombre" ForeColor="Red" ValidationGroup="Vg1">*</asp:RequiredFieldValidator>
                     </td>
                     <td>&nbsp;</td>
                 </tr>
@@ -70,6 +71,7 @@
                     <td class="auto-style2">Descripcion</td>
                     <td>
                         <asp:TextBox ID="txtDescripcionSuc" runat="server" Width="250px" Height="36px"></asp:TextBox>
+                        <asp:RequiredFieldValidator ID="RfvDescripcion" runat="server" ControlToValidate="txtDescripcionSuc" ErrorMessage="Debe Ingresar una Descripcion" ForeColor="Red" ValidationGroup="Vg1">*</asp:RequiredFieldValidator>
                     </td>
                     <td>&nbsp;</td>
                 </tr>
@@ -85,6 +87,7 @@
                     <td class="auto-style2">Direccion</td>
                     <td>
                         <asp:TextBox ID="txtDireccionSuc" runat="server" Width="250px"></asp:TextBox>
+                        <asp:RequiredFieldValidator ID="RfvDireccion" runat="server" ControlToValidate="txtDireccionSuc" ErrorMessage="Debe Ingresar una Direccion" ForeColor="Red" ValidationGroup="Vg1">*</asp:RequiredFieldValidator>
                     </td>
                     <td>&nbsp;</td>
                 </tr>
@@ -92,7 +95,7 @@
                     <td class="auto-style3"></td>
                     <td class="auto-style4">
                         <br />
-                        <asp:Button ID="BtnAceptar" runat="server" Text="Aceptar" OnClick="BtnAceptar_Click" />
+                        <asp:Button ID="BtnAceptar" runat="server" Text="Aceptar" OnClick="BtnAceptar_Click" ValidationGroup="Vg1" />
                         <asp:Label ID="lblMensaje" runat="server"></asp:Label>
                     </td>
                     <td class="auto-style4"></td>
@@ -100,7 +103,8 @@
             </table>
         </div>
         <p>
-            &nbsp;</p>
+            </p>
+        <asp:ValidationSummary ID="Vs" runat="server" ValidationGroup="Vg1" />
     </form>
 </body>
 </html>

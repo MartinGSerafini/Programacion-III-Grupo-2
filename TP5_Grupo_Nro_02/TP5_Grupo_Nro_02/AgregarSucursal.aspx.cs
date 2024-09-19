@@ -10,7 +10,7 @@ namespace TP5_Grupo_Nro_02
 {
     public partial class WebForm1 : System.Web.UI.Page
     {
-        string ruta = "Data Source = localhost\\sqlexpress; Initial Catalog = BDSucursales; Integrated Security=True";
+        string ruta = "Data Source=localhost\\sqlexpress; Initial Catalog=BDSucursales; Integrated Security=True;";
         protected void Page_Load(object sender, EventArgs e)
         {
             if (IsPostBack == false)
