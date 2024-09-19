@@ -10,8 +10,14 @@ namespace TP5_Grupo_Nro_02
 {
     public partial class WebForm1 : System.Web.UI.Page
     {
+        string ruta = "Data Source = localhost\\sqlexpress; Initial Catalog = BDSucursales; Integrated Security=True";
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (IsPostBack == false)
+            {
+                CargarProvincias();
+            }
+            
 
         }
 
@@ -31,5 +37,20 @@ namespace TP5_Grupo_Nro_02
                 lblMensaje.Text = "No se pudo agregar la sucursal";
             }
         }
+
+        protected void CargarProvincias()
+        {
+            SqlConnection BDSucursales = new SqlConnection(ruta);
+            BDSucursales.Open();
+            SqlCommand cmd = new SqlCommand("SELECT * FROM Provincia", BDSucursales);
+            SqlDataReader dr = cmd.ExecuteReader();
+            DdlProvincias.DataSource = dr;
+            DdlProvincias.DataTextField = "DescripcionProvincia";
+            DdlProvincias.DataValueField = "Id_Provincia";
+            DdlProvincias.DataBind();
+            DdlProvincias.Items.Insert(0, new ListItem("Seleccione una provincia", ""));
+            BDSucursales.Close();
+        }
+
     }
 }
