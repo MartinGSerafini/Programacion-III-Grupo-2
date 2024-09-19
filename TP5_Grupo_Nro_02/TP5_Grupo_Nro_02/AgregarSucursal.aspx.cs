@@ -23,7 +23,7 @@ namespace TP5_Grupo_Nro_02
 
         protected void BtnAceptar_Click(object sender, EventArgs e)
         {
-            string consulta = "insert into Sucursal(NombreSucursal,DescripcionSucursal,Id_ProvinciaSucursal,DireccionSucursal) values ('"+txtNombreSuc.Text+"' , '"+txtDescripcionSuc.Text+"' , '"+DdlProvincias.Text+"' , '"+txtDireccionSuc.Text+"')";
+            string consulta = "insert into Sucursal(NombreSucursal,DescripcionSucursal,Id_ProvinciaSucursal,DireccionSucursal) values ('"+txtNombreSuc.Text+"' , '"+txtDescripcionSuc.Text+"' , '"+DdlProvincias.SelectedIndex+"' , '"+txtDireccionSuc.Text+"')";
 
             ConexionSQL conexionsql = new ConexionSQL();
             int fila = conexionsql.ejecutarConsulta(consulta);
