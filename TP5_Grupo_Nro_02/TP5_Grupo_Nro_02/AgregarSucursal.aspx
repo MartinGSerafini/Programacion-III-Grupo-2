@@ -80,6 +80,7 @@
                     <td>
                         <asp:DropDownList ID="DdlProvincias" runat="server" AutoPostBack="True" Width="260px">
                         </asp:DropDownList>
+                        <asp:RequiredFieldValidator ID="rfvProvincia" runat="server" ControlToValidate="DdlProvincias" ErrorMessage="Debe seleccionar una provincia" ForeColor="Red" InitialValue="--Seleccionar provincia--" ValidationGroup="Vg1">*</asp:RequiredFieldValidator>
                     </td>
                     <td>&nbsp;</td>
                 </tr>

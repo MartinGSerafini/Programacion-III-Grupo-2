@@ -41,16 +41,11 @@ namespace TP5_Grupo_Nro_02
 
         protected void CargarProvincias()
         {
-            SqlConnection BDSucursales = new SqlConnection(ruta);
-            BDSucursales.Open();
-            SqlCommand cmd = new SqlCommand("SELECT * FROM Provincia", BDSucursales);
-            SqlDataReader dr = cmd.ExecuteReader();
-            DdlProvincias.DataSource = dr;
-            DdlProvincias.DataTextField = "DescripcionProvincia";
-            DdlProvincias.DataValueField = "Id_Provincia";
-            DdlProvincias.DataBind();
-            DdlProvincias.Items.Insert(0, new ListItem("Seleccione una provincia", ""));
-            BDSucursales.Close();
+            String consulta = "SELECT * FROM Provincia";
+            String item1 = "id_provincia";
+            String item2 = "DescripcionProvincia";
+            ConexionSQL conexion = new ConexionSQL();
+            conexion.consultaParaDdl(consulta, DdlProvincias, item1, item2);
         }
 
         protected void limpiarAgregarSucursal()
