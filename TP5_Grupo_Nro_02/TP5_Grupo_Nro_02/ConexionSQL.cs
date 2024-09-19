@@ -4,6 +4,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
 using System.Web.UI.WebControls;
+using System.Data;
 
 namespace TP5_Grupo_Nro_02
 {
@@ -38,5 +39,18 @@ namespace TP5_Grupo_Nro_02
 
             conexion.Close();
         }
+        public void consultaGrd(string consulta, GridView grd)
+        {
+            SqlConnection conexion = new SqlConnection(ruta);
+            conexion.Open();
+            SqlCommand cmd = new SqlCommand(consulta, conexion);
+            SqlDataReader dr = cmd.ExecuteReader();
+            grd.DataSource = dr;
+            grd.DataBind();
+            conexion.Close();
+
+        }
+
+
     }
 }
