@@ -31,6 +31,8 @@ namespace TP5_Grupo_Nro_02
                               "INNER JOIN Provincia ON Sucursal.Id_ProvinciaSucursal = Provincia.Id_Provincia";
             ConexionSQL Sucursal = new ConexionSQL();
             Sucursal.consultaGrd(consulta, GrdSucursales);
+
+            TxtID.Text = "";
         }
 
         protected void filtro_Click(object sender, EventArgs e)
@@ -42,6 +44,8 @@ namespace TP5_Grupo_Nro_02
                               $"WHERE S.Id_Sucursal = {ID}";
 
             new ConexionSQL().consultaGrd(consulta, GrdSucursales);
+
+            TxtID.Text = "";
         }
     }
 }
