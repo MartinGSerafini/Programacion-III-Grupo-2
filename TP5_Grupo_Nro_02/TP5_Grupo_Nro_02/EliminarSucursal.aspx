@@ -5,6 +5,20 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title></title>
+    <style type="text/css">
+        .auto-style1 {
+            width: 100%;
+        }
+        .auto-style2 {
+            width: 238px;
+        }
+        .auto-style3 {
+            font-weight: normal;
+        }
+        .auto-style4 {
+            width: 377px;
+        }
+    </style>
 </head>
 <body>
     <form id="form1" runat="server">
@@ -23,6 +37,36 @@
                </tr>
             </table>
         </div>
+        <p>
+            &nbsp;</p>
+        <table class="auto-style1">
+            <tr>
+                <td class="auto-style2">
+                    <h2>Eliminar Sucursal</h2>
+                    <p class="auto-style3">
+                        &nbsp;</p>
+                </td>
+                <td class="auto-style4">&nbsp;</td>
+                <td>&nbsp;</td>
+            </tr>
+            <tr>
+                <td class="auto-style2">Ingresar ID sucursal</td>
+                <td class="auto-style4">
+                    <asp:TextBox ID="txtIDSucursal" runat="server" Width="323px"></asp:TextBox>
+                </td>
+                <td>&nbsp;</td>
+            </tr>
+            <tr>
+                <td class="auto-style2">&nbsp;</td>
+                <td class="auto-style4">&nbsp;</td>
+                <td>&nbsp;</td>
+            </tr>
+            <tr>
+                <td class="auto-style2">&nbsp;</td>
+                <td class="auto-style4">&nbsp;</td>
+                <td>&nbsp;</td>
+            </tr>
+        </table>
     </form>
 </body>
 </html>
