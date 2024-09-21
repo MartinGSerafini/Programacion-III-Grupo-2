@@ -57,6 +57,7 @@
                     <asp:RequiredFieldValidator ID="rfvIDEliminar" runat="server" ControlToValidate="txtIDSucursal" ErrorMessage="Ingresar ID " ForeColor="Red" ValidationGroup="Grupo1">*</asp:RequiredFieldValidator>
                     <asp:RegularExpressionValidator ID="revEliminar" runat="server" ControlToValidate="txtIDSucursal" ErrorMessage="Solo se permiten numeros" ForeColor="Red" ValidationExpression="^\d+$" ValidationGroup="Grupo1">*</asp:RegularExpressionValidator>
                 </td>
+<<<<<<< HEAD
                 <td>
                     <asp:Button ID="btnEliminar" runat="server" OnClick="btnEliminar_Click" Text="Eliminar" ValidationGroup="Grupo1" />
                 </td>
@@ -70,6 +71,9 @@
                 </td>
                 <td>&nbsp;</td>
 >>>>>>> parent of 3fb1319 (Add files via upload)
+=======
+                <td>&nbsp;</td>
+>>>>>>> parent of beb2b44 (.)
             </tr>
             <tr>
                 <td class="auto-style2">&nbsp;</td>
