@@ -37,8 +37,6 @@
                </tr>
             </table>
         </div>
-        <p>
-            &nbsp;</p>
         <table class="auto-style1">
             <tr>
                 <td class="auto-style2">
@@ -66,7 +64,9 @@
                 <td>&nbsp;</td>
             </tr>
             <tr>
-                <td class="auto-style2">&nbsp;</td>
+                <td class="auto-style2">
+                    <asp:Label ID="lblMensaje" runat="server" EnableTheming="False" ForeColor="Red"></asp:Label>
+                </td>
                 <td class="auto-style4">&nbsp;</td>
                 <td>&nbsp;</td>
             </tr>

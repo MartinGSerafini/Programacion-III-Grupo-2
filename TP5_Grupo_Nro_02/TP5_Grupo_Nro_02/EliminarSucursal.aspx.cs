@@ -12,14 +12,21 @@ namespace TP5_Grupo_Nro_02
     {
         protected void btnEliminar_Click(object sender, EventArgs e)
         {
-            int IDaux;
-            int.TryParse(txtIDSucursal.Text, out IDaux);
-            string consultaEliminar = "DELETE FROM Sucursal WHERE Id_Sucursal = @IdSucursal";
-            SqlConnection conexion = new SqlConnection("Data Source=localhost\\sqlexpress; Initial Catalog=BDSucursales; Integrated Security=True;");
-            SqlCommand comando = new SqlCommand(consultaEliminar, conexion);
-            comando.Parameters.AddWithValue("@IdSucursal", IDaux);
-            conexion.Open();
-            txtIDSucursal.Text = "";
+            int ID = int.Parse(txtIDSucursal.Text);
+            string consulta = $"DELETE FROM Sucursal WHERE Id_Sucursal = {ID}";
+
+            ConexionSQL conexionsql = new ConexionSQL();
+            int fila = conexionsql.ejecutarConsulta(consulta);
+
+            if (fila > 0)
+            {
+                lblMensaje.Text = "La sucursal se ha eliminado con éxito.";
+                txtIDSucursal.Text = "";
+            }
+            else
+            {
+                lblMensaje.Text = "La sucursal ingresada no existe o ya ha sido eliminada.";
+            }
         }
     }
 }
