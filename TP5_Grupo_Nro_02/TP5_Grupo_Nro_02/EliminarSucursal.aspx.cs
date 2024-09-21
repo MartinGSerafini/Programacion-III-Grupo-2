@@ -12,6 +12,7 @@ namespace TP5_Grupo_Nro_02
     {
         protected void btnEliminar_Click(object sender, EventArgs e)
         {
+<<<<<<< HEAD
             int IDaux;
             int.TryParse(TxbID.Text, out IDaux);
             string consultaEliminar = "DELETE FROM Sucursal WHERE Id_Sucursal = @IdSucursal";
@@ -20,6 +21,9 @@ namespace TP5_Grupo_Nro_02
             comando.Parameters.AddWithValue("@IdSucursal", IDaux);
             conexion.Open();
             TxbID.Text = "";
+=======
+
+>>>>>>> parent of 3fb1319 (Add files via upload)
         }
     }
 }
