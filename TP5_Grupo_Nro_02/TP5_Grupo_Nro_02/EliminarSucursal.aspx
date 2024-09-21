@@ -54,7 +54,9 @@
                 <td class="auto-style4">
                     <asp:TextBox ID="txtIDSucursal" runat="server" Width="323px"></asp:TextBox>
                 </td>
-                <td>&nbsp;</td>
+                <td>
+                    <asp:Button ID="BtnEliminar" runat="server" OnClick="BtnEliminar_Click" Text="Eliminar" />
+                </td>
             </tr>
             <tr>
                 <td class="auto-style2">&nbsp;</td>
