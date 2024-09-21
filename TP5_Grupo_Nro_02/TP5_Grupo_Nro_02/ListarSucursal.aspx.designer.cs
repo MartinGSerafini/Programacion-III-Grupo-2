@@ -51,66 +51,55 @@ namespace TP5_Grupo_Nro_02
         protected global::System.Web.UI.WebControls.HyperLink Hlink3;
 
         /// <summary>
-        /// TxtID control.
+        /// txtIDSucursal control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TxtID;
+        protected global::System.Web.UI.WebControls.TextBox txtIDSucursal;
 
         /// <summary>
-        /// filtro control.
+        /// BtnEliminar control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button filtro;
+        protected global::System.Web.UI.WebControls.Button BtnEliminar;
+        /// Control rfvIDEliminar.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvIDEliminar;
 
         /// <summary>
-        /// Rfv1 control.
+        /// Control revEliminar.
         /// </summary>
         /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator Rfv1;
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator revEliminar;
 
         /// <summary>
-        /// RegularExpressionValidator1 control.
+        /// Control btnEliminar.
         /// </summary>
         /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RegularExpressionValidator RegularExpressionValidator1;
+        protected global::System.Web.UI.WebControls.Button btnEliminar;
 
         /// <summary>
-        /// Mostrar control.
+        /// Control ValidationSummary1.
         /// </summary>
         /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Mostrar;
-
-        /// <summary>
-        /// GrdSucursales control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView GrdSucursales;
-
-        /// <summary>
-        /// Vs1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ValidationSummary Vs1;
+        protected global::System.Web.UI.WebControls.ValidationSummary ValidationSummary1;
     }
 }
