@@ -10,6 +10,7 @@ namespace TP5_Grupo_Nro_02
     public partial class WebForm3 : System.Web.UI.Page
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
         protected void btnEliminar_Click(object sender, EventArgs e)
         {
 <<<<<<< HEAD
@@ -24,6 +25,11 @@ namespace TP5_Grupo_Nro_02
 =======
 
 >>>>>>> parent of 3fb1319 (Add files via upload)
+=======
+        protected void Page_Load(object sender, EventArgs e)
+        {
+
+>>>>>>> parent of beb2b44 (.)
 =======
         protected void Page_Load(object sender, EventArgs e)
         {

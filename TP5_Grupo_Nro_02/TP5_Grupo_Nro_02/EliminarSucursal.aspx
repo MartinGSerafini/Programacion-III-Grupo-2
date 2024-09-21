@@ -70,9 +70,12 @@
                     <asp:TextBox ID="txtIDSucursal" runat="server" Width="323px"></asp:TextBox>
                 </td>
                 <td>&nbsp;</td>
+<<<<<<< HEAD
 >>>>>>> parent of 3fb1319 (Add files via upload)
 =======
                 <td>&nbsp;</td>
+>>>>>>> parent of beb2b44 (.)
+=======
 >>>>>>> parent of beb2b44 (.)
             </tr>
             <tr>

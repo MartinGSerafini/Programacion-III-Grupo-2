@@ -52,7 +52,11 @@ namespace TP5_Grupo_Nro_02
 
         /// <summary>
 <<<<<<< HEAD
+<<<<<<< HEAD
         /// TxbID control.
+=======
+        /// Control txtIDSucursal.
+>>>>>>> parent of beb2b44 (.)
 =======
         /// Control txtIDSucursal.
 >>>>>>> parent of beb2b44 (.)
@@ -61,6 +65,7 @@ namespace TP5_Grupo_Nro_02
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
         protected global::System.Web.UI.WebControls.TextBox TxbID;
@@ -103,6 +108,9 @@ namespace TP5_Grupo_Nro_02
 =======
         protected global::System.Web.UI.WebControls.TextBox txtIDSucursal;
 >>>>>>> parent of 3fb1319 (Add files via upload)
+=======
+        protected global::System.Web.UI.WebControls.TextBox txtIDSucursal;
+>>>>>>> parent of beb2b44 (.)
 =======
         protected global::System.Web.UI.WebControls.TextBox txtIDSucursal;
 >>>>>>> parent of beb2b44 (.)
