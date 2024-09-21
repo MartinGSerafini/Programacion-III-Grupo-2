@@ -51,68 +51,48 @@ namespace TP5_Grupo_Nro_02
         protected global::System.Web.UI.WebControls.HyperLink Hlink3;
 
         /// <summary>
-<<<<<<< HEAD
-<<<<<<< HEAD
-        /// TxbID control.
-=======
         /// Control txtIDSucursal.
->>>>>>> parent of beb2b44 (.)
-=======
-        /// Control txtIDSucursal.
->>>>>>> parent of beb2b44 (.)
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-        protected global::System.Web.UI.WebControls.TextBox TxbID;
+        protected global::System.Web.UI.WebControls.TextBox txtIDSucursal;
 
         /// <summary>
-        /// rfvIDEliminar control.
+        /// Control rfvIDEliminar.
         /// </summary>
         /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvIDEliminar;
 
         /// <summary>
-        /// revEliminar control.
+        /// Control revEliminar.
         /// </summary>
         /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RegularExpressionValidator revEliminar;
 
         /// <summary>
-        /// btnEliminar control.
+        /// Control btnEliminar.
         /// </summary>
         /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnEliminar;
 
         /// <summary>
-        /// ValidationSummary1 control.
+        /// Control ValidationSummary1.
         /// </summary>
         /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.ValidationSummary ValidationSummary1;
-=======
-        protected global::System.Web.UI.WebControls.TextBox txtIDSucursal;
->>>>>>> parent of 3fb1319 (Add files via upload)
-=======
-        protected global::System.Web.UI.WebControls.TextBox txtIDSucursal;
->>>>>>> parent of beb2b44 (.)
-=======
-        protected global::System.Web.UI.WebControls.TextBox txtIDSucursal;
->>>>>>> parent of beb2b44 (.)
     }
 }

@@ -3,32 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\guill\\OneDrive\\Documentos\\GitHub\\Programacion-III-Grupo-2\\TP5_Grupo_Nro_02\\",
   "Documents": [
     {
-<<<<<<< HEAD
-<<<<<<< HEAD
-      "AbsoluteMoniker": "D:0:0:{2AD17D8B-3420-451E-9132-FDB5CD50B2A2}|TP5_Grupo_Nro_02\\TP5_Grupo_Nro_02.csproj|c:\\users\\guill\\onedrive\\documentos\\github\\programacion-iii-grupo-2\\tp5_grupo_nro_02\\tp5_grupo_nro_02\\listarsucursal.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
-      "RelativeMoniker": "D:0:0:{2AD17D8B-3420-451E-9132-FDB5CD50B2A2}|TP5_Grupo_Nro_02\\TP5_Grupo_Nro_02.csproj|solutionrelative:tp5_grupo_nro_02\\listarsucursal.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{2AD17D8B-3420-451E-9132-FDB5CD50B2A2}|TP5_Grupo_Nro_02\\TP5_Grupo_Nro_02.csproj|c:\\users\\guill\\onedrive\\documentos\\github\\programacion-iii-grupo-2\\tp5_grupo_nro_02\\tp5_grupo_nro_02\\eliminarsucursal.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
       "RelativeMoniker": "D:0:0:{2AD17D8B-3420-451E-9132-FDB5CD50B2A2}|TP5_Grupo_Nro_02\\TP5_Grupo_Nro_02.csproj|solutionrelative:tp5_grupo_nro_02\\eliminarsucursal.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2AD17D8B-3420-451E-9132-FDB5CD50B2A2}|TP5_Grupo_Nro_02\\TP5_Grupo_Nro_02.csproj|c:\\users\\guill\\onedrive\\documentos\\github\\programacion-iii-grupo-2\\tp5_grupo_nro_02\\tp5_grupo_nro_02\\listarsucursal.aspx.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2AD17D8B-3420-451E-9132-FDB5CD50B2A2}|TP5_Grupo_Nro_02\\TP5_Grupo_Nro_02.csproj|solutionrelative:tp5_grupo_nro_02\\listarsucursal.aspx.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-=======
->>>>>>> parent of beb2b44 (.)
-      "AbsoluteMoniker": "D:0:0:{2AD17D8B-3420-451E-9132-FDB5CD50B2A2}|TP5_Grupo_Nro_02\\TP5_Grupo_Nro_02.csproj|c:\\users\\guill\\onedrive\\documentos\\github\\programacion-iii-grupo-2\\tp5_grupo_nro_02\\tp5_grupo_nro_02\\listarsucursal.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2AD17D8B-3420-451E-9132-FDB5CD50B2A2}|TP5_Grupo_Nro_02\\TP5_Grupo_Nro_02.csproj|solutionrelative:tp5_grupo_nro_02\\listarsucursal.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-=======
-      "AbsoluteMoniker": "D:0:0:{2AD17D8B-3420-451E-9132-FDB5CD50B2A2}|TP5_Grupo_Nro_02\\TP5_Grupo_Nro_02.csproj|c:\\users\\guill\\onedrive\\documentos\\github\\programacion-iii-grupo-2\\tp5_grupo_nro_02\\tp5_grupo_nro_02\\listarsucursal.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2AD17D8B-3420-451E-9132-FDB5CD50B2A2}|TP5_Grupo_Nro_02\\TP5_Grupo_Nro_02.csproj|solutionrelative:tp5_grupo_nro_02\\listarsucursal.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2AD17D8B-3420-451E-9132-FDB5CD50B2A2}|TP5_Grupo_Nro_02\\TP5_Grupo_Nro_02.csproj|c:\\users\\guill\\onedrive\\documentos\\github\\programacion-iii-grupo-2\\tp5_grupo_nro_02\\tp5_grupo_nro_02\\listarsucursal.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
-      "RelativeMoniker": "D:0:0:{2AD17D8B-3420-451E-9132-FDB5CD50B2A2}|TP5_Grupo_Nro_02\\TP5_Grupo_Nro_02.csproj|solutionrelative:tp5_grupo_nro_02\\listarsucursal.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
->>>>>>> parent of beb2b44 (.)
+      "AbsoluteMoniker": "D:0:0:{2AD17D8B-3420-451E-9132-FDB5CD50B2A2}|TP5_Grupo_Nro_02\\TP5_Grupo_Nro_02.csproj|c:\\users\\guill\\onedrive\\documentos\\github\\programacion-iii-grupo-2\\tp5_grupo_nro_02\\tp5_grupo_nro_02\\eliminarsucursal.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2AD17D8B-3420-451E-9132-FDB5CD50B2A2}|TP5_Grupo_Nro_02\\TP5_Grupo_Nro_02.csproj|solutionrelative:tp5_grupo_nro_02\\eliminarsucursal.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -38,13 +18,24 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-<<<<<<< HEAD
-<<<<<<< HEAD
               "DocumentIndex": 1,
+              "Title": "EliminarSucursal.aspx.cs",
+              "DocumentMoniker": "C:\\Users\\guill\\OneDrive\\Documentos\\GitHub\\Programacion-III-Grupo-2\\TP5_Grupo_Nro_02\\TP5_Grupo_Nro_02\\EliminarSucursal.aspx.cs",
+              "RelativeDocumentMoniker": "TP5_Grupo_Nro_02\\EliminarSucursal.aspx.cs",
+              "ToolTip": "C:\\Users\\guill\\OneDrive\\Documentos\\GitHub\\Programacion-III-Grupo-2\\TP5_Grupo_Nro_02\\TP5_Grupo_Nro_02\\EliminarSucursal.aspx.cs",
+              "RelativeToolTip": "TP5_Grupo_Nro_02\\EliminarSucursal.aspx.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-21T21:13:07.127Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
               "Title": "EliminarSucursal.aspx",
               "DocumentMoniker": "C:\\Users\\guill\\OneDrive\\Documentos\\GitHub\\Programacion-III-Grupo-2\\TP5_Grupo_Nro_02\\TP5_Grupo_Nro_02\\EliminarSucursal.aspx",
               "RelativeDocumentMoniker": "TP5_Grupo_Nro_02\\EliminarSucursal.aspx",
@@ -52,73 +43,7 @@
               "RelativeToolTip": "TP5_Grupo_Nro_02\\EliminarSucursal.aspx",
               "LogicalView": "7651a702-06e5-11d1-8ebd-00a0c90f26ea",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
-              "WhenOpened": "2024-09-21T20:58:28.063Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "ListarSucursal.aspx",
-              "DocumentMoniker": "C:\\Users\\guill\\OneDrive\\Documentos\\GitHub\\Programacion-III-Grupo-2\\TP5_Grupo_Nro_02\\TP5_Grupo_Nro_02\\ListarSucursal.aspx",
-              "RelativeDocumentMoniker": "TP5_Grupo_Nro_02\\ListarSucursal.aspx",
-              "ToolTip": "C:\\Users\\guill\\OneDrive\\Documentos\\GitHub\\Programacion-III-Grupo-2\\TP5_Grupo_Nro_02\\TP5_Grupo_Nro_02\\ListarSucursal.aspx",
-              "RelativeToolTip": "TP5_Grupo_Nro_02\\ListarSucursal.aspx",
-              "LogicalView": "7651a702-06e5-11d1-8ebd-00a0c90f26ea",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
-              "WhenOpened": "2024-09-21T20:57:03.362Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "ListarSucursal.aspx.designer.cs",
-              "DocumentMoniker": "C:\\Users\\guill\\OneDrive\\Documentos\\GitHub\\Programacion-III-Grupo-2\\TP5_Grupo_Nro_02\\TP5_Grupo_Nro_02\\ListarSucursal.aspx.designer.cs",
-              "RelativeDocumentMoniker": "TP5_Grupo_Nro_02\\ListarSucursal.aspx.designer.cs",
-              "ToolTip": "C:\\Users\\guill\\OneDrive\\Documentos\\GitHub\\Programacion-III-Grupo-2\\TP5_Grupo_Nro_02\\TP5_Grupo_Nro_02\\ListarSucursal.aspx.designer.cs",
-              "RelativeToolTip": "TP5_Grupo_Nro_02\\ListarSucursal.aspx.designer.cs",
-              "ViewState": "AgIAAD4AAAAAAAAAAAAQwBIAAAAWAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-21T20:54:31.575Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-=======
-              "DocumentIndex": 0,
->>>>>>> parent of beb2b44 (.)
-              "Title": "ListarSucursal.aspx.cs",
-              "DocumentMoniker": "C:\\Users\\guill\\OneDrive\\Documentos\\GitHub\\Programacion-III-Grupo-2\\TP5_Grupo_Nro_02\\TP5_Grupo_Nro_02\\ListarSucursal.aspx.cs",
-              "RelativeDocumentMoniker": "TP5_Grupo_Nro_02\\ListarSucursal.aspx.cs",
-              "ToolTip": "C:\\Users\\guill\\OneDrive\\Documentos\\GitHub\\Programacion-III-Grupo-2\\TP5_Grupo_Nro_02\\TP5_Grupo_Nro_02\\ListarSucursal.aspx.cs*",
-              "RelativeToolTip": "TP5_Grupo_Nro_02\\ListarSucursal.aspx.cs*",
-              "ViewState": "AgIAAAsAAAAAAAAAAAAxwCAAAAA4AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-21T20:55:04.774Z",
-=======
-              "DocumentIndex": 0,
-              "Title": "ListarSucursal.aspx.cs",
-              "DocumentMoniker": "C:\\Users\\guill\\OneDrive\\Documentos\\GitHub\\Programacion-III-Grupo-2\\TP5_Grupo_Nro_02\\TP5_Grupo_Nro_02\\ListarSucursal.aspx.cs",
-              "RelativeDocumentMoniker": "TP5_Grupo_Nro_02\\ListarSucursal.aspx.cs",
-              "ToolTip": "C:\\Users\\guill\\OneDrive\\Documentos\\GitHub\\Programacion-III-Grupo-2\\TP5_Grupo_Nro_02\\TP5_Grupo_Nro_02\\ListarSucursal.aspx.cs",
-              "RelativeToolTip": "TP5_Grupo_Nro_02\\ListarSucursal.aspx.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAACQAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-19T22:17:50.066Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "ListarSucursal.aspx",
-              "DocumentMoniker": "C:\\Users\\guill\\OneDrive\\Documentos\\GitHub\\Programacion-III-Grupo-2\\TP5_Grupo_Nro_02\\TP5_Grupo_Nro_02\\ListarSucursal.aspx",
-              "RelativeDocumentMoniker": "TP5_Grupo_Nro_02\\ListarSucursal.aspx",
-              "ToolTip": "C:\\Users\\guill\\OneDrive\\Documentos\\GitHub\\Programacion-III-Grupo-2\\TP5_Grupo_Nro_02\\TP5_Grupo_Nro_02\\ListarSucursal.aspx",
-              "RelativeToolTip": "TP5_Grupo_Nro_02\\ListarSucursal.aspx",
-              "LogicalView": "7651a702-06e5-11d1-8ebd-00a0c90f26ea",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
-              "WhenOpened": "2024-09-19T13:05:35.159Z",
->>>>>>> parent of beb2b44 (.)
+              "WhenOpened": "2024-09-21T21:11:49.043Z",
               "EditorCaption": ""
             }
           ]
