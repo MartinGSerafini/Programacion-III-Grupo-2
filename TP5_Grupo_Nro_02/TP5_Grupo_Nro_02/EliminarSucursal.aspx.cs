@@ -12,6 +12,7 @@ namespace TP5_Grupo_Nro_02
     {
         protected void BtnEliminar_Click(object sender, EventArgs e)
         {
+<<<<<<< HEAD
             int IDaux;
             int.TryParse(txtIDSucursal.Text, out IDaux);
             string consultaEliminar = "DELETE FROM Sucursal WHERE Id_Sucursal = @IdSucursal";
@@ -21,5 +22,14 @@ namespace TP5_Grupo_Nro_02
             conexion.Open();
             txtIDSucursal.Text = "";
         }
+=======
+
+        }
+
+        protected void btnEliminar_Click(object sender, EventArgs e)
+        {
+
+        }
+>>>>>>> 3fb131957d7047c5fd687b93d7c3ba09b4b0d327
     }
 }
