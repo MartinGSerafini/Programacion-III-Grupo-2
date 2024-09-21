@@ -23,6 +23,9 @@ namespace TP5_Grupo_Nro_02
             TxbID.Text = "";
 =======
 
+<<<<<<< HEAD
+>>>>>>> parent of 3fb1319 (Add files via upload)
+=======
 >>>>>>> parent of 3fb1319 (Add files via upload)
         }
     }

@@ -58,6 +58,7 @@ namespace TP5_Grupo_Nro_02
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
 <<<<<<< HEAD
+<<<<<<< HEAD
         protected global::System.Web.UI.WebControls.TextBox TxbID;
 
         /// <summary>
@@ -95,6 +96,9 @@ namespace TP5_Grupo_Nro_02
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.ValidationSummary ValidationSummary1;
+=======
+        protected global::System.Web.UI.WebControls.TextBox txtIDSucursal;
+>>>>>>> parent of 3fb1319 (Add files via upload)
 =======
         protected global::System.Web.UI.WebControls.TextBox txtIDSucursal;
 >>>>>>> parent of 3fb1319 (Add files via upload)

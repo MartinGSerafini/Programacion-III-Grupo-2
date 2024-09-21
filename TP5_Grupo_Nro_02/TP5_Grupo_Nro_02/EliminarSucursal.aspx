@@ -53,6 +53,7 @@
                 <td class="auto-style2">Ingresar ID sucursal</td>
                 <td class="auto-style4">
 <<<<<<< HEAD
+<<<<<<< HEAD
                     <asp:TextBox ID="TxbID" runat="server" Width="323px" ValidationGroup="Grupo1"></asp:TextBox>
                     <asp:RequiredFieldValidator ID="rfvIDEliminar" runat="server" ControlToValidate="txtIDSucursal" ErrorMessage="Ingresar ID " ForeColor="Red" ValidationGroup="Grupo1">*</asp:RequiredFieldValidator>
                     <asp:RegularExpressionValidator ID="revEliminar" runat="server" ControlToValidate="txtIDSucursal" ErrorMessage="Solo se permiten numeros" ForeColor="Red" ValidationExpression="^\d+$" ValidationGroup="Grupo1">*</asp:RegularExpressionValidator>
@@ -65,6 +66,11 @@
                     &nbsp;</td>
 =======
 >>>>>>> 3fb131957d7047c5fd687b93d7c3ba09b4b0d327
+=======
+                    <asp:TextBox ID="txtIDSucursal" runat="server" Width="323px"></asp:TextBox>
+                </td>
+                <td>&nbsp;</td>
+>>>>>>> parent of 3fb1319 (Add files via upload)
 =======
                     <asp:TextBox ID="txtIDSucursal" runat="server" Width="323px"></asp:TextBox>
                 </td>
