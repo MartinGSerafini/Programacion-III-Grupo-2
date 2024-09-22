@@ -1,0 +1,29 @@
+﻿@media (prefers-color-scheme: dark) {
+    :root {
+        /* Colores de tema oscuro */
+        --clr-primary-100: #C1FF57;
+        --clr-primary-400: #7CB842;
+        --clr-accent-100: #FFEA00;
+        --clr-accent-400: #B3A500;
+        --clr-neutral-100: #1C1C1C;
+        --clr-text-primary: #FFFFFF;
+        --clr-background-dark: #0D0D0D;
+        --clr-background-light: #1F1F1F;
+        --clr-background: var(--clr-background-dark);
+    }
+}
+
+@media (prefers-color-scheme: light) {
+    :root {
+        /* Colores de tema claro */
+        --clr-primary-100: #C1FF57;
+        --clr-primary-400: #7CB842;
+        --clr-accent-100: #FFEA00;
+        --clr-accent-400: #B3A500;
+        --clr-neutral-100: #FFFFFF;
+        --clr-text-primary: #1C1C1C;
+        --clr-background-light: #FFFFFF;
+        --clr-background-section: #F9F9F9;
+        --clr-background: var(--clr-background-light);
+    }
+}

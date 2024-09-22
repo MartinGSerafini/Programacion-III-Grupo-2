@@ -4,21 +4,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title></title>
-    <style type="text/css">
-        .auto-style1 {
-            width: 100%;
-        }
-        .auto-style2 {
-            width: 238px;
-        }
-        .auto-style3 {
-            font-weight: normal;
-        }
-        .auto-style4 {
-            width: 377px;
-        }
-    </style>
+   
 </head>
 <body>
     <form id="form1" runat="server">

@@ -1,0 +1,10 @@
+﻿@import "colors.css";
+@import "layout.css";
+@import "fonts.css";
+@import "components.css";
+
+body {
+    background-color: var(--clr-background);
+    color: var(--clr-text-primary);
+    font-family: var(--ff-body);
+}

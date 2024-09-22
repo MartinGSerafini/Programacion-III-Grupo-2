@@ -67,6 +67,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="colors.css" />
+    <Content Include="components.css" />
+    <Content Include="fonts.css" />
+    <Content Include="layout.css" />
+    <Content Include="main.css" />
     <Content Include="Web.config" />
     <Content Include="AgregarSucursal.aspx" />
     <Content Include="ListarSucursal.aspx" />
