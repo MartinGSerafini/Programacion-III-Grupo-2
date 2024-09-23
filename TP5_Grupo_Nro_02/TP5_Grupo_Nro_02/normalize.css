@@ -1,53 +1,66 @@
-﻿/* http://meyerweb.com/eric/tools/css/reset/ 
-   v2.0 | 20110126
-   License: none (public domain)
-*/
+﻿/* Normalizer.css - Versión optimizada */
 
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed,
-figure, figcaption, footer, header, hgroup,
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
+/* Eliminar márgenes y padding predeterminados, y establecer box-sizing */
+*,
+*::before,
+*::after {
     margin: 0;
     padding: 0;
-    border: 0;
-    font-size: 100%;
-    font: inherit;
-    vertical-align: baseline;
+    box-sizing: border-box;
 }
-/* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure,
-footer, header, hgroup, menu, nav, section {
-    display: block;
+
+/* Configurar elementos de bloque y tablas */
+html {
+    line-height: 1.15; /* Mejora la legibilidad */
+    -webkit-text-size-adjust: 100%; /* Evitar ajuste de texto en dispositivos móviles */
 }
 
 body {
-    line-height: 1;
+    margin: 0;
+    font-family: sans-serif;
+}
+
+main {
+    display: block;
 }
 
 ol, ul {
     list-style: none;
 }
 
+table {
+    border-collapse: collapse;
+}
+
+img, video {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Asegurar que enlaces y botones hereden el estilo de fuente */
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+button, input, select, textarea {
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+    color: inherit;
+    background: none;
+    border: none;
+    padding: 0;
+    margin: 0;
+    outline: none;
+}
+
+/* Estilos adicionales de compatibilidad */
 blockquote, q {
     quotes: none;
 }
 
-    blockquote:before, blockquote:after,
-    q:before, q:after {
+    blockquote::before, blockquote::after,
+    q::before, q::after {
         content: '';
-        content: none;
     }
-
-table {
-    border-collapse: collapse;
-    border-spacing: 0;
-}

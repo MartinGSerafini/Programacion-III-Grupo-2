@@ -1,4 +1,5 @@
-﻿@import "colors.css";
+﻿@import "normalize.css";
+@import "colors.css";
 @import "layout.css";
 @import "fonts.css";
 @import "components.css";

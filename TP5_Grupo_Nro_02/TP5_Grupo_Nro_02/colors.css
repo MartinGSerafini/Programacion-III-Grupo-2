@@ -27,3 +27,11 @@
         --clr-background: var(--clr-background-light);
     }
 }
+
+:root {
+    --input-text-color: #1C1C1C;
+    --input-bg-color: #C1FF57; 
+    --input-border-color: #7CB842;
+    --input-focus-border-color: #FFEA00; 
+    --input-focus-shadow-color: rgba(255, 234, 0, 0.3); 
+}
