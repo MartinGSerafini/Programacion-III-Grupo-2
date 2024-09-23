@@ -8,6 +8,7 @@
     <link rel="stylesheet" type="text/css" href="../main.css" />
     <title>Listado de sucursales</title>
     <link rel="stylesheet" type="text/css" href="main.css" />
+    <script src="https://kit.fontawesome.com/e31ccd8e46.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <form id="form1" runat="server">
@@ -26,13 +27,14 @@
                 </asp:HyperLink>
             </nav>
 
-            <h1>Listado Sucursales</h1>
+              <h1 class="lato-bold">Listado Sucursales</h1>
 
             <section class="search-section">
-                <label for="TxtID">Búsqueda, ingrese ID de sucursal:</label>
-                <asp:TextBox ID="TxtID" runat="server" CssClass="input"></asp:TextBox>
+                <div class="search-bar">
+                <asp:TextBox ID="TxtID" placeholder="ingrese ID de sucursal:" runat="server" CssClass="input"></asp:TextBox>
+                <asp:Button ID="filtro" runat="server" Text="🔎" OnClick="filtro_Click" ValidationGroup="Vg1" CssClass="btn btn-filter" />
 
-                <asp:Button ID="filtro" runat="server" Text="Filtrar" OnClick="filtro_Click" ValidationGroup="Vg1" CssClass="btn btn-filter" />
+                </div>
 
                 <asp:RequiredFieldValidator
                     ID="Rfv1"
@@ -64,6 +66,7 @@
             </section>
 
             <section class="grid-section">
+
                 <asp:GridView ID="GrdSucursales" runat="server" CssClass="grid-table"></asp:GridView>
             </section>
 

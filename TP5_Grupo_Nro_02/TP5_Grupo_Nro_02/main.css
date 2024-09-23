@@ -9,3 +9,18 @@ body {
     color: var(--clr-text-primary);
     font-family: var(--ff-body);
 }
+
+h1{
+    text-align: center;
+    margin-block-end: 1rem;
+}
+
+.search-section{
+    width: 80%;
+    display: flex;
+    justify-content:space-between;
+    align-items:baseline;
+    margin-block: 1rem;
+    padding-inline:1rem;
+    margin:auto;
+}
