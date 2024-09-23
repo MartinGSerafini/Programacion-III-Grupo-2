@@ -1,2 +1,83 @@
-﻿body {
+﻿table {
+    width: 80%;
+    background-color: var(--clr-actual-400);
+    border-collapse: collapse;
+    margin: auto;
+    border-radius: 1rem;
+    border: none!important;
 }
+
+th, td, caption {
+    padding: 1rem;
+}
+
+table caption, table th {
+    text-align: left;
+}
+
+table caption {
+    background: var(--clr-accent-400);
+    color: inherit;
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+table th {
+    background: var(--clr-neutral-100);
+    color: var(--clr-accent-100);
+    
+}
+
+table tr {
+    transition: all 500ms ease;
+}
+
+    table tr:has(td):hover {
+        background-color: hsl(0 0% 80%);
+        color:var(--clr-neutral-100);
+    }
+
+    table tr:nth-child(even) {
+        background: hsl(0 0% 40% / 0.1);
+    }
+
+th td {
+    border: none;
+}
+.btn {
+    background-color: var(--clr-primary-100);
+    color: var(--clr-neutral-100);
+    border: 2px solid var(--clr-primary-100);
+    padding: .3rem 1rem;
+    border-radius: 5px;
+    font-size: inherit;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+    display: inline-block;
+    width: min-content;
+}
+
+    .btn:hover {
+        background-color: var(--clr-primary-400);
+        color: var(--clr-accent-100);
+        border-color: var(--clr-accent-100);
+    }
+
+
+.input {
+    width: 100%;
+    font-size: 1rem;
+    color: var(--input-text-color);
+    background-color: var(--input-bg-color);
+    border: 1px solid var(--input-border-color);
+    border-radius: 8px;
+    outline: none;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+    .input:focus {
+        border-color: var(--input-focus-border-color);
+        box-shadow: 0 0 0 4px var(--input-focus-shadow-color);
+    }

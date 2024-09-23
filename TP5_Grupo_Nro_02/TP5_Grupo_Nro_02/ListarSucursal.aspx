@@ -30,7 +30,7 @@
 
             <section class="search-section">
                 <label for="TxtID">Búsqueda, ingrese ID de sucursal:</label>
-                <asp:TextBox ID="TxtID" runat="server" CssClass="text-input"></asp:TextBox>
+                <asp:TextBox ID="TxtID" runat="server" CssClass="input"></asp:TextBox>
 
                 <asp:Button ID="filtro" runat="server" Text="Filtrar" OnClick="filtro_Click" ValidationGroup="Vg1" CssClass="btn btn-filter" />
 

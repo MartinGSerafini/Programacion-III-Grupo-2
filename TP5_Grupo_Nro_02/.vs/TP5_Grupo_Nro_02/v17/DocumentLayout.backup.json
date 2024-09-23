@@ -3,35 +3,39 @@
   "WorkspaceRootPath": "C:\\Users\\juanm\\OneDrive\\Desktop\\UTN\\Programacion 3\\Programacion-III-Grupo-2\\TP5_Grupo_Nro_02\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{2AD17D8B-3420-451E-9132-FDB5CD50B2A2}|TP5_Grupo_Nro_02\\TP5_Grupo_Nro_02.csproj|c:\\users\\juanm\\onedrive\\desktop\\utn\\programacion 3\\programacion-iii-grupo-2\\tp5_grupo_nro_02\\tp5_grupo_nro_02\\listarsucursal.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
-      "RelativeMoniker": "D:0:0:{2AD17D8B-3420-451E-9132-FDB5CD50B2A2}|TP5_Grupo_Nro_02\\TP5_Grupo_Nro_02.csproj|solutionrelative:tp5_grupo_nro_02\\listarsucursal.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2AD17D8B-3420-451E-9132-FDB5CD50B2A2}|TP5_Grupo_Nro_02\\TP5_Grupo_Nro_02.csproj|c:\\users\\juanm\\onedrive\\desktop\\utn\\programacion 3\\programacion-iii-grupo-2\\tp5_grupo_nro_02\\tp5_grupo_nro_02\\agregarsucursal.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
-      "RelativeMoniker": "D:0:0:{2AD17D8B-3420-451E-9132-FDB5CD50B2A2}|TP5_Grupo_Nro_02\\TP5_Grupo_Nro_02.csproj|solutionrelative:tp5_grupo_nro_02\\agregarsucursal.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2AD17D8B-3420-451E-9132-FDB5CD50B2A2}|TP5_Grupo_Nro_02\\TP5_Grupo_Nro_02.csproj|c:\\users\\juanm\\onedrive\\desktop\\utn\\programacion 3\\programacion-iii-grupo-2\\tp5_grupo_nro_02\\tp5_grupo_nro_02\\main.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{2AD17D8B-3420-451E-9132-FDB5CD50B2A2}|TP5_Grupo_Nro_02\\TP5_Grupo_Nro_02.csproj|solutionrelative:tp5_grupo_nro_02\\main.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2AD17D8B-3420-451E-9132-FDB5CD50B2A2}|TP5_Grupo_Nro_02\\TP5_Grupo_Nro_02.csproj|c:\\users\\juanm\\onedrive\\desktop\\utn\\programacion 3\\programacion-iii-grupo-2\\tp5_grupo_nro_02\\tp5_grupo_nro_02\\fonts.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{2AD17D8B-3420-451E-9132-FDB5CD50B2A2}|TP5_Grupo_Nro_02\\TP5_Grupo_Nro_02.csproj|solutionrelative:tp5_grupo_nro_02\\fonts.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2AD17D8B-3420-451E-9132-FDB5CD50B2A2}|TP5_Grupo_Nro_02\\TP5_Grupo_Nro_02.csproj|c:\\users\\juanm\\onedrive\\desktop\\utn\\programacion 3\\programacion-iii-grupo-2\\tp5_grupo_nro_02\\tp5_grupo_nro_02\\colors.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "AbsoluteMoniker": "D:0:0:{2AD17D8B-3420-451E-9132-FDB5CD50B2A2}|TP5_Grupo_Nro_02\\TP5_Grupo_Nro_02.csproj|C:\\Users\\juanm\\OneDrive\\Desktop\\UTN\\Programacion 3\\Programacion-III-Grupo-2\\TP5_Grupo_Nro_02\\tp5_grupo_nro_02\\colors.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
       "RelativeMoniker": "D:0:0:{2AD17D8B-3420-451E-9132-FDB5CD50B2A2}|TP5_Grupo_Nro_02\\TP5_Grupo_Nro_02.csproj|solutionrelative:tp5_grupo_nro_02\\colors.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2AD17D8B-3420-451E-9132-FDB5CD50B2A2}|TP5_Grupo_Nro_02\\TP5_Grupo_Nro_02.csproj|c:\\users\\juanm\\onedrive\\desktop\\utn\\programacion 3\\programacion-iii-grupo-2\\tp5_grupo_nro_02\\tp5_grupo_nro_02\\layout.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{2AD17D8B-3420-451E-9132-FDB5CD50B2A2}|TP5_Grupo_Nro_02\\TP5_Grupo_Nro_02.csproj|solutionrelative:tp5_grupo_nro_02\\layout.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2AD17D8B-3420-451E-9132-FDB5CD50B2A2}|TP5_Grupo_Nro_02\\TP5_Grupo_Nro_02.csproj|c:\\users\\juanm\\onedrive\\desktop\\utn\\programacion 3\\programacion-iii-grupo-2\\tp5_grupo_nro_02\\tp5_grupo_nro_02\\components.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "AbsoluteMoniker": "D:0:0:{2AD17D8B-3420-451E-9132-FDB5CD50B2A2}|TP5_Grupo_Nro_02\\TP5_Grupo_Nro_02.csproj|C:\\Users\\juanm\\OneDrive\\Desktop\\UTN\\Programacion 3\\Programacion-III-Grupo-2\\TP5_Grupo_Nro_02\\tp5_grupo_nro_02\\components.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
       "RelativeMoniker": "D:0:0:{2AD17D8B-3420-451E-9132-FDB5CD50B2A2}|TP5_Grupo_Nro_02\\TP5_Grupo_Nro_02.csproj|solutionrelative:tp5_grupo_nro_02\\components.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2AD17D8B-3420-451E-9132-FDB5CD50B2A2}|TP5_Grupo_Nro_02\\TP5_Grupo_Nro_02.csproj|c:\\users\\juanm\\onedrive\\desktop\\utn\\programacion 3\\programacion-iii-grupo-2\\tp5_grupo_nro_02\\tp5_grupo_nro_02\\eliminarsucursal.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "AbsoluteMoniker": "D:0:0:{2AD17D8B-3420-451E-9132-FDB5CD50B2A2}|TP5_Grupo_Nro_02\\TP5_Grupo_Nro_02.csproj|C:\\Users\\juanm\\OneDrive\\Desktop\\UTN\\Programacion 3\\Programacion-III-Grupo-2\\TP5_Grupo_Nro_02\\tp5_grupo_nro_02\\listarsucursal.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{2AD17D8B-3420-451E-9132-FDB5CD50B2A2}|TP5_Grupo_Nro_02\\TP5_Grupo_Nro_02.csproj|solutionrelative:tp5_grupo_nro_02\\listarsucursal.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2AD17D8B-3420-451E-9132-FDB5CD50B2A2}|TP5_Grupo_Nro_02\\TP5_Grupo_Nro_02.csproj|C:\\Users\\juanm\\OneDrive\\Desktop\\UTN\\Programacion 3\\Programacion-III-Grupo-2\\TP5_Grupo_Nro_02\\tp5_grupo_nro_02\\fonts.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{2AD17D8B-3420-451E-9132-FDB5CD50B2A2}|TP5_Grupo_Nro_02\\TP5_Grupo_Nro_02.csproj|solutionrelative:tp5_grupo_nro_02\\fonts.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2AD17D8B-3420-451E-9132-FDB5CD50B2A2}|TP5_Grupo_Nro_02\\TP5_Grupo_Nro_02.csproj|C:\\Users\\juanm\\OneDrive\\Desktop\\UTN\\Programacion 3\\Programacion-III-Grupo-2\\TP5_Grupo_Nro_02\\tp5_grupo_nro_02\\main.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{2AD17D8B-3420-451E-9132-FDB5CD50B2A2}|TP5_Grupo_Nro_02\\TP5_Grupo_Nro_02.csproj|solutionrelative:tp5_grupo_nro_02\\main.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2AD17D8B-3420-451E-9132-FDB5CD50B2A2}|TP5_Grupo_Nro_02\\TP5_Grupo_Nro_02.csproj|c:\\users\\juanm\\onedrive\\desktop\\utn\\programacion 3\\programacion-iii-grupo-2\\tp5_grupo_nro_02\\tp5_grupo_nro_02\\normalize.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{2AD17D8B-3420-451E-9132-FDB5CD50B2A2}|TP5_Grupo_Nro_02\\TP5_Grupo_Nro_02.csproj|solutionrelative:tp5_grupo_nro_02\\normalize.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2AD17D8B-3420-451E-9132-FDB5CD50B2A2}|TP5_Grupo_Nro_02\\TP5_Grupo_Nro_02.csproj|C:\\Users\\juanm\\OneDrive\\Desktop\\UTN\\Programacion 3\\Programacion-III-Grupo-2\\TP5_Grupo_Nro_02\\tp5_grupo_nro_02\\agregarsucursal.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{2AD17D8B-3420-451E-9132-FDB5CD50B2A2}|TP5_Grupo_Nro_02\\TP5_Grupo_Nro_02.csproj|solutionrelative:tp5_grupo_nro_02\\agregarsucursal.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2AD17D8B-3420-451E-9132-FDB5CD50B2A2}|TP5_Grupo_Nro_02\\TP5_Grupo_Nro_02.csproj|C:\\Users\\juanm\\OneDrive\\Desktop\\UTN\\Programacion 3\\Programacion-III-Grupo-2\\TP5_Grupo_Nro_02\\tp5_grupo_nro_02\\layout.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{2AD17D8B-3420-451E-9132-FDB5CD50B2A2}|TP5_Grupo_Nro_02\\TP5_Grupo_Nro_02.csproj|solutionrelative:tp5_grupo_nro_02\\layout.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2AD17D8B-3420-451E-9132-FDB5CD50B2A2}|TP5_Grupo_Nro_02\\TP5_Grupo_Nro_02.csproj|C:\\Users\\juanm\\OneDrive\\Desktop\\UTN\\Programacion 3\\Programacion-III-Grupo-2\\TP5_Grupo_Nro_02\\tp5_grupo_nro_02\\eliminarsucursal.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
       "RelativeMoniker": "D:0:0:{2AD17D8B-3420-451E-9132-FDB5CD50B2A2}|TP5_Grupo_Nro_02\\TP5_Grupo_Nro_02.csproj|solutionrelative:tp5_grupo_nro_02\\eliminarsucursal.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
     },
     {
@@ -46,7 +50,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 6,
           "Children": [
             {
               "$type": "Bookmark",
@@ -54,7 +58,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 5,
+              "Title": "normalize.css",
+              "DocumentMoniker": "C:\\Users\\juanm\\OneDrive\\Desktop\\UTN\\Programacion 3\\Programacion-III-Grupo-2\\TP5_Grupo_Nro_02\\TP5_Grupo_Nro_02\\normalize.css",
+              "RelativeDocumentMoniker": "TP5_Grupo_Nro_02\\normalize.css",
+              "ToolTip": "C:\\Users\\juanm\\OneDrive\\Desktop\\UTN\\Programacion 3\\Programacion-III-Grupo-2\\TP5_Grupo_Nro_02\\TP5_Grupo_Nro_02\\normalize.css",
+              "RelativeToolTip": "TP5_Grupo_Nro_02\\normalize.css",
+              "ViewState": "AgIAACcAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2024-09-22T16:24:40.201Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "ListarSucursal.aspx",
               "DocumentMoniker": "C:\\Users\\juanm\\OneDrive\\Desktop\\UTN\\Programacion 3\\Programacion-III-Grupo-2\\TP5_Grupo_Nro_02\\TP5_Grupo_Nro_02\\ListarSucursal.aspx",
               "RelativeDocumentMoniker": "TP5_Grupo_Nro_02\\ListarSucursal.aspx",
@@ -67,7 +84,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 6,
               "Title": "AgregarSucursal.aspx",
               "DocumentMoniker": "C:\\Users\\juanm\\OneDrive\\Desktop\\UTN\\Programacion 3\\Programacion-III-Grupo-2\\TP5_Grupo_Nro_02\\TP5_Grupo_Nro_02\\AgregarSucursal.aspx",
               "RelativeDocumentMoniker": "TP5_Grupo_Nro_02\\AgregarSucursal.aspx",
@@ -86,14 +103,14 @@
               "RelativeDocumentMoniker": "TP5_Grupo_Nro_02\\fonts.css",
               "ToolTip": "C:\\Users\\juanm\\OneDrive\\Desktop\\UTN\\Programacion 3\\Programacion-III-Grupo-2\\TP5_Grupo_Nro_02\\TP5_Grupo_Nro_02\\fonts.css",
               "RelativeToolTip": "TP5_Grupo_Nro_02\\fonts.css",
-              "ViewState": "AgIAAAwAAAAAAAAAAAAAABsAAAAgAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAAgAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
               "WhenOpened": "2024-09-22T15:06:03.193Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 7,
               "Title": "layout.css",
               "DocumentMoniker": "C:\\Users\\juanm\\OneDrive\\Desktop\\UTN\\Programacion 3\\Programacion-III-Grupo-2\\TP5_Grupo_Nro_02\\TP5_Grupo_Nro_02\\layout.css",
               "RelativeDocumentMoniker": "TP5_Grupo_Nro_02\\layout.css",
@@ -101,18 +118,17 @@
               "RelativeToolTip": "TP5_Grupo_Nro_02\\layout.css",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2024-09-22T15:05:14.128Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-09-22T15:05:14.128Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 1,
               "Title": "components.css",
               "DocumentMoniker": "C:\\Users\\juanm\\OneDrive\\Desktop\\UTN\\Programacion 3\\Programacion-III-Grupo-2\\TP5_Grupo_Nro_02\\TP5_Grupo_Nro_02\\components.css",
               "RelativeDocumentMoniker": "TP5_Grupo_Nro_02\\components.css",
               "ToolTip": "C:\\Users\\juanm\\OneDrive\\Desktop\\UTN\\Programacion 3\\Programacion-III-Grupo-2\\TP5_Grupo_Nro_02\\TP5_Grupo_Nro_02\\components.css",
               "RelativeToolTip": "TP5_Grupo_Nro_02\\components.css",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAACsAAAAAAAAAAAAQwEgAAAAjAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
               "WhenOpened": "2024-09-22T15:05:04.609Z",
               "EditorCaption": ""
@@ -120,32 +136,19 @@
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "colors.css",
-              "DocumentMoniker": "C:\\Users\\juanm\\OneDrive\\Desktop\\UTN\\Programacion 3\\Programacion-III-Grupo-2\\TP5_Grupo_Nro_02\\TP5_Grupo_Nro_02\\colors.css",
-              "RelativeDocumentMoniker": "TP5_Grupo_Nro_02\\colors.css",
-              "ToolTip": "C:\\Users\\juanm\\OneDrive\\Desktop\\UTN\\Programacion 3\\Programacion-III-Grupo-2\\TP5_Grupo_Nro_02\\TP5_Grupo_Nro_02\\colors.css",
-              "RelativeToolTip": "TP5_Grupo_Nro_02\\colors.css",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAAA0AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2024-09-22T15:04:35.634Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
               "Title": "main.css",
               "DocumentMoniker": "C:\\Users\\juanm\\OneDrive\\Desktop\\UTN\\Programacion 3\\Programacion-III-Grupo-2\\TP5_Grupo_Nro_02\\TP5_Grupo_Nro_02\\main.css",
               "RelativeDocumentMoniker": "TP5_Grupo_Nro_02\\main.css",
               "ToolTip": "C:\\Users\\juanm\\OneDrive\\Desktop\\UTN\\Programacion 3\\Programacion-III-Grupo-2\\TP5_Grupo_Nro_02\\TP5_Grupo_Nro_02\\main.css",
               "RelativeToolTip": "TP5_Grupo_Nro_02\\main.css",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAgAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAWAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
               "WhenOpened": "2024-09-22T15:04:18.912Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 9,
               "Title": "EliminarSucursal.aspx.cs",
               "DocumentMoniker": "C:\\Users\\juanm\\OneDrive\\Desktop\\UTN\\Programacion 3\\Programacion-III-Grupo-2\\TP5_Grupo_Nro_02\\TP5_Grupo_Nro_02\\EliminarSucursal.aspx.cs",
               "RelativeDocumentMoniker": "TP5_Grupo_Nro_02\\EliminarSucursal.aspx.cs",
@@ -157,7 +160,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 8,
               "Title": "EliminarSucursal.aspx",
               "DocumentMoniker": "C:\\Users\\juanm\\OneDrive\\Desktop\\UTN\\Programacion 3\\Programacion-III-Grupo-2\\TP5_Grupo_Nro_02\\TP5_Grupo_Nro_02\\EliminarSucursal.aspx",
               "RelativeDocumentMoniker": "TP5_Grupo_Nro_02\\EliminarSucursal.aspx",
@@ -165,7 +168,25 @@
               "RelativeToolTip": "TP5_Grupo_Nro_02\\EliminarSucursal.aspx",
               "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
-              "WhenOpened": "2024-09-21T21:11:49.043Z",
+              "WhenOpened": "2024-09-21T21:11:49.043Z"
+            }
+          ]
+        },
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "colors.css",
+              "DocumentMoniker": "C:\\Users\\juanm\\OneDrive\\Desktop\\UTN\\Programacion 3\\Programacion-III-Grupo-2\\TP5_Grupo_Nro_02\\TP5_Grupo_Nro_02\\colors.css",
+              "RelativeDocumentMoniker": "TP5_Grupo_Nro_02\\colors.css",
+              "ToolTip": "C:\\Users\\juanm\\OneDrive\\Desktop\\UTN\\Programacion 3\\Programacion-III-Grupo-2\\TP5_Grupo_Nro_02\\TP5_Grupo_Nro_02\\colors.css",
+              "RelativeToolTip": "TP5_Grupo_Nro_02\\colors.css",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAACQAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2024-09-22T15:04:35.634Z",
               "EditorCaption": ""
             }
           ]

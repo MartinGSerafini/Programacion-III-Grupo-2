@@ -1,4 +1,74 @@
+# Visual Studio
+.vscode/
+.vs/
 .vsdix
-bin/*
-obj/*
-.vs
+**/*.user
+**/*.suo
+**/*.userosscache
+**/*.sln.docstates
+*.userprefs
+
+# ASP.NET
+project.lock.json
+project.fragment.lock.json
+artifacts/
+bin/
+obj/
+App_Data/
+AppLogs/
+BundleConfig.cs
+node_modules/
+npm-debug.log
+
+# Visual Studio Code
+.history/
+.vscode/
+
+# Windows image file caches
+Thumbs.db
+ehthumbs.db
+
+# Folder config file
+Desktop.ini
+
+# Recycle Bin used on file shares
+$RECYCLE.BIN/
+
+# Logs
+*.log
+
+# Resharper
+_ReSharper*/
+*.DotSettings.user
+
+# ASP.NET Scaffolding
+ScaffoldingReadMe.txt
+
+# NuGet Packages
+*.nupkg
+*.snupkg
+*.nuspec
+packages/*
+!packages/repositories.config
+.nuget/
+project.lock.json
+
+# Entity Framework
+*.edmx.diagram
+*.edmx.sql
+*.ldf
+*.mdf
+
+# Publish outputs
+.publish/
+.publishsettings
+*.publish.xml
+
+# SQL Server files
+*.mdf
+*.ldf
+
+# IIS configuration
+IISExpress/
+# User-specific files
+*.rsuser
