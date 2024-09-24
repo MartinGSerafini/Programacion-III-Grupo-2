@@ -4,60 +4,49 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-   
+    <link rel="stylesheet" type="text/css" href="main.css" />
+    <title>Eliminar sucursal</title>
 </head>
 <body>
     <form id="form1" runat="server">
         <div>
-            <table class="auto-style1">
-              <tr>
-                 <td>
-                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                      <asp:HyperLink ID="Hlink1" runat="server" NavigateUrl="~/AgregarSucursal.aspx">Agregar Sucursal</asp:HyperLink>
-                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                      <asp:HyperLink ID="Hlink2" runat="server" NavigateUrl="~/ListarSucursal.aspx">Listado de Sucursales</asp:HyperLink>
-                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                      <asp:HyperLink ID="Hlink3" runat="server" NavigateUrl="~/EliminarSucursal.aspx">Eliminar Sucursal</asp:HyperLink>
-                 </td>
-               </tr>
-            </table>
+            <nav class="nav">
+                <h1 class="lato-bold">Eliminar sucursal</h1>
+                <ul>
+                    <li class="nav-item">
+                        <asp:HyperLink ID="Hlink1" runat="server" NavigateUrl="~/AgregarSucursal.aspx" CssClass="nav-link">
+Agregar Sucursal 🔼
+                        </asp:HyperLink></li>
+                    <li class="nav-item">
+                        <asp:HyperLink ID="Hlink2" runat="server" NavigateUrl="~/ListarSucursal.aspx" CssClass="nav-link">
+Listado de Sucursales 📚
+                        </asp:HyperLink></li>
+                    <li class="nav-item">
+                        <asp:HyperLink ID="Hlink3" runat="server" NavigateUrl="~/EliminarSucursal.aspx" CssClass="nav-link">
+Eliminar Sucursal ❌
+                        </asp:HyperLink></li>
+                </ul>
+            </nav>
+
         </div>
-        <table class="auto-style1">
-            <tr>
-                <td class="auto-style2">
-                    <h2>Eliminar Sucursal</h2>
-                    <p class="auto-style3">
-                        &nbsp;</p>
-                </td>
-                <td class="auto-style4">&nbsp;</td>
-                <td>&nbsp;</td>
-            </tr>
-            <tr>
-                <td class="auto-style2">Ingresar ID sucursal</td>
-                <td class="auto-style4">
-                    <asp:TextBox ID="txtIDSucursal" runat="server" Width="323px" ValidationGroup="Grupo1"></asp:TextBox>
-                    <asp:RequiredFieldValidator ID="rfvIDEliminar" runat="server" ControlToValidate="txtIDSucursal" ErrorMessage="Ingresar ID " ForeColor="Red" ValidationGroup="Grupo1">*</asp:RequiredFieldValidator>
-                    <asp:RegularExpressionValidator ID="revEliminar" runat="server" ControlToValidate="txtIDSucursal" ErrorMessage="Solo se permiten numeros" ForeColor="Red" ValidationExpression="^\d+$" ValidationGroup="Grupo1">*</asp:RegularExpressionValidator>
-                </td>
-                <td>
-                    <asp:Button ID="btnEliminar" runat="server" OnClick="btnEliminar_Click" Text="Eliminar" ValidationGroup="Grupo1" />
-                </td>
-            </tr>
-            <tr>
-                <td class="auto-style2">&nbsp;</td>
-                <td class="auto-style4">&nbsp;</td>
-                <td>&nbsp;</td>
-            </tr>
-            <tr>
-                <td class="auto-style2">
-                    <asp:Label ID="lblMensaje" runat="server" EnableTheming="False" ForeColor="Red"></asp:Label>
-                </td>
-                <td class="auto-style4">&nbsp;</td>
-                <td>&nbsp;</td>
-            </tr>
-        </table>
-        <asp:ValidationSummary ID="ValidationSummary1" runat="server" ValidationGroup="Grupo1" />
+        <div class="container ej3">
+                <section class="form-group">
+                    <label for="txtIDSucursal" class="label">Ingresar ID Sucursal:</label>
+                    <asp:TextBox ID="txtIDSucursal" runat="server" CssClass="input-field" placeholder="Ingrese ID de sucursal:" ValidationGroup="Grupo1"></asp:TextBox>
+                    <asp:RequiredFieldValidator ID="rfvIDEliminar" runat="server" ControlToValidate="txtIDSucursal" ErrorMessage="Ingresar ID" ForeColor="Red" ValidationGroup="Grupo1">*</asp:RequiredFieldValidator>
+                    <asp:RegularExpressionValidator ID="revEliminar" runat="server" ControlToValidate="txtIDSucursal" ErrorMessage="Solo se permiten números" ForeColor="Red" ValidationExpression="^\d+$" ValidationGroup="Grupo1">*</asp:RegularExpressionValidator>
+                </section>
+
+                <section class="form-group">
+                    <asp:Button ID="btnEliminar" CssClass="btn" runat="server" OnClick="btnEliminar_Click" Text="Eliminar" ValidationGroup="Grupo1" />
+                </section>
+
+            </div>
+            <section class="form-group  text-center">
+                <asp:Label ID="lblMensaje" runat="server" EnableTheming="False" ForeColor="Red"></asp:Label>
+            <asp:ValidationSummary ID="ValidationSummary1" runat="server" ValidationGroup="Grupo1" CssClass="validation-summary" />
+            </section>
+
     </form>
 </body>
 </html>
