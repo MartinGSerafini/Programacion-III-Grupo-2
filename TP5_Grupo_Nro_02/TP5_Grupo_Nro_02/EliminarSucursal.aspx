@@ -11,7 +11,7 @@
     <form id="form1" runat="server">
         <div>
             <nav class="nav">
-                <h1 class="lato-bold">Eliminar sucursal</h1>
+                <h1 class="lato-bold">Eliminar sucursal ❌</h1>
                 <ul>
                     <li class="nav-item">
                         <asp:HyperLink ID="Hlink1" runat="server" NavigateUrl="~/AgregarSucursal.aspx" CssClass="nav-link">

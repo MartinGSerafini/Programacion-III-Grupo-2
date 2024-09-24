@@ -6,29 +6,12 @@
 <head runat="server">
     <link rel="stylesheet" type="text/css" href="main.css" />
     <title>Agregar Sucursal</title>
-    <style type="text/css">
-        .auto-style1 {
-            width: 100%;
-        }
 
-        .auto-style2 {
-            width: 190px;
-        }
-
-        .auto-style3 {
-            width: 190px;
-            height: 33px;
-        }
-
-        .auto-style4 {
-            height: 33px;
-        }
-    </style>
 </head>
 <body>
     <form id="form1" runat="server">
             <nav class="nav">
-                <h1 class="lato-bold">Agregar sucursal</h1>
+                <h1 class="lato-bold">Agregar sucursal 🔼</h1>
                 <ul>
                     <li class="nav-item">
                         <asp:HyperLink ID="Hlink1" runat="server" NavigateUrl="~/AgregarSucursal.aspx" CssClass="nav-link">
