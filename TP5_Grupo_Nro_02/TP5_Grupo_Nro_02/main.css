@@ -12,15 +12,17 @@ body {
 
 h1{
     text-align: center;
-    margin-block-end: 1rem;
+    margin-block-end: 2rem;
 }
 
-.search-section{
-    width: 80%;
+.search-section {
+    width: 90%;
     display: flex;
-    justify-content:space-between;
-    align-items:baseline;
-    margin-block: 1rem;
-    padding-inline:1rem;
-    margin:auto;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-block-end: 2rem;
+    padding-inline: 1rem;
+    margin: auto;
 }
+

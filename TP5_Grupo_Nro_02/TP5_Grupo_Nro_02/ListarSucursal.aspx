@@ -13,26 +13,29 @@
 <body>
     <form id="form1" runat="server">
         <div class="form-container">
-            <nav class="links-nav">
-                <asp:HyperLink ID="Hlink1" runat="server" NavigateUrl="~/AgregarSucursal.aspx" CssClass="nav-link">
-        Agregar Sucursal
-                </asp:HyperLink>
-
-                <asp:HyperLink ID="Hlink2" runat="server" NavigateUrl="~/ListarSucursal.aspx" CssClass="nav-link">
-        Listado de Sucursales
-                </asp:HyperLink>
-
-                <asp:HyperLink ID="Hlink3" runat="server" NavigateUrl="~/EliminarSucursal.aspx" CssClass="nav-link">
-        Eliminar Sucursal
-                </asp:HyperLink>
+            <nav class="nav">
+            <h1 class="lato-bold">Listado de Sucursales</h1>
+                <ul>
+                    <li class="nav-item">
+                        <asp:HyperLink ID="Hlink1" runat="server" NavigateUrl="~/AgregarSucursal.aspx" CssClass="nav-link">
+        Agregar Sucursal 🔼
+                        </asp:HyperLink></li>
+                    <li class="nav-item">
+                        <asp:HyperLink ID="Hlink2" runat="server" NavigateUrl="~/ListarSucursal.aspx" CssClass="nav-link">
+        Listado de Sucursales 📚
+                        </asp:HyperLink></li>
+                    <li class="nav-item">
+                        <asp:HyperLink ID="Hlink3" runat="server" NavigateUrl="~/EliminarSucursal.aspx" CssClass="nav-link">
+        Eliminar Sucursal ❌
+                        </asp:HyperLink></li>
+                </ul>
             </nav>
 
-              <h1 class="lato-bold">Listado Sucursales</h1>
 
             <section class="search-section">
                 <div class="search-bar">
-                <asp:TextBox ID="TxtID" placeholder="ingrese ID de sucursal:" runat="server" CssClass="input"></asp:TextBox>
-                <asp:Button ID="filtro" runat="server" Text="🔎" OnClick="filtro_Click" ValidationGroup="Vg1" CssClass="btn btn-filter" />
+                    <asp:TextBox ID="TxtID"  placeholder="ingrese ID de sucursal:" runat="server" CssClass="input"></asp:TextBox>
+                    <asp:Button ID="filtro" runat="server" Text="🔎" OnClick="filtro_Click" ValidationGroup="Vg1" CssClass="btn btn-filter" />
 
                 </div>
 
@@ -43,7 +46,7 @@
                     ErrorMessage="Debe ingresar un ID"
                     ForeColor="Red"
                     ValidationGroup="Vg1"
-                    CssClass="error-message">
+                    CssClass="error-message hidden">
                 </asp:RequiredFieldValidator>
 
                 <asp:RegularExpressionValidator
@@ -54,7 +57,7 @@
                     ForeColor="Red"
                     ValidationExpression="^\d+$"
                     ValidationGroup="Vg1"
-                    CssClass="error-message">
+                    CssClass="error-message hidden">
                 </asp:RegularExpressionValidator>
 
                 <asp:Button
@@ -69,13 +72,15 @@
 
                 <asp:GridView ID="GrdSucursales" runat="server" CssClass="grid-table"></asp:GridView>
             </section>
-
+            <div class="err">
+                
             <asp:ValidationSummary
                 ID="Vs1"
                 runat="server"
                 HeaderText="Errores:"
                 ValidationGroup="Vg1"
                 CssClass="validation-summary" />
+            </div>
         </div>
     </form>
 
