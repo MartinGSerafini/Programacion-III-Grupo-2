@@ -1,6 +1,5 @@
 ﻿@import "normalize.css";
 @import "colors.css";
-@import "layout.css";
 @import "fonts.css";
 @import "components.css";
 
@@ -14,6 +13,83 @@ h1{
     text-align: center;
     margin-block-end: 2rem;
 }
+h2{
+    text-align: center;
+    margin-block-end: 1.5rem;
+}
+
+
+.form-section {
+    width: 90%;   
+    margin-block: 2rem;
+    padding-inline: 1rem;
+    margin: auto;
+    gap: 1rem;
+}
+
+.form-group{
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+}
+
+.ej1 .form-group{
+    width: 100%;
+    flex-direction: column;
+    gap: .5rem;
+
+}
+
+.text-center{text-align:center;}
+
+.search-bar {
+    width: 80%;
+    overflow: hidden;
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid var(--clr-primary-100);
+    border-radius: 1rem;
+    margin-block-end: 1rem;
+}
+
+    .search-bar > .input {
+        display: flex;
+        flex-flow: 1;
+        background-color: transparent;
+    }
+
+    .search-bar > .btn {
+        border-bottom-right-radius: 1rem;
+        border-top-right-radius: 1rem;
+        padding: .8rem;
+    }
+
+    .label{
+        font-weight: 700;
+        font-size: 1.2rem;
+    }
+
+.ej1 {
+    margin: 2rem auto;
+    padding-inline: 2rem;
+    background-color: var(--clr-neutral-100);
+    border-radius: 1rem;
+    padding-block: 1rem;
+    padding-block-start: 2rem;
+    width: 70%;
+}
+
+.ej3 {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    place-content: center;
+    width: 90%;
+    margin: 2rem;
+    padding-inline: 2rem;
+    background-color: var(--clr-neutral-100);
+    border-radius: 1rem;
+    padding-block: 1rem;
+}
 
 .search-section {
     width: 90%;
@@ -26,3 +102,11 @@ h1{
     margin: auto;
 }
 
+
+.grid-section {
+    margin-block: 2rem;
+}
+
+.btn-show-all {
+    margin-block-start: 1rem;
+}

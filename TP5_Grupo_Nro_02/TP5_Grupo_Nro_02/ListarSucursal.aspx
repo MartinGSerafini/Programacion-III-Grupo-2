@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true"
+﻿    <%@ Page Language="C#" AutoEventWireup="true"
     CodeBehind="ListarSucursal.aspx.cs" Inherits="TP5_Grupo_Nro_02.WebForm2" %>
 
 <!DOCTYPE html>

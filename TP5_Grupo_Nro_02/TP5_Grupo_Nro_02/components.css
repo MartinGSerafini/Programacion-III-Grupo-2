@@ -102,8 +102,12 @@ table tr {
         color: var(--clr-text-primary);
     }
 
-
-.input {
+    .btn:focus, .btn:focus-visible, .btn:focus-visible {
+        border: 1px solid var(--clr-accent-100);
+        background-color: var(--clr-primary-400);
+        color: var(--clr-text-primary);
+    }
+ .input {
     width: 100%;
     font-size: 1rem;
     padding: .3rem 1rem;
@@ -113,31 +117,28 @@ table tr {
     transition: border-color 0.3s, box-shadow 0.3s;
 }
 
-
-.search-bar {
-    width: 80%;
-    overflow: hidden;
-    display: flex;
-    justify-content: space-between;
-    border: 1px solid var(--clr-primary-100);
+.input-field {
+    width: 50%;
+    font-size: 1rem;
+    padding: .5rem 2rem;
+    height: 3rem;
     border-radius: 1rem;
-    margin-block-end: 1rem;
+
+    color: var(--input-text-color);
+    background-color: var(--clr-background-dark);
+    transition:all 500ms ease;
 }
 
-    .search-bar > .input {
-        display: flex;
-        flex-flow: 1;
-        background-color: transparent;
+    .input-field:focus{
+        border: 1px solid var(--clr-accent-100);
     }
 
-    .search-bar > .btn {
-        border-bottom-right-radius: 1rem;
-        border-top-right-radius: 1rem;
-        padding: .8rem;
-    }
-
-    .err{
+    .err {
         margin: 1rem auto;
-        text-align:center;
+        text-align: center;
         font-weight: 700;
     }
+
+.form-group label{
+    text-align: left;
+}
