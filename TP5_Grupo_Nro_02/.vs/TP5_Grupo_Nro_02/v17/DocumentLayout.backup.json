@@ -3,14 +3,27 @@
   "WorkspaceRootPath": "C:\\Users\\guill\\OneDrive\\Documentos\\GitHub\\Programacion-III-Grupo-2\\TP5_Grupo_Nro_02\\",
   "Documents": [
     {
+<<<<<<< HEAD
+      "AbsoluteMoniker": "D:0:0:{2AD17D8B-3420-451E-9132-FDB5CD50B2A2}|TP5_Grupo_Nro_02\\TP5_Grupo_Nro_02.csproj|c:\\users\\juanm\\onedrive\\desktop\\utn\\programacion 3\\programacion-iii-grupo-2\\tp5_grupo_nro_02\\tp5_grupo_nro_02\\components.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{2AD17D8B-3420-451E-9132-FDB5CD50B2A2}|TP5_Grupo_Nro_02\\TP5_Grupo_Nro_02.csproj|solutionrelative:tp5_grupo_nro_02\\components.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+=======
       "AbsoluteMoniker": "D:0:0:{2AD17D8B-3420-451E-9132-FDB5CD50B2A2}|TP5_Grupo_Nro_02\\TP5_Grupo_Nro_02.csproj|c:\\users\\guill\\onedrive\\documentos\\github\\programacion-iii-grupo-2\\tp5_grupo_nro_02\\tp5_grupo_nro_02\\conexionsql.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{2AD17D8B-3420-451E-9132-FDB5CD50B2A2}|TP5_Grupo_Nro_02\\TP5_Grupo_Nro_02.csproj|solutionrelative:tp5_grupo_nro_02\\conexionsql.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+>>>>>>> 7c659511760fda66d7d071d64df375eebc3d598f
     },
     {
       "AbsoluteMoniker": "D:0:0:{2AD17D8B-3420-451E-9132-FDB5CD50B2A2}|TP5_Grupo_Nro_02\\TP5_Grupo_Nro_02.csproj|c:\\users\\guill\\onedrive\\documentos\\github\\programacion-iii-grupo-2\\tp5_grupo_nro_02\\tp5_grupo_nro_02\\agregarsucursal.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
       "RelativeMoniker": "D:0:0:{2AD17D8B-3420-451E-9132-FDB5CD50B2A2}|TP5_Grupo_Nro_02\\TP5_Grupo_Nro_02.csproj|solutionrelative:tp5_grupo_nro_02\\agregarsucursal.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
     },
     {
+<<<<<<< HEAD
+      "AbsoluteMoniker": "D:0:0:{2AD17D8B-3420-451E-9132-FDB5CD50B2A2}|TP5_Grupo_Nro_02\\TP5_Grupo_Nro_02.csproj|C:\\Users\\juanm\\OneDrive\\Desktop\\UTN\\Programacion 3\\Programacion-III-Grupo-2\\TP5_Grupo_Nro_02\\tp5_grupo_nro_02\\colors.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{2AD17D8B-3420-451E-9132-FDB5CD50B2A2}|TP5_Grupo_Nro_02\\TP5_Grupo_Nro_02.csproj|solutionrelative:tp5_grupo_nro_02\\colors.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2AD17D8B-3420-451E-9132-FDB5CD50B2A2}|TP5_Grupo_Nro_02\\TP5_Grupo_Nro_02.csproj|C:\\Users\\juanm\\OneDrive\\Desktop\\UTN\\Programacion 3\\Programacion-III-Grupo-2\\TP5_Grupo_Nro_02\\tp5_grupo_nro_02\\listarsucursal.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{2AD17D8B-3420-451E-9132-FDB5CD50B2A2}|TP5_Grupo_Nro_02\\TP5_Grupo_Nro_02.csproj|solutionrelative:tp5_grupo_nro_02\\listarsucursal.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+=======
       "AbsoluteMoniker": "D:0:0:{2AD17D8B-3420-451E-9132-FDB5CD50B2A2}|TP5_Grupo_Nro_02\\TP5_Grupo_Nro_02.csproj|C:\\Users\\guill\\OneDrive\\Documentos\\GitHub\\Programacion-III-Grupo-2\\TP5_Grupo_Nro_02\\tp5_grupo_nro_02\\listarsucursal.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
       "RelativeMoniker": "D:0:0:{2AD17D8B-3420-451E-9132-FDB5CD50B2A2}|TP5_Grupo_Nro_02\\TP5_Grupo_Nro_02.csproj|solutionrelative:tp5_grupo_nro_02\\listarsucursal.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
     },
@@ -21,6 +34,7 @@
     {
       "AbsoluteMoniker": "D:0:0:{2AD17D8B-3420-451E-9132-FDB5CD50B2A2}|TP5_Grupo_Nro_02\\TP5_Grupo_Nro_02.csproj|C:\\Users\\guill\\OneDrive\\Documentos\\GitHub\\Programacion-III-Grupo-2\\TP5_Grupo_Nro_02\\tp5_grupo_nro_02\\main.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
       "RelativeMoniker": "D:0:0:{2AD17D8B-3420-451E-9132-FDB5CD50B2A2}|TP5_Grupo_Nro_02\\TP5_Grupo_Nro_02.csproj|solutionrelative:tp5_grupo_nro_02\\main.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+>>>>>>> 7c659511760fda66d7d071d64df375eebc3d598f
     }
   ],
   "DocumentGroupContainers": [
@@ -35,6 +49,34 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+<<<<<<< HEAD
+              "Title": "components.css",
+              "DocumentMoniker": "C:\\Users\\juanm\\OneDrive\\Desktop\\UTN\\Programacion 3\\Programacion-III-Grupo-2\\TP5_Grupo_Nro_02\\TP5_Grupo_Nro_02\\components.css",
+              "RelativeDocumentMoniker": "TP5_Grupo_Nro_02\\components.css",
+              "ToolTip": "C:\\Users\\juanm\\OneDrive\\Desktop\\UTN\\Programacion 3\\Programacion-III-Grupo-2\\TP5_Grupo_Nro_02\\TP5_Grupo_Nro_02\\components.css",
+              "RelativeToolTip": "TP5_Grupo_Nro_02\\components.css",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAAAwAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2024-09-22T15:05:04.609Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "colors.css",
+              "DocumentMoniker": "C:\\Users\\juanm\\OneDrive\\Desktop\\UTN\\Programacion 3\\Programacion-III-Grupo-2\\TP5_Grupo_Nro_02\\TP5_Grupo_Nro_02\\colors.css",
+              "RelativeDocumentMoniker": "TP5_Grupo_Nro_02\\colors.css",
+              "ToolTip": "C:\\Users\\juanm\\OneDrive\\Desktop\\UTN\\Programacion 3\\Programacion-III-Grupo-2\\TP5_Grupo_Nro_02\\TP5_Grupo_Nro_02\\colors.css",
+              "RelativeToolTip": "TP5_Grupo_Nro_02\\colors.css",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2024-09-23T19:15:32.211Z",
+=======
               "Title": "ConexionSQL.cs",
               "DocumentMoniker": "C:\\Users\\guill\\OneDrive\\Documentos\\GitHub\\Programacion-III-Grupo-2\\TP5_Grupo_Nro_02\\TP5_Grupo_Nro_02\\ConexionSQL.cs",
               "RelativeDocumentMoniker": "TP5_Grupo_Nro_02\\ConexionSQL.cs",
@@ -56,11 +98,12 @@
               "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
               "WhenOpened": "2024-09-24T02:42:34.392Z",
+>>>>>>> 7c659511760fda66d7d071d64df375eebc3d598f
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "ListarSucursal.aspx",
               "DocumentMoniker": "C:\\Users\\guill\\OneDrive\\Documentos\\GitHub\\Programacion-III-Grupo-2\\TP5_Grupo_Nro_02\\TP5_Grupo_Nro_02\\ListarSucursal.aspx",
               "RelativeDocumentMoniker": "TP5_Grupo_Nro_02\\ListarSucursal.aspx",
@@ -72,6 +115,9 @@
             },
             {
               "$type": "Document",
+<<<<<<< HEAD
+              "DocumentIndex": 1,
+=======
               "DocumentIndex": 3,
               "Title": "components.css",
               "DocumentMoniker": "C:\\Users\\guill\\OneDrive\\Documentos\\GitHub\\Programacion-III-Grupo-2\\TP5_Grupo_Nro_02\\TP5_Grupo_Nro_02\\components.css",
@@ -85,12 +131,13 @@
             {
               "$type": "Document",
               "DocumentIndex": 4,
+>>>>>>> 7c659511760fda66d7d071d64df375eebc3d598f
               "Title": "main.css",
               "DocumentMoniker": "C:\\Users\\guill\\OneDrive\\Documentos\\GitHub\\Programacion-III-Grupo-2\\TP5_Grupo_Nro_02\\TP5_Grupo_Nro_02\\main.css",
               "RelativeDocumentMoniker": "TP5_Grupo_Nro_02\\main.css",
               "ToolTip": "C:\\Users\\guill\\OneDrive\\Documentos\\GitHub\\Programacion-III-Grupo-2\\TP5_Grupo_Nro_02\\TP5_Grupo_Nro_02\\main.css",
               "RelativeToolTip": "TP5_Grupo_Nro_02\\main.css",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAARAAAAAAAAAA==",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAuwBQAAAAbAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
               "WhenOpened": "2024-09-22T15:04:18.912Z"
             }
