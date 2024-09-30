@@ -13,10 +13,32 @@ namespace TP6_Grupo_Nro_02
         {
             if(IsPostBack == false)
             {
-                GestionProductos gproductos = new GestionProductos();
-                GrdProductos.DataSource = gproductos.ObtenerTodosLosProductos();
-                GrdProductos.DataBind();
+                cargarTabla();
             }
         }
+
+        public void cargarTabla()
+        {
+            GestionProductos gproductos = new GestionProductos();
+            GrdProductos.DataSource = gproductos.ObtenerTodosLosProductos();
+            GrdProductos.DataBind();
+        }
+
+        protected void GrdProductos_PageIndexChanging(object sender, GridViewPageEventArgs e)
+        {
+            GrdProductos.PageIndex = e.NewPageIndex;
+            cargarTabla();
+        }
+        protected void GrdProductos_RowEditing(object sender, GridViewEditEventArgs e)
+        {
+            GrdProductos.EditIndex = e.NewEditIndex;
+            cargarTabla();
+        }
+
+        protected void GrdProductos_RowDeleting(object sender, GridViewDeleteEventArgs e)
+        {
+
+        }
+
     }
 }
