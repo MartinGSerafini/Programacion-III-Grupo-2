@@ -11,9 +11,12 @@ namespace TP6_Grupo_Nro_02
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            string consulta = "SELECT IdProducto AS [Id Producto], NombreProducto AS [Nombre Producto], CantidadPorUnidad AS [Cantidad Por Unidad], PrecioUnidad AS [Precio Unidad] FROM Productos";
-            ConexionSQL conexion = new ConexionSQL();
-            conexion.consultaGrd(consulta,GrdProductos);
+            if(IsPostBack == false)
+            {
+                GestionProductos gproductos = new GestionProductos();
+                GrdProductos.DataSource = gproductos.ObtenerTodosLosProductos();
+                GrdProductos.DataBind();
+            }
         }
     }
 }

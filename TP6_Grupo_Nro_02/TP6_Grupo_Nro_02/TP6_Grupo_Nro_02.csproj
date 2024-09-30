@@ -73,7 +73,9 @@
     <Content Include="Ejercicio 1.aspx" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ConexionSQL.cs" />
+    <Compile Include="Clases\GestionProductos.cs" />
+    <Compile Include="Clases\Producto.cs" />
+    <Compile Include="Clases\ConexionSQL.cs" />
     <Compile Include="Ejercicio 2.aspx.cs">
       <DependentUpon>Ejercicio 2.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -110,6 +112,9 @@
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
   </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
@@ -127,6 +132,9 @@
           <CustomServerUrl>
           </CustomServerUrl>
           <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+          <servers defaultServer="SelfHostServer">
+            <server name="SelfHostServer" exePath="" cmdArgs="" url="http://localhost:50512/" workingDir="" />
+          </servers>
         </WebProjectProperties>
       </FlavorProperties>
     </VisualStudio>

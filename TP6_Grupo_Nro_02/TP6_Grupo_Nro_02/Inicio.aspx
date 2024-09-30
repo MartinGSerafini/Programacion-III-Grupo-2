@@ -32,7 +32,7 @@
     </tr>
     <tr>
         <td class="auto-style2" style="font-size: 21px;">
-            <asp:HyperLink ID="Hlink1" runat="server" NavigateUrl="~Ejercicio 1.aspx">Ejercicio 1</asp:HyperLink>
+            <asp:HyperLink ID="Hlink1" runat="server" NavigateUrl="~/Ejercicio 1.aspx">Ejercicio 1</asp:HyperLink>
         </td>
     </tr>
     <tr>
@@ -40,7 +40,7 @@
     </tr>
     <tr>
         <td class="auto-style2" style="font-size: 21px;">
-            <asp:HyperLink ID="Hlink2" runat="server" NavigateUrl="~Ejercicio 2.aspx">Ejercicio 2</asp:HyperLink>
+            <asp:HyperLink ID="Hlink2" runat="server" NavigateUrl="~/Ejercicio 2.aspx">Ejercicio 2</asp:HyperLink>
         </td>
     </tr>
     
