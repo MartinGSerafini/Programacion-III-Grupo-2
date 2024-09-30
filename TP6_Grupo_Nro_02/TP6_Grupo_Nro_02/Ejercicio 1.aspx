@@ -4,30 +4,15 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title></title>
-    <style type="text/css">
-        .auto-style1 {
-            width: 159px;
-        }
-        .auto-style2 {
-            width: 169px;
-        }
-    </style>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" type="text/css" href="./styles/main.css" />
+    <title>Ejercicio 1</title>
+
 </head>
 <body>
     <form id="form1" runat="server">
-        <table class="auto-style1">
-        <tr>
-            <td class="auto-style2"></td>
-        </tr>
-        <tr>
-            <td class="auto-style2" style="font-size: 37px;"><strong>Productos</strong></td>
-        </tr>
-        <tr>
-            <td class="auto-style2"></td>
-        </tr>
-        </table>
+        <h1>Productos</h1>
+
         <asp:GridView ID="GrdProductos" runat="server">
         </asp:GridView>
     </form>
