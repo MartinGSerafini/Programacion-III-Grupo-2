@@ -1,0 +1,37 @@
+:root {
+    --clr-primary-400: #4747eb; /* Azul */
+    --clr-primary-700: #9d26d9; /* Púrpura oscuro */
+    
+    --clr-bg-900: #070711; /* Fondo oscuro */
+    --clr-bg-600: #121221; /* Fondo oscuro */
+    --clr-bg-300:#282852;
+
+    --clr-text: #f2f2f2;  /* Texto claro */
+    --clr-bg: var(--clr-bg-600);
+    
+    --clr-accent-400: #db75f0; /* Acento púrpura claro */
+    --clr-border: #363663; /* Bordes */
+    
+    --clr-hover-bg: #1919e6; /* Fondo hover azul */
+    --clr-hover-text: #ebebeb; /* Texto hover blanco */
+
+    --ff-body: "Montserrat", sans-serif;
+    --fz-body: 16px;
+  }
+
+  @media (prefers-color-scheme: light) {
+    :root {
+      --clr-primary-400: #4747eb; /* Azul */
+      --clr-primary-700: #9d26d9; /* Púrpura oscuro */
+      
+      --clr-bg: #fafafa; /* Fondo claro */
+      --clr-text: #1a1a1a;  /* Texto oscuro */
+      
+      --clr-accent-400: #db75f0; /* Acento púrpura claro */
+      --clr-border: #cccccc; /* Bordes claros */
+      
+      --clr-hover-bg: #5e5eed; /* Fondo hover azul más claro */
+      --clr-hover-text: #1a1a1a; /* Texto hover negro */
+    }
+  }
+  
