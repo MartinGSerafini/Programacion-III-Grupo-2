@@ -37,8 +37,21 @@ namespace TP6_Grupo_Nro_02
 
         protected void GrdProductos_RowDeleting(object sender, GridViewDeleteEventArgs e)
         {
+            String idProducto = ((Label)GrdProductos.Rows[e.RowIndex].FindControl("Lbl_idproducto")).Text;
 
+            Producto producto = new Producto();
+            producto.idproducto = Convert.ToInt32(idProducto);
+
+            GestionProductos gProductos = new GestionProductos();
+            gProductos.EliminarProducto(producto);
+
+            cargarTabla();
         }
 
+        protected void GrdProductos_RowCancelingEdit(object sender, GridViewCancelEditEventArgs e)
+        {
+            GrdProductos.EditIndex = -1;
+            cargarTabla();
+        }
     }
 }
