@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace TP6_Grupo_Nro_02
 {
@@ -53,5 +54,25 @@ namespace TP6_Grupo_Nro_02
             GrdProductos.EditIndex = -1;
             cargarTabla();
         }
+
+        protected void GrdProductos_RowUpdating(object sender, GridViewUpdateEventArgs e)
+        {
+            string aux_idproducto = ((Label)GrdProductos.Rows[e.RowIndex].FindControl("lbl_eit_DProducto")).Text;
+            string aux_NombreProducto = ((TextBox)GrdProductos.Rows[e.RowIndex].FindControl("txt_eit_nombreproducto")).Text;
+            string aux_CantidadPorProducto = ((TextBox)GrdProductos.Rows[e.RowIndex].FindControl("txt_eit_cantxunidad")).Text;
+            string aux_PrecioxUnidad = ((TextBox)GrdProductos.Rows[e.RowIndex].FindControl("txt_eit_precioxunidad")).Text;
+
+            Producto producto = new Producto();
+            producto.idproducto = Convert.ToInt32(aux_idproducto);
+            producto.nombreproducto = aux_NombreProducto;
+            producto.cantidadxunidad = aux_CantidadPorProducto;
+            producto.preciounidad = Convert.ToDecimal(aux_PrecioxUnidad);
+
+            GestionProductos gestionProductos = new GestionProductos();
+            gestionProductos.ActualizarProducto(producto);
+            GrdProductos.EditIndex = -1;
+            cargarTabla();
+        }
+
     }
 }

@@ -37,20 +37,20 @@ namespace TP6_Grupo_Nro_02
         private void ArmarParametrosProductosEliminar(ref SqlCommand cmd, Producto producto)
         {
             SqlParameter sqlParameter = new SqlParameter();
-            sqlParameter = cmd.Parameters.Add("@idproducto", SqlDbType.Int);
+            sqlParameter = cmd.Parameters.Add("@IDPRODUCTO", SqlDbType.Int);
             sqlParameter.Value = producto.idproducto;
         }
 
         private void ArmarParametrosProductos(ref SqlCommand cmd, Producto producto)
         {
             SqlParameter sqlParameter = new SqlParameter();
-            sqlParameter = cmd.Parameters.Add("@idproducto", SqlDbType.Int);
+            sqlParameter = cmd.Parameters.Add("@IDPRODUCTO", SqlDbType.Int);
             sqlParameter.Value = producto.idproducto;
-            sqlParameter = cmd.Parameters.Add("@nombreproducto", SqlDbType.NVarChar, 40);
+            sqlParameter = cmd.Parameters.Add("@NOMBREPRODUCTO", SqlDbType.NVarChar, 40);
             sqlParameter.Value = producto.nombreproducto;
-            sqlParameter = cmd.Parameters.Add("@cantidadxunidad", SqlDbType.NVarChar, 20);
+            sqlParameter = cmd.Parameters.Add("@CANTIDADPORUNIDAD", SqlDbType.NVarChar, 20);
             sqlParameter.Value = producto.cantidadxunidad;
-            sqlParameter = cmd.Parameters.Add("@preciounidad", SqlDbType.Money);
+            sqlParameter = cmd.Parameters.Add("@PRECIOUNIDAD", SqlDbType.Money);
             sqlParameter.Value = producto.preciounidad;
         }
 
@@ -59,7 +59,7 @@ namespace TP6_Grupo_Nro_02
             SqlCommand comando  = new SqlCommand();
             ArmarParametrosProductos(ref comando, producto);
             ConexionSQL con = new ConexionSQL();
-            int FilasInsertadas = con.EjecutarProcedimietnoAlmacenado(comando, "spActualizarProducto");
+            int FilasInsertadas = con.EjecutarProcedimientoAlmacenado(comando, "spActualizarProducto");
             if (FilasInsertadas == 1)
                 return true;
             else
@@ -71,7 +71,7 @@ namespace TP6_Grupo_Nro_02
             SqlCommand comando = new SqlCommand();
             ArmarParametrosProductosEliminar(ref comando, producto);
             ConexionSQL con = new ConexionSQL();
-            int FilasInsertadas = con.EjecutarProcedimietnoAlmacenado(comando, "spEliminarProducto");
+            int FilasInsertadas = con.EjecutarProcedimientoAlmacenado(comando, "spEliminarProducto");
             if (FilasInsertadas == 1)
                 return true;
             else

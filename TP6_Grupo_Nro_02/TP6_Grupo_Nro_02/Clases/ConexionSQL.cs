@@ -42,7 +42,7 @@ namespace TP6_Grupo_Nro_02
             }
         }
 
-        public int EjecutarProcedimietnoAlmacenado(SqlCommand comando, string NombreSP)
+        public int EjecutarProcedimientoAlmacenado(SqlCommand comando, string NombreSP)
         {
             int FilasCambiadas;
             SqlConnection Conexion = ObtenerConexion();
