@@ -67,6 +67,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="MostrarProductos.aspx" />
+    <Content Include="SeleccionarProductos.aspx" />
     <Content Include="Ejercicio 2.aspx" />
     <Content Include="Inicio.aspx" />
     <Content Include="Web.config" />
@@ -76,6 +78,20 @@
     <Compile Include="Clases\GestionProductos.cs" />
     <Compile Include="Clases\Producto.cs" />
     <Compile Include="Clases\ConexionSQL.cs" />
+    <Compile Include="MostrarProductos.aspx.cs">
+      <DependentUpon>MostrarProductos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MostrarProductos.aspx.designer.cs">
+      <DependentUpon>MostrarProductos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SeleccionarProductos.aspx.cs">
+      <DependentUpon>SeleccionarProductos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SeleccionarProductos.aspx.designer.cs">
+      <DependentUpon>SeleccionarProductos.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Ejercicio 2.aspx.cs">
       <DependentUpon>Ejercicio 2.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
