@@ -11,7 +11,17 @@ namespace TP6_Grupo_Nro_02
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (IsPostBack == false)
+            {
+                cargarTabla();
+            }
         }
-    }
+
+        public void cargarTabla()
+        {
+            GestionProductos gproductos = new GestionProductos();
+            grdProductos.DataSource = gproductos.ObtenerTodosLosProductos();
+            grdProductos.DataBind();
+        }
+    } 
 }
