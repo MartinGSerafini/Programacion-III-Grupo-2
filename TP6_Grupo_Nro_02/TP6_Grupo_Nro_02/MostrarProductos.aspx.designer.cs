@@ -11,7 +11,7 @@ namespace TP6_Grupo_Nro_02
 {
 
 
-    public partial class Ejercicio_2
+    public partial class Ejercicio_2A
     {
 
         /// <summary>
