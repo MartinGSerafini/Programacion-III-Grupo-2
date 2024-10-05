@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -11,7 +12,15 @@ namespace TP6_Grupo_Nro_02
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (!IsPostBack)
+            {
+                if (Session["tabla"] != null)
+                {
+                    DataTable tablaProductos = (DataTable)Session["tabla"];
+                    GrdMostrarProductos.DataSource = tablaProductos;
+                    GrdMostrarProductos.DataBind();
+                }
+            }
         }
     }
 }
