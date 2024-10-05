@@ -44,7 +44,11 @@ namespace TP6_Grupo_Nro_02
             {
                 Session["tabla"] = crearTabla();
             }
-            agregarFila((DataTable)Session["tabla"], S_IdProducto, S_NombreProducto, S_IdProveedor, S_PrecioUnitario);
+
+            if (validarRepeticiones(S_IdProducto))
+            {
+                agregarFila((DataTable)Session["tabla"], S_IdProducto, S_NombreProducto, S_IdProveedor, S_PrecioUnitario);
+            }
         }
 
         public DataTable crearTabla()
@@ -75,6 +79,26 @@ namespace TP6_Grupo_Nro_02
             dataRow["Precio Unitario"] = PrecioUnitario;
 
             tabla.Rows.Add(dataRow);
+        }
+
+        public bool validarRepeticiones(string IdProducto)
+        {
+            DataTable tabla = Session["tabla"] as DataTable;
+            if(tabla == null)
+            {
+                return true;
+            }
+            int filas = tabla.Rows.Count;
+            string id;
+            for (int i=0; i<filas; i++)
+            {
+                id = tabla.Rows[i]["Id Producto"].ToString();
+                if (id == IdProducto)
+                {
+                    return false;
+                }
+            }
+            return true;
         }
     } 
 }

@@ -16,7 +16,10 @@ namespace TP6_Grupo_Nro_02
 
         protected void LinkDelete_Click(object sender, EventArgs e)
         {
-
+            if(Session["tabla"] != null)
+            {
+                Session["tabla"] = null;
+            }
         }
     }
 }
