@@ -35,20 +35,20 @@
     <tr>
         <td class="auto-style2" style="font-size: 21px;">
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <asp:HyperLink ID="Hlink1" runat="server" NavigateUrl="~/SeleccionarProductos.aspx">Seleccionar productos:</asp:HyperLink>
+            <asp:HyperLink ID="Hlink1" runat="server" NavigateUrl="~/SeleccionarProductos.aspx">Seleccionar productos</asp:HyperLink>
         </td>
     </tr>
     <tr>
         <td class="auto-style2" style="font-size: 21px;">
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <asp:LinkButton ID="LinkButton1" runat="server">Eliminar productos seleccionados:</asp:LinkButton>
+            <asp:LinkButton ID="LinkDelete" runat="server" OnClick="LinkDelete_Click">Eliminar productos seleccionados</asp:LinkButton>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         </td>
     </tr>
     <tr>
         <td class="auto-style2" style="font-size: 21px;">
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <asp:HyperLink ID="Hlink2" runat="server" NavigateUrl="~/MostrarProductos.aspx"> Mostrar productos:</asp:HyperLink>
+            <asp:HyperLink ID="Hlink2" runat="server" NavigateUrl="~/MostrarProductos.aspx"> Mostrar productos</asp:HyperLink>
         </td>
     </tr>
     
