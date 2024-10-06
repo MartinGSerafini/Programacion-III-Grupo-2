@@ -1,0 +1,27 @@
+CREATE PROCEDURE spActualizarProducto
+(
+    @IDPRODUCTO INT,
+    @NOMBREPRODUCTO NVARCHAR(40),
+    @CANTIDADPORUNIDAD NVARCHAR(20),
+    @PRECIOUNIDAD MONEY
+)
+AS
+BEGIN
+    UPDATE Productos
+    SET
+        NombreProducto = @NOMBREPRODUCTO,
+        CantidadPorUnidad = @CANTIDADPORUNIDAD,
+        PrecioUnidad = @PRECIOUNIDAD
+    WHERE IdProducto = @IDPRODUCTO;
+END;
+
+
+CREATE PROCEDURE spEliminarProducto
+(
+    @IDPRODUCTO INT
+)
+AS
+BEGIN
+    DELETE FROM Productos
+    WHERE IdProducto = @IDPRODUCTO;
+END;
