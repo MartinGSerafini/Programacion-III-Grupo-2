@@ -54,6 +54,9 @@
     
 </table>
         </div>
+        <p>
+            <asp:HyperLink ID="Back" runat="server" NavigateUrl="~/Inicio.aspx">Volver</asp:HyperLink>
+        </p>
     </form>
 </body>
 </html>
