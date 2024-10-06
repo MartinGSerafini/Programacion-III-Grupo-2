@@ -17,29 +17,15 @@ namespace TP6_Grupo_Nro_02
         public SqlConnection ObtenerConexion() //DEVUELVE UN SQL CONEXION
         {
             SqlConnection cn = new SqlConnection(ruta);
-            try
-            {
-                cn.Open();
-                return cn;
-            }
-            catch (Exception ex)
-            {
-                return null;
-            }
+            cn.Open();
+            return cn;
         }
 
         public SqlDataAdapter ObtenerAdaptador(string consultaSql) //DEVUELVE EL ADAPTADOR
         {
             SqlDataAdapter adaptador;
-            try
-            {
-                adaptador = new SqlDataAdapter(consultaSql, ObtenerConexion());
-                return adaptador;
-            }
-            catch (Exception ex)
-            {
-                return null;
-            }
+            adaptador = new SqlDataAdapter(consultaSql, ObtenerConexion());
+            return adaptador;
         }
 
         public int EjecutarProcedimientoAlmacenado(SqlCommand comando, string NombreSP)

@@ -38,7 +38,7 @@ namespace TP6_Grupo_Nro_02
             string S_IdProveedor = ((Label)grdProductos.Rows[e.NewSelectedIndex].FindControl("lbl_it_IdProveedor")).Text;
             string S_PrecioUnitario = ((Label)grdProductos.Rows[e.NewSelectedIndex].FindControl("lbl_it_PrecioUnitario")).Text;
 
-            lblSeleccionProductos.Text = "Producto Agregado: " + S_IdProducto + " " + S_NombreProducto + " " + S_IdProveedor + " " + S_PrecioUnitario;
+            lblSeleccionProductos.Text = "Producto Agregado: " + S_NombreProducto;
 
             if (Session["tabla"] == null)
             {
