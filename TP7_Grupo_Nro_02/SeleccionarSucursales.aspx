@@ -80,12 +80,12 @@
             <tr>
                 <td class="auto-style4"></td>
                 <td class="auto-style18">
-                    <asp:HyperLink ID="HyperLink3" runat="server" Font-Bold="True" Font-Size="14pt" NavigateUrl="~/ListadoSucursalesSeleccionados.aspx">Listado de Sucursales</asp:HyperLink>
+                    <asp:HyperLink ID="HyperLink3" runat="server" Font-Bold="True" Font-Size="14pt" NavigateUrl="~/SeleccionarSucursales.aspx">Listado de Sucursales</asp:HyperLink>
                     <br />
                     <br />
                 </td>
                 <td class="auto-style17">
-                    <asp:HyperLink ID="HyperLink2" runat="server" Font-Bold="True" Font-Size="14pt" NavigateUrl="~/SeleccionarSucursales.aspx">Mostrar Sucursales Seleccionadas</asp:HyperLink>
+                    <asp:HyperLink ID="HyperLink2" runat="server" Font-Bold="True" Font-Size="14pt" NavigateUrl="~/ListadoSucursalesSeleccionados.aspx">Mostrar Sucursales Seleccionadas</asp:HyperLink>
                     <br />
                     <br />
                 </td>
@@ -112,11 +112,11 @@
             <tr>
                 <td class="auto-style30"></td>
                 <td class="auto-style19">
-                    <asp:ListView ID="ListView1" runat="server">
+                    <asp:ListView ID="lvSucursales" runat="server" DataSourceID="SqlDataSource">
                     </asp:ListView>
                 </td>
                 <td class="auto-style32">
-                    <asp:SqlDataSource ID="SqlDataSource1" runat="server"></asp:SqlDataSource>
+                    <asp:SqlDataSource ID="SqlDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:BDSucursalesConnectionString %>" SelectCommand="SELECT [Id_Sucursal], [NombreSucursal], [DescripcionSucursal], [Id_ProvinciaSucursal], [URL_Imagen_Sucursal] FROM [Sucursal]"></asp:SqlDataSource>
                 </td>
             </tr>
             <tr>

@@ -30,13 +30,13 @@
             <tr>
                 <td class="auto-style4"></td>
                 <td class="auto-style3">
-                    <asp:HyperLink ID="HyperLink1" runat="server" Font-Bold="True" Font-Size="14pt" NavigateUrl="~/ListadoSucursalesSeleccionados.aspx">Listado de Sucursales</asp:HyperLink>
+                    <asp:HyperLink ID="HyperLink1" runat="server" Font-Bold="True" Font-Size="14pt" NavigateUrl="~/SeleccionarSucursales.aspx">Listado de Sucursales</asp:HyperLink>
                     <br />
                     <br />
                 </td>
                 <td class="auto-style2">&nbsp;</td>
                 <td>
-                    <asp:HyperLink ID="HyperLink2" runat="server" Font-Bold="True" Font-Size="14pt" NavigateUrl="~/SeleccionarSucursales.aspx">Mostrar Sucursales Seleccionadas</asp:HyperLink>
+                    <asp:HyperLink ID="HyperLink2" runat="server" Font-Bold="True" Font-Size="14pt" NavigateUrl="~/ListadoSucursalesSeleccionados.aspx">Mostrar Sucursales Seleccionadas</asp:HyperLink>
                     <br />
                     <br />
                 </td>
