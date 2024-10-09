@@ -8,142 +8,138 @@
     <title></title>
     <style type="text/css">
 
+
         .auto-style1 {
             width: 100%;
-        }
-        .auto-style13 {
-            height: 26px;
-        }
-        .auto-style14 {
-            width: 77px;
-            height: 26px;
-        }
-        .auto-style15 {
-            width: 438px;
-        }
-        .auto-style16 {
-            height: 26px;
-            width: 438px;
-        }
-        .auto-style17 {
-            width: 438px;
-            height: 45px;
-        }
-        .auto-style22 {
-            height: 69px;
-            width: 21px;
-        }
-        .auto-style23 {
-            height: 81px;
-            width: 21px;
-        }
-        .auto-style24 {
-            height: 73px;
-            width: 21px;
-        }
-        .auto-style25 {
-            height: 94px;
-            width: 21px;
-        }
-        .auto-style26 {
-            height: 86px;
-            width: 21px;
-        }
-        .auto-style27 {
-            height: 85px;
-            width: 21px;
-        }
-        .auto-style28 {
-            height: 80px;
-            width: 21px;
-        }
-        .auto-style29 {
-            width: 412px;
-        }
-        .auto-style32 {
-            width: 204px;
-            height: 26px;
-        }
-        .auto-style33 {
-            width: 311px;
-            height: 45px;
         }
         .auto-style34 {
             width: 306px;
         }
-        .auto-style35 {
-            width: 311px;
-            height: 26px;
+        .auto-style41 {
+            width: 309px;
         }
-        .auto-style36 {
-            width: 311px;
+        .auto-style43 {
+            width: 380px;
+        }
+        .auto-style45 {
+            width: 217px;
+        }
+        .auto-style46 {
+            width: 214px;
+        }
+        .auto-style47 {
+            width: 221px;
+        }
+        .auto-style48 {
+            width: 272px;
+        }
+        .auto-style49 {
+            width: 221px;
+            height: 84px;
+        }
+        .auto-style50 {
+            width: 200px;
+            height: 84px;
         }
         </style>
 </head>
 <body>
     <form id="form2" runat="server">
-        <table class="auto-style1">
+        <table class="Links">
             <tr>
-                <td class="auto-style33">
+                <td class="auto-style46">&nbsp;</td>
+                <td class="auto-style43">
                     <asp:HyperLink ID="HyperLink3" runat="server" Font-Bold="True" Font-Size="14pt" NavigateUrl="~/SeleccionarSucursales.aspx">Listado de Sucursales</asp:HyperLink>
                     </td>
-                <td class="auto-style17">
+                <td>
                     <asp:HyperLink ID="HyperLink2" runat="server" Font-Bold="True" Font-Size="14pt" NavigateUrl="~/ListadoSucursalesSeleccionados.aspx">Mostrar Sucursales Seleccionadas</asp:HyperLink>
-                    <br />
-                    <br />
-                </td>
+                    </td>
+            </tr>
+        </table>
+        <table class="Titulo y Busqueda">
+            <tr>
+                <td class="auto-style45">&nbsp;</td>
+                <td class="auto-style41">&nbsp;</td>
+                <td class="auto-style48">&nbsp;</td>
+                <td>&nbsp;</td>
             </tr>
             <tr>
-                <td class="auto-style36">
-                    <h1 class="auto-style29">Listado de sucursales<br />
-                    </h1>
+                <td class="auto-style45">&nbsp;</td>
+                <td class="auto-style41" style="font-weight: bold;font-size: 25px">Listado de sucursales<br />
+                    <br />
                 </td>
-                <td class="auto-style15">
-                    &nbsp;</td>
+                <td class="auto-style48">&nbsp;</td>
+                <td>&nbsp;</td>
             </tr>
-           <tr>
-    <td class="auto-style35">Busqueda por nombre de sucursal:</td>
-    <td class="auto-style16">
-        <asp:TextBox ID="txtSucursal" runat="server" Width="407px"></asp:TextBox>
-    </td>
-    <td class="auto-style14">
+            <tr>
+                <td class="auto-style45">&nbsp;</td>
+                <td class="auto-style41">Busqueda por nombre de sucursal:</td>
+                <td class="auto-style48">
+        <asp:TextBox ID="txtSucursal" runat="server" Width="250px"></asp:TextBox>
+                </td>
+                <td>
         <asp:Button ID="BtnBuscar" runat="server" ClientIDMode="AutoID" Text="Buscar" Width="76px" OnClick="BtnBuscar_Click" />
-    </td>
-    <td class="auto-style13"></td>
-</tr>
+                </td>
+            </tr>
             <tr>
-                <td class="auto-style36">&nbsp;</td>
-                <td class="auto-style32">
+                <td class="auto-style45">&nbsp;</td>
+                <td class="auto-style41">
                     <asp:SqlDataSource ID="SqlDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:BDSucursalesConnectionString %>" SelectCommand="SELECT [NombreSucursal], [DescripcionSucursal], [URL_Imagen_Sucursal] FROM [Sucursal]"></asp:SqlDataSource>
                 </td>
+                <td class="auto-style48">&nbsp;</td>
+                <td>&nbsp;</td>
             </tr>
-            </table>
-        <table class="auto-style1">
+        </table>
+            <div style="display: flex; justify-content: flex-start;">
+                <table class="Botones">
             <tr>
-                 <td class="auto-style22">
-                     <asp:Button ID="btnBuenosAires" runat="server" Text="Buenos Aires" Width="180px" />
+                <td>
+                     <asp:Button ID="btnBuenosAires" runat="server" Text="Buenos Aires" Width="180px" OnClick="btnProvincia_Click" />
                  </td>
-                 <td class="auto-style34" rowspan="7">
-                    <asp:ListView ID="lvSucursales" runat="server" DataSourceID="SqlDataSource" GroupItemCount="3">
-                        <%--<AlternatingItemTemplate>
-                            <td runat="server" style="background-color: #FFFFFF;color: #284775;">
-                                <asp:Label ID="lblNombreSucursal" runat="server" Text='<%# Eval("NombreSucursal") %>' />
-                                <br />
-                                <asp:Label ID="lblDescripcionSucursal" runat="server" Text='<%# Bind("DescripcionSucursal") %>'></asp:Label>
-                                <br />
-                                <asp:ImageButton ID="ImageButton2" runat="server" ImageUrl='<%# Bind("URL_Imagen_Sucursal") %>' />
-                                <br />
-                            </td>
-                        </AlternatingItemTemplate>--%>
+            </tr>
+            <tr>
+                <td>
+                     <asp:Button ID="btnEntreRios" runat="server" Text="Entre Rios" Width="180px" OnClick="btnProvincia_Click" />
+                 </td>
+            </tr>
+            <tr>
+                <td>
+                    <asp:Button ID="btnSantaFe" runat="server" Text="Santa Fe" Width="180px" OnClick="btnProvincia_Click" />  
+                </td>
+            </tr>
+            <tr>
+                <td>
+                     <asp:Button ID="btnLaPampa" runat="server" Text="La Pampa" Width="180px" OnClick="btnProvincia_Click" />
+                 </td>
+            </tr>
+            <tr>
+                <td>
+                     <asp:Button ID="btnCordoba" runat="server" Text="Cordoba" Width="180px" OnClick="btnProvincia_Click" />
+                 </td>
+            </tr>
+            <tr>
+                <td>
+                     <asp:Button ID="btnMisiones" runat="server" Text="Misiones" Width="180px" OnClick="btnProvincia_Click" />
+                 </td>
+            </tr>
+            <tr>
+                <td>
+                     <asp:Button ID="btnChaco" runat="server" Text="Chaco" Width="180px" OnClick="btnProvincia_Click" />
+                 </td>
+            </tr>
+        </table>
+        <table class="ListView" style="width: auto;">
+                  <td class="auto-style1" rowspan="7">
+                    <asp:ListView ID="lvSucursales" runat="server" DataSourceID="SqlDataSource" GroupItemCount="3" OnPagePropertiesChanging="lvSucursales_PagePropertiesChanging">
                         <EditItemTemplate>
                             <td runat="server" style="background-color: #999999;">NombreSucursal:
-                                <asp:TextBox ID="NombreSucursalTextBox" runat="server" Text='<%# Bind("NombreSucursal") %>' />
+                                <asp:TextBox ID="NombreSucursalTextBox" runat="server" Text='<%# Bind("NombreSucursal") %>' style="text-align: center; font-weight: bold;"/>
                                 <br />
                                 DescripcionSucursal:
-                                <asp:TextBox ID="DescripcionSucursalTextBox" runat="server" Text='<%# Bind("DescripcionSucursal") %>' />
+                                <asp:TextBox ID="DescripcionSucursalTextBox" runat="server" Text='<%# Bind("DescripcionSucursal") %>' style="text-align: center; font-weight: bold;"/>
                                 <br />
                                 URL_Imagen_Sucursal:
-                                <asp:TextBox ID="URL_Imagen_SucursalTextBox" runat="server" Text='<%# Bind("URL_Imagen_Sucursal") %>' />
+                                <asp:TextBox ID="URL_Imagen_SucursalTextBox" runat="server" Text='<%# Bind("URL_Imagen_Sucursal") %>' style="text-align: center;"/>
                                 <br />
                                 <asp:Button ID="UpdateButton" runat="server" CommandName="Update" Text="Actualizar" />
                                 <br />
@@ -171,10 +167,10 @@
                                 <asp:TextBox ID="NombreSucursalTextBox" runat="server" Text='<%# Bind("NombreSucursal") %>' />
                                 <br />
                                 DescripcionSucursal:
-                                <asp:TextBox ID="DescripcionSucursalTextBox" runat="server" Text='<%# Bind("DescripcionSucursal") %>' />
+                                <asp:TextBox ID="DescripcionSucursalTextBox" runat="server" Text='<%# Bind("DescripcionSucursal") %>'/>
                                 <br />
                                 URL_Imagen_Sucursal:
-                                <asp:TextBox ID="URL_Imagen_SucursalTextBox" runat="server" Text='<%# Bind("URL_Imagen_Sucursal") %>' />
+                                <asp:TextBox ID="URL_Imagen_SucursalTextBox" runat="server" Text='<%# Bind("URL_Imagen_Sucursal") %>'/>
                                 <br />
                                 <asp:Button ID="InsertButton" runat="server" CommandName="Insert" Text="Insertar" />
                                 <br />
@@ -182,19 +178,26 @@
                                 <br />
                             </td>
                         </InsertItemTemplate>
-    <ItemTemplate>
-        <td runat="server" style="background-color: #E0FFFF;color: #333333;">
-            <asp:Label ID="lblNombreSucursal" runat="server" Text='<%# Eval("NombreSucursal") %>' />
-            <br />
-            <asp:Label ID="lblDescripcionSucursal" runat="server" Text='<%# Bind("DescripcionSucursal") %>' />
-            <br />
-            <asp:ImageButton ID="ImageButton1" runat="server" ImageUrl='<%# Bind("URL_Imagen_Sucursal") %>' />
-            <br />
-            <br />
-            <asp:Button ID="btnSeleccionar" runat="server" Text="Seleccionar" CommandName="eventoSeleccionar" OnCommand="btnSeleccionar_Command" />
-            <br />
-        </td>
-    </ItemTemplate>
+                        <ItemTemplate>
+    <td runat="server" style="background-color: #E0FFFF; color: #333333; padding: 10px; border: none;">
+        <div style="display: flex; flex-direction: column; align-items: center; height: 100%;">
+            <asp:Label ID="lblNombreSucursal" runat="server" Text='<%# Eval("NombreSucursal") %>' 
+                       style="font-weight: bold; margin-bottom: 5px; text-align: center;" />
+
+            <div style="display: flex; justify-content: center; align-items: center; width: 200px; height: 200px; overflow: hidden; margin: 0 auto; padding: 0; border: none;">
+                <asp:ImageButton ID="ImageButton1" runat="server" ImageUrl='<%# Bind("URL_Imagen_Sucursal") %>' 
+                                 style="width: 100%; height: auto; max-height: 100%; object-fit: cover; border: none;" />
+            </div>
+            
+            <asp:Label ID="lblDescripcionSucursal" runat="server" Text='<%# Bind("DescripcionSucursal") %>' 
+                       style="font-weight: normal; display: block; overflow: hidden; white-space: normal; width: 200px; margin: 5px 0; line-height: 1.5; height: 120px; text-align: center; text-overflow: ellipsis;" />
+            
+            <div style="display: flex; justify-content: center; width: 100%;">
+                <asp:Button ID="btnSeleccionar" runat="server" Text="Seleccionar" CommandName="eventoSeleccionar" OnCommand="btnSeleccionar_Command" style="margin-top: 10px;" />
+            </div>
+        </div>
+    </td>
+</ItemTemplate>
                         <LayoutTemplate>
                             <table runat="server">
                                 <tr runat="server">
@@ -230,40 +233,10 @@
                                 <br />
                             </td>
                         </SelectedItemTemplate>
-</asp:ListView>
+                    </asp:ListView>
                  </td>
-            </tr>
-            <tr>
-                 <td class="auto-style23">
-                     <asp:Button ID="btnEntreRios" runat="server" Text="Entre Rios" Width="180px" />
-                 </td>
-            </tr>
-            <tr>
-                <td class="auto-style24">
-                    <asp:Button ID="btnSantaFe" runat="server" Text="Santa Fe" Width="180px" />
-                </td>
-            </tr>
-            <tr>
-                 <td class="auto-style25">
-                     <asp:Button ID="btnLaPampa" runat="server" Text="La Pampa" Width="180px" />
-                 </td>
-            </tr>
-            <tr>
-                 <td class="auto-style26">
-                     <asp:Button ID="btnCordoba" runat="server" Text="Cordoba" Width="180px" />
-                 </td>
-            </tr>
-            <tr>
-                 <td class="auto-style28">
-                     <asp:Button ID="btnMisiones" runat="server" Text="Misiones" Width="180px" />
-                 </td>
-            </tr>
-            <tr>
-                 <td class="auto-style27">
-                     <asp:Button ID="btnChaco" runat="server" Text="Chaco" Width="180px" />
-                 </td>
-            </tr>
         </table>
+            </div>
     </form>
         </body>
 </html>

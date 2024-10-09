@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
+using System.Reflection;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
@@ -19,14 +21,8 @@ namespace TP7_Grupo_Nro_02
 
         protected void btnSeleccionar_Command(object sender, CommandEventArgs e)
         {
-            string S_IdSucursal;
-            string S_Nombre;
-            string S_Descripcion;
-
             if (Session["tabla"] == null)
-            {
                 Session["tabla"] = crearTabla();
-            }
         }
 
         protected void BtnBuscar_Click(object sender, EventArgs e)
@@ -68,6 +64,41 @@ namespace TP7_Grupo_Nro_02
             dataRow["DESCRIPCION"] = Descripcion;
 
             tabla.Rows.Add(dataRow);
+        }
+        protected void lvSucursales_PagePropertiesChanging(object sender, PagePropertiesChangingEventArgs e)
+        {
+            DataPager pager = lvSucursales.FindControl("DataPager1") as DataPager;
+            pager.SetPageProperties(e.StartRowIndex, e.MaximumRows, false);
+            string provincia = Session["ProvinciaSeleccionada"] as string;
+            CargarListview(provincia);
+        }
+
+        protected void btnProvincia_Click(object sender, EventArgs e)
+        {
+            Button btn = (Button)sender;
+            string provincia = btn.Text;
+            Session["ProvinciaSeleccionada"] = provincia;
+            CargarListview(provincia);
+        }
+        private void CargarListview(string provincia)
+        {
+            if (!string.IsNullOrEmpty(provincia))
+            {
+                ConexionSQL cn = new ConexionSQL();
+                SqlDataAdapter adapter = cn.ObtenerAdaptador(
+                    "SELECT s.[NombreSucursal], s.[DescripcionSucursal], s.[URL_Imagen_Sucursal] " +
+                    "FROM [Sucursal] s JOIN [Provincia] p ON s.Id_ProvinciaSucursal = p.Id_Provincia " +
+                    "WHERE p.DescripcionProvincia = @NombreProvincia");
+
+                adapter.SelectCommand.Parameters.AddWithValue("@NombreProvincia", provincia);
+
+                DataSet ds = new DataSet();
+                adapter.Fill(ds, "Sucursal");
+
+                lvSucursales.DataSourceID = null;
+                lvSucursales.DataSource = ds.Tables["Sucursal"];
+                lvSucursales.DataBind();
+            }
         }
     }
 }
