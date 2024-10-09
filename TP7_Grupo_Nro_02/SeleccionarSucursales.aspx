@@ -107,7 +107,7 @@
         <asp:TextBox ID="txtSucursal" runat="server" Width="407px"></asp:TextBox>
     </td>
     <td class="auto-style14">
-        <asp:Button ID="BtnBuscar" runat="server" ClientIDMode="AutoID" Text="Buscar" Width="76px" />
+        <asp:Button ID="BtnBuscar" runat="server" ClientIDMode="AutoID" Text="Buscar" Width="76px" OnClick="BtnBuscar_Click" />
     </td>
     <td class="auto-style13"></td>
 </tr>
@@ -191,7 +191,7 @@
             <asp:ImageButton ID="ImageButton1" runat="server" ImageUrl='<%# Bind("URL_Imagen_Sucursal") %>' />
             <br />
             <br />
-            <asp:Button ID="btnSeleccionar" runat="server" Text="Seleccionar" />
+            <asp:Button ID="btnSeleccionar" runat="server" Text="Seleccionar" CommandName="eventoSeleccionar" OnCommand="btnSeleccionar_Command" />
             <br />
         </td>
     </ItemTemplate>
