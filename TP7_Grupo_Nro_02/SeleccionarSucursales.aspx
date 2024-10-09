@@ -97,23 +97,30 @@
                 <td class="auto-style15">
                     &nbsp;</td>
             </tr>
-            <tr>
-                <td class="auto-style11">
-                <td class="auto-style20" style="font-size: 14pt;">Busqueda por nombre de sucursal:<br /></td>
-                    &nbsp;</td>
-                <td class="auto-style16">
-                    <asp:TextBox ID="txtSucursal" runat="server" Width="407px"></asp:TextBox>
-                </td>
-                <td class="auto-style14">
-                    <asp:Button ID="BtnBuscar" runat="server" ClientIDMode="AutoID" Text="Buscar" Width="76px" />
-                </td>
-                <td class="auto-style13"></td>
-            </tr>
+           <tr>
+    <td class="auto-style11"></td>
+    <td class="auto-style20" style="font-size: 14pt;">Busqueda por nombre de sucursal:<br /></td>
+    <td class="auto-style16">
+        <asp:TextBox ID="txtSucursal" runat="server" Width="407px"></asp:TextBox>
+    </td>
+    <td class="auto-style14">
+        <asp:Button ID="BtnBuscar" runat="server" ClientIDMode="AutoID" Text="Buscar" Width="76px" />
+    </td>
+    <td class="auto-style13"></td>
+</tr>
             <tr>
                 <td class="auto-style30"></td>
                 <td class="auto-style19">
                     <asp:ListView ID="lvSucursales" runat="server" DataSourceID="SqlDataSource">
-                    </asp:ListView>
+    <ItemTemplate>
+        <div style="border: 1px solid #ccc; padding: 10px; margin: 10px;">
+            <h3><%# Eval("NombreSucursal") %></h3>
+            <p><%# Eval("DescripcionSucursal") %></p>
+            <p><strong>Provincia:</strong> <%# Eval("Id_ProvinciaSucursal") %></p>
+            <img src='<%# Eval("URL_Imagen_Sucursal") %>' alt='<%# Eval("NombreSucursal") %>' style="width: 100px; height: auto;" />
+        </div>
+    </ItemTemplate>
+</asp:ListView>
                 </td>
                 <td class="auto-style32">
                     <asp:SqlDataSource ID="SqlDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:BDSucursalesConnectionString %>" SelectCommand="SELECT [Id_Sucursal], [NombreSucursal], [DescripcionSucursal], [Id_ProvinciaSucursal], [URL_Imagen_Sucursal] FROM [Sucursal]"></asp:SqlDataSource>

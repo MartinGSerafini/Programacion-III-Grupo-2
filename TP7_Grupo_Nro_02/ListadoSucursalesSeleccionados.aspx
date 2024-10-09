@@ -55,11 +55,17 @@
                     &nbsp;</td>
             </tr>
         </table>
-        <table class="auto-style5">
-            <td class="auto-style4"></td>
+       <table class="auto-style5">
+    <tr>
+        <td class="auto-style4"></td>
+    </tr>
+    <tr>
+        <td>
             <asp:GridView ID="GridView1" runat="server" Height="131px" Width="229px">
             </asp:GridView>
-        </table>
+        </td>
+    </tr>
+</table>
     </form>
 </body>
 </html>
