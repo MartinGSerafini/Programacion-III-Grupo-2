@@ -21,8 +21,21 @@ namespace TP7_Grupo_Nro_02
 
         protected void btnSeleccionar_Command(object sender, CommandEventArgs e)
         {
-            if (Session["tabla"] == null)
-                Session["tabla"] = crearTabla();
+            if (e.CommandName == "eventoSeleccionar")
+            {
+                string IdSucursal = e.CommandArgument.ToString();
+                string Nombre = "";
+                string Descripcion = "";
+
+
+                if (Session["tabla"] == null)
+                    Session["tabla"] = crearTabla();
+
+                if (validarRepeticiones(IdSucursal))
+                {
+                    agregarFila((DataTable)Session["tabla"], IdSucursal, Nombre, Descripcion);
+                }
+            }
         }
 
         protected void BtnBuscar_Click(object sender, EventArgs e)
@@ -65,6 +78,35 @@ namespace TP7_Grupo_Nro_02
 
             tabla.Rows.Add(dataRow);
         }
+
+        public bool validarRepeticiones(string IdSucursal)
+        {
+            DataTable tabla = Session["tabla"] as DataTable;
+            if (tabla == null)
+            {
+                return true;
+            }
+            int filas = tabla.Rows.Count;
+            string id;
+            for (int i = 0; i < filas; i++)
+            {
+                id = tabla.Rows[i]["Id_Sucursal"].ToString();
+                if (id == IdSucursal)
+                {
+                    return false;
+                }
+            }
+            return true;
+        }
+
+        protected void btnProvincias_Command(object sender, CommandEventArgs e)
+        {
+            if(e.CommandName == "ComandoBoton")
+            {
+                Session["provinciaseleccionada"] = e.CommandArgument.ToString();
+                CargarListview(e.CommandArgument.ToString());
+            }
+        }
         protected void lvSucursales_PagePropertiesChanging(object sender, PagePropertiesChangingEventArgs e)
         {
             DataPager pager = lvSucursales.FindControl("DataPager1") as DataPager;
@@ -73,13 +115,13 @@ namespace TP7_Grupo_Nro_02
             CargarListview(provincia);
         }
 
-        protected void btnProvincia_Click(object sender, EventArgs e)
-        {
-            Button btn = (Button)sender;
-            string provincia = btn.Text;
-            Session["ProvinciaSeleccionada"] = provincia;
-            CargarListview(provincia);
-        }
+        //protected void btnprovincia_click(object sender, eventargs e)
+        //{
+        //    button btn = (button)sender;
+        //    string provincia = btn.text;
+        //    session["provinciaseleccionada"] = provincia;
+        //    cargarlistview(provincia);
+        //}
         private void CargarListview(string provincia)
         {
             if (!string.IsNullOrEmpty(provincia))

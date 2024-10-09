@@ -12,9 +12,6 @@
         .auto-style1 {
             width: 100%;
         }
-        .auto-style34 {
-            width: 306px;
-        }
         .auto-style41 {
             width: 309px;
         }
@@ -27,19 +24,8 @@
         .auto-style46 {
             width: 214px;
         }
-        .auto-style47 {
-            width: 221px;
-        }
         .auto-style48 {
             width: 272px;
-        }
-        .auto-style49 {
-            width: 221px;
-            height: 84px;
-        }
-        .auto-style50 {
-            width: 200px;
-            height: 84px;
         }
         </style>
 </head>
@@ -84,9 +70,11 @@
             <tr>
                 <td class="auto-style45">&nbsp;</td>
                 <td class="auto-style41">
-                    <asp:SqlDataSource ID="SqlDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:BDSucursalesConnectionString %>" SelectCommand="SELECT [NombreSucursal], [DescripcionSucursal], [URL_Imagen_Sucursal] FROM [Sucursal]"></asp:SqlDataSource>
+                    <asp:SqlDataSource ID="SqlDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:BDSucursalesConnectionString %>" SelectCommand="SELECT [NombreSucursal], [DescripcionSucursal], [URL_Imagen_Sucursal], [Id_Sucursal] FROM [Sucursal]"></asp:SqlDataSource>
                 </td>
-                <td class="auto-style48">&nbsp;</td>
+                <td class="auto-style48">
+                     <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:BDSucursalesConnectionString %>" SelectCommand="SELECT [DescripcionProvincia], [Id_Provincia] FROM [Provincia]"></asp:SqlDataSource>
+                 </td>
                 <td>&nbsp;</td>
             </tr>
         </table>
@@ -94,43 +82,22 @@
                 <table class="Botones">
             <tr>
                 <td>
-                     <asp:Button ID="btnBuenosAires" runat="server" Text="Buenos Aires" Width="180px" OnClick="btnProvincia_Click" />
+                     <asp:DataList ID="DlProvincias" runat="server" DataSourceID="SqlDataSource1">
+                         <ItemTemplate>
+                             <asp:Button ID="btnProvincias" runat="server" Text='<%# Bind("DescripcionProvincia") %>' Width="250px" CommandArgument='<%# Bind("DescripcionProvincia") %>' CommandName="ComandoBoton" Height="40px" OnCommand="btnProvincias_Command" />
+                             <br />
+                             <br />
+                             <br />
+                         </ItemTemplate>
+                     </asp:DataList>
                  </td>
-            </tr>
-            <tr>
                 <td>
-                     <asp:Button ID="btnEntreRios" runat="server" Text="Entre Rios" Width="180px" OnClick="btnProvincia_Click" />
-                 </td>
+                     &nbsp;</td>
             </tr>
-            <tr>
-                <td>
-                    <asp:Button ID="btnSantaFe" runat="server" Text="Santa Fe" Width="180px" OnClick="btnProvincia_Click" />  
-                </td>
-            </tr>
-            <tr>
-                <td>
-                     <asp:Button ID="btnLaPampa" runat="server" Text="La Pampa" Width="180px" OnClick="btnProvincia_Click" />
-                 </td>
-            </tr>
-            <tr>
-                <td>
-                     <asp:Button ID="btnCordoba" runat="server" Text="Cordoba" Width="180px" OnClick="btnProvincia_Click" />
-                 </td>
-            </tr>
-            <tr>
-                <td>
-                     <asp:Button ID="btnMisiones" runat="server" Text="Misiones" Width="180px" OnClick="btnProvincia_Click" />
-                 </td>
-            </tr>
-            <tr>
-                <td>
-                     <asp:Button ID="btnChaco" runat="server" Text="Chaco" Width="180px" OnClick="btnProvincia_Click" />
-                 </td>
-            </tr>
-        </table>
+            </table>
         <table class="ListView" style="width: auto;">
                   <td class="auto-style1" rowspan="7">
-                    <asp:ListView ID="lvSucursales" runat="server" DataSourceID="SqlDataSource" GroupItemCount="3" OnPagePropertiesChanging="lvSucursales_PagePropertiesChanging">
+                    <asp:ListView ID="lvSucursales" runat="server" DataSourceID="SqlDataSource" GroupItemCount="3">
                         <EditItemTemplate>
                             <td runat="server" style="background-color: #999999;">NombreSucursal:
                                 <asp:TextBox ID="NombreSucursalTextBox" runat="server" Text='<%# Bind("NombreSucursal") %>' style="text-align: center; font-weight: bold;"/>
@@ -193,7 +160,7 @@
                        style="font-weight: normal; display: block; overflow: hidden; white-space: normal; width: 200px; margin: 5px 0; line-height: 1.5; height: 120px; text-align: center; text-overflow: ellipsis;" />
             
             <div style="display: flex; justify-content: center; width: 100%;">
-                <asp:Button ID="btnSeleccionar" runat="server" Text="Seleccionar" CommandName="eventoSeleccionar" OnCommand="btnSeleccionar_Command" style="margin-top: 10px;" />
+                <asp:Button ID="btnSeleccionar" runat="server" Text="Seleccionar" CommandName="eventoSeleccionar" OnCommand="btnSeleccionar_Command" style="margin-top: 10px;" CommandArgument='<%# Bind("Id_Sucursal") + ""+ Bind("NombreSucursal") + "" +Bind("DescripcionSucursal") %>' />
             </div>
         </div>
     </td>
