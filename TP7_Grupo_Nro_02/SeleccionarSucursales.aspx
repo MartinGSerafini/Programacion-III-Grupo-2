@@ -73,7 +73,7 @@
                     <asp:SqlDataSource ID="SqlDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:BDSucursalesConnectionString %>" SelectCommand="SELECT [NombreSucursal], [DescripcionSucursal], [URL_Imagen_Sucursal], [Id_Sucursal] FROM [Sucursal]"></asp:SqlDataSource>
                 </td>
                 <td class="auto-style48">
-                     <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:BDSucursalesConnectionString %>" SelectCommand="SELECT [DescripcionProvincia], [Id_Provincia] FROM [Provincia]"></asp:SqlDataSource>
+                     <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:BDSucursalesConnectionString %>" SelectCommand="SELECT DISTINCT [DescripcionProvincia] FROM [Provincia]"></asp:SqlDataSource>
                  </td>
                 <td>&nbsp;</td>
             </tr>
@@ -96,7 +96,7 @@
             </tr>
             </table>
         <table class="ListView" style="width: auto;">
-                  <td class="auto-style1" rowspan="7">
+           <td class="auto-style1" rowspan="7">
                     <asp:ListView ID="lvSucursales" runat="server" DataSourceID="SqlDataSource" GroupItemCount="3">
                         <EditItemTemplate>
                             <td runat="server" style="background-color: #999999;">NombreSucursal:

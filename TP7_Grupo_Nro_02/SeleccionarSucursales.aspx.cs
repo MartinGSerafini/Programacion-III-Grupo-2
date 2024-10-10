@@ -43,14 +43,25 @@ namespace TP7_Grupo_Nro_02
             DataSet ds = new DataSet();
             string nombre = txtSucursal.Text;
             ConexionSQL cn = new ConexionSQL();
-            SqlDataAdapter adapter = cn.ObtenerAdaptador("SELECT [NombreSucursal], [DescripcionSucursal], [URL_Imagen_Sucursal] " +
+
+            if (string.IsNullOrEmpty(nombre))
+            {
+                SqlDataAdapter adapter = cn.ObtenerAdaptador("SELECT [NombreSucursal], [DescripcionSucursal], [URL_Imagen_Sucursal] FROM [Sucursal]");
+                adapter.Fill(ds, "Sucursal");
+                lvSucursales.DataSourceID = null;
+                lvSucursales.DataSource = ds.Tables["Sucursal"];
+                lvSucursales.DataBind();
+            }
+            else
+            {
+                SqlDataAdapter adapter = cn.ObtenerAdaptador("SELECT [NombreSucursal], [DescripcionSucursal], [URL_Imagen_Sucursal] " +
                                                                         "FROM [Sucursal] WHERE [NombreSucursal] = @NombreSucursal");
-            adapter.SelectCommand.Parameters.AddWithValue("@NombreSucursal", nombre);
-            
-            adapter.Fill(ds, "Sucursal");
-            lvSucursales.DataSourceID = null;
-            lvSucursales.DataSource = ds.Tables["Sucursal"];
-            lvSucursales.DataBind();
+                adapter.SelectCommand.Parameters.AddWithValue("@NombreSucursal", nombre);
+                adapter.Fill(ds, "Sucursal");
+                lvSucursales.DataSourceID = null;
+                lvSucursales.DataSource = ds.Tables["Sucursal"];
+                lvSucursales.DataBind();
+            }
         }
 
         public DataTable crearTabla()
@@ -114,14 +125,6 @@ namespace TP7_Grupo_Nro_02
             string provincia = Session["ProvinciaSeleccionada"] as string;
             CargarListview(provincia);
         }
-
-        //protected void btnprovincia_click(object sender, eventargs e)
-        //{
-        //    button btn = (button)sender;
-        //    string provincia = btn.text;
-        //    session["provinciaseleccionada"] = provincia;
-        //    cargarlistview(provincia);
-        //}
         private void CargarListview(string provincia)
         {
             if (!string.IsNullOrEmpty(provincia))
