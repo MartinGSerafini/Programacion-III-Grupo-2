@@ -66,7 +66,6 @@
                                     <asp:Label ID="lblNombreSucursal" runat="server" Text='<%# Eval("NombreSucursal") %>' />
                                     <asp:ImageButton ID="ImageButton1" runat="server" ImageUrl='<%# Bind("URL_Imagen_Sucursal") %>' />
                                     <asp:Label ID="lblDescripcionSucursal" runat="server" Text='<%# Bind("DescripcionSucursal") %>' />
-                                    <asp:Button ID="btnSeleccionar" runat="server" Text="Seleccionar" CommandName="eventoSeleccionar" OnCommand="btnSeleccionar_Command" CommandArgument='<%# Eval("Id_Sucursal") + "|" + Eval("NombreSucursal") + "|" + Eval("DescripcionSucursal") %>' />
                                 </div>
                             </td>
                         </ItemTemplate>
