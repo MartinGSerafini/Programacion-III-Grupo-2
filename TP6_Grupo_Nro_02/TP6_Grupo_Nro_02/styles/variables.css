@@ -1,0 +1,21 @@
+:root {
+    /* Tema Claro */
+    --primary-color: #2563EB;
+    --secondary-color: #6D28D9;
+    --background-color: #FFFFFF;
+    --text-color: #1F2937;
+    --gray-color: #E5E7EB;
+}
+
+@media (prefers-color-scheme: dark) {
+    /* Tema Oscuro */
+    :root {
+        --primary-color: #3B82F6;
+        --secondary-color: #8B5CF6;
+        --background-color: #1C1C1E;
+        --text-color: #F5F5F5;
+        --gray-color: #3A3A3C;
+    }
+}
+background-color: #07105e;
+background-image: linear-gradient(43deg, #07105e 45%, #6d28d9 79%, #2563eb 100%);

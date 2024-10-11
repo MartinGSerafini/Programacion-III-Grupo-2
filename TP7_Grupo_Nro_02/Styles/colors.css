@@ -1,0 +1,38 @@
+﻿@media (prefers-color-scheme: dark){
+:root {
+    /* Colores para el tema claro */
+    --clr-primary-dark-blue: #080f24;
+    --clr-primary-purple: #6D28D9;
+    --clr-light-blue: #60A5FA;
+    --clr-light-purple: #A78BFA;
+    --clr-accent-yellow: #FBBF24;
+    --clr-accent-pink: #EC4899;
+    --clr-gray-light: #F3F4F6;
+    --clr-gray-medium: #9CA3AF;
+    --clr-gray-dark: #374151;
+    /* Fondo con degradado para el tema claro */
+    --clr-background: var(--clr-primary-dark-blue);
+    --clr-text: var(--clr-gray-light);
+    --clr-heading: var(--clr-primary-dark-blue);
+   
+}
+}
+@media (prefers-color-scheme: light) {
+    :root {
+        /* Colores para el tema oscuro */
+        --clr-primary-dark-blue: #3B82F6; /* Azul más vibrante en oscuro */
+        --clr-primary-purple: #8B5CF6;
+        --clr-light-blue: #93C5FD;
+        --clr-light-purple: #C4B5FD;
+        --clr-accent-yellow: #FCD34D;
+        --clr-accent-pink: #F472B6;
+        /* Grises en tema oscuro */
+        --clr-gray-light: #374151;
+        --clr-gray-medium: #6B7280;
+        --clr-gray-dark: #D1D5DB;
+        /* Fondo con degradado para el tema oscuro */
+        --clr-background: var(--clr-gray-dark);
+        --clr-text: #E5E7EB;
+        --clr-heading: var(--clr-primary-purple);
+    }
+}

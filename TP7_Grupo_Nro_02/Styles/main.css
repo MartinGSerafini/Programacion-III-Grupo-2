@@ -1,0 +1,40 @@
+﻿@import "normalize.css";
+@import 'colors.css';
+@import 'components.css';
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+body {
+    background: rgb(58,108,194);
+    background: radial-gradient(circle, rgba(58,108,194,1) 0%, rgba(8,16,68,1) 41%, rgba(4,0,69,1) 95%);
+    color: var(--clr-text);
+    font-size: var(--fz-body);
+    font-family: "Poppins", sans-serif;
+}
+
+
+nav {
+    display: flex;
+    gap: 2rem;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    font-weight: 700;
+    padding: 1rem;
+    background-color: var(--clr-background);
+}
+
+.search-section {
+    width: 80%;
+    overflow: hidden;
+    margin: 2rem;
+    
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.province-buttons{
+    width: 100%;
+    display: flex;
+    gap: 1rem;
+}
