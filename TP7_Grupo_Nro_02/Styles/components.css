@@ -1,0 +1,132 @@
+﻿@import 'colors.css';
+
+/* Estilos para botones */
+.btn {
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 0.5rem;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    color: var(--clr-text);
+    background-color: var(--clr-primary-purple);
+}
+
+.btn:hover {
+    background-color: var(--clr-accent-yellow);
+    color: var(--clr-primary-dark-blue);
+}
+
+/* Estilos para inputs */
+.input {
+    padding: 0.5rem;
+    font-size: 1rem;
+    border: 1px solid var(--clr-gray-medium);
+    border-radius: 0.5rem;
+    width: 100%;
+    color: var(--clr-text);
+    background-color: var(--clr-background);
+    transition: border-color 0.3s ease, background-color 0.3s ease;
+}
+
+.input:focus {
+    border-color: var(--clr-light-blue);
+    background-color: var(--clr-light-purple);
+    outline: none;
+}
+
+/* Estilos generales para la tabla */
+.ListView {
+    width: auto;
+    border-collapse: collapse;
+    margin: auto;
+    font-family: Arial, sans-serif;
+}
+
+    /* Estilos para las celdas de la tabla */
+    .ListView td {
+        padding: 12px;
+        border: 1px solid var(--clr-gray-medium);
+        text-align: left;
+        transition: background-color 0.3s ease;
+    }
+
+    /* Estilos para el encabezado */
+    .ListView th {
+        background-color: var(--clr-primary-purple);
+        color: var(--clr-text);
+        padding: 12px;
+        font-weight: bold;
+    }
+
+    /* Efecto hover en las filas */
+ 
+/* Estilos para las etiquetas dentro de las celdas */
+.desc {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Estilos para las imágenes */
+.ListView img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+/* Estilos para el pager */
+.DataPager {
+    margin: 20px 0;
+    text-align: center;
+}
+
+    /* Estilos para el pager buttons */
+    .DataPager button {
+        background-color: var(--clr-primary-purple);
+        color: var(--clr-text);
+        border: none;
+        padding: 8px 15px;
+        margin: 0 5px;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+        .DataPager button:hover {
+            background-color: var(--clr-accent-yellow);
+        }
+
+/* Estilos para el mensaje de datos vacíos */
+.EmptyDataTemplate td {
+    text-align: center;
+    font-style: italic;
+    color: var(--clr-gray-medium);
+}
+
+/* Estilos para el modo oscuro */
+@media (prefers-color-scheme: dark) {
+    .ListView td {
+        background-color: transparent;
+        color: var(--clr-text);
+        
+    }
+
+    .ListView th {
+        background-color: var(--clr-primary-purple);
+    }
+
+   
+
+        .btn:hover {
+            background-color: var(--clr-accent-yellow);
+        }
+
+    .DataPager button {
+        background-color: var(--clr-primary-purple);
+    }
+
+        .DataPager button:hover {
+            background-color: var(--clr-accent-pink);
+        }
+}
