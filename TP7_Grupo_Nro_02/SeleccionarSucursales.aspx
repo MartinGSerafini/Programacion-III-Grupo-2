@@ -160,7 +160,7 @@
                        style="font-weight: normal; display: block; overflow: hidden; white-space: normal; width: 200px; margin: 5px 0; line-height: 1.5; height: 120px; text-align: center; text-overflow: ellipsis;" />
             
             <div style="display: flex; justify-content: center; width: 100%;">
-                <asp:Button ID="btnSeleccionar" runat="server" Text="Seleccionar" CommandName="eventoSeleccionar" OnCommand="btnSeleccionar_Command" style="margin-top: 10px;" CommandArgument='<%# Bind("Id_Sucursal") +"|"+ Bind("NombreSucursal") + "|" +Bind("DescripcionSucursal") %>' />
+                <asp:Button ID="btnSeleccionar" runat="server" Text="Seleccionar" CommandName="eventoSeleccionar" OnCommand="btnSeleccionar_Command" style="margin-top: 10px;" CommandArgument='<%# Eval("Id_Sucursal")+" "+Eval("NombreSucursal")+" "+Eval("DescripcionSucursal") %>' />
             </div>
         </div>
     </td>

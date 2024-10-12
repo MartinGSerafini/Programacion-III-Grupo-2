@@ -22,21 +22,17 @@ namespace TP7_Grupo_Nro_02
         protected void btnSeleccionar_Command(object sender, CommandEventArgs e)
         {
             if (e.CommandName == "eventoSeleccionar")
-            {
-                string[] datosSucursal = e.CommandArgument.ToString().Split('|');
+            {//Toma los datos de la sucursal (id_sucursal, Nombre, Descripcion), los separa por ' ' con Split y los guarda en 3 variables
+                string[] datosSucursal = (e.CommandArgument.ToString()).Split(' ');
+                string IdSucursal = datosSucursal[0];
+                string Nombre = datosSucursal[1];
+                string Descripcion = datosSucursal[2];
+                //Genera la tabla en caso de ser null y agrega la fila
+                if (Session["tabla"] == null)
+                    Session["tabla"] = crearTabla();
 
-                if (datosSucursal.Length == 3)
-                {
-                    string IdSucursal = datosSucursal[0];
-                    string Nombre = datosSucursal[1];
-                    string Descripcion = datosSucursal[2];
-
-                    if (Session["tabla"] == null)
-                        Session["tabla"] = crearTabla();
-
-                    if (validarRepeticiones(IdSucursal))
-                        agregarFila((DataTable)Session["tabla"], IdSucursal, Nombre, Descripcion);
-                }
+                if (validarRepeticiones(IdSucursal))
+                    agregarFila((DataTable)Session["tabla"], IdSucursal, Nombre, Descripcion);
             }
         }
 
@@ -48,7 +44,8 @@ namespace TP7_Grupo_Nro_02
 
             if (string.IsNullOrEmpty(nombre))
             {
-                SqlDataAdapter adapter = cn.ObtenerAdaptador("SELECT [NombreSucursal], [DescripcionSucursal], [URL_Imagen_Sucursal] FROM [Sucursal]");
+                SqlDataAdapter adapter = cn.ObtenerAdaptador("SELECT [Id_Sucursal], [NombreSucursal], [DescripcionSucursal], [URL_Imagen_Sucursal]" +
+                                                            " FROM [Sucursal]");
                 adapter.Fill(ds, "Sucursal");
                 lvSucursales.DataSourceID = null;
                 lvSucursales.DataSource = ds.Tables["Sucursal"];
@@ -56,8 +53,8 @@ namespace TP7_Grupo_Nro_02
             }
             else
             {
-                SqlDataAdapter adapter = cn.ObtenerAdaptador("SELECT [NombreSucursal], [DescripcionSucursal], [URL_Imagen_Sucursal] " +
-                                                                        "FROM [Sucursal] WHERE [NombreSucursal] = @NombreSucursal");
+                SqlDataAdapter adapter = cn.ObtenerAdaptador("SELECT [Id_Sucursal], [NombreSucursal], [DescripcionSucursal], [URL_Imagen_Sucursal] " +
+                                                            "FROM [Sucursal] WHERE [NombreSucursal] = @NombreSucursal");
                 adapter.SelectCommand.Parameters.AddWithValue("@NombreSucursal", nombre);
                 adapter.Fill(ds, "Sucursal");
                 lvSucursales.DataSourceID = null;
@@ -103,7 +100,7 @@ namespace TP7_Grupo_Nro_02
             string id;
             for (int i = 0; i < filas; i++)
             {
-                id = tabla.Rows[i]["Id_Sucursal"].ToString();
+                id = tabla.Rows[i]["ID_SUCURSAL"].ToString();
                 if (id == IdSucursal)
                 {
                     return false;
@@ -133,7 +130,7 @@ namespace TP7_Grupo_Nro_02
             {
                 ConexionSQL cn = new ConexionSQL();
                 SqlDataAdapter adapter = cn.ObtenerAdaptador(
-                    "SELECT s.[NombreSucursal], s.[DescripcionSucursal], s.[URL_Imagen_Sucursal] " +
+                    "SELECT s.[Id_Sucursal], s.[NombreSucursal], s.[DescripcionSucursal], s.[URL_Imagen_Sucursal] " +
                     "FROM [Sucursal] s JOIN [Provincia] p ON s.Id_ProvinciaSucursal = p.Id_Provincia " +
                     "WHERE p.DescripcionProvincia = @NombreProvincia");
 
