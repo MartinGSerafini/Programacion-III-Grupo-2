@@ -35,9 +35,7 @@ namespace TP7_Grupo_Nro_02
                         Session["tabla"] = crearTabla();
 
                     if (validarRepeticiones(IdSucursal))
-                    {
                         agregarFila((DataTable)Session["tabla"], IdSucursal, Nombre, Descripcion);
-                    }
                 }
             }
         }

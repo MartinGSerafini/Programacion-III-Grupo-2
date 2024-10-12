@@ -19,7 +19,7 @@ namespace TP7_Grupo_Nro_02
                     DataTable dt = (DataTable)Session["tabla"];
 
                     GridView1.DataSource = dt;
-                    GridView1.DataBind();
+                    GridView1.DataBind(); // Vincula los datos al GridView
                 }
                 else
                 {
