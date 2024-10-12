@@ -54,7 +54,7 @@ namespace TP7_Grupo_Nro_02
             else
             {
                 SqlDataAdapter adapter = cn.ObtenerAdaptador("SELECT [Id_Sucursal], [NombreSucursal], [DescripcionSucursal], [URL_Imagen_Sucursal] " +
-                                                            "FROM [Sucursal] WHERE [NombreSucursal] = @NombreSucursal");
+                                                            "FROM [Sucursal] WHERE [NombreSucursal] LIKE '%' + @NombreSucursal + '%'");
                 adapter.SelectCommand.Parameters.AddWithValue("@NombreSucursal", nombre);
                 adapter.Fill(ds, "Sucursal");
                 lvSucursales.DataSourceID = null;
