@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -11,7 +12,21 @@ namespace TP7_Grupo_Nro_02
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (!IsPostBack)
+            {
+                if (Session["tabla"] != null)
+                {
+                    DataTable dt = (DataTable)Session["tabla"];
 
+                    GridView1.DataSource = dt;
+                    GridView1.DataBind();
+                }
+                else
+                {
+                    GridView1.DataSource = null;
+                    GridView1.DataBind();
+                }
+            }
         }
     }
 }

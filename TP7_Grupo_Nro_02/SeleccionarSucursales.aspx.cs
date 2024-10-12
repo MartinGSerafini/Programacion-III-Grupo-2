@@ -23,17 +23,21 @@ namespace TP7_Grupo_Nro_02
         {
             if (e.CommandName == "eventoSeleccionar")
             {
-                string IdSucursal = e.CommandArgument.ToString();
-                string Nombre = "";
-                string Descripcion = "";
+                string[] datosSucursal = e.CommandArgument.ToString().Split('|');
 
-
-                if (Session["tabla"] == null)
-                    Session["tabla"] = crearTabla();
-
-                if (validarRepeticiones(IdSucursal))
+                if (datosSucursal.Length == 3)
                 {
-                    agregarFila((DataTable)Session["tabla"], IdSucursal, Nombre, Descripcion);
+                    string IdSucursal = datosSucursal[0];
+                    string Nombre = datosSucursal[1];
+                    string Descripcion = datosSucursal[2];
+
+                    if (Session["tabla"] == null)
+                        Session["tabla"] = crearTabla();
+
+                    if (validarRepeticiones(IdSucursal))
+                    {
+                        agregarFila((DataTable)Session["tabla"], IdSucursal, Nombre, Descripcion);
+                    }
                 }
             }
         }

@@ -104,6 +104,49 @@
                             </td>
                         </InsertItemTemplate>
 
+<<<<<<< Updated upstream
+=======
+            <div style="display: flex; justify-content: center; align-items: center; width: 200px; height: 200px; overflow: hidden; margin: 0 auto; padding: 0; border: none;">
+                <asp:ImageButton ID="ImageButton1" runat="server" ImageUrl='<%# Bind("URL_Imagen_Sucursal") %>' 
+                                 style="width: 100%; height: auto; max-height: 100%; object-fit: cover; border: none;" />
+            </div>
+            
+            <asp:Label ID="lblDescripcionSucursal" runat="server" Text='<%# Bind("DescripcionSucursal") %>' 
+                       style="font-weight: normal; display: block; overflow: hidden; white-space: normal; width: 200px; margin: 5px 0; line-height: 1.5; height: 120px; text-align: center; text-overflow: ellipsis;" />
+            
+            <div style="display: flex; justify-content: center; width: 100%;">
+                <asp:Button ID="btnSeleccionar" runat="server" Text="Seleccionar" CommandName="eventoSeleccionar"
+                 OnCommand="btnSeleccionar_Command"
+                 CommandArgument='<%# Bind("Id_Sucursal") + "|" + Bind("NombreSucursal") + "|" + Bind("DescripcionSucursal") %>'
+                 style="margin-top: 10px;" />
+            </div>
+        </div>
+    </td>
+</ItemTemplate>
+                        <LayoutTemplate>
+                            <table runat="server">
+                                <tr runat="server">
+                                    <td runat="server">
+                                        <table id="groupPlaceholderContainer" runat="server" border="1" style="background-color: #FFFFFF;border-collapse: collapse;border-color: #999999;border-style:none;border-width:1px;font-family: Verdana, Arial, Helvetica, sans-serif;">
+                                            <tr id="groupPlaceholder" runat="server">
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                                <tr runat="server">
+                                    <td runat="server" style="text-align: center;background-color: #5D7B9D;font-family: Verdana, Arial, Helvetica, sans-serif;color: #FFFFFF">
+                                        <asp:DataPager ID="DataPager1" runat="server" PageSize="6">
+                                            <Fields>
+                                                <asp:NextPreviousPagerField ButtonType="Button" ShowFirstPageButton="True" ShowNextPageButton="False" ShowPreviousPageButton="False" />
+                                                <asp:NumericPagerField />
+                                                <asp:NextPreviousPagerField ButtonType="Button" ShowLastPageButton="True" ShowNextPageButton="False" ShowPreviousPageButton="False" />
+                                            </Fields>
+                                        </asp:DataPager>
+                                    </td>
+                                </tr>
+                            </table>
+                        </LayoutTemplate>
+>>>>>>> Stashed changes
                         <SelectedItemTemplate>
                             <td>
                                 <asp:Label ID="NombreSucursalLabel" runat="server" Text='<%# Eval("NombreSucursal") %>' />
