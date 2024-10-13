@@ -96,8 +96,9 @@
             </tr>
             </table>
         <table class="ListView" style="width: auto;">
-           <td class="auto-style1" rowspan="7">
-                    <asp:ListView ID="lvSucursales" runat="server" DataSourceID="SqlDataSource" GroupItemCount="3">
+            <tr>
+                <td class="auto-style1" rowspan="7">
+                    <asp:ListView ID="lvSucursales" runat="server" DataSourceID="SqlDataSource" GroupItemCount="3" OnPagePropertiesChanging="lvSucursales_PagePropertiesChanging">
                         <EditItemTemplate>
                             <td runat="server" style="background-color: #999999;">NombreSucursal:
                                 <asp:TextBox ID="NombreSucursalTextBox" runat="server" Text='<%# Bind("NombreSucursal") %>' style="text-align: center; font-weight: bold;"/>
@@ -146,25 +147,22 @@
                             </td>
                         </InsertItemTemplate>
                         <ItemTemplate>
-    <td runat="server" style="background-color: #E0FFFF; color: #333333; padding: 10px; border: none;">
-        <div style="display: flex; flex-direction: column; align-items: center; height: 100%;">
-            <asp:Label ID="lblNombreSucursal" runat="server" Text='<%# Eval("NombreSucursal") %>' 
-                       style="font-weight: bold; margin-bottom: 5px; text-align: center;" />
-
-            <div style="display: flex; justify-content: center; align-items: center; width: 200px; height: 200px; overflow: hidden; margin: 0 auto; padding: 0; border: none;">
-                <asp:ImageButton ID="ImageButton1" runat="server" ImageUrl='<%# Bind("URL_Imagen_Sucursal") %>' 
+                            <td runat="server" style="background-color: #E0FFFF; color: #333333; padding: 10px; border: none;">
+                            <div style="display: flex; flex-direction: column; align-items: center; height: 100%;">
+                            <asp:Label ID="lblNombreSucursal" runat="server" Text='<%# Eval("NombreSucursal") %>' 
+                                 style="font-weight: bold; margin-bottom: 5px; text-align: center;" />
+                            <div style="display: flex; justify-content: center; align-items: center; width: 200px; height: 200px; overflow: hidden; margin: 0 auto; padding: 0; border: none;">
+                            <asp:ImageButton ID="ImageButton1" runat="server" ImageUrl='<%# Bind("URL_Imagen_Sucursal") %>' 
                                  style="width: 100%; height: auto; max-height: 100%; object-fit: cover; border: none;" />
-            </div>
-            
-            <asp:Label ID="lblDescripcionSucursal" runat="server" Text='<%# Bind("DescripcionSucursal") %>' 
-                       style="font-weight: normal; display: block; overflow: hidden; white-space: normal; width: 200px; margin: 5px 0; line-height: 1.5; height: 120px; text-align: center; text-overflow: ellipsis;" />
-            
-            <div style="display: flex; justify-content: center; width: 100%;">
-                <asp:Button ID="btnSeleccionar" runat="server" Text="Seleccionar" CommandName="eventoSeleccionar" OnCommand="btnSeleccionar_Command" style="margin-top: 10px;" CommandArgument='<%# Eval("Id_Sucursal")+" "+Eval("NombreSucursal")+" "+Eval("DescripcionSucursal") %>' />
-            </div>
-        </div>
-    </td>
-</ItemTemplate>
+                            </div>
+                            <asp:Label ID="lblDescripcionSucursal" runat="server" Text='<%# Bind("DescripcionSucursal") %>' 
+                                 style="font-weight: normal; display: block; overflow: hidden; white-space: normal; width: 200px; margin: 5px 0; line-height: 1.5; height: 120px; text-align: center; text-overflow: ellipsis;" />
+                            <div style="display: flex; justify-content: center; width: 100%;">
+                            <asp:Button ID="btnSeleccionar" runat="server" Text="Seleccionar" CommandName="eventoSeleccionar" OnCommand="btnSeleccionar_Command" style="margin-top: 10px;" CommandArgument='<%# Eval("Id_Sucursal")+"|"+Eval("NombreSucursal")+"|"+Eval("DescripcionSucursal") %>' />
+                            </div>
+                            </div>
+                            </td>
+                        </ItemTemplate>
                         <LayoutTemplate>
                             <table runat="server">
                                 <tr runat="server">
@@ -202,6 +200,7 @@
                         </SelectedItemTemplate>
                     </asp:ListView>
                  </td>
+            </tr>
         </table>
             </div>
     </form>

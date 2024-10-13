@@ -22,12 +22,11 @@ namespace TP7_Grupo_Nro_02
         protected void btnSeleccionar_Command(object sender, CommandEventArgs e)
         {
             if (e.CommandName == "eventoSeleccionar")
-            {//Toma los datos de la sucursal (id_sucursal, Nombre, Descripcion), los separa por ' ' con Split y los guarda en 3 variables
-                string[] datosSucursal = (e.CommandArgument.ToString()).Split(' ');
+            {
+                string[] datosSucursal = (e.CommandArgument.ToString()).Split('|');
                 string IdSucursal = datosSucursal[0];
                 string Nombre = datosSucursal[1];
                 string Descripcion = datosSucursal[2];
-                //Genera la tabla en caso de ser null y agrega la fila
                 if (Session["tabla"] == null)
                     Session["tabla"] = crearTabla();
 
@@ -38,18 +37,14 @@ namespace TP7_Grupo_Nro_02
 
         protected void BtnBuscar_Click(object sender, EventArgs e)
         {
+            Session["provinciaseleccionada"] = null;
             DataSet ds = new DataSet();
             string nombre = txtSucursal.Text;
             ConexionSQL cn = new ConexionSQL();
 
             if (string.IsNullOrEmpty(nombre))
             {
-                SqlDataAdapter adapter = cn.ObtenerAdaptador("SELECT [Id_Sucursal], [NombreSucursal], [DescripcionSucursal], [URL_Imagen_Sucursal]" +
-                                                            " FROM [Sucursal]");
-                adapter.Fill(ds, "Sucursal");
-                lvSucursales.DataSourceID = null;
-                lvSucursales.DataSource = ds.Tables["Sucursal"];
-                lvSucursales.DataBind();
+                Response.Redirect("SeleccionarSucursales.aspx");
             }
             else
             {
