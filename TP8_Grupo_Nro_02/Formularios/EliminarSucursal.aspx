@@ -1,4 +1,4 @@
-﻿<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="EliminarSucursal.aspx.vb" Inherits="TP8_Grupo_Nro_02.WebForm3" %>
+﻿<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="EliminarSucursal.aspx.cs" Inherits="TP8_Grupo_Nro_02.WebForm3" %>
 
 <!DOCTYPE html>
 

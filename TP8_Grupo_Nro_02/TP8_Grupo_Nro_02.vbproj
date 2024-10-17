@@ -129,14 +129,12 @@
     </Compile>
     <Compile Include="Formularios\ListadoDeSucursales.aspx.vb">
       <DependentUpon>ListadoDeSucursales.aspx</DependentUpon>
-      <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="Formularios\EliminarSucursal.aspx.designer.vb">
       <DependentUpon>EliminarSucursal.aspx</DependentUpon>
     </Compile>
     <Compile Include="Formularios\EliminarSucursal.aspx.vb">
       <DependentUpon>EliminarSucursal.aspx</DependentUpon>
-      <SubType>ASPXCodebehind</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>

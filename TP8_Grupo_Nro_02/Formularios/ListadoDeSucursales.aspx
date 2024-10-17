@@ -1,4 +1,4 @@
-﻿<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="ListadoDeSucursales.aspx.vb" Inherits="TP8_Grupo_Nro_02.WebForm2" %>
+﻿<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="ListadoDeSucursales.aspx.cs" Inherits="TP8_Grupo_Nro_02.WebForm2" %>
 
 <!DOCTYPE html>
 

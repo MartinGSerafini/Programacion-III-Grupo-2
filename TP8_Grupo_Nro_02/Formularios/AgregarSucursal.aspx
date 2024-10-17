@@ -1,4 +1,4 @@
-﻿<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="AgregarSucursal.aspx.vb" Inherits="TP8_Grupo_Nro_02.WebForm1" %>
+﻿<%@ Page Language="C#" AutoEventWireup="false" CodeBehind="AgregarSucursal.aspx.cs" Inherits="TP8_Grupo_Nro_02.WebForm1" %>
 
 <!DOCTYPE html>
 
