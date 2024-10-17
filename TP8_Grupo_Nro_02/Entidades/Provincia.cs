@@ -16,6 +16,6 @@ namespace Entidades
         public int getId_Provincia() {return Id_Provincia;}
         public void setId_Provincia(int IdProvincia) { Id_Provincia = IdProvincia;}
         public string getDescripcionProvincia() { return DescripcionProvincia;}
-        public void setDescripcionCategoria(string Descripcion) { DescripcionProvincia = Descripcion;}
+        public void setDescripcionProvincia(string Descripcion) { DescripcionProvincia = Descripcion;}
     }
 }

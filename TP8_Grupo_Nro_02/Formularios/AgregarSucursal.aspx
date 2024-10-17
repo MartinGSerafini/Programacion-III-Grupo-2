@@ -97,7 +97,7 @@
                     <asp:TextBox ID="txtNombreSucursal" runat="server" Width="282px"></asp:TextBox>
                 </td>
                 <td class="auto-style2">
-                    <asp:RequiredFieldValidator ID="rfvNombreSucursal" runat="server" ControlToValidate="txtNombreSucursal">*</asp:RequiredFieldValidator>
+                    <asp:RequiredFieldValidator ID="rfvNombreSucursal" runat="server" ControlToValidate="txtNombreSucursal" ErrorMessage="Debe Ingresar un Nombre de Sucursal" ForeColor="Red" ValidationGroup="vg1">*</asp:RequiredFieldValidator>
                 </td>
             </tr>
             <tr>
@@ -110,10 +110,10 @@
                     <asp:Label ID="Label2" runat="server" Font-Size="13pt" Text="Descripción:"></asp:Label>
                 </td>
                 <td class="auto-style11">
-                    <asp:TextBox ID="txtDescripcion" runat="server" Height="71px" Width="281px"></asp:TextBox>
+                    <asp:TextBox ID="txtDescripcion" runat="server" Height="56px" Width="281px"></asp:TextBox>
                 </td>
                 <td>
-                    <asp:RequiredFieldValidator ID="rfvDescripcion" runat="server" ControlToValidate="txtDescripcion">*</asp:RequiredFieldValidator>
+                    <asp:RequiredFieldValidator ID="rfvDescripcion" runat="server" ControlToValidate="txtDescripcion" ErrorMessage="Debe Ingresar una Descipcion de Sucursal" ForeColor="Red" ValidationGroup="vg1">*</asp:RequiredFieldValidator>
                 </td>
             </tr>
             <tr>
@@ -129,7 +129,9 @@
                     <asp:DropDownList ID="ddlProvincia" runat="server" Height="16px" Width="290px">
                     </asp:DropDownList>
                 </td>
-                <td>&nbsp;</td>
+                <td>
+                    <asp:RequiredFieldValidator ID="Rfv" runat="server" ControlToValidate="ddlProvincia" ErrorMessage="Debe Seleccionar  una Provincia" ForeColor="Red" InitialValue="0" ValidationGroup="vg1">*</asp:RequiredFieldValidator>
+                </td>
             </tr>
             <tr>
                 <td class="auto-style6"></td>
@@ -144,18 +146,22 @@
                     <asp:TextBox ID="txtDireccion" runat="server" Height="44px" Width="281px"></asp:TextBox>
                 </td>
                 <td class="auto-style2">
-                    <asp:RequiredFieldValidator ID="rfvDireccion" runat="server" ControlToValidate="txtDireccion">*</asp:RequiredFieldValidator>
+                    <asp:RequiredFieldValidator ID="rfvDireccion" runat="server" ControlToValidate="txtDireccion" ErrorMessage="Debe Ingresar una Direccion de Sucursal" ForeColor="Red" ValidationGroup="vg1">*</asp:RequiredFieldValidator>
                 </td>
             </tr>
             <tr>
                 <td class="auto-style5">&nbsp;</td>
                 <td class="auto-style4">&nbsp;</td>
                 <td class="auto-style10">
-                    <asp:Button ID="btnAceptar" runat="server" Text="Aceptar" />
+                    <br />
+                    <asp:Button ID="btnAceptar" runat="server" Text="Aceptar" OnClick="btnAceptar_Click" ValidationGroup="vg1" />
                 </td>
-                <td class="auto-style2">&nbsp;</td>
+                <td class="auto-style2">
+                    <asp:Label ID="lblconfirmacion" runat="server" Text="La Sucursal a sido agregada con exito" Visible="False"></asp:Label>
+                </td>
             </tr>
         </table>
+        <asp:ValidationSummary ID="ValidationSummary1" runat="server" ValidationGroup="vg1" />
     </form>
 </body>
 </html>

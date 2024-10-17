@@ -17,7 +17,7 @@ namespace Datos
         {
             DataTable tabla = ds.ObtenerTabla("Provincia", "SELECT * FROM Provincia WHERE Id_Provincia = " + prov.getId_Provincia());
             prov.setId_Provincia(Convert.ToInt32(tabla.Rows[0][0].ToString()));
-            prov.setDescripcionCategoria(tabla.Rows[0][1].ToString());
+            prov.setDescripcionProvincia(tabla.Rows[0][1].ToString());
             return prov;
         }
 
