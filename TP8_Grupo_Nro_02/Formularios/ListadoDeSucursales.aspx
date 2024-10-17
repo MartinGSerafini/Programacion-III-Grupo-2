@@ -1,4 +1,4 @@
-﻿<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="ListadoDeSucursales.aspx.cs" Inherits="TP8_Grupo_Nro_02.WebForm2" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ListadoDeSucursales.aspx.cs" Inherits="TP8_Grupo_Nro_02.WebForm3" %>
 
 <!DOCTYPE html>
 
@@ -7,13 +7,14 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title></title>
     <style type="text/css">
+
         .auto-style1 {
             width: 100%;
         }
     </style>
 </head>
 <body>
-    <form id="form1" runat="server">
+    <form id="form2" runat="server">
         <div>
             <table class="auto-style1">
                 <tr>

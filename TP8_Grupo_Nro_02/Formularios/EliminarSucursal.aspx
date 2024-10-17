@@ -1,4 +1,4 @@
-﻿<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="EliminarSucursal.aspx.cs" Inherits="TP8_Grupo_Nro_02.WebForm3" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="EliminarSucursal.aspx.cs" Inherits="TP8_Grupo_Nro_02.WebForm2" %>
 
 <!DOCTYPE html>
 
@@ -7,6 +7,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title></title>
     <style type="text/css">
+
         .auto-style1 {
             width: 100%;
         }
