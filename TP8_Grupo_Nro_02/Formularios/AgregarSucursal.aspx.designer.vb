@@ -86,6 +86,15 @@ Partial Public Class WebForm1
     Protected WithEvents txtNombreSucursal As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
+    '''Control rfvNombreSucursal.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents rfvNombreSucursal As Global.System.Web.UI.WebControls.RequiredFieldValidator
+
+    '''<summary>
     '''Control Label2.
     '''</summary>
     '''<remarks>
@@ -102,6 +111,15 @@ Partial Public Class WebForm1
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
     Protected WithEvents txtDescripcion As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''Control rfvDescripcion.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents rfvDescripcion As Global.System.Web.UI.WebControls.RequiredFieldValidator
 
     '''<summary>
     '''Control Label3.
@@ -138,6 +156,15 @@ Partial Public Class WebForm1
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
     Protected WithEvents txtDireccion As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''Control rfvDireccion.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents rfvDireccion As Global.System.Web.UI.WebControls.RequiredFieldValidator
 
     '''<summary>
     '''Control btnAceptar.

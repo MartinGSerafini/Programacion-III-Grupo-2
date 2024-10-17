@@ -33,6 +33,13 @@
         .auto-style9 {
             width: 286px;
         }
+        .auto-style10 {
+            height: 23px;
+            width: 315px;
+        }
+        .auto-style11 {
+            width: 315px;
+        }
     </style>
 </head>
 <body>
@@ -76,7 +83,8 @@
                 <td class="auto-style4">
                     <asp:Label ID="Label1" runat="server" Font-Size="14"><b>Agregar Sucursal</b></asp:Label>
                 </td>
-                <td class="auto-style2"></td>
+                <td class="auto-style10"></td>
+                <td class="auto-style2">&nbsp;</td>
             </tr>
             <tr>
                 <td class="auto-style5">&nbsp;</td>
@@ -87,8 +95,11 @@
                 <td class="auto-style4">
                     <asp:Label ID="Label6" runat="server" Text="Nombre sucursal:" Font-Size="13pt"></asp:Label>
                 </td>
-                <td class="auto-style2">
+                <td class="auto-style10">
                     <asp:TextBox ID="txtNombreSucursal" runat="server" Width="282px"></asp:TextBox>
+                </td>
+                <td class="auto-style2">
+                    <asp:RequiredFieldValidator ID="rfvNombreSucursal" runat="server" ControlToValidate="txtNombreSucursal">*</asp:RequiredFieldValidator>
                 </td>
             </tr>
             <tr>
@@ -100,8 +111,11 @@
                 <td class="auto-style8">
                     <asp:Label ID="Label2" runat="server" Text="Descripción:" Font-Size="13pt"></asp:Label>
                 </td>
-                <td>
+                <td class="auto-style11">
                     <asp:TextBox ID="txtDescripcion" runat="server" Height="71px" Width="281px"></asp:TextBox>
+                </td>
+                <td>
+                    <asp:RequiredFieldValidator ID="rfvDescripcion" runat="server" ControlToValidate="txtDescripcion">*</asp:RequiredFieldValidator>
                 </td>
             </tr>
             <tr>
@@ -113,10 +127,12 @@
                 <td class="auto-style8">
                     <asp:Label ID="Label3" runat="server" Text="Provincia:" Font-Size="13pt"></asp:Label>
                 </td>
-                <td>
+                <td class="auto-style11">
                     <asp:DropDownList ID="ddlProvincia" runat="server" Height="16px" Width="290px">
                     </asp:DropDownList>
                 </td>
+                <td>
+                    &nbsp;</td>
             </tr>
             <tr>
                 <td class="auto-style6"></td>
@@ -127,17 +143,22 @@
                 <td class="auto-style4">
                     <asp:Label ID="Label4" runat="server" Text="Dirección:" Font-Size="13pt"></asp:Label>
                 </td>
-                <td class="auto-style2">
+                <td class="auto-style10">
                     <asp:TextBox ID="txtDireccion" runat="server" Height="44px" Width="281px"></asp:TextBox>
+                </td>
+                <td class="auto-style2">
+                    <asp:RequiredFieldValidator ID="rfvDireccion" runat="server" ControlToValidate="txtDireccion">*</asp:RequiredFieldValidator>
                 </td>
             </tr>
             <tr>
                 <td class="auto-style5">&nbsp;</td>
                 <td class="auto-style4">
                     &nbsp;</td>
-                <td class="auto-style2">
+                <td class="auto-style10">
                     <asp:Button ID="btnAceptar" runat="server" Text="Aceptar" />
                 </td>
+                <td class="auto-style2">
+                    &nbsp;</td>
             </tr>
         </table>
     </form>
