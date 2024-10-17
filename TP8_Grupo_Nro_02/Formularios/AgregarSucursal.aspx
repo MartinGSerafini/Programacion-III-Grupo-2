@@ -157,7 +157,7 @@
                     <asp:Button ID="btnAceptar" runat="server" Text="Aceptar" OnClick="btnAceptar_Click" ValidationGroup="vg1" />
                 </td>
                 <td class="auto-style2">
-                    <asp:Label ID="lblconfirmacion" runat="server" Text="La Sucursal a sido agregada con exito" Visible="False"></asp:Label>
+                    <asp:Label ID="lblconfirmacion" runat="server" Text="La Sucursal fue agregada con exito" Visible="False"></asp:Label>
                 </td>
             </tr>
         </table>
