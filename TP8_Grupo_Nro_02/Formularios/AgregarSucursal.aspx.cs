@@ -37,7 +37,22 @@ namespace TP8_Grupo_Nro_02
 
         protected void btnAceptar_Click(object sender, EventArgs e)
         {
-            borrarcampos();
+            string consulta = "INSERT INTO Sucursal(NombreSucursal,DescripcionSucursal,Id_ProvinciaSucursal,DireccionSucursal) " +
+                               "VALUES ('" + txtNombreSucursal.Text + "' , '" + txtDescripcion.Text + "' , '" + ddlProvincia.SelectedIndex + 
+                               "' , '" + txtDireccion.Text + "')";
+
+            LogicaSucursal ls = new LogicaSucursal();
+            int fila = ls.ConexionSQL(consulta);
+
+            if (fila > 0)
+            {
+                lblconfirmacion.Text = "Sucursal agregada correctamente";
+                borrarcampos();
+            }
+            else
+            {
+                lblconfirmacion.Text = "No se pudo agregar la sucursal";
+            }
         }
 
         private void borrarcampos()
