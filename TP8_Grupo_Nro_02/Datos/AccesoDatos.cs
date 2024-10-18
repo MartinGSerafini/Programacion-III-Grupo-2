@@ -8,13 +8,25 @@ using System.Data;
 
 namespace Datos
 {
-    internal class AccesoDatos
+    public class AccesoDatos
     {
         String ruta = "Data Source=localhost\\sqlexpress; Initial Catalog = BDSucursales; Integrated Security = True";
 
         public AccesoDatos()
         {
         }
+
+        public int ejecutarConsulta(string consulta)
+        {
+            SqlConnection conexion = new SqlConnection(ruta);
+            conexion.Open();
+
+            SqlCommand cmd = new SqlCommand(consulta, conexion);
+            int filas = cmd.ExecuteNonQuery();
+
+            return filas;
+        }
+
         private SqlConnection ObtenerConexion()
         {
             SqlConnection cn = new SqlConnection(ruta);
