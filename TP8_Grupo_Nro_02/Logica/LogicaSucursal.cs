@@ -17,6 +17,12 @@ namespace Logica
             return dao.getTablaSucursales();
         }
 
+        public int ConexionSQL(string consulta)
+        {
+            AccesoDatos ad = new AccesoDatos();
+            return ad.ejecutarConsulta(consulta);
+        }
+
         public Sucursal get(int id)
         {
             DaoSucursal dao = new DaoSucursal();
