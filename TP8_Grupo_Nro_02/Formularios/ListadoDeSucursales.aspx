@@ -62,22 +62,23 @@
                 <td class="auto-style2">Busqueda Ingrese Id Sucursal:</td>
                 <td class="auto-style3">
                     <asp:TextBox ID="txtid_sucursal" runat="server" Width="240px"></asp:TextBox>
-                </td>
+                &nbsp;</td>
                 <td class="auto-style4">
-                    <asp:Button ID="btnfiltrar" runat="server" Text="Filtrar" Width="59px" />
+                    <asp:Button ID="btnfiltrar" runat="server" Text="Filtrar" Width="59px" OnClick="btnfiltrar_Click" />
                 </td>
                 <td>
                     <asp:Button ID="btnmostrar_todos" runat="server" Text="Mostrar Todos" />
                 </td>
             </tr>
             <tr>
-                <td class="auto-style2">
+                <td colspan="4">
+                    &nbsp;</td>
+            </tr>
+            <tr>
+                <td colspan="4">
                     <asp:GridView ID="Grid" runat="server">
                     </asp:GridView>
                 </td>
-                <td class="auto-style3">&nbsp;</td>
-                <td class="auto-style4">&nbsp;</td>
-                <td>&nbsp;</td>
             </tr>
             <tr>
                 <td class="auto-style2">&nbsp;</td>
