@@ -18,14 +18,23 @@ namespace TP8_Grupo_Nro_02
             if (!IsPostBack)
             {
                 DataTable tablaSucursal = log.getTabla();
-                Grid.DataSource = tablaSucursal;
-                Grid.DataBind();
+                Gvsucursales.DataSource = tablaSucursal;
+                Gvsucursales.DataBind();
             }
         }
 
         protected void btnfiltrar_Click(object sender, EventArgs e)
         {
-            
+            int ID = int.Parse(txtid_sucursal.Text);
+
+            LogicaSucursal log = new LogicaSucursal();
+
+            DataTable sucursalData = log.getTableId(ID);
+
+            Gvsucursales.DataSource = sucursalData;
+            Gvsucursales.DataBind();
+
+            txtid_sucursal.Text = "";
         }
     }
 }
