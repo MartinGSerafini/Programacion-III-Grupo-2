@@ -20,16 +20,6 @@ namespace Logica
 
         public DataTable getTableId(int id)
         {
-
-            string consulta = $"SELECT S.Id_Sucursal, S.NombreSucursal AS Nombre, S.DescripcionSucursal AS Descripcion, " +
-                              "P.DescripcionProvincia AS Provincia, S.DireccionSucursal AS Direccion " +
-                              $"FROM Sucursal S INNER JOIN Provincia " + "P ON S.Id_ProvinciaSucursal = P.Id_Provincia " +
-                              $"WHERE S.Id_Sucursal = {id}";
-
-            AccesoDatos datos = new AccesoDatos();
-            DataTable tabla = datos.ObtenerTabla("Sucursal", consulta);
-
-            return tabla;
         }
 
         public int ConexionSQL(string consulta)
