@@ -26,8 +26,13 @@ namespace Logica
                                 "WHERE s.Id_Sucursal = " + id;
             AccesoDatos datos = new AccesoDatos();
             DataTable dt = datos.ObtenerTabla("Sucursal", consulta);
-
             return dt;
+        }
+
+        public Boolean validacionTablaVacia(DataTable dt)
+        {
+            DaoSucursal dao = new DaoSucursal();
+            return dao.tablaVacia(dt);
         }
 
         public int ConexionSQL(string consulta)
