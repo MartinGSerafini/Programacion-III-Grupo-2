@@ -25,20 +25,28 @@ namespace TP8_Grupo_Nro_02
 
         protected void btnfiltrar_Click(object sender, EventArgs e)
         {
-            int ID = int.Parse(txtid_sucursal.Text);
-
-            LogicaSucursal log = new LogicaSucursal();
-
-            DataTable sucursalData = log.getTableId(ID);
-            if (log.validacionTablaVacia(sucursalData))
+            try
             {
-                lblIdSucursal.Text = "No se encontró el ID";
+                int ID = int.Parse(txtid_sucursal.Text);
+
+                LogicaSucursal log = new LogicaSucursal();
+
+                DataTable sucursalData = log.getTableId(ID);
+                if (log.validacionTablaVacia(sucursalData))
+                {
+                    lblIdSucursal.Text = "No se encontró el ID";
+                }
+
+                Gvsucursales.DataSource = sucursalData;
+                Gvsucursales.DataBind();
+
+                txtid_sucursal.Text = "";
             }
-
-            Gvsucursales.DataSource = sucursalData;
-            Gvsucursales.DataBind();
-
-            txtid_sucursal.Text = "";
+            catch 
+            {
+                txtid_sucursal.Text = "";
+                return;
+            }
         }
 
         protected void btnMostrarTodos_Click(object sender, EventArgs e)

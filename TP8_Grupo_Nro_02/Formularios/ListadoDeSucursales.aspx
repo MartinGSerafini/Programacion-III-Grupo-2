@@ -15,7 +15,7 @@
             width: 220px;
         }
         .auto-style3 {
-            width: 427px;
+            width: 372px;
         }
         .auto-style4 {
             width: 90px;
@@ -25,6 +25,24 @@
         }
         .auto-style6 {
             width: 250px;
+        }
+        .auto-style7 {
+            width: 220px;
+            height: 30px;
+        }
+        .auto-style8 {
+            width: 372px;
+            height: 30px;
+        }
+        .auto-style9 {
+            width: 90px;
+            height: 30px;
+        }
+        .auto-style10 {
+            height: 30px;
+        }
+        .auto-style11 {
+            height: 23px;
         }
     </style>
 </head>
@@ -59,22 +77,27 @@
         </div>
         <table class="auto-style1">
             <tr>
-                <td class="auto-style2">Busqueda Ingrese Id Sucursal:</td>
-                <td class="auto-style3">
+                <td class="auto-style7">Busqueda Ingrese Id Sucursal:</td>
+                <td class="auto-style8">
                     <asp:TextBox ID="txtid_sucursal" runat="server" Width="240px" ValidationGroup="1"></asp:TextBox>
                 &nbsp;&nbsp;
                     <asp:RequiredFieldValidator ID="rfvIdSucursal" runat="server" ControlToValidate="txtid_sucursal" ForeColor="Red" ValidationGroup="1">Ingrese el Id</asp:RequiredFieldValidator>
                 </td>
-                <td class="auto-style4">
+                <td class="auto-style9">
                     <asp:Button ID="btnfiltrar" runat="server" Text="Filtrar" Width="59px" OnClick="btnfiltrar_Click" ValidationGroup="1" />
                 </td>
-                <td>
+                <td class="auto-style10">
                     <asp:Button ID="btnMostrarTodos" runat="server" Text="Mostrar Todos" OnClick="btnMostrarTodos_Click" ValidationGroup="2" />
                 </td>
             </tr>
             <tr>
-                <td colspan="4">
+                <td colspan="3" class="auto-style11">
+                    <asp:RegularExpressionValidator ID="revIdSucursal" runat="server" ControlToValidate="txtid_sucursal" ForeColor="Red" ValidationExpression="^\d+$">Error, solo se permiten numeros</asp:RegularExpressionValidator>
                     <br />
+                </td>
+            </tr>
+            <tr>
+                <td colspan="4">
                     <asp:Label ID="lblIdSucursal" runat="server" ForeColor="Red"></asp:Label>
                     <br />
                 </td>
