@@ -1,0 +1,6 @@
+CREATE PROCEDURE spEliminarSucursal
+    @IdSucursal INT
+AS
+BEGIN
+    DELETE FROM Sucursal WHERE Id_Sucursal = @IdSucursal;
+END;

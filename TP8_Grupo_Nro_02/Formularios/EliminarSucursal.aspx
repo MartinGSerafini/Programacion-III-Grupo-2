@@ -25,14 +25,14 @@
             height: 30px;
         }
         .auto-style7 {
-            width: 369px;
+            width: 326px;
             height: 30px;
         }
         .auto-style8 {
             height: 30px;
         }
         .auto-style9 {
-            width: 369px;
+            width: 326px;
         }
     </style>
 </head>
@@ -75,24 +75,25 @@
                 <td class="auto-style6">Ingresar ID Sucursal:</td>
                 <td class="auto-style7">
                     <asp:TextBox ID="txtIdSucursal" runat="server" Width="273px"></asp:TextBox>
-                    <asp:RequiredFieldValidator ID="rfcIdSucursal" runat="server" ControlToValidate="txtIdSucursal" ErrorMessage="RequiredFieldValidator" ForeColor="Red">Ingrese el ID</asp:RequiredFieldValidator>
+                    <asp:RequiredFieldValidator ID="rfcIdSucursal" runat="server" ControlToValidate="txtIdSucursal" ErrorMessage="Debe Ingresar un ID" ForeColor="Red" ToolTip="vg1" ValidationGroup="vg1">*</asp:RequiredFieldValidator>
+                &nbsp;<asp:RegularExpressionValidator ID="revIdSucursal" runat="server" ControlToValidate="txtIdSucursal" ForeColor="Red" ValidationExpression="^\d+$" ErrorMessage="Solo se Permiten Ingresar Numeros" ValidationGroup="vg1">*</asp:RegularExpressionValidator>
                 </td>
                 <td class="auto-style8">
-                    <asp:Button ID="btnEliminar" runat="server" Text="Eliminar" OnClick="btnEliminar_Click" />
+                    <asp:Button ID="btnEliminar" runat="server" Text="Eliminar" OnClick="btnEliminar_Click" ValidationGroup="vg1" />
                 </td>
             </tr>
             <tr>
                 <td colspan="3">
-                    <asp:RegularExpressionValidator ID="revIdSucursal" runat="server" ControlToValidate="txtIdSucursal" ForeColor="Red" ValidationExpression="^\d+$">Error, solo se permiten numeros</asp:RegularExpressionValidator>
+                    <asp:Label ID="lblValidacion" runat="server" ForeColor="Red"></asp:Label>
                 </td>
             </tr>
             <tr>
                 <td colspan="3">
                     <br />
-                    <asp:Label ID="lblValidacion" runat="server" ForeColor="Red"></asp:Label>
                 </td>
             </tr>
         </table>
+        <asp:ValidationSummary ID="ValidationSummary1" runat="server" ValidationGroup="vg1" />
     </form>
 </body>
 </html>

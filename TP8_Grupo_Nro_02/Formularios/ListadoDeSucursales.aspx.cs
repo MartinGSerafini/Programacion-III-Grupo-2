@@ -37,7 +37,6 @@ namespace TP8_Grupo_Nro_02
             {
                 LblSucursal.Visible = true;
                 txtid_sucursal.Text = "";
-                return;
             }
 
             Gvsucursales.DataSource = sucursalData;
