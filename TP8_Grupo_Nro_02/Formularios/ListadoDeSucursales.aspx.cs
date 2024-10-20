@@ -30,11 +30,26 @@ namespace TP8_Grupo_Nro_02
             LogicaSucursal log = new LogicaSucursal();
 
             DataTable sucursalData = log.getTableId(ID);
+            if (log.validacionTablaVacia(sucursalData))
+            {
+                lblIdSucursal.Text = "No se encontró el ID";
+            }
 
             Gvsucursales.DataSource = sucursalData;
             Gvsucursales.DataBind();
 
             txtid_sucursal.Text = "";
+        }
+
+        protected void btnmostrar_todos_Click(object sender, EventArgs e)
+        {
+
+            DataTable tablaSucursal = log.getTabla();
+            Gvsucursales.DataSource = tablaSucursal;
+            Gvsucursales.DataBind();
+
+            txtid_sucursal.Text = "";
+            lblIdSucursal.Text = "";
         }
     }
 }

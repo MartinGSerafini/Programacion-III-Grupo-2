@@ -69,6 +69,15 @@ namespace TP8_Grupo_Nro_02
         protected global::System.Web.UI.WebControls.TextBox txtid_sucursal;
 
         /// <summary>
+        /// Control rfvIdSucursal.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvIdSucursal;
+
+        /// <summary>
         /// Control btnfiltrar.
         /// </summary>
         /// <remarks>
@@ -85,6 +94,15 @@ namespace TP8_Grupo_Nro_02
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnmostrar_todos;
+
+        /// <summary>
+        /// Control lblIdSucursal.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblIdSucursal;
 
         /// <summary>
         /// Control Gvsucursales.

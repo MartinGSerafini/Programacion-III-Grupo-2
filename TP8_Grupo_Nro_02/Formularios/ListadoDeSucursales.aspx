@@ -15,7 +15,7 @@
             width: 220px;
         }
         .auto-style3 {
-            width: 285px;
+            width: 427px;
         }
         .auto-style4 {
             width: 90px;
@@ -61,18 +61,23 @@
             <tr>
                 <td class="auto-style2">Busqueda Ingrese Id Sucursal:</td>
                 <td class="auto-style3">
-                    <asp:TextBox ID="txtid_sucursal" runat="server" Width="240px"></asp:TextBox>
-                &nbsp;</td>
+                    <asp:TextBox ID="txtid_sucursal" runat="server" Width="240px" ValidationGroup="1"></asp:TextBox>
+                &nbsp;&nbsp;
+                    <asp:RequiredFieldValidator ID="rfvIdSucursal" runat="server" ControlToValidate="txtid_sucursal" ForeColor="Red" ValidationGroup="1">Ingrese el Id</asp:RequiredFieldValidator>
+                </td>
                 <td class="auto-style4">
-                    <asp:Button ID="btnfiltrar" runat="server" Text="Filtrar" Width="59px" OnClick="btnfiltrar_Click" />
+                    <asp:Button ID="btnfiltrar" runat="server" Text="Filtrar" Width="59px" OnClick="btnfiltrar_Click" ValidationGroup="1" />
                 </td>
                 <td>
-                    <asp:Button ID="btnmostrar_todos" runat="server" Text="Mostrar Todos" />
+                    <asp:Button ID="btnmostrar_todos" runat="server" Text="Mostrar Todos" OnClick="btnmostrar_todos_Click" ValidationGroup="2" />
                 </td>
             </tr>
             <tr>
                 <td colspan="4">
-                    &nbsp;</td>
+                    <br />
+                    <asp:Label ID="lblIdSucursal" runat="server" ForeColor="Red"></asp:Label>
+                    <br />
+                </td>
             </tr>
             <tr>
                 <td colspan="4">
