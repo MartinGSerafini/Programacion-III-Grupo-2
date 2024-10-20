@@ -69,13 +69,22 @@ namespace TP8_Grupo_Nro_02
         protected global::System.Web.UI.WebControls.TextBox txtid_sucursal;
 
         /// <summary>
-        /// Control rfvIdSucursal.
+        /// Control CvSucursal.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvIdSucursal;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator CvSucursal;
+
+        /// <summary>
+        /// Control Evsucursal.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator Evsucursal;
 
         /// <summary>
         /// Control btnfiltrar.
@@ -96,22 +105,13 @@ namespace TP8_Grupo_Nro_02
         protected global::System.Web.UI.WebControls.Button btnMostrarTodos;
 
         /// <summary>
-        /// Control revIdSucursal.
+        /// Control LblSucursal.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RegularExpressionValidator revIdSucursal;
-
-        /// <summary>
-        /// Control lblIdSucursal.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblIdSucursal;
+        protected global::System.Web.UI.WebControls.Label LblSucursal;
 
         /// <summary>
         /// Control Gvsucursales.
@@ -121,5 +121,14 @@ namespace TP8_Grupo_Nro_02
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.GridView Gvsucursales;
+
+        /// <summary>
+        /// Control ValidationSummary1.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ValidationSummary ValidationSummary1;
     }
 }

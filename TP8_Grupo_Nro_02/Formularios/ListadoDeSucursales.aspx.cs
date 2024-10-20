@@ -25,28 +25,24 @@ namespace TP8_Grupo_Nro_02
 
         protected void btnfiltrar_Click(object sender, EventArgs e)
         {
-            try
+            LblSucursal.Visible = false;
+
+            int ID = int.Parse(txtid_sucursal.Text);
+
+            LogicaSucursal log = new LogicaSucursal();
+
+            DataTable sucursalData = log.getTableId(ID);
+
+            if (log.validacionIDenTabla(ID) == false)
             {
-                int ID = int.Parse(txtid_sucursal.Text);
-
-                LogicaSucursal log = new LogicaSucursal();
-
-                DataTable sucursalData = log.getTableId(ID);
-                if (log.validacionTablaVacia(sucursalData))
-                {
-                    lblIdSucursal.Text = "No se encontró el ID";
-                }
-
-                Gvsucursales.DataSource = sucursalData;
-                Gvsucursales.DataBind();
-
-                txtid_sucursal.Text = "";
-            }
-            catch 
-            {
+                LblSucursal.Visible = true;
                 txtid_sucursal.Text = "";
                 return;
             }
+
+            Gvsucursales.DataSource = sucursalData;
+            Gvsucursales.DataBind();
+            txtid_sucursal.Text = "";
         }
 
         protected void btnMostrarTodos_Click(object sender, EventArgs e)
@@ -56,7 +52,7 @@ namespace TP8_Grupo_Nro_02
             Gvsucursales.DataBind();
 
             txtid_sucursal.Text = "";
-            lblIdSucursal.Text = "";
+            LblSucursal.Text = "";
         }
     }
 }

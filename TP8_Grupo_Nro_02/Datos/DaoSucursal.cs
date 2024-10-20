@@ -81,5 +81,16 @@ namespace Datos
             }
             return true;
         }
+
+        public Boolean IDenTabla(int ID)
+        {
+            string consulta = $"SELECT COUNT(*) FROM Sucursal WHERE Id_Sucursal = {ID}";
+            int max = ds.ObtenerMaximo(consulta);
+
+            if (max == 0)
+                return false;
+            else
+                return true;
+        }
     }
 }

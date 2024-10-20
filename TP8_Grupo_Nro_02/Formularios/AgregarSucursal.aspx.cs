@@ -44,14 +44,17 @@ namespace TP8_Grupo_Nro_02
             LogicaSucursal ls = new LogicaSucursal();
             int fila = ls.ConexionSQL(consulta);
 
+            lblconfirmacion.Visible = false;
             if (fila > 0)
             {
                 lblconfirmacion.Text = "Sucursal agregada correctamente";
+                lblconfirmacion.Visible = true;
                 borrarcampos();
             }
             else
             {
                 lblconfirmacion.Text = "No se pudo agregar la sucursal";
+                lblconfirmacion.Visible = true;
             }
         }
 

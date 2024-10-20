@@ -35,6 +35,12 @@ namespace Logica
             return dao.tablaVacia(dt);
         }
 
+        public Boolean validacionIDenTabla(int ID)
+        {
+            DaoSucursal dao = new DaoSucursal();
+            return dao.IDenTabla(ID);
+        }
+
         public int ConexionSQL(string consulta)
         {
             AccesoDatos ad = new AccesoDatos();
