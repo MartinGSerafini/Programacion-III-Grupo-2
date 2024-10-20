@@ -69,7 +69,7 @@
                     <asp:Button ID="btnfiltrar" runat="server" Text="Filtrar" Width="59px" OnClick="btnfiltrar_Click" ValidationGroup="1" />
                 </td>
                 <td>
-                    <asp:Button ID="btnmostrar_todos" runat="server" Text="Mostrar Todos" OnClick="btnmostrar_todos_Click" ValidationGroup="2" />
+                    <asp:Button ID="btnMostrarTodos" runat="server" Text="Mostrar Todos" OnClick="btnMostrarTodos_Click" ValidationGroup="2" />
                 </td>
             </tr>
             <tr>

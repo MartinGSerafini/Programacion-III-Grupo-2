@@ -41,9 +41,8 @@ namespace TP8_Grupo_Nro_02
             txtid_sucursal.Text = "";
         }
 
-        protected void btnmostrar_todos_Click(object sender, EventArgs e)
+        protected void btnMostrarTodos_Click(object sender, EventArgs e)
         {
-
             DataTable tablaSucursal = log.getTabla();
             Gvsucursales.DataSource = tablaSucursal;
             Gvsucursales.DataBind();

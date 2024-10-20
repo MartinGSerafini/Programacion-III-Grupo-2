@@ -87,13 +87,13 @@ namespace TP8_Grupo_Nro_02
         protected global::System.Web.UI.WebControls.Button btnfiltrar;
 
         /// <summary>
-        /// Control btnmostrar_todos.
+        /// Control btnMostrarTodos.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnmostrar_todos;
+        protected global::System.Web.UI.WebControls.Button btnMostrarTodos;
 
         /// <summary>
         /// Control lblIdSucursal.
