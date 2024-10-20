@@ -1,0 +1,105 @@
+﻿@import "normalize.css";
+@import "variables.css";
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;0,900;1,300&display=swap');
+@import "components.css";
+
+body {
+    background-color: var(--clr-bg);
+    color: var(--clr-text);
+    font-size: var(--fz-body);
+    font-family: var(--ff-body);
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    margin-bottom: 1.5rem;
+    font-weight: 900;
+    color: var(--clr-accent);
+}
+
+nav {
+    background-color: var(--clr-neutral-400);
+    color: var(--clr-neutral-200);
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+    nav ul {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 2rem;
+    }
+
+.nav-link {
+    text-decoration: none;
+    color: var(--clr-link);
+    font-weight: 700;
+    transition: color 0.3s;
+}
+
+    .nav-link:hover {
+        color: var(--clr-hover-text);
+    }
+
+.form-section {
+    display: grid;
+    gap: 1rem;
+}
+
+    .form-section .desc {
+        padding: 1rem;
+        background-color: var(--clr-row-even-bg);
+        border-radius: .5rem;
+        height: 120px;
+    }
+
+    .form-section .input {
+        border-radius: .5rem;
+        padding: .75rem;
+        border: 1px solid var(--clr-border);
+        transition: border 0.3s;
+    }
+
+.input:focus {
+    border: 1px solid var(--clr-accent-400);
+    outline: none;
+}
+
+.layout {
+    margin: 2rem auto;
+    padding: 2rem;
+    background-color: var(--clr-neutral-100);
+    border-radius: 1rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 80%;
+    max-width: 700px;
+}
+
+.button {
+    background-color: var(--clr-link);
+    color: var(--color-hover-text);
+    border: none;
+    border-radius: .5rem;
+    padding: .5rem 1.5rem;
+    cursor: pointer;
+    font-weight: 700;
+    transition: background-color 0.3s;
+}
+
+    .button:hover {
+        background-color: var(--clr-hover-bg);
+    }
+
+
+.form-submit {
+    display: flex; /* Utilizar flexbox para alinear */
+    justify-content: flex-end; /* Alinear a la derecha */
+    margin-top: 1rem; /* Espaciado superior */
+}

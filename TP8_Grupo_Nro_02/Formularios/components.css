@@ -1,0 +1,47 @@
+﻿@import "variables.css";
+
+.button {
+    background-color: var(--clr-bg-secondary);
+    color: var(--clr-text);
+    border: 1px solid var(--clr-border);
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+    .button:hover {
+        background-color: var(--clr-block-hover-bg);
+        color: var(--clr-accent);
+        border-color: var(--clr-accent);
+    }
+
+    .button:active {
+        background-color: var(--clr-block-bg);
+        color: var(--clr-text);
+    }
+
+    .button:disabled {
+        background-color: var(--clr-bg);
+        color: var(--clr-muted-text);
+        border-color: var(--clr-border);
+        cursor: not-allowed;
+    }
+
+.dropdown {
+    width: 100%;
+    padding: 0.5rem;
+    font-size: 1rem;
+    background-color: var(--clr-neutral-100);
+    border: 1px solid var(--clr-neutral-600);
+    border-radius: 4px;
+    outline: none;
+    transition: border-color 0.3s, background-color 0.3s;
+}
+
+.dropdown:focus {
+    border-color: var(--clr-accent-400);
+    box-shadow: 0 0 0 2px var(--clr-accent-100);
+}
+

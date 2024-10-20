@@ -1,0 +1,47 @@
+﻿
+:root {
+    --ff-body: "Lato", san-serif;
+    --fz-body: 16px;
+    /* Colores primarios (azules) */
+    --clr-primary-100: #93C5FD; /* Azul claro */
+    --clr-primary-200: #60A5FA; /* Azul intermedio */
+    --clr-primary-300: #3B82F6; /* Azul vibrante */
+    --clr-primary-400: #2563EB; /* Azul más oscuro */
+    --clr-primary-500: #1D4ED8; /* Azul profundo */
+    /* Colores neutros (grises) */
+    --clr-neutral-100: #F3F4F6; /* Gris muy claro */
+    --clr-neutral-200: #E5E7EB; /* Gris claro */
+    --clr-neutral-300: #9CA3AF; /* Gris intermedio */
+    --clr-neutral-400: #6B7280; /* Gris medio */
+    --clr-neutral-500: #374151; /* Gris oscuro */
+    --clr-neutral-600: #1F2937; /* Gris muy oscuro */
+    --clr-neutral-900: #111827; /* Gris casi negro */
+    /* Colores de acento (púrpura y otros acentos) */
+    --clr-accent-100: #E9D5FF; /* Púrpura claro */
+    --clr-accent-200: #C4B5FD; /* Púrpura suave */
+    --clr-accent-300: #A78BFA; /* Púrpura intermedio */
+    --clr-accent-400: #8B5CF6; /* Púrpura vibrante */
+    --clr-accent-500: #6D28D9; /* Púrpura oscuro */
+    /* Acentos secundarios (amarillo y rosa) */
+    --clr-accent-yellow-100: #FEF3C7; /* Amarillo muy claro */
+    --clr-accent-yellow-400: #FBBF24; /* Amarillo vibrante */
+    --clr-accent-pink-100: #FCE7F3; /* Rosa muy claro */
+    --clr-accent-pink-400: #EC4899; /* Rosa vibrante */
+
+    --clr-bg: var(--clr-neutral-200); /* Fondo principal */
+    --clr-text: var(--clr-neutral-600); /* Texto principal */
+    --clr-accent: var(--clr-primary-300); /* Acento azul vibrante */
+
+    --clr-bg-secondary: var(--clr-neutral-200); /* Fondo secundario */
+    --clr-border: var(--clr-neutral-300); /* Bordes */
+    --clr-muted-text: var(--clr-neutral-500); /* Texto atenuado */
+
+    --clr-highlight-yellow: var(--clr-accent-yellow-400); /* Amarillo resaltado */
+    --clr-highlight-green: var(--clr-accent-green-400); /* Verde resaltado */
+    --clr-highlight-red: var(--clr-accent-red-400); /* Rojo resaltado */
+
+    --clr-block-bg: var(--clr-neutral-100); /* Fondo de bloques */
+    --clr-block-hover-bg: var(--clr-neutral-200); /* Fondo de bloques en hover */
+}
+
+
