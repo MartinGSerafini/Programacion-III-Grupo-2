@@ -70,5 +70,16 @@ namespace Datos
             SqlParametros = comando.Parameters.Add("@NOMBRESUCURSAL", SqlDbType.VarChar);
             SqlParametros.Value = sucu.getNombreSucursal();
         }
+
+        public Boolean tablaVacia(DataTable tabla)
+        {
+            string consulta = "SELECT COUNT(*) FROM Sucursal";
+            int max = ds.ObtenerMaximo(consulta);
+            if (max == 0)
+            {
+                return false;
+            }
+            return true;
+        }
     }
 }
