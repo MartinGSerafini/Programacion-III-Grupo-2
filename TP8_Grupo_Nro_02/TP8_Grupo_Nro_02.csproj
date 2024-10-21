@@ -67,6 +67,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Formularios\components.css" />
+    <Content Include="Formularios\main.css" />
+    <Content Include="Formularios\normalize.css" />
+    <Content Include="Formularios\variables.css" />
     <Content Include="Web.config" />
     <Content Include="Formularios\AgregarSucursal.aspx" />
     <Content Include="Formularios\EliminarSucursal.aspx" />
@@ -118,6 +122,9 @@
       <Project>{b6691b25-9452-4087-a88b-3c5ca0d16c47}</Project>
       <Name>Logica</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Formularios\App_LocalResources\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

@@ -82,6 +82,17 @@ nav {
     max-width: 700px;
 }
 
+.ls {
+    width: 80%;
+    max-width: 80vw;
+}
+
+.button-container{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+
 .button {
     background-color: var(--clr-link);
     color: var(--color-hover-text);

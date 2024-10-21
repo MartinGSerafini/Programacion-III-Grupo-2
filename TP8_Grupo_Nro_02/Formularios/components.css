@@ -45,3 +45,56 @@
     box-shadow: 0 0 0 2px var(--clr-accent-100);
 }
 
+table {
+    width: 100%;
+    background-color: var(--clr-neutral-200);
+    border-collapse: collapse !important;
+    margin: auto;
+    border-radius: 1rem;
+}
+
+th, td, caption {
+    padding: 1rem;
+}
+
+table caption, table th {
+    text-align: left;
+}
+
+table caption {
+    background: var(--clr-accent-500);
+    color: inherit;
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+table th {
+    background: var(--clr-neutral-100);
+    color: var(--clr-accent-100);
+}
+
+table tr {
+    transition: all 500ms ease;
+}
+
+    table tr:has(td):hover {
+        background-color: hsl(0 0% 80%);
+        color: var(--clr-neutral-100);
+    }
+
+    table tr:nth-child(even) {
+        background: hsl(0 0% 30% / 0.1);
+    }
+
+
+.button-container .button{
+    background-color: var(--clr-bg-secondary);
+    color: var(--clr-text);
+    border: 1px solid var(--clr-border);
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
