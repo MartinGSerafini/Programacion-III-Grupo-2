@@ -73,6 +73,7 @@
     <Content Include="FormAdmin\Form_Menu_Administrador.aspx" />
     <Content Include="FormAdmin\Form_Admin_Listado_Pacientes.aspx" />
     <Content Include="FormAdmin\Form_Agregar_Pacientes.aspx" />
+    <Content Include="Imagenes\Logo_MS.png" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
