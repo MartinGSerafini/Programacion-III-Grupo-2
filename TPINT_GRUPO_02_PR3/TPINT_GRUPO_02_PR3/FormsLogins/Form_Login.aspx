@@ -96,10 +96,13 @@
             margin-bottom: 20px;
             width: 396px;
         }
+<<<<<<< Updated upstream
         .auto-style3 {
             width: 100px;
             height: 91px;
         }
+=======
+>>>>>>> Stashed changes
         </style>
 </head>
 <body>
@@ -108,7 +111,8 @@
             <div class="auto-style2">
                 Medical Studio
             </div>
-               <img src="/Imagenes/Logo_MS.png" alt="Logo" style="vertical-align: middle; margin-right: 10px;" class="auto-style3" /><br />
+            <br />
+               <img src="/Imagenes/Logo_MS.png" alt="Logo" style="width: 40px; height: 40px; vertical-align: middle; margin-right: 10px;" /><br />
             <br />
             <asp:Label ID="lblError" runat="server" ForeColor="White"></asp:Label>
 &nbsp;<div class="input-group">
