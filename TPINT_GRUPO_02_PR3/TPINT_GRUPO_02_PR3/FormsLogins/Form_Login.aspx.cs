@@ -13,5 +13,10 @@ namespace TPINT_GRUPO_02_PR3.Formularios
         {
 
         }
+
+        protected void BtnIniciar_Sesion_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

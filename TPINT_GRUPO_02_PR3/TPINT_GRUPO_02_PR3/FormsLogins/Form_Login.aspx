@@ -94,22 +94,24 @@
             font-weight: bold;
             color: #FFFFFF;
             margin-bottom: 20px;
-            width: 396px;
+            width: 400px;
         }
-        .auto-style3 {
-            width: 81px;
-            height: 70px;
+        .auto-style4 {
+            width: 150px;
+            height: 140px;
         }
-    </style>
+        </style>
 </head>
 <body>
     <form id="form1" runat="server">
         <div class="auto-style1">
-            <div class="auto-style2">
-                Medical Studio
+            <div class="auto-style2" style="display: flex; justify-content: center; align-items: center;">
+                <div style="display: flex; flex-direction: column; margin-right: 10px;">
+                <span style="font-size: 60px;">Medical</span>
+                <span style="font-size: 50px;">Studio</span>
             </div>
-               <img src="Imagenes/Logo_MS.png" alt="Logo" style="width: 40px; height: 40px; vertical-align: middle; margin-right: 10px;" />
-
+                <img src="../Imagenes/Logo_MS.png" alt="Logo" class="auto-style4" />
+            </div>
             <div class="input-group">
                 <asp:Label ID="Label1" runat="server" Text="DNI:" AssociatedControlID="TxbUsuario"></asp:Label>
                 <asp:TextBox ID="TxbUsuario" runat="server" Width="100%" MaxLength="20" placeholder="Ingrese su DNI"></asp:TextBox>
@@ -123,14 +125,14 @@
             </div>
 
             <div class="button-container">
-                <asp:Button ID="BtnIniciar_Sesion" CssClass="login-button" runat="server" Text="Iniciar Sesión" ValidationGroup="VG1" />
+                <asp:Button ID="BtnIniciar_Sesion" CssClass="login-button" runat="server" Text="Iniciar Sesión" ValidationGroup="VG1" OnClick="BtnIniciar_Sesion_Click" />
             </div>
 
             <div class="social-icons">
                 <asp:HyperLink ID="HLInstagram" runat="server" NavigateUrl="https://www.instagram.com" Target="_blank">
                     <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram" style="width: 30px; height: 30px;"/>
                 </asp:HyperLink>
-                <asp:HyperLink ID="HLFacebook" runat="server" NavigateUrl="https://www.facebook.com" Target="_blank">
+                <asp:HyperLink ID="HLFacebook" runat="server" NavigateUrl="https://www.facebook.com/profile.php?id=61567773056854" Target="_blank">
                     <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook" style="width: 30px; height: 30px;"/>
                 </asp:HyperLink>
                 <asp:HyperLink ID="HLTwitter" runat="server" NavigateUrl="https://www.twitter.com" Target="_blank">
