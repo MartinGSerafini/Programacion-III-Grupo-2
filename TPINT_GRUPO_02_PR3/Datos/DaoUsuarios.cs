@@ -28,7 +28,7 @@ namespace Datos
 
         public Boolean existeUsuario(Usuarios usu)
         {
-            string consulta = "SELECT * FROM USUARIOS WHERE FK_DNI_USU = '" + usu.getDNIusuario();
+            string consulta = "SELECT * FROM USUARIOS WHERE FK_DNI_USU = '" + usu.getDNIusuario() + "'";
             return ds.existe(consulta);
         }
     }
