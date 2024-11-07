@@ -96,6 +96,10 @@
             margin-bottom: 20px;
             width: 396px;
         }
+        .auto-style3 {
+            width: 100px;
+            height: 91px;
+        }
         </style>
 </head>
 <body>
@@ -104,7 +108,7 @@
             <div class="auto-style2">
                 Medical Studio
             </div>
-               <img src="/Imagenes/Logo_MS.png" alt="Logo" style="width: 40px; height: 40px; vertical-align: middle; margin-right: 10px;" /><br />
+               <img src="/Imagenes/Logo_MS.png" alt="Logo" style="vertical-align: middle; margin-right: 10px;" class="auto-style3" /><br />
             <br />
             <asp:Label ID="lblError" runat="server" ForeColor="White"></asp:Label>
 &nbsp;<div class="input-group">
@@ -120,7 +124,7 @@
             </div>
 
             <div class="button-container">
-                <asp:Button ID="BtnIniciar_Sesion" CssClass="login-button" runat="server" Text="Iniciar Sesión" ValidationGroup="VG1" />
+                <asp:Button ID="BtnIniciar_Sesion" CssClass="login-button" runat="server" Text="Iniciar Sesión" ValidationGroup="VG1" OnClick="BtnIniciar_Sesion_Click" />
             </div>
 
             <div class="social-icons">
