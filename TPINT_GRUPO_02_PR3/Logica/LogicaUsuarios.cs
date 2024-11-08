@@ -24,5 +24,11 @@ namespace Logica
             DaoUsuarios dao = new DaoUsuarios();
             return dao.existeUsuario(usu);
         }
+
+        public int TipoUsuario(Usuarios usu)
+        {
+            DaoUsuarios dao = new DaoUsuarios();
+            return dao.TipoDeUsuario(usu);
+        }
     }
 }
