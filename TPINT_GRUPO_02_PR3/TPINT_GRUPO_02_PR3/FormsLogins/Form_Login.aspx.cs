@@ -19,7 +19,7 @@ namespace TPINT_GRUPO_02_PR3.Formularios
         protected void BtnIniciar_Sesion_Click(object sender, EventArgs e)
         {
             Usuarios usuario = new Usuarios();
-            usuario.setDNIusuario(TxbUsuario.Text);
+            usuario.setDNIusuario(TxbUsuario.Text);//
             LogicaUsuarios Logica = new LogicaUsuarios();
             if (Logica.ExisteUsuario(usuario))
             {
@@ -31,14 +31,20 @@ namespace TPINT_GRUPO_02_PR3.Formularios
                 }
                 else
                 {
-                    //Verificar que tipo de usuraio es para poder redirigirlo
+                    if(Logica.TipoUsuario(usuario) == 1)
+                    {
+                        Response.Redirect("/FormsAdmin/Form_Menu_Administrador.aspx");
+                    }
+                    else if (Logica.TipoUsuario(usuario) == 2)
+                    {
+                        Response.Redirect("/FormsMedic/Form_Medico_Turnos.aspx");
+                    }
                 }
             }
             else
             {
                 lblError.Text = "Usuario no encontrado";
             }
-            
         }
     }
 }
