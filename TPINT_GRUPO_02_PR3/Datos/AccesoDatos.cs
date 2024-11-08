@@ -77,6 +77,19 @@ namespace Datos
             return estado;
         }
 
+        public int BuscarTipoUsuario(String consulta)
+        {
+            int ID_Tipo_Usuario = 0;
+            SqlConnection Conexion = ObtenerConexion();
+            SqlCommand cmd = new SqlCommand(consulta, Conexion);
+            SqlDataReader datos = cmd.ExecuteReader();
+            if (datos.Read())
+            {
+                ID_Tipo_Usuario = datos.GetInt32(0);
+            }
+            return ID_Tipo_Usuario;
+        }
+
         public int EjecutarProcedimientoAlmacenado(SqlCommand Comando, String nombreSP)
         {
             int FilasCambiadas;

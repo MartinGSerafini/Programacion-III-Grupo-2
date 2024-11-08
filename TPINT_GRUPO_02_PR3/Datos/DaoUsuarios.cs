@@ -31,5 +31,11 @@ namespace Datos
             string consulta = "SELECT * FROM USUARIOS WHERE FK_DNI_USU = '" + usu.getDNIusuario() + "'";
             return ds.existe(consulta);
         }
+
+        public int TipoDeUsuario(Usuarios usu)
+        {
+            string consulta = "SELECT FK_ID_TIPO_USUARIO_USU FROM USUARIOS WHERE FK_DNI_USU = '" + usu.getDNIusuario() + "'";
+            return ds.BuscarTipoUsuario(consulta);
+        }
     }
 }
