@@ -13,7 +13,8 @@ namespace TPINT_GRUPO_02_PR3.Formularios
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            
+            if(!IsPostBack)
+            LblError.Visible = false;
         }
 
         protected void BtnIniciar_Sesion_Click(object sender, EventArgs e)
@@ -27,23 +28,36 @@ namespace TPINT_GRUPO_02_PR3.Formularios
                 usuario2 = Logica.getUsuario(usuario.getDNIusuario());
                 if (TxbContra.Text != usuario2.getContraseniaUsuario())
                 {
-                    lblError.Text = "Contraseña incorrecta";
+                    LblError.Visible = true;
+                    TxbUsuario.Text = "";
+                    TxbContra.Text = "";
                 }
                 else
                 {
-                    if(Logica.TipoUsuario(usuario) == 1)
+                if (Logica.TipoUsuario(usuario) == 1)
                     {
+                        LogicaAdministradores logicaAdministrador = new LogicaAdministradores();
+                        string NombreUsuario = logicaAdministrador.ObtenerNombreYApellidoAdministrador(usuario.getDNIusuario());
+
+                        Session["NombreUsuario"] = NombreUsuario;
                         Response.Redirect("/FormsAdmin/Form_Menu_Administrador.aspx");
+
                     }
                     else if (Logica.TipoUsuario(usuario) == 2)
                     {
+                        LogicaMedicos logicaMedico = new LogicaMedicos();
+                        string NombreUsuario = logicaMedico.ObtenerNombreYApellidoMedico(usuario.getDNIusuario());
+
+                        Session["NombreUsuario"] = NombreUsuario;
                         Response.Redirect("/FormsMedic/Form_Medico_Turnos.aspx");
                     }
                 }
             }
             else
             {
-                lblError.Text = "Usuario no encontrado";
+                LblError.Visible = true;
+                TxbUsuario.Text = "";
+                TxbContra.Text = "";
             }
         }
     }

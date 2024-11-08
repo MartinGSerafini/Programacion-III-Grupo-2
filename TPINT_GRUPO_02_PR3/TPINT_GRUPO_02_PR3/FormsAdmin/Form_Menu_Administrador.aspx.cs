@@ -11,7 +11,7 @@ namespace TPINT_GRUPO_02_PR3.Formularios
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            LblUsuario.Text = Session["NombreUsuario"] as string;
         }
     }
 }

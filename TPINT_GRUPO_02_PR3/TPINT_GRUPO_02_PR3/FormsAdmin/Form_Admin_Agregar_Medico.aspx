@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Agregar_Medico.aspx.cs" Inherits="TPINT_GRUPO_02_PR3.FormAdmin.Agregar_Medico" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Form_Admin_Agregar_Medico.aspx.cs" Inherits="TPINT_GRUPO_02_PR3.FormAdmin.Agregar_Medico" %>
 
 <!DOCTYPE html>
 

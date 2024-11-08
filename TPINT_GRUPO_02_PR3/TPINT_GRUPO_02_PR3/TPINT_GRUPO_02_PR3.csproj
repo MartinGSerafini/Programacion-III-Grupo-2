@@ -67,29 +67,29 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="FormAdmin\Agregar_Medico.aspx" />
-    <Content Include="FormAdmin\ListadoMedicos.aspx" />
+    <Content Include="FormsAdmin\Form_Admin_Agregar_Medico.aspx" />
+    <Content Include="FormsAdmin\Form_Admin_Listado_Medicos.aspx" />
     <Content Include="FormsLogins\Form_Login.aspx" />
-    <Content Include="FormAdmin\Form_Menu_Administrador.aspx" />
-    <Content Include="FormAdmin\Form_Admin_Listado_Pacientes.aspx" />
-    <Content Include="FormAdmin\Form_Agregar_Pacientes.aspx" />
+    <Content Include="FormsAdmin\Form_Menu_Administrador.aspx" />
+    <Content Include="FormsAdmin\Form_Admin_Listado_Pacientes.aspx" />
+    <Content Include="FormsAdmin\Form_Admin_Agregar_Pacientes.aspx" />
     <Content Include="Imagenes\Logo_MS.png" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="FormAdmin\Agregar_Medico.aspx.cs">
-      <DependentUpon>Agregar_Medico.aspx</DependentUpon>
+    <Compile Include="FormsAdmin\Form_Admin_Agregar_Medico.aspx.cs">
+      <DependentUpon>Form_Admin_Agregar_Medico.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="FormAdmin\Agregar_Medico.aspx.designer.cs">
-      <DependentUpon>Agregar_Medico.aspx</DependentUpon>
+    <Compile Include="FormsAdmin\Form_Admin_Agregar_Medico.aspx.designer.cs">
+      <DependentUpon>Form_Admin_Agregar_Medico.aspx</DependentUpon>
     </Compile>
-    <Compile Include="FormAdmin\ListadoMedicos.aspx.cs">
-      <DependentUpon>ListadoMedicos.aspx</DependentUpon>
+    <Compile Include="FormsAdmin\Form_Admin_Listado_Medicos.aspx.cs">
+      <DependentUpon>Form_Admin_Listado_Medicos.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="FormAdmin\ListadoMedicos.aspx.designer.cs">
-      <DependentUpon>ListadoMedicos.aspx</DependentUpon>
+    <Compile Include="FormsAdmin\Form_Admin_Listado_Medicos.aspx.designer.cs">
+      <DependentUpon>Form_Admin_Listado_Medicos.aspx</DependentUpon>
     </Compile>
     <Compile Include="FormsLogins\Form_Login.aspx.cs">
       <DependentUpon>Form_Login.aspx</DependentUpon>
@@ -98,26 +98,26 @@
     <Compile Include="FormsLogins\Form_Login.aspx.designer.cs">
       <DependentUpon>Form_Login.aspx</DependentUpon>
     </Compile>
-    <Compile Include="FormAdmin\Form_Menu_Administrador.aspx.cs">
+    <Compile Include="FormsAdmin\Form_Menu_Administrador.aspx.cs">
       <DependentUpon>Form_Menu_Administrador.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="FormAdmin\Form_Menu_Administrador.aspx.designer.cs">
+    <Compile Include="FormsAdmin\Form_Menu_Administrador.aspx.designer.cs">
       <DependentUpon>Form_Menu_Administrador.aspx</DependentUpon>
     </Compile>
-    <Compile Include="FormAdmin\Form_Admin_Listado_Pacientes.aspx.cs">
+    <Compile Include="FormsAdmin\Form_Admin_Listado_Pacientes.aspx.cs">
       <DependentUpon>Form_Admin_Listado_Pacientes.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="FormAdmin\Form_Admin_Listado_Pacientes.aspx.designer.cs">
+    <Compile Include="FormsAdmin\Form_Admin_Listado_Pacientes.aspx.designer.cs">
       <DependentUpon>Form_Admin_Listado_Pacientes.aspx</DependentUpon>
     </Compile>
-    <Compile Include="FormAdmin\Form_Agregar_Pacientes.aspx.cs">
-      <DependentUpon>Form_Agregar_Pacientes.aspx</DependentUpon>
+    <Compile Include="FormsAdmin\Form_Admin_Agregar_Pacientes.aspx.cs">
+      <DependentUpon>Form_Admin_Agregar_Pacientes.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="FormAdmin\Form_Agregar_Pacientes.aspx.designer.cs">
-      <DependentUpon>Form_Agregar_Pacientes.aspx</DependentUpon>
+    <Compile Include="FormsAdmin\Form_Admin_Agregar_Pacientes.aspx.designer.cs">
+      <DependentUpon>Form_Admin_Agregar_Pacientes.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

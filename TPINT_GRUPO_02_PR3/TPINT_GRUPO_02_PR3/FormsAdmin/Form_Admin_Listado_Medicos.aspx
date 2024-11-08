@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ListadoMedicos.aspx.cs" Inherits="TPINT_GRUPO_02_PR3.FormAdmin.ListadoMedicos" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Form_Admin_Listado_Medicos.aspx.cs" Inherits="TPINT_GRUPO_02_PR3.FormAdmin.ListadoMedicos" %>
 
 <!DOCTYPE html>
 

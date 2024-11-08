@@ -22,7 +22,6 @@ namespace Datos
             usu.setDNIusuario(tabla.Rows[0][2].ToString());
             usu.setContraseniaUsuario(tabla.Rows[0][3].ToString());
             usu.setFECHA_CREACION(Convert.ToDateTime(tabla.Rows[0][4].ToString()));
-
             return usu;
         }
 
@@ -36,6 +35,35 @@ namespace Datos
         {
             string consulta = "SELECT FK_ID_TIPO_USUARIO_USU FROM USUARIOS WHERE FK_DNI_USU = '" + usu.getDNIusuario() + "'";
             return ds.BuscarTipoUsuario(consulta);
+        }
+
+        public string GetNombreUsuario(Usuarios usu)
+        {
+            string consulta = "";
+
+            if (usu.getIDTipoUsuario() == 1)
+            {
+                consulta = "SELECT NombreAdministrador FROM Administradores WHERE FK_DNI_ADMIN = '" + usu.getDNIusuario() + "'";
+            }
+            else if (usu.getIDTipoUsuario() == 2)
+            {
+                consulta = "SELECT NombreMedico FROM Medicos WHERE FK_DNI_MEDICO = '" + usu.getDNIusuario() + "'";
+            }
+            DataTable tabla = ds.ObtenerTabla("USUARIOS", consulta);
+
+            if (tabla.Rows.Count > 0)
+            {
+                if (usu.getIDTipoUsuario() == 1)
+                {
+                    return tabla.Rows[0]["NombreAdministrador"].ToString();
+                }
+                else if (usu.getIDTipoUsuario() == 2)
+                {
+                    return tabla.Rows[0]["NombreMedico"].ToString();
+                }
+            }
+
+            return string.Empty;
         }
     }
 }
