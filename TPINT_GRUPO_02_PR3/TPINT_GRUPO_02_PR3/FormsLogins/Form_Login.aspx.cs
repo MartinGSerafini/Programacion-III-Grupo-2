@@ -13,7 +13,7 @@ namespace TPINT_GRUPO_02_PR3.Formularios
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if(!IsPostBack)
+            Session.Remove("NombreUsuario");
             LblError.Visible = false;
         }
 

@@ -144,7 +144,6 @@
                 </div>
                 <img src="../Imagenes/Logo_MS.png" alt="Logo" class="auto-style3"/>
             </div>
-            <asp:Label ID="LblError" runat="server" ForeColor="White" Visible="False">&quot;Usuario o Contraseña incorrecta&quot;</asp:Label>
             <div class="input-group">        
                 <div class="input-group">
                     <asp:Label ID="Label1" runat="server" Text="DNI:" AssociatedControlID="TxbUsuario"></asp:Label>
@@ -156,6 +155,9 @@
                     <asp:Label ID="Label3" runat="server" Text="Contraseña:" AssociatedControlID="TxbContra"></asp:Label>
                     <asp:TextBox ID="TxbContra" runat="server" TextMode="Password" Width="100%" MaxLength="20" placeholder="************"></asp:TextBox>
                     <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="TxbContra" ErrorMessage="* Debe ingresar una contraseña" ForeColor="#FFC2C2" Display="Dynamic" ValidationGroup="VG1" />
+                    <br />
+                    <br />
+            <asp:Label ID="LblError" runat="server" ForeColor="White" Visible="False">&quot;Usuario o Contraseña incorrecta&quot;</asp:Label>
                 </div>
 
                 <div class="button-container">
