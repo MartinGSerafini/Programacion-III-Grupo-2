@@ -49,7 +49,7 @@ namespace TPINT_GRUPO_02_PR3.Formularios
                         string NombreUsuario = logicaMedico.ObtenerNombreYApellidoMedico(usuario.getDNIusuario());
 
                         Session["NombreUsuario"] = NombreUsuario;
-                        Response.Redirect("/FormsMedic/Form_Medico_Turnos.aspx");
+                        Response.Redirect("/FormsMedico/Form_Medico_Turnos.aspx");
                     }
                 }
             }
