@@ -22,5 +22,31 @@ namespace Logica
             DaoPacientes dao = new DaoPacientes();
             return dao.getTablaPacientesFiltrada(filtro, dato);
         }
+
+        public bool EliminarPaciente(string DNI)
+        {
+            DaoPacientes Dao = new DaoPacientes();
+            Pacientes paciente = new Pacientes();
+            paciente.setDNI(DNI);
+            int op = Dao.bajaLogicaPaciente(paciente);
+            if(op == 1)
+            {
+                return true;
+            }
+            else { return false; }
+        }
+
+        public bool ModificarPaciente(string DNI)
+        {
+            DaoPacientes Dao = new DaoPacientes();
+            Pacientes paciente = new Pacientes();
+            paciente.setDNI(DNI);
+            int op = Dao.ModificaiónPaciente(paciente);
+            if (op == 1)
+            {
+                return true;
+            }
+            else { return false; }
+        }
     }
 }

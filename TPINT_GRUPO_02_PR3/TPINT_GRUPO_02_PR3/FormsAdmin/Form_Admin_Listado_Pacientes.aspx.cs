@@ -6,6 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using Logica;
 using System.Data;
+using System.Data.SqlClient;
 
 namespace TPINT_GRUPO_02_PR3
 {
@@ -31,5 +32,34 @@ namespace TPINT_GRUPO_02_PR3
             GrdPacientes.DataSource = tabla;
             GrdPacientes.DataBind();
         }
+
+        protected void GrdPacientes_RowEditing(object sender, GridViewEditEventArgs e)
+        {
+            GrdPacientes.EditIndex = e.NewEditIndex;
+            DataTable tabla = log.getTabla();
+            GrdPacientes.DataSource = tabla;
+            GrdPacientes.DataBind();
+        }
+
+        protected void GrdPacientes_RowDeleting(object sender, GridViewDeleteEventArgs e)
+        {
+            string s_DNIPaciente = ((Label)GrdPacientes.Rows[e.RowIndex].FindControl("lbl_it_DNI")).Text;
+            LogicaPacientes logica = new LogicaPacientes();
+
+
+            if (logica.EliminarPaciente(s_DNIPaciente))
+            {
+                lblMensaje.Text = "El paciente con DNI " + s_DNIPaciente + " fué eliminado con éxito";
+            }
+            else
+            {
+                lblMensaje.Text = "El paciente con DNI " + s_DNIPaciente + " no se pudo eliminar";
+            }
+
+            DataTable tabla = log.getTabla();
+            GrdPacientes.DataSource = tabla;
+            GrdPacientes.DataBind();
+        }
+
     }
 }

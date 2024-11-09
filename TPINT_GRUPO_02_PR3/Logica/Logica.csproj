@@ -42,8 +42,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="LogicaAdministradores.cs" />
+    <Compile Include="LogicaLocalidades.cs" />
     <Compile Include="LogicaMedicos.cs" />
     <Compile Include="LogicaPacientes.cs" />
+    <Compile Include="LogicaProvincias.cs" />
     <Compile Include="LogicaUsuarios.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
