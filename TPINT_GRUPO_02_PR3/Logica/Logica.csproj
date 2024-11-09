@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="LogicaAdministradores.cs" />
     <Compile Include="LogicaMedicos.cs" />
+    <Compile Include="LogicaPacientes.cs" />
     <Compile Include="LogicaUsuarios.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
