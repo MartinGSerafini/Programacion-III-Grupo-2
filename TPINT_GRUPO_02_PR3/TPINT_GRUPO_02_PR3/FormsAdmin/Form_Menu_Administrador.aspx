@@ -201,9 +201,9 @@
             <p>&nbsp;</p>
 
             <div class="button-container">
-                <a href="../FormAdmin/Form_Admin_Listado_Pacientes.aspx">PACIENTES</a>
+                <a href="../FormsAdmin/Form_Admin_Listado_Pacientes.aspx">PACIENTES</a>
                 <a href="#">TURNOS</a>
-                <a href="../FormAdmin/Agregar_Medico.aspx">MEDICOS</a>
+                <a href="../FormsAdmin/Agregar_Medico.aspx">MEDICOS</a>
                 <a href="#">REPORTES</a>
             </div>
         </div>
