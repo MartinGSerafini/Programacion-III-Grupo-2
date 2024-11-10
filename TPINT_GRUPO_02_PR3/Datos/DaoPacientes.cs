@@ -16,9 +16,11 @@ namespace Datos
         public DataTable getTablaPacientes()
         {
             DataTable tabla = ds.ObtenerTabla("PACIENTES", "SELECT P.DNI_PAS, P.NOMBRE_PAS, P.APELLIDO_PAS, P.SEXO_PAS, " +
-                "P.NACIONALIDAD_PAS, P.NACIMIENTO_PAS, P.DIRECCION_PAS, L.NOMBRE_LOC, PRO.NOMBRE_PRO, P.EMAIL_PAS, P.TELEFONO_PAS " +
+                "P.NACIONALIDAD_PAS, P.NACIMIENTO_PAS, P.DIRECCION_PAS, L.NOMBRE_LOC, PRO.NOMBRE_PRO, P.EMAIL_PAS, " +
+                "P.TELEFONO_PAS, P.FK_ID_LOCALIDAD_PAS, P.FK_ID_PROVINCIA_PAS " +  // Agregar las columnas FK_ID_LOCALIDAD_PAS y FK_ID_PROVINCIA_PAS
                 "FROM PACIENTES P INNER JOIN LOCALIDADES L ON P.FK_ID_LOCALIDAD_PAS = L.ID_LOCALIDAD_LOC " +
-                "INNER JOIN PROVINCIAS PRO ON P.FK_ID_PROVINCIA_PAS = PRO.ID_PROVINCIA_PRO WHERE P.ESTADO_PAS = 'Activo'");
+                "INNER JOIN PROVINCIAS PRO ON P.FK_ID_PROVINCIA_PAS = PRO.ID_PROVINCIA_PRO " +
+                "WHERE P.ESTADO_PAS = 'Activo'");
             return tabla;
         }
 
@@ -28,7 +30,7 @@ namespace Datos
                 "P.NACIONALIDAD_PAS, P.NACIMIENTO_PAS, P.DIRECCION_PAS, L.NOMBRE_LOC, PRO.NOMBRE_PRO, P.EMAIL_PAS, P.TELEFONO_PAS " +
                 "FROM PACIENTES P INNER JOIN LOCALIDADES L ON P.FK_ID_LOCALIDAD_PAS = L.ID_LOCALIDAD_LOC " +
                 "INNER JOIN PROVINCIAS PRO ON P.FK_ID_PROVINCIA_PAS = PRO.ID_PROVINCIA_PRO " +
-                "WHERE " + filtro + " = '" + dato + "', AND P.ESTADO_PAS = 'Activo'");
+                "WHERE " + filtro + " = '" + dato + "' AND P.ESTADO_PAS = 'Activo'");
             return tabla;
         }
 
@@ -84,8 +86,8 @@ namespace Datos
         {
             DataTable tabla = ds.ObtenerTabla("PACIENTES", "SELECT * FROM PACIENTES WHERE DNI_PAS = " + paciente.getDNI());
             paciente.setId_Paciente(Convert.ToInt32(tabla.Rows[0][0].ToString()));
-            paciente.setLocalidad(tabla.Rows[0][1].ToString());
-            paciente.setProvincia(tabla.Rows[0][2].ToString());
+            paciente.setLocalidad(Convert.ToInt32(tabla.Rows[0][1].ToString()));
+            paciente.setProvincia(Convert.ToInt32(tabla.Rows[0][2].ToString()));
             paciente.setDNI(tabla.Rows[0][3].ToString());
             paciente.setNombre(tabla.Rows[0][4].ToString());
             paciente.setApellido(tabla.Rows[0][5].ToString());

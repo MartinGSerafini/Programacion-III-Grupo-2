@@ -10,8 +10,8 @@ namespace Entidades
     public class Pacientes
     {
         private int ID_PACIENTE;
-        private string LOCALIDAD;
-        private string PROVINCIA;
+        private int FK_ID_LOCALIDAD_PAS;
+        private int FK_ID_PROVINCIA_PAS;
         private string DNI_PAS;
         private string NOMBRE_PAS;
         private string APELLIDO_PAS;
@@ -27,10 +27,10 @@ namespace Entidades
 
         public int getId_Paciente() { return ID_PACIENTE; }
         public void setId_Paciente(int ID) { ID_PACIENTE = ID; }
-        public string getLocalidad() { return LOCALIDAD; }
-        public void setLocalidad(string ID) { LOCALIDAD = ID; }
-        public string getProvincia() { return PROVINCIA; }
-        public void setProvincia(string ID) { PROVINCIA = ID; }
+        public int getLocalidad() { return FK_ID_LOCALIDAD_PAS; }
+        public void setLocalidad(int ID) { FK_ID_LOCALIDAD_PAS = ID; }
+        public int getProvincia() { return FK_ID_PROVINCIA_PAS; }
+        public void setProvincia(int ID) { FK_ID_PROVINCIA_PAS = ID; }
         public string getDNI() { return DNI_PAS; }
         public void setDNI(string DNI) { DNI_PAS = DNI; }
         public string getNombre() { return NOMBRE_PAS; }

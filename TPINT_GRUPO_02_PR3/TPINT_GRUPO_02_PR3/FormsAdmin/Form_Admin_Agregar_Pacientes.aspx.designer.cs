@@ -213,13 +213,13 @@ namespace TPINT_GRUPO_02_PR3
         protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvCorreo;
 
         /// <summary>
-        /// Control ddlNacionalidad.
+        /// Control TxbNacionalidad.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlNacionalidad;
+        protected global::System.Web.UI.WebControls.TextBox TxbNacionalidad;
 
         /// <summary>
         /// Control rfvNacionalidad.
@@ -265,6 +265,15 @@ namespace TPINT_GRUPO_02_PR3
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvNacimiento;
+
+        /// <summary>
+        /// Control PRUEBA.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label PRUEBA;
 
         /// <summary>
         /// Control btnAtras.

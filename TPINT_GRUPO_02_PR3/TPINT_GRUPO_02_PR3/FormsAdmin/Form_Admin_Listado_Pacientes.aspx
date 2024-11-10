@@ -332,24 +332,30 @@
                         <asp:Label ID="lbl_it_Direccion" runat="server" Text='<%# Bind("DIRECCION_PAS") %>'></asp:Label>
                     </ItemTemplate>
                 </asp:TemplateField>
-                <asp:TemplateField HeaderText="Localidad">
-                    <EditItemTemplate>
-                        <asp:DropDownList ID="ddlLocalidades" runat="server" SelectedValue='<%# Bind("FK_ID_LOCALIDAD_PAS") %>'>
-                        </asp:DropDownList>
-                    </EditItemTemplate>
-                    <ItemTemplate>
-                        <asp:Label ID="lbl_it_Localidad" runat="server" Text='<%# Bind("NOMBRE_LOC") %>'></asp:Label>
-                    </ItemTemplate>
-                </asp:TemplateField>
-                <asp:TemplateField HeaderText="Provincia">
-                    <EditItemTemplate>
-                        <asp:DropDownList ID="ddlProvincias" runat="server" SelectedValue='<%# Bind("FK_ID_PROVINCIA_PAS") %>'>
-                        </asp:DropDownList>
-                    </EditItemTemplate>
-                    <ItemTemplate>
-                        <asp:Label ID="lbl_it_Provincia" runat="server" Text='<%# Bind("NOMBRE_PRO") %>'></asp:Label>
-                    </ItemTemplate>
-                </asp:TemplateField>
+
+<asp:TemplateField HeaderText="Provincia">
+    <EditItemTemplate>
+        <asp:DropDownList ID="ddlProvincias" runat="server" 
+            SelectedValue='<%# Bind("FK_ID_PROVINCIA_PAS") %>'>
+        </asp:DropDownList>
+    </EditItemTemplate>
+    <ItemTemplate>
+        <asp:Label ID="lbl_it_Provincia" runat="server" 
+            Text='<%# Bind("NOMBRE_PRO") %>'></asp:Label>
+    </ItemTemplate>
+</asp:TemplateField>
+<asp:TemplateField HeaderText="Localidad">
+    <EditItemTemplate>
+        <asp:DropDownList ID="ddlLocalidades" runat="server" 
+            SelectedValue='<%# Bind("FK_ID_LOCALIDAD_PAS") %>'>
+        </asp:DropDownList>
+    </EditItemTemplate>
+    <ItemTemplate>
+        <asp:Label ID="lbl_it_Localidad" runat="server" 
+            Text='<%# Bind("NOMBRE_LOC") %>'></asp:Label>
+    </ItemTemplate>
+</asp:TemplateField>
+
                 <asp:TemplateField HeaderText="Email">
                     <EditItemTemplate>
                         <asp:TextBox ID="txtEmail" runat="server" Text='<%# Bind("EMAIL_PAS") %>'></asp:TextBox>

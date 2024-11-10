@@ -1,5 +1,6 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Form_Admin_Agregar_Pacientes.aspx.cs" Inherits="TPINT_GRUPO_02_PR3.Form_Agregar_Pacientes" %>
 
+
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -141,7 +142,7 @@
                 </td>
                 <td class="auto-style78" style="font-weight: bold;font-size: 17px">Provincia: </td>
                 <td class="auto-style75">
-                    <asp:DropDownList ID="ddlProvincia" runat="server" Height="21px" Width="222px">
+                    <asp:DropDownList ID="ddlProvincia" runat="server" Height="21px" Width="222px" AutoPostBack="True" OnSelectedIndexChanged="ddlProvincia_SelectedIndexChanged">
                         <asp:ListItem Value="-1">--Seleccione una provincia--</asp:ListItem>
                     </asp:DropDownList>
                 </td>
@@ -162,8 +163,8 @@
                 </td>
                 <td class="auto-style78" style="font-weight: bold;font-size: 17px">Localidad: </td>
                 <td class="auto-style75">
-                    <asp:DropDownList ID="ddlLocalidad" runat="server" Height="23px" Width="221px">
-                        <asp:ListItem Value="-1">--Seleccione una localidad--</asp:ListItem>
+                    <asp:DropDownList ID="ddlLocalidad" runat="server" Height="23px" Width="221px" OnSelectedIndexChanged="ddlProvincia_SelectedIndexChanged">
+                    <asp:ListItem Value="-1">--Seleccione una localidad--</asp:ListItem>
                     </asp:DropDownList>
                 </td>
                 <td class="auto-style73">
@@ -197,12 +198,10 @@
                 <td class="auto-style79"></td>
                 <td class="auto-style77" style="font-weight: bold;font-size: 17px">Nacionalidad: </td>
                 <td class="auto-style71">
-                    <asp:DropDownList ID="ddlNacionalidad" runat="server" Height="21px" Width="222px">
-                        <asp:ListItem Value="-1">--Seleccione la nacionalidad--</asp:ListItem>
-                    </asp:DropDownList>
+                <asp:TextBox ID="TxbNacionalidad" runat="server" Height="18px" Width="215px"></asp:TextBox>
                 </td>
                 <td class="auto-style73">
-                    <asp:RequiredFieldValidator ID="rfvNacionalidad" runat="server" ControlToValidate="ddlNacionalidad" ForeColor="Red" InitialValue="--Seleccione la nacionalidad--">*</asp:RequiredFieldValidator>
+                    <asp:RequiredFieldValidator ID="rfvNacionalidad" runat="server" ControlToValidate="TxbNacionalidad" ForeColor="Red" InitialValue="--Ingrese la nacionalidad--">*</asp:RequiredFieldValidator>
                 </td>
                 <td class="auto-style78" style="font-weight: bold;font-size: 17px">Telefono: </td>
                 <td class="auto-style75">
@@ -228,7 +227,9 @@
         <table>
             <tr>
                 <td class="auto-style87">&nbsp;</td>
-                <td class="auto-style83">&nbsp;</td>
+                <td class="auto-style83">
+                    <asp:Label ID="PRUEBA" runat="server" Text="Label"></asp:Label>
+                </td>
             </tr>
         </table>
         <br />
