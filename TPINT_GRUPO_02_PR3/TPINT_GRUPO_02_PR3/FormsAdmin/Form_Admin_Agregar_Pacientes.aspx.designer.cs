@@ -87,6 +87,15 @@ namespace TPINT_GRUPO_02_PR3
         protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvDNI;
 
         /// <summary>
+        /// Control RevDni.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator RevDni;
+
+        /// <summary>
         /// Control txtDirección.
         /// </summary>
         /// <remarks>
@@ -114,13 +123,13 @@ namespace TPINT_GRUPO_02_PR3
         protected global::System.Web.UI.WebControls.TextBox txtNombre;
 
         /// <summary>
-        /// Control rfvNombre.
+        /// Control RfvNombre.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvNombre;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RfvNombre;
 
         /// <summary>
         /// Control ddlProvincia.

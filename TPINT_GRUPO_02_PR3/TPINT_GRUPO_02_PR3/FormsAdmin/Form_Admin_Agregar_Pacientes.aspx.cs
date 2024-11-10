@@ -18,18 +18,8 @@ namespace TPINT_GRUPO_02_PR3
                 lblUsuario.Text = Session["NombreUsuario"] as string;
                 CargarProvincias();
                 CargarSexos();
+                CargarFechaMax();
             }
-        }
-
-        private void CargarProvincias()
-        {
-            DataTable dtProvincias = logicaProvincias.getTabla();
-            ddlProvincia.DataSource = dtProvincias;
-            ddlProvincia.DataTextField = "NombreProvincia";
-            ddlProvincia.DataValueField = "IdProvincia";
-            ddlProvincia.DataBind();
-
-            ddlProvincia.Items.Insert(0, new ListItem("Seleccionar Provincia", "0"));
         }
 
         protected void ddlProvincia_SelectedIndexChanged(object sender, EventArgs e)
@@ -45,6 +35,16 @@ namespace TPINT_GRUPO_02_PR3
                 ddlLocalidad.Items.Clear();
                 ddlLocalidad.Items.Insert(0, new ListItem("Seleccionar Localidad", "0"));
             }
+        }
+        private void CargarProvincias()
+        {
+            DataTable dtProvincias = logicaProvincias.getTabla();
+            ddlProvincia.DataSource = dtProvincias;
+            ddlProvincia.DataTextField = "NombreProvincia";
+            ddlProvincia.DataValueField = "IdProvincia";
+            ddlProvincia.DataBind();
+
+            ddlProvincia.Items.Insert(0, new ListItem("Seleccionar Provincia", "0"));
         }
         private void CargarLocalidades(int idProvincia)
         {
@@ -62,6 +62,10 @@ namespace TPINT_GRUPO_02_PR3
             ddlSexo.Items.Add(new ListItem("--Seleccione una opción--", "-1"));
             ddlSexo.Items.Add(new ListItem("F", "0"));
             ddlSexo.Items.Add(new ListItem("M", "1"));
+        }
+        private void CargarFechaMax()
+        {
+            txtNacimiento.Attributes["max"] = DateTime.Today.ToString("yyyy-MM-dd");
         }
     }
 }
