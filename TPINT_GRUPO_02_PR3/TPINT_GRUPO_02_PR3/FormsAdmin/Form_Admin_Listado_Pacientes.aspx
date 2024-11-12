@@ -165,18 +165,6 @@
         border-top-left-radius: 15px;
         border-top-right-radius: 15px;
     }
-        .auto-style58 {
-            width: 544px;
-            height: 61px;
-        }
-        .auto-style60 {
-            width: 243px;
-            height: 61px;
-        }
-            .auto-style61 {
-                width: 432px;
-                height: 61px;
-            }
             .auto-style62 {
                 width: 232px;
                 height: 61px;
@@ -233,22 +221,15 @@
         </div>
         <table class="auto-style72">
             <tr>
-                <td class="auto-style58"></td>
-                <td class="auto-style60" style="font-weight: bold;font-size: 27px">Listado de pacientes
-                </td>
-            </tr>
-        </table>
-        <table>
-            <tr>
-                <td class="auto-style61">&nbsp;</td>
+                Listado de pacientes                
                 <td class="auto-style62">
-                    <asp:TextBox ID="txtBuscador" style="font-weight: bold;font-size: 15px" runat="server" Width="220px" Height="20px"></asp:TextBox>
+                    <asp:TextBox ID="txtBuscador" Style="font-weight: bold; font-size: 15px" runat="server" Width="220px" Height="20px"></asp:TextBox>
                 </td>
                 <td class="auto-style63">
                     <asp:Button ID="btnBuscar" runat="server" Text="Buscar" OnClick="btnBuscar_Click" />
                 </td>
                 <td class="auto-style64">
-                    <asp:Label ID="Label1" style="font-weight: bold;font-size: 15px" runat="server" Text="Filtrar por: "></asp:Label>
+                    <asp:Label ID="Label1" Style="font-weight: bold; font-size: 15px" runat="server" Text="Filtrar por: "></asp:Label>
                 </td>
                 <td class="auto-style70">
                     <asp:DropDownList ID="ddlFiltros" runat="server" Height="23px" Width="226px">
@@ -266,16 +247,13 @@
                         <asp:ListItem Value="P.TELEFONO_PAS">TELEFONO</asp:ListItem>
                     </asp:DropDownList>
                 </td>
-                <td class="auto-style73">
-                    <asp:RequiredFieldValidator ID="rfvCategoria" runat="server" ControlToValidate="ddlFiltros" ForeColor="Red" InitialValue="SELECCIONE UNA CATEGORIA">Debe seleccionar una categoria</asp:RequiredFieldValidator>
-                </td>
             </tr>
         </table>
-        <asp:GridView ID="GrdPacientes" runat="server" AutoGenerateColumns="False" OnRowDeleting="GrdPacientes_RowDeleting" OnRowEditing="GrdPacientes_RowEditing">
+        <asp:GridView ID="GrdPacientes" runat="server" AutoGenerateColumns="False" OnRowDeleting="GrdPacientes_RowDeleting" OnRowEditing="GrdPacientes_RowEditing" OnRowCancelingEdit="GrdPacientes_RowCancelingEdit" OnRowUpdating="GrdPacientes_RowUpdating">
             <Columns>
                 <asp:TemplateField HeaderText="DNI">
                     <EditItemTemplate>
-                        <asp:Label ID="lblNombre" runat="server" Text='<%# Bind("DNI_PAS") %>'></asp:Label>
+                        <asp:Label ID="lblDNI" runat="server" Text='<%# Bind("DNI_PAS") %>'></asp:Label>
                     </EditItemTemplate>
                     <ItemTemplate>
                         <asp:Label ID="lbl_it_DNI" runat="server" Text='<%# Bind("DNI_PAS") %>'></asp:Label>
@@ -310,7 +288,7 @@
                 </asp:TemplateField>
                 <asp:TemplateField HeaderText="Nacionalidad">
                     <EditItemTemplate>
-                        <asp:TextBox ID="txtNacionalidad" runat="server" Text='<%# Bind("NACIONALIDAD_PAS") %>'></asp:TextBox>
+                        <asp:TextBox ID="txtNacionalidad" runat="server" Text='<%# Bind("NACIONALIDAD_PAS") %>' TextMode="Date"></asp:TextBox>
                     </EditItemTemplate>
                     <ItemTemplate>
                         <asp:Label ID="lbl_it_Nacionalidad" runat="server" Text='<%# Bind("NACIONALIDAD_PAS") %>'></asp:Label>
@@ -335,27 +313,28 @@
 
 <asp:TemplateField HeaderText="Provincia">
     <EditItemTemplate>
-        <asp:DropDownList ID="ddlProvincias" runat="server" 
-            SelectedValue='<%# Bind("FK_ID_PROVINCIA_PAS") %>'>
+        <asp:DropDownList ID="ddlProvincias" runat="server" AutoPostBack="True" AppendDataBoundItems="True" 
+                          OnSelectedIndexChanged="ddlProvincias_SelectedIndexChanged" 
+                          DataSourceID="SqlDataSource1" 
+                          DataTextField="NOMBRE_PRO" DataValueField="ID_PROVINCIA_PRO">
+            <asp:ListItem Text="Seleccione una Provincia" Value="-1" />
         </asp:DropDownList>
     </EditItemTemplate>
     <ItemTemplate>
-        <asp:Label ID="lbl_it_Provincia" runat="server" 
-            Text='<%# Bind("NOMBRE_PRO") %>'></asp:Label>
-    </ItemTemplate>
-</asp:TemplateField>
-<asp:TemplateField HeaderText="Localidad">
-    <EditItemTemplate>
-        <asp:DropDownList ID="ddlLocalidades" runat="server" 
-            SelectedValue='<%# Bind("FK_ID_LOCALIDAD_PAS") %>'>
-        </asp:DropDownList>
-    </EditItemTemplate>
-    <ItemTemplate>
-        <asp:Label ID="lbl_it_Localidad" runat="server" 
-            Text='<%# Bind("NOMBRE_LOC") %>'></asp:Label>
+        <asp:Label ID="lbl_it_Provincia" runat="server" Text='<%# Bind("NOMBRE_PRO") %>'></asp:Label>
     </ItemTemplate>
 </asp:TemplateField>
 
+<asp:TemplateField HeaderText="Localidad">
+    <EditItemTemplate>
+        <asp:DropDownList ID="ddlLocalidades" runat="server" DataSourceID="SqlDataSource2" DataTextField="NOMBRE_LOC" DataValueField="ID_LOCALIDAD_LOC">
+            <asp:ListItem Text="Seleccione una Localidad" Value="-1" />
+        </asp:DropDownList>
+    </EditItemTemplate>
+    <ItemTemplate>
+        <asp:Label ID="lbl_it_Localidad" runat="server" Text='<%# Bind("NOMBRE_LOC") %>'></asp:Label>
+    </ItemTemplate>
+</asp:TemplateField>
                 <asp:TemplateField HeaderText="Email">
                     <EditItemTemplate>
                         <asp:TextBox ID="txtEmail" runat="server" Text='<%# Bind("EMAIL_PAS") %>'></asp:TextBox>
@@ -377,6 +356,18 @@
             </Columns>
         </asp:GridView>
         <asp:Label ID="lblMensaje" runat="server"></asp:Label>
+        <asp:SqlDataSource ID="SqlDataSource1" runat="server" 
+            ConnectionString="<%$ ConnectionStrings:MedicalStudioConnectionString %>" 
+            SelectCommand="SELECT ID_PROVINCIA_PRO, NOMBRE_PRO FROM [PROVINCIAS]">
+        </asp:SqlDataSource>
+
+        <asp:SqlDataSource ID="SqlDataSource2" runat="server" 
+            ConnectionString="<%$ ConnectionStrings:MedicalStudioConnectionString %>" 
+            SelectCommand="SELECT ID_LOCALIDAD_LOC, NOMBRE_LOC FROM [LOCALIDADES] WHERE FK_ID_PROVINCIA_LOC = @ID_PROVINCIA_PRO">
+            <SelectParameters>
+                <asp:Parameter Name="ID_PROVINCIA_PRO" Type="Int32" DefaultValue="-1" />
+            </SelectParameters>
+        </asp:SqlDataSource>
     </form>
 </body>
 </html>

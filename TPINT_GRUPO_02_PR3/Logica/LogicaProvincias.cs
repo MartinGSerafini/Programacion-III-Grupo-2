@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Datos;
+using Entidades;
 
 namespace Logica
 {
@@ -14,6 +15,12 @@ namespace Logica
         {
             DaoProvincias dao = new DaoProvincias();
             return dao.getTablaProvincias();
+        }
+        public Provincias getProvincia(int id)
+        {
+            DaoProvincias dao = new DaoProvincias();
+            Provincias provincia = dao.getProvincia(id);
+            return provincia;
         }
     }
 }

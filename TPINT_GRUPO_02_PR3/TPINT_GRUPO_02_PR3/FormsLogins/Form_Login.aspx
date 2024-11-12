@@ -157,7 +157,6 @@
                     <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="TxbContra" ErrorMessage="* Debe ingresar una contraseña" ForeColor="#FFC2C2" Display="Dynamic" ValidationGroup="VG1" />
                     <br />
                     <br />
-            <asp:Label ID="LblError" runat="server" ForeColor="White" Visible="False">&quot;Usuario o Contraseña incorrecta&quot;</asp:Label>
                 </div>
 
                 <div class="button-container">

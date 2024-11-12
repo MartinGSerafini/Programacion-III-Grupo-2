@@ -35,18 +35,25 @@ namespace Logica
             }
             else { return false; }
         }
-
-        public bool ModificarPaciente(string DNI)
+        public bool ActualizarPaciente(Pacientes paciente)
         {
             DaoPacientes Dao = new DaoPacientes();
-            Pacientes paciente = new Pacientes();
-            paciente.setDNI(DNI);
-            int op = Dao.ModificaiónPaciente(paciente);
+            int op = Dao.ActualizarPaciente(paciente);
             if (op == 1)
             {
                 return true;
             }
             else { return false; }
+        }
+        public bool VerificarExistenciaDePaciente(string DNI)
+        {
+            DaoPacientes dao = new DaoPacientes();
+            return dao.ExistePacienteConDNI(DNI);
+        }
+        public bool AgregarPaciente(Pacientes paciente)
+        {
+            DaoPacientes dao = new DaoPacientes();
+            return dao.InsertarPaciente(paciente);
         }
     }
 }

@@ -16,5 +16,11 @@ namespace Logica
             DaoLocalidades dao = new DaoLocalidades();
             return dao.getTablaLocalidades(idProvincia);
         }
+        public Localidades getLocalidad(int id)
+        {
+            DaoLocalidades dao = new DaoLocalidades();
+            Localidades localidad = dao.getLocalidad(id);
+            return localidad;
+        }
     }
 }

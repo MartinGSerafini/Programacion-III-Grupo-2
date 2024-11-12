@@ -75,33 +75,61 @@ namespace Datos
             sqlParametros.Value = paciente.getTelefono();
         }
 
-        public int ModificaiónPaciente(Pacientes paciente)
+        public int ActualizarPaciente(Pacientes paciente)
         {
             SqlCommand Comando = new SqlCommand();
             ArmarParametrosPacientesModificacion(ref Comando, paciente);
             return ds.EjecutarProcedimientoAlmacenado(Comando, "spModificarPaciente");
         }
-
-        public Pacientes getPaciente(Pacientes paciente)
+        public bool ExistePacienteConDNI(string DNI)
         {
-            DataTable tabla = ds.ObtenerTabla("PACIENTES", "SELECT * FROM PACIENTES WHERE DNI_PAS = " + paciente.getDNI());
-            paciente.setId_Paciente(Convert.ToInt32(tabla.Rows[0][0].ToString()));
-            paciente.setLocalidad(Convert.ToInt32(tabla.Rows[0][1].ToString()));
-            paciente.setProvincia(Convert.ToInt32(tabla.Rows[0][2].ToString()));
-            paciente.setDNI(tabla.Rows[0][3].ToString());
-            paciente.setNombre(tabla.Rows[0][4].ToString());
-            paciente.setApellido(tabla.Rows[0][5].ToString());
-            paciente.setSexo(tabla.Rows[0][6].ToString());
-            paciente.setNacionalidad(tabla.Rows[0][7].ToString());
-            paciente.setNacimiento(Convert.ToDateTime(tabla.Rows[0][8].ToString()));
-            paciente.setDireccion(tabla.Rows[0][9].ToString());
-            paciente.setEmail(tabla.Rows[0][7].ToString());
-            paciente.setTelefono(tabla.Rows[0][7].ToString());
-            paciente.setEstado(tabla.Rows[0][7].ToString());
+            string sql = "SELECT COUNT(*) FROM PACIENTES WHERE DNI_PAS = '" + DNI + "'";
 
-            return paciente;
+            DataTable tabla = ds.ObtenerTabla("PACIENTES", sql);
+
+            if (tabla.Rows.Count > 0)
+            {
+                return Convert.ToInt32(tabla.Rows[0][0]) > 0;
+            }
+            return false;
+        }
+        public bool InsertarPaciente(Pacientes paciente)
+        {
+            string sql = "INSERT INTO PACIENTES (DNI_PAS, NOMBRE_PAS, APELLIDO_PAS, SEXO_PAS, " +
+                         "FK_ID_LOCALIDAD_PAS, FK_ID_PROVINCIA_PAS, NACIONALIDAD_PAS, NACIMIENTO_PAS, " +
+                         "DIRECCION_PAS, EMAIL_PAS, TELEFONO_PAS, ESTADO_PAS) " +
+                         "VALUES (@DNI, @Nombre, @Apellido, @Sexo, @LocalidadId, @ProvinciaId, @Nacionalidad, " +
+                         "@Nacimiento, @Direccion, @Email, @Telefono, @Estado)";
+
+            SqlCommand cmd = new SqlCommand(sql);
+
+            cmd.Parameters.AddWithValue("@DNI", paciente.getDNI());
+            cmd.Parameters.AddWithValue("@Nombre", paciente.getNombre());
+            cmd.Parameters.AddWithValue("@Apellido", paciente.getApellido());
+            cmd.Parameters.AddWithValue("@Sexo", paciente.getSexo());
+            cmd.Parameters.AddWithValue("@LocalidadId", paciente.getLocalidad());
+            cmd.Parameters.AddWithValue("@ProvinciaId", paciente.getProvincia());
+            cmd.Parameters.AddWithValue("@Nacionalidad", paciente.getNacionalidad());
+            SqlParameter paramNacimiento = new SqlParameter("@Nacimiento", SqlDbType.Date);
+            paramNacimiento.Value = paciente.getNacimiento();
+            cmd.Parameters.Add(paramNacimiento);
+            cmd.Parameters.AddWithValue("@Direccion", paciente.getDireccion());
+            cmd.Parameters.AddWithValue("@Email", paciente.getEmail());
+            cmd.Parameters.AddWithValue("@Telefono", paciente.getTelefono());
+            cmd.Parameters.AddWithValue("@Estado", paciente.getEstado());
+
+            AccesoDatos accesoDatos = new AccesoDatos();
+
+            try
+            {
+                int filasAfectadas = accesoDatos.EjecutarComando(cmd);
+                return filasAfectadas > 0;
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
         }
 
-        
     }
 }

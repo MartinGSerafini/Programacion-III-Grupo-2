@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
@@ -14,7 +15,6 @@ namespace TPINT_GRUPO_02_PR3.Formularios
         protected void Page_Load(object sender, EventArgs e)
         {
             Session.Remove("NombreUsuario");
-            LblError.Visible = false;
         }
 
         protected void BtnIniciar_Sesion_Click(object sender, EventArgs e)
@@ -28,7 +28,8 @@ namespace TPINT_GRUPO_02_PR3.Formularios
                 usuario2 = Logica.getUsuario(usuario.getDNIusuario());
                 if (TxbContra.Text != usuario2.getContraseniaUsuario())
                 {
-                    LblError.Visible = true;
+                    string script = "alert('Usuario o Contraseña incorrecta.');";
+                    ClientScript.RegisterStartupScript(this.GetType(), "mensajeError", script, true);
                     TxbUsuario.Text = "";
                     TxbContra.Text = "";
                 }
@@ -55,7 +56,8 @@ namespace TPINT_GRUPO_02_PR3.Formularios
             }
             else
             {
-                LblError.Visible = true;
+                string script = "alert('Usuario o Contraseña incorrecta.');";
+                ClientScript.RegisterStartupScript(this.GetType(), "mensajeError", script, true);
                 TxbUsuario.Text = "";
                 TxbContra.Text = "";
             }

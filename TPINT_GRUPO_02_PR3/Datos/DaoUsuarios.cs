@@ -65,5 +65,12 @@ namespace Datos
 
             return string.Empty;
         }
+
+        public int agregarUsuario(int tipo, string dni, string contra)
+        {
+            int filas = ds.ejecutarConsulta("INSERT INTO USUARIOS(FK_ID_TIPO_USUARIO_USU,FK_DNI_USU,CONTRA_USU,FECHA_CREACION_USU)" +
+                                            "SELECT " + tipo + ", '" + dni + "', '" + contra + "', GETDATE();");
+            return filas;
+        }
     }
 }

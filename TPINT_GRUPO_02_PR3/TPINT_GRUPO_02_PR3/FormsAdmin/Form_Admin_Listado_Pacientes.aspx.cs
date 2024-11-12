@@ -6,139 +6,164 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using Logica;
 using System.Data;
-using System.Data.SqlClient;
+using Entidades;
+using System.Net;
 
 namespace TPINT_GRUPO_02_PR3
 {
     public partial class Form_Admin_Listado_Pacientes : System.Web.UI.Page
     {
         LogicaPacientes log = new LogicaPacientes();
+        DataTable dt = null;
+
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
             {
                 LblUsuario.Text = Session["NombreUsuario"] as string;
-                DataTable tabla = log.getTabla();
-                GrdPacientes.DataSource = tabla;
-                GrdPacientes.DataBind();
+                CargarGrilla();
             }
         }
 
         protected void btnBuscar_Click(object sender, EventArgs e)
         {
-            string categoria = txtBuscador.Text, filtro = ddlFiltros.SelectedValue;
+            string categoria = txtBuscador.Text;
+            string filtro = ddlFiltros.SelectedValue;
 
             DataTable tabla = log.getTablaFiltrada(categoria, filtro);
+            GrdPacientes.DataSource = tabla;
+            GrdPacientes.DataBind();
+            dt = tabla; 
+        }
+
+        protected void CargarGrilla()
+        {
+            DataTable tabla = dt ?? log.getTabla();
             GrdPacientes.DataSource = tabla;
             GrdPacientes.DataBind();
         }
 
         protected void GrdPacientes_RowEditing(object sender, GridViewEditEventArgs e)
         {
+            // Establece el índice de edición
             GrdPacientes.EditIndex = e.NewEditIndex;
-            DataTable tabla = Session["TablaFiltrada"] as DataTable ?? log.getTabla();
-            GrdPacientes.DataSource = tabla;
-            GrdPacientes.DataBind();
+            CargarGrilla();
 
-            // Obtener los valores actuales de Provincia y Localidad del paciente
-            int idProvincia = Convert.ToInt32(((Label)GrdPacientes.Rows[e.NewEditIndex].FindControl("lbl_it_Provincia")).Text);
-            int idLocalidad = Convert.ToInt32(((Label)GrdPacientes.Rows[e.NewEditIndex].FindControl("lbl_it_Localidad")).Text);
+            // Encuentra los controles DropDownList
+            DropDownList ddlProvincias = (DropDownList)GrdPacientes.Rows[GrdPacientes.EditIndex].FindControl("ddlProvincias");
+            DropDownList ddlLocalidades = (DropDownList)GrdPacientes.Rows[GrdPacientes.EditIndex].FindControl("ddlLocalidades");
 
-            // Llenar el DropDownList de Provincias
-            DropDownList ddlProvincias = (DropDownList)GrdPacientes.Rows[e.NewEditIndex].FindControl("ddlProvincias");
-            LogicaProvincias logProvincias = new LogicaProvincias();
-            ddlProvincias.DataSource = logProvincias.getTabla();
-            ddlProvincias.DataTextField = "NOMBRE_PRO";
-            ddlProvincias.DataValueField = "ID_PROVINCIA_PRO";
-            ddlProvincias.DataBind();
-
-            // Seleccionar la provincia actual
-            if (ddlProvincias.Items.FindByValue(idProvincia.ToString()) != null)
+            if (ddlProvincias != null && ddlLocalidades != null)
             {
-                ddlProvincias.SelectedValue = idProvincia.ToString();
-            }
-            else
-            {
-                // Si no se encuentra, selecciona el primer elemento o maneja como desees
-                ddlProvincias.SelectedIndex = 0;
-            }
+                ddlProvincias.DataBind();
 
-            // Llenar el DropDownList de Localidades
-            DropDownList ddlLocalidades = (DropDownList)GrdPacientes.Rows[e.NewEditIndex].FindControl("ddlLocalidades");
-            LogicaLocalidades logLocalidades = new LogicaLocalidades();
-            ddlLocalidades.DataSource = logLocalidades.getTablaLocalidades(idProvincia);
-            ddlLocalidades.DataTextField = "NOMBRE_LOC";
-            ddlLocalidades.DataValueField = "ID_LOCALIDAD_LOC";
-            ddlLocalidades.DataBind();
-
-            // Seleccionar la localidad actual
-            if (ddlLocalidades.Items.FindByValue(idLocalidad.ToString()) != null)
-            {
-                ddlLocalidades.SelectedValue = idLocalidad.ToString();
-            }
-            else
-            {
-                // Si la localidad no se encuentra, selecciona el primer ítem o maneja de la forma que prefieras
-                ddlLocalidades.SelectedIndex = 0;
+                if (ddlProvincias.SelectedValue != "-1" && !string.IsNullOrEmpty(ddlProvincias.SelectedValue))
+                {
+                    int idProvincia = Convert.ToInt32(ddlProvincias.SelectedValue);
+                    ddlLocalidades.DataBind();
+                    string selectedValueLocalidad = ddlLocalidades.SelectedValue;
+                    if (!string.IsNullOrEmpty(selectedValueLocalidad) && selectedValueLocalidad != "-1")
+                    {
+                        int idLocalidadSeleccionada = Convert.ToInt32(selectedValueLocalidad);
+                        ddlLocalidades.SelectedValue = idLocalidadSeleccionada.ToString();
+                    }
+                    else
+                    {
+                    }
+                }
+                else
+                {
+                }
             }
         }
 
 
-
-
-        protected void GrdPacientes_RowDataBound(object sender, GridViewRowEventArgs e)
+        protected void GrdPacientes_RowUpdating(object sender, GridViewUpdateEventArgs e)
         {
-            if (e.Row.RowType == DataControlRowType.DataRow && e.Row.RowState.HasFlag(DataControlRowState.Edit))
+            string DNI = ((Label)GrdPacientes.Rows[e.RowIndex].FindControl("lblDNI")).Text;
+            string Nombre = ((TextBox)GrdPacientes.Rows[e.RowIndex].FindControl("txtNombre")).Text;
+            string Apellido = ((TextBox)GrdPacientes.Rows[e.RowIndex].FindControl("txtApellido")).Text;
+            string Sexo = ((DropDownList)GrdPacientes.Rows[e.RowIndex].FindControl("ddlSexo")).SelectedValue;
+            string Nacionalidad = ((TextBox)GrdPacientes.Rows[e.RowIndex].FindControl("txtNacionalidad")).Text;
+            DateTime Nacimiento;
+            bool fechaValida = DateTime.TryParse(((TextBox)GrdPacientes.Rows[e.RowIndex].FindControl("txtNacimiento")).Text, out Nacimiento);
+            if (!fechaValida)
             {
-                DropDownList ddlProvincias = (DropDownList)e.Row.FindControl("ddlProvincias");
-                DropDownList ddlLocalidades = (DropDownList)e.Row.FindControl("ddlLocalidades");
-
-                if (ddlProvincias != null && ddlLocalidades != null)
-                {
-                    LogicaProvincias logicaProvincias = new LogicaProvincias();
-                    LogicaLocalidades logicaLocalidades = new LogicaLocalidades();
-
-                    DataTable provincias = logicaProvincias.getTabla();
-                    ddlProvincias.DataSource = provincias;
-                    ddlProvincias.DataTextField = "NOMBRE_PRO";
-                    ddlProvincias.DataValueField = "ID_PROVINCIA_PRO";
-                    ddlProvincias.DataBind();
-                    ddlProvincias.Items.Insert(0, new ListItem("Selecciona una provincia", "0"));
-
-                    int provinciaId = Convert.ToInt32(DataBinder.Eval(e.Row.DataItem, "ID_PROVINCIA_PRO"));
-                    ddlProvincias.SelectedValue = provinciaId.ToString();
-
-                    DataTable localidades = logicaLocalidades.getTablaLocalidades(provinciaId);
-                    ddlLocalidades.DataSource = localidades;
-                    ddlLocalidades.DataTextField = "NOMBRE_LOC";
-                    ddlLocalidades.DataValueField = "ID_LOCALIDAD_LOC";
-                    ddlLocalidades.DataBind();
-                    ddlLocalidades.Items.Insert(0, new ListItem("Selecciona una localidad", "0"));
-
-                    int localidadId = Convert.ToInt32(DataBinder.Eval(e.Row.DataItem, "IDLocalidad"));
-                    ddlLocalidades.SelectedValue = localidadId.ToString();
-                }
+                lblMensaje.Text = "La fecha de nacimiento no es válida.";
+                return;
             }
+            string Direccion = ((TextBox)GrdPacientes.Rows[e.RowIndex].FindControl("txtDireccion")).Text;
+            int Provincia = Convert.ToInt32(((DropDownList)GrdPacientes.Rows[e.RowIndex].FindControl("ddlProvincias")).SelectedValue);
+            int Localidad = Convert.ToInt32(((DropDownList)GrdPacientes.Rows[e.RowIndex].FindControl("ddlLocalidades")).SelectedValue);
+            string Email = ((TextBox)GrdPacientes.Rows[e.RowIndex].FindControl("txtEmail")).Text;
+            string Telefono = ((TextBox)GrdPacientes.Rows[e.RowIndex].FindControl("txtTelefono")).Text;
+
+            Pacientes Pac = new Pacientes();
+            {
+                Pac.setDNI(DNI);
+                Pac.setNombre(Nombre);
+                Pac.setApellido(Apellido);
+                Pac.setSexo(Sexo);
+                Pac.setLocalidad(Localidad);
+                Pac.setProvincia(Provincia);
+                Pac.setNacionalidad(Nacionalidad);
+                Pac.setNacimiento(DateTime.Parse(Nacionalidad));
+                Pac.setDireccion(Direccion);
+                Pac.setEmail(Email);
+                Pac.setTelefono(Telefono);
+                Pac.setEstado("Activo");
+            };
+
+            log.ActualizarPaciente(Pac);
+
+            GrdPacientes.EditIndex = -1;
+            CargarGrilla();
+
+            lblMensaje.Text = "Paciente actualizado correctamente.";
         }
 
         protected void GrdPacientes_RowDeleting(object sender, GridViewDeleteEventArgs e)
         {
             string s_DNIPaciente = ((Label)GrdPacientes.Rows[e.RowIndex].FindControl("lbl_it_DNI")).Text;
-            LogicaPacientes logica = new LogicaPacientes();
 
-
-            if (logica.EliminarPaciente(s_DNIPaciente))
+            if (log.EliminarPaciente(s_DNIPaciente))
             {
-                lblMensaje.Text = "El paciente con DNI " + s_DNIPaciente + " fué eliminado con éxito";
+                lblMensaje.Text = $"El paciente con DNI {s_DNIPaciente} fue eliminado con éxito.";
             }
             else
             {
-                lblMensaje.Text = "El paciente con DNI " + s_DNIPaciente + " no se pudo eliminar";
+                lblMensaje.Text = $"El paciente con DNI {s_DNIPaciente} no se pudo eliminar.";
             }
 
-            DataTable tabla = log.getTabla();
-            GrdPacientes.DataSource = tabla;
-            GrdPacientes.DataBind();
+            CargarGrilla();
+        }
+
+        protected void GrdPacientes_RowCancelingEdit(object sender, GridViewCancelEditEventArgs e)
+        {
+            GrdPacientes.EditIndex = -1;
+            CargarGrilla();
+        }
+
+        protected void ddlProvincias_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            DropDownList ddlProvincias = (DropDownList)sender;
+            GridViewRow row = (GridViewRow)ddlProvincias.NamingContainer;
+            int provinciaSeleccionada = Convert.ToInt32(ddlProvincias.SelectedValue);
+            DropDownList ddlLocalidades = (DropDownList)row.FindControl("ddlLocalidades");
+            
+            if (provinciaSeleccionada != -1)
+            {
+                SqlDataSource2.SelectParameters["ID_PROVINCIA_PRO"].DefaultValue = provinciaSeleccionada.ToString();
+                ddlLocalidades.DataBind();
+                ddlLocalidades.Items.Insert(0, new ListItem("Seleccione una localidad", "-1"));
+                ddlLocalidades.SelectedValue = "-1"; // Asegurarse de que no haya una localidad seleccionada por defecto
+            }
+            else
+            {
+                ddlLocalidades.Items.Clear();
+                ddlLocalidades.Items.Add(new ListItem("Seleccione una localidad", "-1"));
+                ddlLocalidades.SelectedValue = "-1";
+            }
         }
 
     }

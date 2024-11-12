@@ -30,5 +30,11 @@ namespace Logica
             DaoUsuarios dao = new DaoUsuarios();
             return dao.TipoDeUsuario(usu);
         }
+
+        public int AgregarUsuario(int tipo, string dni, string contra)
+        {
+            DaoUsuarios dao = new DaoUsuarios();
+            return dao.agregarUsuario(tipo, dni, contra);
+        }
     }
 }

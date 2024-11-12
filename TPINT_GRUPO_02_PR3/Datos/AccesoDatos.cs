@@ -34,8 +34,9 @@ namespace Datos
                 cn.Open();
                 return cn;
             }
-            catch (Exception)
+            catch (Exception ex)
             {
+                Console.WriteLine("Error al abrir la conexión: " + ex.Message);
                 return null;
             }
         }
@@ -115,6 +116,28 @@ namespace Datos
                 max = Convert.ToInt32(datos[0].ToString());
             }
             return max;
+        }
+        public int EjecutarComando(SqlCommand comando)
+        {
+            using (SqlConnection conexion = ObtenerConexion())
+            {
+                if (conexion == null)
+                {
+                    Console.WriteLine("No se pudo establecer la conexión.");
+                    return 0;
+                }
+
+                try
+                {
+                    comando.Connection = conexion;
+                    int filasAfectadas = comando.ExecuteNonQuery();
+                    return filasAfectadas;
+                }
+                catch (Exception)
+                {
+                    return 0;
+                }
+            }
         }
 
     }
