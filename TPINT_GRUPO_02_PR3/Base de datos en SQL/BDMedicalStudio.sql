@@ -1,5 +1,5 @@
---ALTER DATABASE MedicalStudio SET SINGLE_USER WITH ROLLBACK IMMEDIATE;
---DROP DATABASE MedicalStudio
+ALTER DATABASE MedicalStudio SET SINGLE_USER WITH ROLLBACK IMMEDIATE;
+DROP DATABASE MedicalStudio
 
 -- Crea la base de datos
 CREATE DATABASE MedicalStudio;
@@ -299,17 +299,6 @@ CREATE TABLE TURNOS (
 );
 GO
 
-INSERT INTO PACIENTES (FK_ID_LOCALIDAD_PAS, FK_ID_PROVINCIA_PAS, DNI_PAS, NOMBRE_PAS, APELLIDO_PAS, SEXO_PAS, NACIONALIDAD_PAS,  NACIMIENTO_PAS,  DIRECCION_PAS, EMAIL_PAS, TELEFONO_PAS, ESTADO_PAS)
-SELECT 1, 1, '12345678', 'Juan', 'Perez', 'M', 'Argentina', '1985-06-15', 'Calle Falsa 123', 'juan.perez@example.com', '123456789', 'Activo' UNION
-SELECT 2, 1, '87654321', 'Maria', 'Lopez', 'F', 'Argentina', '1990-11-25', 'Avenida Siempre Viva 742', 'maria.lopez@example.com', '987654321', 'Activo' UNION
-SELECT 3, 2, '45678912', 'Carlos', 'Gomez', 'M', 'Chile', '1978-03-30', 'Ruta 40 km 100', 'carlos.gomez@example.com', '456123789', 'Inactivo' UNION
-SELECT 4, 2, '78912345', 'Ana', 'Martinez', 'F', 'Uruguay', '1983-08-12', 'Libertad 456', 'ana.martinez@example.com', '789456123', 'Activo' UNION
-SELECT 5, 3, '32165498', 'Lucia', 'Garcia', 'F', 'Argentina', '1995-01-20', 'Belgrano 789', 'lucia.garcia@example.com', '321654987', 'Inactivo';
-GO
-
-DROP PROCEDURE spBajaLogicaPaciente
-GO
-
 CREATE PROCEDURE spBajaLogicaPaciente
 @DNIPACIENTE char(8)
 AS
@@ -318,7 +307,7 @@ WHERE DNI_PAS = @DNIPACIENTE
 RETURN
 GO
 
-DROP PROCEDURE spModificarPaciente
+DROP PROCEDURE spBajaLogicaPaciente
 GO
 
 CREATE PROCEDURE spModificarPaciente
@@ -329,4 +318,6 @@ UPDATE PACIENTES SET FK_ID_LOCALIDAD_PAS = @LOCALIDAD, FK_ID_PROVINCIA_PAS = @PR
 NACIMIENTO_PAS = @NACIMIENTO ,DIRECCION_PAS = @DIRECCION, EMAIL_PAS = @EMAIL, TELEFONO_PAS = @TELEFONO
 WHERE DNI_PAS = @DNIPACIENTE
 RETURN
+GO
+DROP PROCEDURE spModificarPaciente
 GO

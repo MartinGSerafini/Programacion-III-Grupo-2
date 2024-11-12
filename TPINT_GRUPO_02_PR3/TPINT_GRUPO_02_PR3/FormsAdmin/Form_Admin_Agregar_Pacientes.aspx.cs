@@ -94,7 +94,7 @@ namespace TPINT_GRUPO_02_PR3
                     Pac.setDNI(txtDNI.Text);
                     Pac.setNombre(txtNombre.Text);
                     Pac.setApellido(txtApellido.Text);
-                    Pac.setSexo(ddlSexo.SelectedValue.ToString());
+                    Pac.setSexo(ddlSexo.SelectedItem.Text);
                     Pac.setLocalidad(int.Parse(ddlLocalidad.SelectedValue.ToString()));
                     Pac.setProvincia(int.Parse(ddlProvincia.SelectedValue.ToString()));
                     Pac.setNacionalidad(TxbNacionalidad.Text);

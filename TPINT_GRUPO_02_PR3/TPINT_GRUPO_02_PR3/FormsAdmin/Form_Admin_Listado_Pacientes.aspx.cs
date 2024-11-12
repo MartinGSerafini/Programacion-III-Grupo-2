@@ -45,34 +45,33 @@ namespace TPINT_GRUPO_02_PR3
 
         protected void GrdPacientes_RowEditing(object sender, GridViewEditEventArgs e)
         {
-            // Establece el índice de edición
             GrdPacientes.EditIndex = e.NewEditIndex;
             CargarGrilla();
 
-            // Encuentra los controles DropDownList
             DropDownList ddlProvincias = (DropDownList)GrdPacientes.Rows[GrdPacientes.EditIndex].FindControl("ddlProvincias");
             DropDownList ddlLocalidades = (DropDownList)GrdPacientes.Rows[GrdPacientes.EditIndex].FindControl("ddlLocalidades");
 
             if (ddlProvincias != null && ddlLocalidades != null)
             {
-                ddlProvincias.DataBind();
+                Label lblProvincia = (Label)GrdPacientes.Rows[e.NewEditIndex].FindControl("lbl_it_Provincia");
+                Label lblLocalidad = (Label)GrdPacientes.Rows[e.NewEditIndex].FindControl("lbl_it_Localidad");
 
-                if (ddlProvincias.SelectedValue != "-1" && !string.IsNullOrEmpty(ddlProvincias.SelectedValue))
+                if (lblProvincia != null && lblLocalidad != null)
                 {
-                    int idProvincia = Convert.ToInt32(ddlProvincias.SelectedValue);
-                    ddlLocalidades.DataBind();
-                    string selectedValueLocalidad = ddlLocalidades.SelectedValue;
-                    if (!string.IsNullOrEmpty(selectedValueLocalidad) && selectedValueLocalidad != "-1")
+                    string idProvincia = lblProvincia.Text;
+                    if (!string.IsNullOrEmpty(idProvincia))
                     {
-                        int idLocalidadSeleccionada = Convert.ToInt32(selectedValueLocalidad);
-                        ddlLocalidades.SelectedValue = idLocalidadSeleccionada.ToString();
+                        ddlProvincias.SelectedValue = idProvincia;
+
+                        SqlDataSource2.SelectParameters["ID_PROVINCIA_PRO"].DefaultValue = idProvincia;
+                        ddlLocalidades.DataBind();
+
+                        string idLocalidad = lblLocalidad.Text;
+                        if (!string.IsNullOrEmpty(idLocalidad))
+                        {
+                            ddlLocalidades.SelectedValue = idLocalidad;
+                        }
                     }
-                    else
-                    {
-                    }
-                }
-                else
-                {
                 }
             }
         }
@@ -88,8 +87,6 @@ namespace TPINT_GRUPO_02_PR3
             DateTime Nacimiento;
             if (DateTime.TryParseExact(((TextBox)GrdPacientes.Rows[e.RowIndex].FindControl("txtNacimiento")).Text, "dd-MM-yyyy", null, System.Globalization.DateTimeStyles.None ,out Nacimiento))
             {
-                lblMensaje.Text = "La fecha de nacimiento no es válida.";
-                return;
             }
             string Direccion = ((TextBox)GrdPacientes.Rows[e.RowIndex].FindControl("txtDireccion")).Text;
             int Provincia = Convert.ToInt32(((DropDownList)GrdPacientes.Rows[e.RowIndex].FindControl("ddlProvincias")).SelectedValue);
@@ -118,7 +115,8 @@ namespace TPINT_GRUPO_02_PR3
             GrdPacientes.EditIndex = -1;
             CargarGrilla();
 
-            lblMensaje.Text = "Paciente actualizado correctamente.";
+            string script = "alert('El Registro fue Modificado con Exito.');";
+            ClientScript.RegisterStartupScript(this.GetType(), "mensajeExito", script, true);
         }
 
         protected void GrdPacientes_RowDeleting(object sender, GridViewDeleteEventArgs e)
@@ -127,11 +125,13 @@ namespace TPINT_GRUPO_02_PR3
 
             if (log.EliminarPaciente(s_DNIPaciente))
             {
-                lblMensaje.Text = $"El paciente con DNI {s_DNIPaciente} fue eliminado con éxito.";
+                string script = "alert('El Registro fue Eliminiado con Exito.');";
+                ClientScript.RegisterStartupScript(this.GetType(), "mensajeExito", script, true);
             }
             else
             {
-                lblMensaje.Text = $"El paciente con DNI {s_DNIPaciente} no se pudo eliminar.";
+                string script = "alert('El Registro no se puedo Eliminar.');";
+                ClientScript.RegisterStartupScript(this.GetType(), "mensajeExito", script, true);
             }
 
             CargarGrilla();
@@ -155,7 +155,7 @@ namespace TPINT_GRUPO_02_PR3
                 SqlDataSource2.SelectParameters["ID_PROVINCIA_PRO"].DefaultValue = provinciaSeleccionada.ToString();
                 ddlLocalidades.DataBind();
                 ddlLocalidades.Items.Insert(0, new ListItem("Seleccione una localidad", "-1"));
-                ddlLocalidades.SelectedValue = "-1"; // Asegurarse de que no haya una localidad seleccionada por defecto
+                ddlLocalidades.SelectedValue = "-1";
             }
             else
             {
@@ -164,6 +164,5 @@ namespace TPINT_GRUPO_02_PR3
                 ddlLocalidades.SelectedValue = "-1";
             }
         }
-
     }
 }
