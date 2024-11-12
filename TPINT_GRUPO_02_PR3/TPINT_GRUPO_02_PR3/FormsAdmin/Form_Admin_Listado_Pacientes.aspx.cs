@@ -86,8 +86,7 @@ namespace TPINT_GRUPO_02_PR3
             string Sexo = ((DropDownList)GrdPacientes.Rows[e.RowIndex].FindControl("ddlSexo")).SelectedValue;
             string Nacionalidad = ((TextBox)GrdPacientes.Rows[e.RowIndex].FindControl("txtNacionalidad")).Text;
             DateTime Nacimiento;
-            bool fechaValida = DateTime.TryParse(((TextBox)GrdPacientes.Rows[e.RowIndex].FindControl("txtNacimiento")).Text, out Nacimiento);
-            if (!fechaValida)
+            if (DateTime.TryParseExact(((TextBox)GrdPacientes.Rows[e.RowIndex].FindControl("txtNacimiento")).Text, "dd-MM-yyyy", null, System.Globalization.DateTimeStyles.None ,out Nacimiento))
             {
                 lblMensaje.Text = "La fecha de nacimiento no es válida.";
                 return;
@@ -107,7 +106,7 @@ namespace TPINT_GRUPO_02_PR3
                 Pac.setLocalidad(Localidad);
                 Pac.setProvincia(Provincia);
                 Pac.setNacionalidad(Nacionalidad);
-                Pac.setNacimiento(DateTime.Parse(Nacionalidad));
+                Pac.setNacimiento(Nacimiento);
                 Pac.setDireccion(Direccion);
                 Pac.setEmail(Email);
                 Pac.setTelefono(Telefono);

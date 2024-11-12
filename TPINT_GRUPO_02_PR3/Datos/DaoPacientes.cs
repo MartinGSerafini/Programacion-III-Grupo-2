@@ -53,9 +53,9 @@ namespace Datos
             SqlParameter sqlParametros = new SqlParameter();
             sqlParametros = Comando.Parameters.Add("@DNIPACIENTE", SqlDbType.Char);
             sqlParametros.Value = paciente.getDNI();
-            sqlParametros = Comando.Parameters.Add("@LOCALIDAD", SqlDbType.Char);
+            sqlParametros = Comando.Parameters.Add("@LOCALIDAD", SqlDbType.Int);
             sqlParametros.Value = paciente.getLocalidad();
-            sqlParametros = Comando.Parameters.Add("@PROVINCIA", SqlDbType.Char);
+            sqlParametros = Comando.Parameters.Add("@PROVINCIA", SqlDbType.Int);
             sqlParametros.Value = paciente.getProvincia();
             sqlParametros = Comando.Parameters.Add("@NOMBRE", SqlDbType.Char);
             sqlParametros.Value = paciente.getNombre();

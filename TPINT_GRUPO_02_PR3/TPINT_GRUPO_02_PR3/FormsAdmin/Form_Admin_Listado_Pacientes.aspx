@@ -288,7 +288,7 @@
                 </asp:TemplateField>
                 <asp:TemplateField HeaderText="Nacionalidad">
                     <EditItemTemplate>
-                        <asp:TextBox ID="txtNacionalidad" runat="server" Text='<%# Bind("NACIONALIDAD_PAS") %>' TextMode="Date"></asp:TextBox>
+                        <asp:TextBox ID="txtNacionalidad" runat="server" Text='<%# Bind("NACIONALIDAD_PAS") %>'></asp:TextBox>
                     </EditItemTemplate>
                     <ItemTemplate>
                         <asp:Label ID="lbl_it_Nacionalidad" runat="server" Text='<%# Bind("NACIONALIDAD_PAS") %>'></asp:Label>
