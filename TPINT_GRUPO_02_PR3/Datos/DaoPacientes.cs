@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
@@ -17,7 +18,7 @@ namespace Datos
         {
             DataTable tabla = ds.ObtenerTabla("PACIENTES", "SELECT P.DNI_PAS, P.NOMBRE_PAS, P.APELLIDO_PAS, P.SEXO_PAS, " +
                 "P.NACIONALIDAD_PAS, P.NACIMIENTO_PAS, P.DIRECCION_PAS, L.NOMBRE_LOC, PRO.NOMBRE_PRO, P.EMAIL_PAS, " +
-                "P.TELEFONO_PAS, P.FK_ID_LOCALIDAD_PAS, P.FK_ID_PROVINCIA_PAS " +  // Agregar las columnas FK_ID_LOCALIDAD_PAS y FK_ID_PROVINCIA_PAS
+                "P.TELEFONO_PAS, P.FK_ID_LOCALIDAD_PAS, P.FK_ID_PROVINCIA_PAS " +
                 "FROM PACIENTES P INNER JOIN LOCALIDADES L ON P.FK_ID_LOCALIDAD_PAS = L.ID_LOCALIDAD_LOC " +
                 "INNER JOIN PROVINCIAS PRO ON P.FK_ID_PROVINCIA_PAS = PRO.ID_PROVINCIA_PRO " +
                 "WHERE P.ESTADO_PAS = 'Activo'");
@@ -26,12 +27,13 @@ namespace Datos
 
         public DataTable getTablaPacientesFiltrada(string filtro, string dato)
         {
-            DataTable tabla = ds.ObtenerTabla("PACIENTES", "SELECT P.DNI_PAS, P.NOMBRE_PAS, P.APELLIDO_PAS, P.SEXO_PAS, " +
-                "P.NACIONALIDAD_PAS, P.NACIMIENTO_PAS, P.DIRECCION_PAS, L.NOMBRE_LOC, PRO.NOMBRE_PRO, P.EMAIL_PAS, P.TELEFONO_PAS " +
-                "FROM PACIENTES P INNER JOIN LOCALIDADES L ON P.FK_ID_LOCALIDAD_PAS = L.ID_LOCALIDAD_LOC " +
-                "INNER JOIN PROVINCIAS PRO ON P.FK_ID_PROVINCIA_PAS = PRO.ID_PROVINCIA_PRO " +
-                "WHERE " + filtro + " = '" + dato + "' AND P.ESTADO_PAS = 'Activo'");
-            return tabla;
+            string cons = "SELECT P.DNI_PAS, P.NOMBRE_PAS, P.APELLIDO_PAS, P.SEXO_PAS, " +
+                           "P.NACIONALIDAD_PAS, P.NACIMIENTO_PAS, P.DIRECCION_PAS, L.NOMBRE_LOC, PRO.NOMBRE_PRO, P.EMAIL_PAS, P.TELEFONO_PAS " +
+                           "FROM PACIENTES P INNER JOIN LOCALIDADES L ON P.FK_ID_LOCALIDAD_PAS = L.ID_LOCALIDAD_LOC " +
+                           "INNER JOIN PROVINCIAS PRO ON P.FK_ID_PROVINCIA_PAS = PRO.ID_PROVINCIA_PRO " +
+                           "WHERE " + filtro + " LIKE '" + dato + "%' AND P.ESTADO_PAS = 'Activo'";
+
+            return ds.ObtenerTabla("PACIENTES", cons);
         }
 
         public void ArmarParametrosPacientesBajaLogica(ref SqlCommand Comando, Pacientes paciente)
@@ -125,7 +127,7 @@ namespace Datos
                 int filasAfectadas = accesoDatos.EjecutarComando(cmd);
                 return filasAfectadas > 0;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return false;
             }

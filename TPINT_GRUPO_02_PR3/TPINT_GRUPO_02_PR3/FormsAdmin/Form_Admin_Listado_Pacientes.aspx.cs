@@ -31,7 +31,12 @@ namespace TPINT_GRUPO_02_PR3
         {
             string categoria = txtBuscador.Text;
             string filtro = ddlFiltros.SelectedValue;
-
+            if (filtro == "-1")
+            {
+                string script = "alert('Por favor, seleccione una categoría válida.');";
+                ClientScript.RegisterStartupScript(this.GetType(), "mensajeExito", script, true);
+                return;
+            }
             DataTable tabla = log.getTablaFiltrada(categoria, filtro);
             GrdPacientes.DataSource = tabla;
             GrdPacientes.DataBind();
@@ -143,13 +148,16 @@ namespace TPINT_GRUPO_02_PR3
                 MensajeError += "Ingresa una dirección válida (solo letras, números, espacios y guiones).\n";
                 e.Cancel = true;
             }
+            
             DropDownList ddlProvincias = (DropDownList)GrdPacientes.Rows[e.RowIndex].FindControl("ddlProvincias");
             if (ddlProvincias == null || ddlProvincias.SelectedIndex <= 0)
             {
                 MensajeError += "Seleccione una Provincia.\n";
                 e.Cancel = true;
-            }
+            } 
             int Provincia = Convert.ToInt32(((DropDownList)GrdPacientes.Rows[e.RowIndex].FindControl("ddlProvincias")).SelectedValue);
+            
+            
             DropDownList ddlLocalidades = (DropDownList)GrdPacientes.Rows[e.RowIndex].FindControl("ddlLocalidades");
             if (ddlLocalidades == null || ddlLocalidades.SelectedIndex <= -1)
             {
@@ -157,6 +165,8 @@ namespace TPINT_GRUPO_02_PR3
                 e.Cancel = true;
             }
             int Localidad = Convert.ToInt32(((DropDownList)GrdPacientes.Rows[e.RowIndex].FindControl("ddlLocalidades")).SelectedValue);
+            
+            
             string Email = ((TextBox)GrdPacientes.Rows[e.RowIndex].FindControl("txtEmail")).Text;
             if (!Regex.IsMatch(Email, @"^[\w\.\-]+@[\w\-]+\.[a-zA-Z]{2,}$"))
             {

@@ -373,7 +373,7 @@
         </td>
         <td>
             <asp:DropDownList ID="ddlFiltros" runat="server" CssClass="dropdown-filter">
-                <asp:ListItem>SELECCIONE UNA CATEGORÍA</asp:ListItem>
+                <asp:ListItem Value="-1">SELECCIONE UNA CATEGORÍA</asp:ListItem>
                 <asp:ListItem Value="P.DNI_PAS">DNI</asp:ListItem>
                 <asp:ListItem Value="P.NOMBRE_PAS">NOMBRE</asp:ListItem>
                 <asp:ListItem Value="P.APELLIDO_PAS">APELLIDO</asp:ListItem>
