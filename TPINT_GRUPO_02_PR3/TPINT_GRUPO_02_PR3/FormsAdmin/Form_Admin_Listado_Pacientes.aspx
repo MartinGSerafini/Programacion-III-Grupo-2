@@ -7,33 +7,53 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title></title>
         <style type="text/css">
-/* Estilos generales */
+            /* Estilos generales */
             body {
                 background-color: #4C1766;
-                font-family: Arial, sans-serif;
-                color: #FFFFFF;
-                margin: 0;
                 display: flex;
                 align-items: center;
                 justify-content: center;
+                height: 100vh;
+                margin: 0;
+                font-family: Arial, sans-serif;
+                color: #FFFFFF;
+                flex-wrap: wrap;
+            }
+
+            /* Contenedor principal */
+            .wrapper {
+                display: inline-block;
+                text-align: center;
             }
 
             /* Encabezado */
+            .header, .container {
+                width: 100%; /* Asegura que tanto el header como el container ocupen el 100% del ancho disponible */
+                max-width: 100vw; /* Limita el ancho al 100% de la pantalla */
+                box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+                border-radius: 15px;
+            }
+
             .header {
-                    position: fixed;
-                    top: 0;
-                    left: 0;
-                    width: 100%;
-                    display: flex;
-                    justify-content: space-between;
-                    align-items: center;
-                    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
-                    border-top-left-radius: 15px;
-                    border-top-right-radius: 15px;
-                    z-index: 1000;
-                    padding: 20px;
-                    background-color: #3A104D;
-                    height: 60px;
+                width: 103%;
+                background-color: #3A104D;
+                padding: 20px;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                border-top-left-radius: 15px;
+                border-top-right-radius: 15px;
+            }
+
+            /* Contenedor secundario */
+            .container {
+                background-color: #6C2C91;
+                padding: 40px;
+                border-radius: 15px;
+                width: 100%; /* Igual al ancho del header */
+                max-width: 100vw; /* Se asegura de no exceder el 100% de la ventana */
+                text-align: center;
+                box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
             }
 
             /* Logo y menú */
@@ -141,24 +161,6 @@
             .link:active {
                 background-color: #5B1F6D;
             }
-
-            /* Contenedor principal */
-            .container {
-                background-color: #6C2C91;
-                padding: 60px;
-                border-bottom-left-radius: 15px;
-                border-bottom-right-radius: 15px;
-                width: 1200px;
-                text-align: center;
-                box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
-                font-weight: bold;
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-                align-items: center;
-                margin-top: 60px;
-            }
-
             /* Botones de menú */
             .button-container {
                 display: grid;
@@ -190,102 +192,102 @@
                 font-weight: bold;
             }
             .table-style {
-    width: 100%;
-    border-collapse: collapse;
-    font-family: Arial, sans-serif;
-}
+                width: 100%;
+                border-collapse: collapse;
+                font-family: Arial, sans-serif;
+            }
 
-.table-style th, .table-style td {
-    border: 1px solid #d1c4e9; /* Borde lila suave */
-    padding: 8px;
-    text-align: left;
-    color: #4a148c; /* Texto morado oscuro para registros */
-}
+            .table-style th, .table-style td {
+                border: 1px solid #d1c4e9; /* Borde lila suave */
+                padding: 8px;
+                text-align: left;
+                color: #4a148c; /* Texto morado oscuro para registros */
+            }
 
-.table-style th {
-    background-color: #7e57c2; /* Fondo morado oscuro para encabezados */
-    color: #f3e5f5; /* Texto lila claro */
-    font-weight: bold;
-}
+            .table-style th {
+                background-color: #7e57c2; /* Fondo morado oscuro para encabezados */
+                color: #f3e5f5; /* Texto lila claro */
+                font-weight: bold;
+            }
 
-.table-style tr:nth-child(even) {
-    background-color: #ede7f6; /* Fondo lila claro para filas pares */
-}
+            .table-style tr:nth-child(even) {
+                background-color: #ede7f6; /* Fondo lila claro para filas pares */
+            }
 
-.table-style tr:hover {
-    background-color: #d1c4e9; /* Fondo lila intermedio al pasar el mouse */
-}
+            .table-style tr:hover {
+                background-color: #d1c4e9; /* Fondo lila intermedio al pasar el mouse */
+            }
 
-.input-style {
-    width: 90%;
-    padding: 6px;
-    border: 1px solid #9575cd; /* Borde morado intermedio */
-    border-radius: 4px;
-}
+            .input-style {
+                width: 90%;
+                padding: 6px;
+                border: 1px solid #9575cd; /* Borde morado intermedio */
+                border-radius: 4px;
+            }
 
-.table-style button {
-    background-color: #9575cd; /* Morado medio para botones */
-    color: #ffffff; /* Texto blanco */
-    border: none;
-    padding: 5px 10px;
-    cursor: pointer;
-    border-radius: 4px;
-    font-size: 14px;
-}
+            .table-style button {
+                background-color: #9575cd; /* Morado medio para botones */
+                color: #ffffff; /* Texto blanco */
+                border: none;
+                padding: 5px 10px;
+                cursor: pointer;
+                border-radius: 4px;
+                font-size: 14px;
+            }
 
-.table-style button:hover {
-    background-color: #7e57c2; /* Morado oscuro al pasar el mouse */
-}
-.search-table {
-    width: 100%;
-    border-spacing: 8px;
-    font-family: Arial, sans-serif;
-}
+            .table-style button:hover {
+                background-color: #7e57c2; /* Morado oscuro al pasar el mouse */
+            }
+            .search-table {
+                width: 100%;
+                border-spacing: 8px;
+                font-family: Arial, sans-serif;
+            }
 
-.input-search {
-    padding: 8px;
-    font-weight: bold;
-    font-size: 15px;
-    color: #4a148c; /* Morado oscuro */
-    border: 1px solid #9575cd; /* Borde morado */
-    border-radius: 4px;
-    background-color: #ede7f6; /* Fondo lila claro */
-    width: 100%;
-    box-sizing: border-box;
-}
+            .input-search {
+                padding: 8px;
+                font-weight: bold;
+                font-size: 15px;
+                color: #4a148c; /* Morado oscuro */
+                border: 1px solid #9575cd; /* Borde morado */
+                border-radius: 4px;
+                background-color: #ede7f6; /* Fondo lila claro */
+                width: 100%;
+                box-sizing: border-box;
+            }
 
-.btn-search {
-    background-color: #7e57c2; /* Morado medio */
-    color: #ffffff; /* Texto blanco */
-    padding: 8px 12px;
-    border: none;
-    border-radius: 4px;
-    font-weight: bold;
-    font-size: 15px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
+            .btn-search {
+                background-color: #7e57c2; /* Morado medio */
+                color: #ffffff; /* Texto blanco */
+                padding: 8px 12px;
+                border: none;
+                border-radius: 4px;
+                font-weight: bold;
+                font-size: 15px;
+                cursor: pointer;
+                transition: background-color 0.3s ease;
+            }
 
-.btn-search:hover {
-    background-color: #5e35b1; /* Morado oscuro al pasar el mouse */
-}
+            .btn-search:hover {
+                background-color: #5e35b1; /* Morado oscuro al pasar el mouse */
+            }
 
-.label-filter {
-    font-weight: bold;
-    font-size: 15px;
-    color: #4a148c; /* Morado oscuro */
-}
+            .label-filter {
+                font-weight: bold;
+                font-size: 15px;
+                color: #4a148c; /* Morado oscuro */
+            }
 
-.dropdown-filter {
-    padding: 6px;
-    font-size: 15px;
-    color: #4a148c; /* Morado oscuro */
-    border: 1px solid #9575cd; /* Borde morado */
-    border-radius: 4px;
-    background-color: #ede7f6; /* Fondo lila claro */
-    width: 100%;
-    box-sizing: border-box;
-}
+            .dropdown-filter {
+                padding: 6px;
+                font-size: 15px;
+                color: #4a148c; /* Morado oscuro */
+                border: 1px solid #9575cd; /* Borde morado */
+                border-radius: 4px;
+                background-color: #ede7f6; /* Fondo lila claro */
+                width: 100%;
+                box-sizing: border-box;
+            }
 
             .auto-style5 {
                 width: 59%;
@@ -298,68 +300,66 @@
             }
             /* Clase para el DropDownList */
             .dropdown-filter {
-                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Fuente moderna */
-                font-size: 14px; /* Tamaño adecuado para legibilidad */
-                color: #4a148c; /* Color morado oscuro */
-                background-color: #f3e5f5; /* Fondo claro que contraste bien con el texto */
-                border: 1px solid #b39ddb; /* Borde sutil para el dropdown */
-                padding: 8px; /* Espaciado interno */
-                border-radius: 4px; /* Bordes redondeados */
-                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombras sutiles */
-                width: 250px; /* Asegura que el ancho se mantiene */
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                font-size: 14px;
+                color: #4a148c;
+                background-color: #f3e5f5;
+                border: 1px solid #b39ddb;
+                padding: 8px;
+                border-radius: 4px;
+                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+                width: 250px; 
             }
 
             /* Cambiar color cuando el mouse pasa por encima */
             .dropdown-filter:hover {
-                background-color: #d1c4e9; /* Color claro al pasar el ratón */
+                background-color: #d1c4e9;
             }
     </style>
 </head>
 <body>
     <form id="form1" runat="server">
+        <div class="wrapper">
         <div class="header">
             <div class="menu-left">
-                <img src="../Imagenes/Logo_MS.png" alt="Logo" class="logo" />
+                <img src="../Imagenes/Logo_MS.png" alt="Logo" />
                 <div class="menu-dropdown">
                     <button>☰</button>
                     <ul>
-                        <li><a href="../FormAdmin/Form_Admin_Listado_Pacientes.aspx">PACIENTES</a></li>
+                        <li><a href="../FormsAdmin/Form_Admin_Listado_Pacientes.aspx">PACIENTES</a></li>
                         <li><a href="#">TURNOS</a></li>
-                        <li><a href="#">MEDICOS</a></li>
+                        <li><a href="../FormsAdmin/Form_Admin_Listado_Medicos.aspx">MEDICOS</a></li>
                         <li><a href="#">REPORTES</a></li>
                         <li><a href="<%= ResolveUrl("~/FormsLogins/Form_Login.aspx") %>">CERRAR SESIÓN</a></li>
                     </ul>
                 </div>
             </div>
             <div class="admin-links">
-                <asp:HyperLink ID="hlAgregarPaciente" runat="server" NavigateUrl="~/FormsAdmin/Form_Admin_Agregar_Pacientes.aspx" class="link">AGREGAR PACIENTE</asp:HyperLink>
-                <asp:HyperLink ID="hlListadoPacientes" runat="server" NavigateUrl="~/FormsAdmin/Form_Admin_Listado_Pacientes.aspx" class="link">LISTAR PACIENTES</asp:HyperLink>
+                <asp:HyperLink ID="hlAgregarPaciente" runat="server" NavigateUrl="~/FormsAdmin/Form_Admin_Agregar_Pacientes.aspx" CssClass="btn-search">AGREGAR PACIENTE</asp:HyperLink>
+                <asp:HyperLink ID="hlListadoPacientes" runat="server" NavigateUrl="~/FormsAdmin/Form_Admin_Listado_Pacientes.aspx" CssClass="btn-search">LISTAR PACIENTES</asp:HyperLink>
             </div>
             <div class="user-info">
-                <asp:HyperLink ID="HLInstagram" runat="server" NavigateUrl="https://www.instagram.com" Target="_blank">
+                <asp:HyperLink ID="HLInstagram" runat="server" NavigateUrl="https://www.instagram.com/medical_studio_2024/" Target="_blank">
                     <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram" style="width: 30px; height: 30px;"/>
                 </asp:HyperLink>
-            <asp:HyperLink ID="HLFacebook" runat="server" NavigateUrl="https://www.facebook.com/profile.php?id=61567773056854" Target="_blank">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook" style="width: 30px; height: 30px;"/>
-            </asp:HyperLink>
-            <asp:HyperLink ID="HLTwitter" runat="server" NavigateUrl="https://www.twitter.com" Target="_blank">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/6/6f/Logo_of_Twitter.svg" alt="Twitter" style="width: 30px; height: 30px;"/>
-            </asp:HyperLink>
-            <asp:Label ID="LblUsuario" runat="server" CssClass="username"></asp:Label>
+                <asp:HyperLink ID="HLFacebook" runat="server" NavigateUrl="https://www.facebook.com/profile.php?id=61567773056854" Target="_blank">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook" style="width: 30px; height: 30px;"/>
+                </asp:HyperLink>
+                <asp:HyperLink ID="HLTwitter" runat="server" NavigateUrl="https://x.com/Guillermoseraf3" Target="_blank">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6f/Logo_of_Twitter.svg" alt="Twitter" style="width: 30px; height: 30px;"/>
+                </asp:HyperLink>
+                <asp:Label ID="LblUsuario" runat="server" CssClass="username"></asp:Label>
             </div>
         </div>
-    <div align="center" class="container">
-        <table>
+    <div class="container">
+        <table align="center">
             <tr>
-                <td style="font-weight: bold;font-size: 40px" class="auto-style7">Administrador 
-                    <br />
-                    de Pacientes<br/>
-                    <br/>
-                </td>
+                <td style="font-weight: bold;font-size: 40px" class="auto-style7">Administrador de Pacientes<br/>
+                &nbsp;</td>
             </tr>
         </table>
         
-       <table class="auto-style5">
+       <table align="center" class="auto-style5">
     <tr>
         <td>
             <asp:TextBox ID="txtBuscador" runat="server" CssClass="input-search" Width="220px"></asp:TextBox>
@@ -503,13 +503,11 @@
                 <asp:Label ID="lbl_it_Telefono" runat="server" Text='<%# Bind("TELEFONO_PAS") %>'></asp:Label>
             </ItemTemplate>
         </asp:TemplateField>
-        
-
-
        <asp:TemplateField>
             <ItemTemplate>
                 <asp:Button ID="btnEditar" runat="server" CommandName="Edit" Text="&#9881;" />
             </ItemTemplate>
+
             <EditItemTemplate>
                 <asp:Button ID="btnActualizar" runat="server" CommandName="Update" Text="&#10004;" 
                     OnClientClick="return confirmarEdicion();" />
@@ -544,6 +542,7 @@
                 <asp:Parameter Name="ID_PROVINCIA_PRO" Type="Int32" DefaultValue="-1" />
             </SelectParameters>
         </asp:SqlDataSource>
+    </div>
     </div>
     </form>
 </body>

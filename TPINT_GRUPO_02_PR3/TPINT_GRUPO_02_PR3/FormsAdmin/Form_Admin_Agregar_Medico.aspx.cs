@@ -159,5 +159,9 @@ namespace TPINT_GRUPO_02_PR3.FormAdmin
         {
             Response.Redirect("Form_Menu_Administrador.aspx");
         }
+        protected void cvDias_ServerValidate(object source, ServerValidateEventArgs args)
+        {
+            args.IsValid = cblDias.SelectedIndex != -1;
+        }
     }
 }

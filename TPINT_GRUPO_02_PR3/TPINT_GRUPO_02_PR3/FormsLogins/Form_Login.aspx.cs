@@ -39,7 +39,8 @@ namespace TPINT_GRUPO_02_PR3.Formularios
                     {
                         LogicaAdministradores logicaAdministrador = new LogicaAdministradores();
                         string NombreUsuario = logicaAdministrador.ObtenerNombreYApellidoAdministrador(usuario.getDNIusuario());
-
+                        TxbUsuario.Text = "";
+                        TxbContra.Text = "";
                         Session["NombreUsuario"] = NombreUsuario;
                         Response.Redirect("/FormsAdmin/Form_Menu_Administrador.aspx");
 
@@ -48,7 +49,8 @@ namespace TPINT_GRUPO_02_PR3.Formularios
                     {
                         LogicaMedicos logicaMedico = new LogicaMedicos();
                         string NombreUsuario = logicaMedico.ObtenerNombreYApellidoMedico(usuario.getDNIusuario());
-
+                        TxbUsuario.Text = "";
+                        TxbContra.Text = "";
                         Session["NombreUsuario"] = NombreUsuario;
                         Response.Redirect("/FormsMedico/Form_Medico_Turnos.aspx");
                     }

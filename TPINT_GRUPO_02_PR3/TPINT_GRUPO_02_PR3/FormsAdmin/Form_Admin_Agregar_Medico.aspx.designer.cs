@@ -195,13 +195,13 @@ namespace TPINT_GRUPO_02_PR3.FormAdmin
         protected global::System.Web.UI.WebControls.TextBox txtnacionalidad;
 
         /// <summary>
-        /// Control RequiredFieldValidator3.
+        /// Control RequiredFieldValidator12.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator3;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator12;
 
         /// <summary>
         /// Control txtNacimiento.
@@ -213,13 +213,13 @@ namespace TPINT_GRUPO_02_PR3.FormAdmin
         protected global::System.Web.UI.WebControls.TextBox txtNacimiento;
 
         /// <summary>
-        /// Control RequiredFieldValidator4.
+        /// Control RequiredFieldValidator3.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator4;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator3;
 
         /// <summary>
         /// Control txtDireccion.
@@ -339,6 +339,15 @@ namespace TPINT_GRUPO_02_PR3.FormAdmin
         protected global::System.Web.UI.WebControls.CheckBoxList cblDias;
 
         /// <summary>
+        /// Control cvDias.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CustomValidator cvDias;
+
+        /// <summary>
         /// Control lblDias.
         /// </summary>
         /// <remarks>
@@ -382,6 +391,15 @@ namespace TPINT_GRUPO_02_PR3.FormAdmin
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator11;
+
+        /// <summary>
+        /// Control cvHora.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CustomValidator cvHora;
 
         /// <summary>
         /// Control txtContraseña.
