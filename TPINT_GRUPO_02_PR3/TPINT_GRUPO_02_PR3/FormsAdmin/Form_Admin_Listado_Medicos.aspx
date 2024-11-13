@@ -358,9 +358,8 @@
             </td>
             </tr>
         </table>
-        <table>
+        <table align="center">
             <tr>
-                <td class="auto-style61"></td>
                 <td class="auto-style62">
                     <asp:TextBox ID="txtBuscador" CssClass="input-search" style="font-weight: bold;font-size: 15px" runat="server" Width="220px" Height="20px"></asp:TextBox>
                 </td>
@@ -468,18 +467,18 @@
 
                     <asp:TemplateField HeaderText="Provincia">
                         <EditItemTemplate>
-                            <asp:DropDownList ID="ddlProvincias" CssClass="input-style" runat="server" AutoPostBack="True" 
-                                              AppendDataBoundItems="True" 
-                                              OnSelectedIndexChanged="ddlProvincias_SelectedIndexChanged" 
-                                              DataSourceID="SqlDataSource1" 
-                                              DataTextField="NOMBRE_PRO" DataValueField="ID_PROVINCIA_PRO">
-                                <asp:ListItem Text="Seleccione una Provincia" Value="-1" />
-                            </asp:DropDownList>
-                        </EditItemTemplate>
-                        <ItemTemplate>
-                            <asp:Label ID="lbl_it_Provincia" runat="server" Text='<%# Bind("NOMBRE_PRO") %>'></asp:Label>
-                        </ItemTemplate>
-                    </asp:TemplateField>
+                             <asp:DropDownList ID="ddlProvincias" CssClass="input-style" runat="server" AutoPostBack="True" 
+                                               AppendDataBoundItems="True" 
+                                               OnSelectedIndexChanged="ddlProvincias_SelectedIndexChanged" 
+                                               DataSourceID="SqlDataSource1" 
+                                               DataTextField="NOMBRE_PRO" DataValueField="ID_PROVINCIA_PRO">
+                                 <asp:ListItem Text="Seleccione una Provincia" Value="-1" />
+                             </asp:DropDownList>
+                         </EditItemTemplate>
+                         <ItemTemplate>
+                             <asp:Label ID="lbl_it_Provincia" runat="server" Text='<%# Bind("NOMBRE_PRO") %>'></asp:Label>
+                         </ItemTemplate>
+                     </asp:TemplateField>
 
                     <asp:TemplateField HeaderText="Localidad">
                         <EditItemTemplate>
@@ -581,9 +580,6 @@
             <asp:SqlDataSource ID="SqlDataSource3" runat="server" 
                 ConnectionString="<%$ ConnectionStrings:MedicalStudioConnectionString %>" 
                 SelectCommand="SELECT ID_ESPECIALIDAD_ESP, NOMBRE_ESP FROM [ESPECIALIDADES]">
-                <SelectParameters>
-                    <asp:Parameter Name="ID_PROVINCIA_PRO" Type="Int32" DefaultValue="-1" />
-                </SelectParameters>
             </asp:SqlDataSource>
     </div>
     </div>

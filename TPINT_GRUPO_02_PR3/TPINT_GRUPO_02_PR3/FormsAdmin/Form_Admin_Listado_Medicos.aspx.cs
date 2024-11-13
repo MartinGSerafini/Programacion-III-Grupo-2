@@ -53,6 +53,7 @@ namespace TPINT_GRUPO_02_PR3.FormAdmin
                 int localidadId = Convert.ToInt32(rowView["FK_ID_LOCALIDAD_MED"]);
 
                 ddlProvincias.SelectedValue = provinciaId.ToString();
+
                 SqlDataSource2.SelectParameters["ID_PROVINCIA_PRO"].DefaultValue = provinciaId.ToString();
                 ddlLocalidades.DataBind();
                 ddlLocalidades.SelectedValue = localidadId.ToString();
@@ -62,33 +63,6 @@ namespace TPINT_GRUPO_02_PR3.FormAdmin
         {
             grdListadoMedicos.EditIndex = e.NewEditIndex;
             CargarGrilla();
-
-            DropDownList ddlProvincias = (DropDownList)grdListadoMedicos.Rows[grdListadoMedicos.EditIndex].FindControl("ddlProvincias");
-            DropDownList ddlLocalidades = (DropDownList)grdListadoMedicos.Rows[grdListadoMedicos.EditIndex].FindControl("ddlLocalidades");
-
-            if (ddlProvincias != null && ddlLocalidades != null)
-            {
-                Label lblProvincia = (Label)grdListadoMedicos.Rows[e.NewEditIndex].FindControl("lbl_it_Provincia");
-                Label lblLocalidad = (Label)grdListadoMedicos.Rows[e.NewEditIndex].FindControl("lbl_it_Localidad");
-
-                if (lblProvincia != null && lblLocalidad != null)
-                {
-                    string idProvincia = lblProvincia.Text;
-                    if (!string.IsNullOrEmpty(idProvincia))
-                    {
-                        ddlProvincias.SelectedValue = idProvincia;
-
-                        SqlDataSource2.SelectParameters["ID_PROVINCIA_PRO"].DefaultValue = idProvincia;
-                        ddlLocalidades.DataBind();
-
-                        string idLocalidad = lblLocalidad.Text;
-                        if (!string.IsNullOrEmpty(idLocalidad))
-                        {
-                            ddlLocalidades.SelectedValue = idLocalidad;
-                        }
-                    }
-                }
-            }
         }
 
         protected void grdListadoMedicos_RowUpdating(object sender, GridViewUpdateEventArgs e)
@@ -174,14 +148,16 @@ namespace TPINT_GRUPO_02_PR3.FormAdmin
             {
                 SqlDataSource2.SelectParameters["ID_PROVINCIA_PRO"].DefaultValue = provinciaSeleccionada.ToString();
                 ddlLocalidades.DataBind();
-                ddlLocalidades.Items.Insert(0, new ListItem("Seleccione una localidad", "-1"));
-                ddlLocalidades.SelectedValue = "-1";
+
+                if (ddlLocalidades.Items.FindByValue("-1") == null)
+                {
+                    ddlLocalidades.Items.Insert(0, new ListItem("Seleccione una localidad", "-1"));
+                }
             }
             else
             {
                 ddlLocalidades.Items.Clear();
                 ddlLocalidades.Items.Add(new ListItem("Seleccione una localidad", "-1"));
-                ddlLocalidades.SelectedValue = "-1";
             }
         }
     }
