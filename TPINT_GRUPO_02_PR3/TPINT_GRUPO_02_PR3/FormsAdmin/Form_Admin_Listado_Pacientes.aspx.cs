@@ -165,8 +165,6 @@ namespace TPINT_GRUPO_02_PR3
                 e.Cancel = true;
             }
             int Localidad = Convert.ToInt32(((DropDownList)GrdPacientes.Rows[e.RowIndex].FindControl("ddlLocalidades")).SelectedValue);
-            
-            
             string Email = ((TextBox)GrdPacientes.Rows[e.RowIndex].FindControl("txtEmail")).Text;
             if (!Regex.IsMatch(Email, @"^[\w\.\-]+@[\w\-]+\.[a-zA-Z]{2,}$"))
             {

@@ -105,18 +105,6 @@ namespace Datos
             return FilasCambiadas;
         }
 
-        public int ObtenerMaximo(string consulta)
-        {
-            int max = 0;
-            SqlConnection Conexion = ObtenerConexion();
-            SqlCommand cmd = new SqlCommand(consulta, Conexion);
-            SqlDataReader datos = cmd.ExecuteReader();
-            if (datos.Read())
-            {
-                max = Convert.ToInt32(datos[0].ToString());
-            }
-            return max;
-        }
         public int EjecutarComando(SqlCommand comando)
         {
             using (SqlConnection conexion = ObtenerConexion())

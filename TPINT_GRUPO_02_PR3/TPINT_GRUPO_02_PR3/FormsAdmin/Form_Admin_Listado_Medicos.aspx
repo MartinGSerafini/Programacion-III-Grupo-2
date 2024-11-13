@@ -517,7 +517,7 @@
                                               AppendDataBoundItems="True" 
                                               DataSourceID="SqlDataSource3" 
                                               DataTextField="NOMBRE_ESP" DataValueField="ID_ESPECIALIDAD_ESP">
-                                <asp:ListItem Text="Seleccione una Provincia" Value="-1" />
+                                <asp:ListItem Text="Seleccione una Especialidad" Value="-1" />
                             </asp:DropDownList>
                         </EditItemTemplate>
                         <ItemTemplate>

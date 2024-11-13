@@ -27,7 +27,12 @@ namespace TPINT_GRUPO_02_PR3.FormAdmin
         {
             string categoria = txtBuscador.Text;
             string filtro = ddlFiltros.SelectedValue;
-
+            if (filtro == "-1")
+            {
+                string script = "alert('Por favor, seleccione una categoría válida.');";
+                ClientScript.RegisterStartupScript(this.GetType(), "mensajeExito", script, true);
+                return;
+            }
             DataTable tabla = log.getTablaFiltrada(categoria, filtro);
             grdListadoMedicos.DataSource = tabla;
             grdListadoMedicos.DataBind();
@@ -45,49 +50,146 @@ namespace TPINT_GRUPO_02_PR3.FormAdmin
         {
             if (e.Row.RowType == DataControlRowType.DataRow && grdListadoMedicos.EditIndex == e.Row.RowIndex)
             {
-                DropDownList ddlProvincias = (DropDownList)e.Row.FindControl("ddlProvincias");
-                DropDownList ddlLocalidades = (DropDownList)e.Row.FindControl("ddlLocalidades");
+                DropDownList ddlEspecialidades = (DropDownList)e.Row.FindControl("ddlEspecialidades");
 
                 DataRowView rowView = (DataRowView)e.Row.DataItem;
-                int provinciaId = Convert.ToInt32(rowView["FK_ID_PROVINCIA_MED"]);
-                int localidadId = Convert.ToInt32(rowView["FK_ID_LOCALIDAD_MED"]);
+                if (rowView.Row.Table.Columns.Contains("FK_ID_ESPECIALIDAD_MED"))
+                {
+                    int especialidadId = Convert.ToInt32(rowView["FK_ID_ESPECIALIDAD_MED"]);
 
-                ddlProvincias.SelectedValue = provinciaId.ToString();
-
-                SqlDataSource2.SelectParameters["ID_PROVINCIA_PRO"].DefaultValue = provinciaId.ToString();
-                ddlLocalidades.DataBind();
-                ddlLocalidades.SelectedValue = localidadId.ToString();
+                    ddlEspecialidades.SelectedValue = especialidadId.ToString();
+                }
+                else
+                {
+                    string script = "alert('La columna 'FK_ID_ESPECIALIDAD_MED' no existe en los datos.');";
+                    ClientScript.RegisterStartupScript(this.GetType(), "mensajeExito", script, true);
+                }
             }
         }
+
         protected void grdListadoMedicos_RowEditing(object sender, GridViewEditEventArgs e)
         {
             grdListadoMedicos.EditIndex = e.NewEditIndex;
             CargarGrilla();
+
+            DropDownList ddlEspecialidades = (DropDownList)grdListadoMedicos.Rows[grdListadoMedicos.EditIndex].FindControl("ddlEspecialidades");
+
+            if (ddlEspecialidades != null)
+            {
+                Label lblEspecialidad = (Label)grdListadoMedicos.Rows[e.NewEditIndex].FindControl("lbl_it_Especialidad");
+
+                if (lblEspecialidad != null)
+                {
+                    string idEspecialidad = lblEspecialidad.Text;
+                    if (!string.IsNullOrEmpty(idEspecialidad))
+                    {
+                        ddlEspecialidades.SelectedValue = idEspecialidad;
+                    }
+                }
+            }
         }
 
         protected void grdListadoMedicos_RowUpdating(object sender, GridViewUpdateEventArgs e)
         {
+            string MensajeError = "";
             string DNI = ((Label)grdListadoMedicos.Rows[e.RowIndex].FindControl("lblDNI")).Text;
+            string Legajo = ((Label)grdListadoMedicos.Rows[e.RowIndex].FindControl("lblLegajo")).Text;
             string Nombre = ((TextBox)grdListadoMedicos.Rows[e.RowIndex].FindControl("txtNombre")).Text;
-            string Apellido = ((TextBox)grdListadoMedicos.Rows[e.RowIndex].FindControl("txtApellido")).Text;
-            string Sexo = ((DropDownList)grdListadoMedicos.Rows[e.RowIndex].FindControl("ddlSexo")).SelectedValue;
-            string Nacionalidad = ((TextBox)grdListadoMedicos.Rows[e.RowIndex].FindControl("txtNacionalidad")).Text;
-            DateTime Nacimiento;
-            if (DateTime.TryParseExact(((TextBox)grdListadoMedicos.Rows[e.RowIndex].FindControl("txtNacimiento")).Text, "dd-MM-yyyy", null, System.Globalization.DateTimeStyles.None, out Nacimiento))
+            if (string.IsNullOrWhiteSpace(Nombre) || !System.Text.RegularExpressions.Regex.IsMatch(Nombre, @"^[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]+$"))
             {
+                MensajeError += "El Nombre no debe contener números ni estar vacío.\n";
+                e.Cancel = true;
             }
+
+            string Apellido = ((TextBox)grdListadoMedicos.Rows[e.RowIndex].FindControl("txtApellido")).Text;
+            if (string.IsNullOrWhiteSpace(Apellido) || !System.Text.RegularExpressions.Regex.IsMatch(Apellido, @"^[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]+$"))
+            {
+                MensajeError += "El Apellido no debe contener números ni estar vacío.\n";
+                e.Cancel = true;
+            }
+
+            string Sexo = ((DropDownList)grdListadoMedicos.Rows[e.RowIndex].FindControl("ddlSexo")).SelectedValue;
+
+            string Nacionalidad = ((TextBox)grdListadoMedicos.Rows[e.RowIndex].FindControl("txtNacionalidad")).Text;
+            if (string.IsNullOrWhiteSpace(Nacionalidad) || !System.Text.RegularExpressions.Regex.IsMatch(Nacionalidad, @"^[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]+$"))
+            {
+                MensajeError += "La Nacionalidad no debe contener números ni estar vacía.\n";
+                e.Cancel = true;
+            }
+
+            DateTime Nacimiento;
+            if (!DateTime.TryParseExact(((TextBox)grdListadoMedicos.Rows[e.RowIndex].FindControl("txtNacimiento")).Text, "dd-MM-yyyy", null, System.Globalization.DateTimeStyles.None, out Nacimiento))
+            {
+                MensajeError += "La fecha de nacimiento debe tener un formato dd-MM-yyyy y no estar vacía.\n";
+                e.Cancel = true;
+            }
+            else if (Nacimiento > DateTime.Today)
+            {
+                MensajeError += "La fecha de nacimiento no puede ser posterior a la fecha actual.\n";
+                e.Cancel = true;
+            }
+
             string Direccion = ((TextBox)grdListadoMedicos.Rows[e.RowIndex].FindControl("txtDireccion")).Text;
-            int Localidad = Convert.ToInt32(((DropDownList)grdListadoMedicos.Rows[e.RowIndex].FindControl("ddlLocalidades")).SelectedValue);
+            if (string.IsNullOrWhiteSpace(Direccion) || !System.Text.RegularExpressions.Regex.IsMatch(Direccion, @"^[a-zA-ZáéíóúÁÉÍÓÚñÑ0-9\s]+$"))
+            {
+                MensajeError += "Ingresa una dirección válida (solo letras, números, espacios y guiones).\n";
+                e.Cancel = true;
+            }
+
+            DropDownList ddlProvincias = (DropDownList)grdListadoMedicos.Rows[e.RowIndex].FindControl("ddlProvincias");
+            if (ddlProvincias == null || ddlProvincias.SelectedIndex <= 0)
+            {
+                MensajeError += "Seleccione una Provincia.\n";
+                e.Cancel = true;
+            }
             int Provincia = Convert.ToInt32(((DropDownList)grdListadoMedicos.Rows[e.RowIndex].FindControl("ddlProvincias")).SelectedValue);
+
+
+            DropDownList ddlLocalidades = (DropDownList)grdListadoMedicos.Rows[e.RowIndex].FindControl("ddlLocalidades");
+            if (ddlLocalidades == null || ddlLocalidades.SelectedIndex <= -1)
+            {
+                MensajeError += "Seleccione una Localidad.\n";
+                e.Cancel = true;
+            }
+            int Localidad = Convert.ToInt32(((DropDownList)grdListadoMedicos.Rows[e.RowIndex].FindControl("ddlLocalidades")).SelectedValue);
+
             string Email = ((TextBox)grdListadoMedicos.Rows[e.RowIndex].FindControl("txtEmail")).Text;
+            if (!System.Text.RegularExpressions.Regex.IsMatch(Email, @"^[\w\.\-]+@[\w\-]+\.[a-zA-Z]{2,}$"))
+            {
+                MensajeError += "Introduce un correo electrónico válido.\n";
+                e.Cancel = true;
+            }
+
             string Telefono = ((TextBox)grdListadoMedicos.Rows[e.RowIndex].FindControl("txtTelefono")).Text;
-            int Especialidad = Convert.ToInt32(((DropDownList)grdListadoMedicos.Rows[e.RowIndex].FindControl("ddlEspecialidades")).SelectedValue);
+            if (!System.Text.RegularExpressions.Regex.IsMatch(Telefono, @"^\d+$"))
+            {
+                MensajeError += "El teléfono debe contener solo números y no estar vacío.\n";
+                e.Cancel = true;
+            }
+
+            DropDownList ddlEspecialidades = (DropDownList)grdListadoMedicos.Rows[e.RowIndex].FindControl("ddlEspecialidades");
+            if (ddlLocalidades == null || ddlLocalidades.SelectedIndex <= -1)
+            {
+                MensajeError += "Seleccione una Localidad.\n";
+                e.Cancel = true;
+            }
+            int Especialidad = Convert.ToInt32(((DropDownList)grdListadoMedicos.Rows[e.RowIndex].FindControl("ddlLocalidades")).SelectedValue);
+
             string Dias = ((TextBox)grdListadoMedicos.Rows[e.RowIndex].FindControl("txtDias")).Text;
             string Horario = ((TextBox)grdListadoMedicos.Rows[e.RowIndex].FindControl("txtHorarios")).Text;
+
+            if (!string.IsNullOrEmpty(MensajeError))
+            {
+                e.Cancel = true;
+                string scriptvalidacion = $"alert('{MensajeError.Replace("\n", "\\n")}');";
+                ClientScript.RegisterStartupScript(this.GetType(), "MensajeError", scriptvalidacion, true);
+                return;
+            }
 
             Medico Med = new Medico();
             {
                 Med.setDni(DNI);
+                Med.setLegajo(Legajo);
                 Med.setNombre(Nombre);
                 Med.setApellido(Apellido);
                 Med.setSexo(Sexo);
