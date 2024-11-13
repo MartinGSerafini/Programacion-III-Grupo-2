@@ -8,6 +8,8 @@ using Logica;
 using System.Data;
 using Entidades;
 using System.Net;
+using System.Data.SqlClient;
+using System.Text.RegularExpressions;
 
 namespace TPINT_GRUPO_02_PR3
 {
@@ -43,6 +45,25 @@ namespace TPINT_GRUPO_02_PR3
             GrdPacientes.DataBind();
         }
 
+        protected void GrdPacientes_RowDataBound(object sender, GridViewRowEventArgs e)
+        {
+            if (e.Row.RowType == DataControlRowType.DataRow && GrdPacientes.EditIndex == e.Row.RowIndex)
+            {
+                DropDownList ddlProvincias = (DropDownList)e.Row.FindControl("ddlProvincias");
+                DropDownList ddlLocalidades = (DropDownList)e.Row.FindControl("ddlLocalidades");
+
+                DataRowView rowView = (DataRowView)e.Row.DataItem;
+                int provinciaId = Convert.ToInt32(rowView["FK_ID_PROVINCIA_PAS"]);
+                int localidadId = Convert.ToInt32(rowView["FK_ID_LOCALIDAD_PAS"]);
+
+                ddlProvincias.SelectedValue = provinciaId.ToString();
+
+                SqlDataSource2.SelectParameters["ID_PROVINCIA_PRO"].DefaultValue = provinciaId.ToString();
+                ddlLocalidades.DataBind();
+
+                ddlLocalidades.SelectedValue = localidadId.ToString();
+            }
+        }
         protected void GrdPacientes_RowEditing(object sender, GridViewEditEventArgs e)
         {
             GrdPacientes.EditIndex = e.NewEditIndex;
@@ -75,24 +96,89 @@ namespace TPINT_GRUPO_02_PR3
                 }
             }
         }
-
-
         protected void GrdPacientes_RowUpdating(object sender, GridViewUpdateEventArgs e)
         {
+            string MensajeError = "";
             string DNI = ((Label)GrdPacientes.Rows[e.RowIndex].FindControl("lblDNI")).Text;
             string Nombre = ((TextBox)GrdPacientes.Rows[e.RowIndex].FindControl("txtNombre")).Text;
+            if (string.IsNullOrWhiteSpace(Nombre) || !System.Text.RegularExpressions.Regex.IsMatch(Nombre, @"^[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]+$"))
+            {
+
+                MensajeError += "El Nombre no debe contener números ni estar vacío.\n";
+                e.Cancel = true;
+            }
             string Apellido = ((TextBox)GrdPacientes.Rows[e.RowIndex].FindControl("txtApellido")).Text;
+            if (string.IsNullOrWhiteSpace(Apellido) || !System.Text.RegularExpressions.Regex.IsMatch(Apellido, @"^[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]+$"))
+            {
+                MensajeError += "El Apellido no debe contener números ni estar vacío.\n";
+                e.Cancel = true;
+            }
             string Sexo = ((DropDownList)GrdPacientes.Rows[e.RowIndex].FindControl("ddlSexo")).SelectedValue;
             string Nacionalidad = ((TextBox)GrdPacientes.Rows[e.RowIndex].FindControl("txtNacionalidad")).Text;
-            DateTime Nacimiento;
-            if (DateTime.TryParseExact(((TextBox)GrdPacientes.Rows[e.RowIndex].FindControl("txtNacimiento")).Text, "dd-MM-yyyy", null, System.Globalization.DateTimeStyles.None ,out Nacimiento))
+            if (string.IsNullOrWhiteSpace(Nacionalidad) || !System.Text.RegularExpressions.Regex.IsMatch(Nacionalidad, @"^[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]+$"))
             {
+                MensajeError += "La Nacionalidad no debe contener números ni estar vacía.\n";
+                e.Cancel = true;
+            }
+            DateTime Nacimiento;
+            if (!DateTime.TryParseExact(
+                ((TextBox)GrdPacientes.Rows[e.RowIndex].FindControl("txtNacimiento")).Text,"yyyy-MM-dd",null,System.Globalization.DateTimeStyles.None,out Nacimiento))
+            {
+                MensajeError += "La fecha debe tener un formato yyyy-MM-dd y no estar vacía.\n";
+                e.Cancel = true;
+            }
+            else if (Nacimiento > DateTime.Today)
+            {
+                MensajeError += "La fecha de nacimiento no puede ser posterior a la fecha actual.\n";
+                e.Cancel = true;
+            }
+            if (Nacimiento > DateTime.Today)
+            {
+                MensajeError += "La fecha de nacimiento no puede ser posterior a la fecha actual.\n";
+                e.Cancel = true;
             }
             string Direccion = ((TextBox)GrdPacientes.Rows[e.RowIndex].FindControl("txtDireccion")).Text;
+            if (string.IsNullOrWhiteSpace(Direccion) || !Regex.IsMatch(Direccion, @"^[a-zA-ZáéíóúÁÉÍÓÚñÑ0-9\s]+$"))
+            {
+                MensajeError += "Ingresa una dirección válida (solo letras, números, espacios y guiones).\n";
+                e.Cancel = true;
+            }
+            DropDownList ddlProvincias = (DropDownList)GrdPacientes.Rows[e.RowIndex].FindControl("ddlProvincias");
+            if (ddlProvincias == null || ddlProvincias.SelectedIndex <= 0)
+            {
+                MensajeError += "Seleccione una Provincia.\n";
+                e.Cancel = true;
+            }
             int Provincia = Convert.ToInt32(((DropDownList)GrdPacientes.Rows[e.RowIndex].FindControl("ddlProvincias")).SelectedValue);
+            DropDownList ddlLocalidades = (DropDownList)GrdPacientes.Rows[e.RowIndex].FindControl("ddlLocalidades");
+            if (ddlLocalidades == null || ddlLocalidades.SelectedIndex <= -1)
+            {
+                MensajeError += "Seleccione una Localidad.\n";
+                e.Cancel = true;
+            }
             int Localidad = Convert.ToInt32(((DropDownList)GrdPacientes.Rows[e.RowIndex].FindControl("ddlLocalidades")).SelectedValue);
             string Email = ((TextBox)GrdPacientes.Rows[e.RowIndex].FindControl("txtEmail")).Text;
+            if (!Regex.IsMatch(Email, @"^[\w\.\-]+@[\w\-]+\.[a-zA-Z]{2,}$"))
+            {
+                MensajeError += "Introduce un correo electrónico válido.\n";
+                e.Cancel = true;
+            }
             string Telefono = ((TextBox)GrdPacientes.Rows[e.RowIndex].FindControl("txtTelefono")).Text;
+            if (!Regex.IsMatch(Telefono, @"^\d+$"))
+            {
+                MensajeError += "El teléfono debe contener solo números y no estár vacío.\n";
+                e.Cancel = true;
+            }
+
+            if (!string.IsNullOrEmpty(MensajeError))
+            {
+                // Cancela la operación de edición
+                e.Cancel = true;
+
+                string scriptvalidacion = $"alert('{MensajeError.Replace("\n", "\\n")}');";
+                ClientScript.RegisterStartupScript(this.GetType(), "MensajeError", scriptvalidacion, true);
+                return;
+            }
 
             Pacientes Pac = new Pacientes();
             {
@@ -149,19 +235,21 @@ namespace TPINT_GRUPO_02_PR3
             GridViewRow row = (GridViewRow)ddlProvincias.NamingContainer;
             int provinciaSeleccionada = Convert.ToInt32(ddlProvincias.SelectedValue);
             DropDownList ddlLocalidades = (DropDownList)row.FindControl("ddlLocalidades");
-            
+
             if (provinciaSeleccionada != -1)
             {
                 SqlDataSource2.SelectParameters["ID_PROVINCIA_PRO"].DefaultValue = provinciaSeleccionada.ToString();
                 ddlLocalidades.DataBind();
-                ddlLocalidades.Items.Insert(0, new ListItem("Seleccione una localidad", "-1"));
-                ddlLocalidades.SelectedValue = "-1";
+
+                if (ddlLocalidades.Items.FindByValue("-1") == null)
+                {
+                    ddlLocalidades.Items.Insert(0, new ListItem("Seleccione una localidad", "-1"));
+                }
             }
             else
             {
                 ddlLocalidades.Items.Clear();
                 ddlLocalidades.Items.Add(new ListItem("Seleccione una localidad", "-1"));
-                ddlLocalidades.SelectedValue = "-1";
             }
         }
     }

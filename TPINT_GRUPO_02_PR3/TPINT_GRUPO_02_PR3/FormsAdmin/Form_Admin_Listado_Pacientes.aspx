@@ -28,8 +28,8 @@
 
             /* Encabezado */
             .header, .container {
-                width: 100%; /* Asegura que tanto el header como el container ocupen el 100% del ancho disponible */
-                max-width: 100vw; /* Limita el ancho al 100% de la pantalla */
+                width: 100%; 
+                max-width: 100vw;
                 box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
                 border-radius: 15px;
             }
@@ -210,8 +210,8 @@
                 font-weight: bold;
             }
 
-            .table-style tr:nth-child(even) {
-                background-color: #ede7f6; /* Fondo lila claro para filas pares */
+            .table-style tr {
+                background-color: #ede7f6;
             }
 
             .table-style tr:hover {
@@ -391,7 +391,7 @@
 </table>
         <br />
 
-        <asp:GridView ID="GrdPacientes" runat="server" AutoGenerateColumns="False" CssClass="table-style" OnRowDeleting="GrdPacientes_RowDeleting" OnRowEditing="GrdPacientes_RowEditing" OnRowCancelingEdit="GrdPacientes_RowCancelingEdit" OnRowUpdating="GrdPacientes_RowUpdating">
+        <asp:GridView ID="GrdPacientes" runat="server" AutoGenerateColumns="False" CssClass="table-style" OnRowDeleting="GrdPacientes_RowDeleting" OnRowEditing="GrdPacientes_RowEditing" OnRowCancelingEdit="GrdPacientes_RowCancelingEdit" OnRowUpdating="GrdPacientes_RowUpdating" OnRowDataBound="GrdPacientes_RowDataBound">
     <Columns>
         <asp:TemplateField HeaderText="DNI">
             <EditItemTemplate>
@@ -443,12 +443,16 @@
         
         <asp:TemplateField HeaderText="Nacimiento">
             <EditItemTemplate>
-                <asp:TextBox ID="txtNacimiento" CssClass="input-style" runat="server" Text='<%# Bind("NACIMIENTO_PAS") %>'></asp:TextBox>
+                <asp:TextBox ID="txtNacimiento" CssClass="input-style" runat="server" 
+                    Text='<%# DataBinder.Eval(Container.DataItem, "NACIMIENTO_PAS", "{0:yyyy-MM-dd}") %>' 
+                    type="date"></asp:TextBox>
             </EditItemTemplate>
             <ItemTemplate>
-                <asp:Label ID="lbl_it_Nacimiento" runat="server" Text='<%# Bind("NACIMIENTO_PAS") %>'></asp:Label>
+                <asp:Label ID="lbl_it_Nacimiento" runat="server" 
+                    Text='<%# Eval("NACIMIENTO_PAS", "{0:dd/MM/yyyy}") %>'></asp:Label>
             </ItemTemplate>
         </asp:TemplateField>
+
         
         <asp:TemplateField HeaderText="Dirección">
             <EditItemTemplate>
