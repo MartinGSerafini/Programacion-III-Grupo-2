@@ -32,6 +32,7 @@ namespace TPINT_GRUPO_02_PR3.FormAdmin
             }
 
             string dni = txtDNI.Text.Trim();
+            string legajo = txtLegajo.Text.Trim();
 
             LogicaMedicos logicaMed = new LogicaMedicos();
             LogicaUsuarios logicaUsu = new LogicaUsuarios();
@@ -46,8 +47,9 @@ namespace TPINT_GRUPO_02_PR3.FormAdmin
             }
             if (!logicaMed.VerificarExistenciaDeMedico(dni))
             {
-                Medico Med = new Medico();
+                if (!logicaMed.VerificarExistenciaDeMedico2(legajo))
                 {
+                    Medico Med = new Medico();
                     Med.setLegajo(txtLegajo.Text);
                     Med.setDni(txtDNI.Text);
                     Med.setNombre(txtNombre.Text);
@@ -62,27 +64,31 @@ namespace TPINT_GRUPO_02_PR3.FormAdmin
                     Med.setTelefono(txtTelefono.Text);
                     Med.setEspecialidad(Convert.ToInt32(ddlEspecialidad.SelectedValue));
                     Med.setEstado("Activo");
-                };
-
-
-                bool validMedico = logicaMed.AgregarMedico(Med);
-                if (validMedico)
-                {
-                    logicaUsu.AgregarUsuario(2, dni, txtContraseña.Text);
-                    logicaMed.AgregarHorario(dias, txtHoraInicio.Text, txtHoraFinal.Text, dni);
-                    string script = "alert('El Medico fue Ingresado al Sistema.');";
-                    ClientScript.RegisterStartupScript(this.GetType(), "mensajeExito", script, true);
-                    limpiarCampos();
+                    bool validMedico = logicaMed.AgregarMedico(Med);
+                    if (validMedico)
+                    {
+                        logicaUsu.AgregarUsuario(2, dni, txtContraseña.Text);
+                        logicaMed.AgregarHorario(dias, txtHoraInicio.Text, txtHoraFinal.Text, dni);
+                        string script = "alert('El Medico fue Ingresado al Sistema.');";
+                        ClientScript.RegisterStartupScript(this.GetType(), "mensajeExito", script, true);
+                        limpiarCampos();
+                    }
+                    else
+                    {
+                        string script = "alert('Hubo un problema al Ingresar al Medico al sistema.');";
+                        ClientScript.RegisterStartupScript(this.GetType(), "mensajeError", script, true);
+                    }
                 }
                 else
                 {
-                    string script = "alert('Hubo un problema al Ingresar al Medico al sistema.');";
+                    string script = "alert('El Legajo ya está registrado. No se puede agregar el Medico.');";
                     ClientScript.RegisterStartupScript(this.GetType(), "mensajeError", script, true);
+                    return;
                 }
             }
             else
             {
-                string script = "alert('El DNI ya está registrado. No se puede agregar el paciente.');";
+                string script = "alert('El DNI ya está registrado. No se puede agregar el Medico.');";
                 ClientScript.RegisterStartupScript(this.GetType(), "mensajeError", script, true);
                 return;
             }

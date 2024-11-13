@@ -77,5 +77,10 @@ namespace Logica
             DaoMedicos dao = new DaoMedicos();
             return dao.ExisteMedicoConDNI(DNI);
         }
+        public bool VerificarExistenciaDeMedico2(string legajo)
+        {
+            DaoMedicos dao = new DaoMedicos();
+            return dao.ExisteMedicoConDNI(legajo);
+        }
     }
 }

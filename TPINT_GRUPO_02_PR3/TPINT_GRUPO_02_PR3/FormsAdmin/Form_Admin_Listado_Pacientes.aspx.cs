@@ -182,7 +182,6 @@ namespace TPINT_GRUPO_02_PR3
 
             if (!string.IsNullOrEmpty(MensajeError))
             {
-                // Cancela la operación de edición
                 e.Cancel = true;
 
                 string scriptvalidacion = $"alert('{MensajeError.Replace("\n", "\\n")}');";

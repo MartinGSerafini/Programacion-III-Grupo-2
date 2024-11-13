@@ -393,7 +393,7 @@
             </tr>
         </table>
             <br />
-            <asp:GridView ID="grdListadoMedicos" runat="server" AutoGenerateColumns="False" CssClass="table-style" OnRowEditing="grdListadoMedicos_RowEditing" OnRowUpdating="grdListadoMedicos_RowUpdating" OnRowCancelingEdit="grdListadoMedicos_RowCancelingEdit" OnRowDeleting="grdListadoMedicos_RowDeleting">
+            <asp:GridView ID="grdListadoMedicos" runat="server" AutoGenerateColumns="False" CssClass="table-style" OnRowEditing="grdListadoMedicos_RowEditing" OnRowUpdating="grdListadoMedicos_RowUpdating" OnRowCancelingEdit="grdListadoMedicos_RowCancelingEdit" OnRowDeleting="grdListadoMedicos_RowDeleting" OnRowDataBound="grdListadoMedicos_RowDataBound">
                 <Columns>
                     <asp:TemplateField HeaderText="Legajo">
                         <EditItemTemplate>

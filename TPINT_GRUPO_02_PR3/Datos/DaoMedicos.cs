@@ -65,8 +65,8 @@ namespace Datos
 
         public void agregarHorario(string dia, string horaIni, string horaFin, string dni)
         {
-            ds.ejecutarConsulta("INSERT INTO HORARIO_ATENCION (FK_DNI_MEDICO_HDA, DIA_HDA, HORA_INICIO_HDA, HORA_FIN_HDA) " +
-                "SELECT (SELECT ID_MEDICO_MED FROM MEDICOS WHERE FK_DNI_MED = '" + dni + "'), '" + dia + "', '" + horaIni + "', '" + horaFin + "'");
+            ds.ejecutarConsulta("INSERT INTO HORARIO_ATENCION (FK_DNI_MEDICO_HDA, DIA_HDA, HORA_INICIO_HDA, HORA_FIN_HDA) " + 
+                "SELECT '" + dni + "', '" + dia + "', '" + horaIni + "', '" + horaFin + "'");
         }
 
         public DataTable getTablaMedicos()
@@ -159,7 +159,19 @@ namespace Datos
 
         public bool ExisteMedicoConDNI(string DNI)
         {
-            string sql = "SELECT COUNT(*) FROM MEDICOS WHERE FK_DNI_MED = '" + DNI + "'";
+            string sql = "SELECT COUNT(*) FROM USUARIOS WHERE FK_DNI_USU = '" + DNI + "'";
+
+            DataTable tabla = ds.ObtenerTabla("USUARIOS", sql);
+
+            if (tabla.Rows.Count > 0)
+            {
+                return Convert.ToInt32(tabla.Rows[0][0]) > 0;
+            }
+            return false;
+        }
+        public bool ExisteMedicoConLegajo(string legajo)
+        {
+            string sql = "SELECT COUNT(*) FROM MEDICOS WHERE LEGAJO_MED = '" + legajo + "'";
 
             DataTable tabla = ds.ObtenerTabla("MEDICOS", sql);
 

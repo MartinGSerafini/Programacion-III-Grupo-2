@@ -41,6 +41,23 @@ namespace TPINT_GRUPO_02_PR3.FormAdmin
             grdListadoMedicos.DataBind();
         }
 
+        protected void grdListadoMedicos_RowDataBound(object sender, GridViewRowEventArgs e)
+        {
+            if (e.Row.RowType == DataControlRowType.DataRow && grdListadoMedicos.EditIndex == e.Row.RowIndex)
+            {
+                DropDownList ddlProvincias = (DropDownList)e.Row.FindControl("ddlProvincias");
+                DropDownList ddlLocalidades = (DropDownList)e.Row.FindControl("ddlLocalidades");
+
+                DataRowView rowView = (DataRowView)e.Row.DataItem;
+                int provinciaId = Convert.ToInt32(rowView["FK_ID_PROVINCIA_MED"]);
+                int localidadId = Convert.ToInt32(rowView["FK_ID_LOCALIDAD_MED"]);
+
+                ddlProvincias.SelectedValue = provinciaId.ToString();
+                SqlDataSource2.SelectParameters["ID_PROVINCIA_PRO"].DefaultValue = provinciaId.ToString();
+                ddlLocalidades.DataBind();
+                ddlLocalidades.SelectedValue = localidadId.ToString();
+            }
+        }
         protected void grdListadoMedicos_RowEditing(object sender, GridViewEditEventArgs e)
         {
             grdListadoMedicos.EditIndex = e.NewEditIndex;
