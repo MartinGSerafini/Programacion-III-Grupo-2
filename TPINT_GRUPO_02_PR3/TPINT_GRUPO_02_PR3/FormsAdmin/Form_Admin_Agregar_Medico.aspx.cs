@@ -1,4 +1,5 @@
 ﻿using Logica;
+using Entidades;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -15,6 +16,7 @@ namespace TPINT_GRUPO_02_PR3.FormAdmin
         {
             if (!IsPostBack)
             {
+                lblDias.Visible = false;
                 LblUsuario.Text = Session["NombreUsuario"] as string;
                 CargarProvincias();
                 CargarEspecialidades();
@@ -25,24 +27,14 @@ namespace TPINT_GRUPO_02_PR3.FormAdmin
         {
             if (cblDias.SelectedItem == null)
             {
-                lblDias.Text = "*";
+                lblDias.Visible = true;
                 return;
             }
 
+            string dni = txtDNI.Text.Trim();
+
             LogicaMedicos logicaMed = new LogicaMedicos();
             LogicaUsuarios logicaUsu = new LogicaUsuarios();
-
-            int legajo = Convert.ToInt32(txtLegajo.Text);
-            int idLocalidad = Convert.ToInt32(ddlLocalidad.SelectedValue);
-            int idEspecialidad = Convert.ToInt32(ddlEspecialidad.SelectedValue);
-
-            char sexo = ddlSexo.SelectedItem.Text[0];
-            string dni = txtDNI.Text, nombre = txtNombre.Text, apellido = txtApellido.Text;
-            string nacionalidad = txtnacionalidad.Text;
-            string nacimiento = txtNacimiento.Text, direccion = txtDireccion.Text, email = txtCorreo.Text, telefono = txtTelefono.Text;
-            string contra = txtContraseña.Text;
-            string horaIni = txtHoraInicio.Text, horaFin = txtHoraFinal.Text;
-
             List<string> dias = new List<string>();
 
             foreach (ListItem item in cblDias.Items)
@@ -52,16 +44,32 @@ namespace TPINT_GRUPO_02_PR3.FormAdmin
                     dias.Add(item.Text);
                 }
             }
-
-            int validMedico = logicaMed.AgregarMedico(dni, idLocalidad, idEspecialidad, legajo,
-                                                        nombre, apellido, sexo, nacionalidad, nacimiento, direccion, email, telefono);
-
-            if (validMedico != -1)
+            if (!logicaMed.VerificarExistenciaDeMedico(dni))
             {
-                if (validMedico == 1)
+                Medico Med = new Medico();
                 {
-                    logicaUsu.AgregarUsuario(2, dni, contra);
-                    logicaMed.AgregarHorario(dias, horaIni, horaFin, dni);
+                    Med.setLegajo(txtLegajo.Text);
+                    Med.setDni(txtDNI.Text);
+                    Med.setNombre(txtNombre.Text);
+                    Med.setApellido(txtApellido.Text);
+                    Med.setSexo(ddlSexo.SelectedItem.Text);
+                    Med.setLocalidad(Convert.ToInt32(ddlLocalidad.SelectedValue));
+                    Med.setProvincia(Convert.ToInt32(ddlProvincia.SelectedValue));
+                    Med.setNacionalidad(txtnacionalidad.Text);
+                    Med.setNacimiento(DateTime.Parse(txtNacimiento.Text));
+                    Med.setDireccion(txtDireccion.Text);
+                    Med.setEmail(txtCorreo.Text);
+                    Med.setTelefono(txtTelefono.Text);
+                    Med.setEspecialidad(Convert.ToInt32(ddlEspecialidad.SelectedValue));
+                    Med.setEstado("Activo");
+                };
+
+
+                bool validMedico = logicaMed.AgregarMedico(Med);
+                if (validMedico)
+                {
+                    logicaUsu.AgregarUsuario(2, dni, txtContraseña.Text);
+                    logicaMed.AgregarHorario(dias, txtHoraInicio.Text, txtHoraFinal.Text, dni);
                     string script = "alert('El Medico fue Ingresado al Sistema.');";
                     ClientScript.RegisterStartupScript(this.GetType(), "mensajeExito", script, true);
                     limpiarCampos();
@@ -74,8 +82,9 @@ namespace TPINT_GRUPO_02_PR3.FormAdmin
             }
             else
             {
-                string script = "alert('El DNI ya está registrado. No se puede agregar el Medico al Sistema.');";
+                string script = "alert('El DNI ya está registrado. No se puede agregar el paciente.');";
                 ClientScript.RegisterStartupScript(this.GetType(), "mensajeError", script, true);
+                return;
             }
         }
 
@@ -158,10 +167,6 @@ namespace TPINT_GRUPO_02_PR3.FormAdmin
         protected void btnAtras_Click(object sender, EventArgs e)
         {
             Response.Redirect("Form_Menu_Administrador.aspx");
-        }
-        protected void cvDias_ServerValidate(object source, ServerValidateEventArgs args)
-        {
-            args.IsValid = cblDias.SelectedIndex != -1;
         }
     }
 }

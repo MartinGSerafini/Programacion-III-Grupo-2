@@ -339,15 +339,6 @@ namespace TPINT_GRUPO_02_PR3.FormAdmin
         protected global::System.Web.UI.WebControls.CheckBoxList cblDias;
 
         /// <summary>
-        /// Control cvDias.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.CustomValidator cvDias;
-
-        /// <summary>
         /// Control lblDias.
         /// </summary>
         /// <remarks>

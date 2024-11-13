@@ -17,12 +17,10 @@ namespace Logica
             return dao.GetNombreYApellidoMedico(dniMedico);
         }
 
-        public int AgregarMedico(string dni, int IDLocalidad, int IDEspecialidad, int legajo, string nombre, string apellido, char sexo,
-                                string nacionalidad, string nacimiento, string direccion, string email, string telefono)
+        public bool AgregarMedico(Medico medico)
         {
             DaoMedicos dao = new DaoMedicos();
-            return dao.agregarMedico(dni, IDLocalidad, IDEspecialidad, legajo, nombre, apellido, sexo, nacionalidad, nacimiento,
-                                    direccion, email, telefono);
+            return dao.agregarMedico(medico);
         }
 
         public void AgregarHorario(List<string> listaDias, string horaIni, string horaFin, string dni)
@@ -32,10 +30,52 @@ namespace Logica
             dao.agregarHorario(dias, horaIni, horaFin, dni);
         }
 
+        public bool EliminarMedico(string DNI)
+        {
+            DaoMedicos Dao = new DaoMedicos();
+            Medico medico = new Medico();
+            medico.setDni(DNI);
+            int op = Dao.bajaLogicaMedico(medico);
+            if (op == 1)
+            {
+                return true;
+            }
+            else { return false; }
+        }
+
+        public bool ActualizarMedico(Medico medico)
+        {
+            DaoMedicos Dao = new DaoMedicos();
+            int op = Dao.ActualizarMedico(medico);
+            if (op == 1)
+            {
+                return true;
+            }
+            else { return false; }
+        }
+
+        public DataTable GetTablaMedicos()
+        {
+            DaoMedicos dao = new DaoMedicos();
+            return dao.getTablaMedicos();
+        }
+
+        public DataTable getTablaFiltrada(string dato, string filtro)
+        {
+            DaoMedicos dao = new DaoMedicos();
+            return dao.getTablaMedicosFiltrada(dato, filtro);
+        }
+
         public DataTable getTabla()
         {
             DaoMedicos dao = new DaoMedicos();
             return dao.getTablaEspecialidades();
+        }
+
+        public bool VerificarExistenciaDeMedico(string DNI)
+        {
+            DaoMedicos dao = new DaoMedicos();
+            return dao.ExisteMedicoConDNI(DNI);
         }
     }
 }

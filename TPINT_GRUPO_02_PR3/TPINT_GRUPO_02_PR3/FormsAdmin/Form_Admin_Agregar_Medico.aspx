@@ -432,9 +432,8 @@
                 </asp:CheckBoxList>
             </td>
             <td class="auto-style5">
-                <asp:CustomValidator ID="cvDias" runat="server" ValidationGroup="VG1" OnServerValidate="cvDias_ServerValidate" ForeColor="#FFC2C2" ErrorMessage="Debe Seleccionar al menos un Día."></asp:CustomValidator>
                 <br />
-                <asp:Label ID="lblDias" runat="server" ForeColor="#FFC2C2"></asp:Label>
+                <asp:Label ID="lblDias" runat="server" ForeColor="#FFC2C2">Debe Seleccionar al menos un Día</asp:Label>
             </td>
         </tr>
         <tr>
