@@ -308,8 +308,7 @@
             padding: 8px;
             border-radius: 4px;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            width: 250px; 
-        }
+                    }
 
         /* Cambiar color cuando el mouse pasa por encima */
         .dropdown-filter:hover {
@@ -371,7 +370,7 @@
 
                 </td>
                 <td class="auto-style65">
-                    <asp:DropDownList ID="ddlFiltros" runat="server" Height="19px" Width="173px" CssClass="dropdown-filter">
+                    <asp:DropDownList ID="ddlFiltros" runat="server" CssClass="dropdown-filter" Width="231px">
                         <asp:ListItem Value="-1">SELECCIONE UNA CATEGORÍA</asp:ListItem>
                         <asp:ListItem Value="M.LEGAJO_MED">LEGAJO</asp:ListItem>
                         <asp:ListItem Value="M.FK_DNI_MED">DNI</asp:ListItem>
