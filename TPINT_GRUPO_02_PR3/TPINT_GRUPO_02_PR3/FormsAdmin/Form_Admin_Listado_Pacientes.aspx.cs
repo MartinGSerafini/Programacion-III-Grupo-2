@@ -137,11 +137,6 @@ namespace TPINT_GRUPO_02_PR3
                 MensajeError += "La fecha de nacimiento no puede ser posterior a la fecha actual.\n";
                 e.Cancel = true;
             }
-            if (Nacimiento > DateTime.Today)
-            {
-                MensajeError += "La fecha de nacimiento no puede ser posterior a la fecha actual.\n";
-                e.Cancel = true;
-            }
             string Direccion = ((TextBox)GrdPacientes.Rows[e.RowIndex].FindControl("txtDireccion")).Text;
             if (string.IsNullOrWhiteSpace(Direccion) || !Regex.IsMatch(Direccion, @"^[a-zA-ZáéíóúÁÉÍÓÚñÑ0-9\s]+$"))
             {

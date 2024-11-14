@@ -372,7 +372,7 @@
                 </td>
                 <td class="auto-style65">
                     <asp:DropDownList ID="ddlFiltros" runat="server" Height="19px" Width="173px" CssClass="dropdown-filter">
-                        <asp:ListItem>SELECCIONE UNA CATEGORÍA</asp:ListItem>
+                        <asp:ListItem Value="-1">SELECCIONE UNA CATEGORÍA</asp:ListItem>
                         <asp:ListItem Value="M.LEGAJO_MED">LEGAJO</asp:ListItem>
                         <asp:ListItem Value="M.FK_DNI_MED">DNI</asp:ListItem>
                         <asp:ListItem Value="M.NOMBRE_MED">NOMBRE</asp:ListItem>
@@ -449,10 +449,13 @@
 
                     <asp:TemplateField HeaderText="Nacimiento">
                         <EditItemTemplate>
-                            <asp:TextBox ID="txtNacimiento" CssClass="input-style" runat="server" Text='<%# Bind("NACIMIENTO_MED") %>'></asp:TextBox>
+                            <asp:TextBox ID="txtNacimiento" CssClass="input-style" runat="server" 
+                                Text='<%# DataBinder.Eval(Container.DataItem, "NACIMIENTO_MED", "{0:yyyy-MM-dd}") %>' 
+                                type="date"></asp:TextBox>
                         </EditItemTemplate>
                         <ItemTemplate>
-                            <asp:Label ID="lbl_it_Nacimiento" runat="server" Text='<%# Bind("NACIMIENTO_MED") %>'></asp:Label>
+                            <asp:Label ID="lbl_it_Nacimiento" runat="server" 
+                                Text='<%# Eval("NACIMIENTO_MED", "{0:dd/MM/yyyy}") %>'></asp:Label>
                         </ItemTemplate>
                     </asp:TemplateField>
 
@@ -483,7 +486,7 @@
                     <asp:TemplateField HeaderText="Localidad">
                         <EditItemTemplate>
                             <asp:DropDownList ID="ddlLocalidades" CssClass="input-style" runat="server" DataSourceID="SqlDataSource2" 
-                                              DataTextField="NOMBRE_LOC" DataValueField="ID_LOCALIDAD_LOC">
+                                              DataTextField="NOMBRE_LOC" DataValueField="ID_LOCALIDAD_LOC" AutoPostBack="True">
                                 <asp:ListItem Text="Seleccione una Localidad" Value="-1" />
                             </asp:DropDownList>
                         </EditItemTemplate>
@@ -568,7 +571,7 @@
             </script>
             <asp:SqlDataSource ID="SqlDataSource1" runat="server" 
                 ConnectionString="<%$ ConnectionStrings:MedicalStudioConnectionString %>" 
-                SelectCommand="SELECT ID_PROVINCIA_PRO, NOMBRE_PRO FROM [PROVINCIAS]">
+                SelectCommand="SELECT ID_PROVINCIA_PRO, NOMBRE_PRO FROM [PROVINCIAS] ">
             </asp:SqlDataSource>
             <asp:SqlDataSource ID="SqlDataSource2" runat="server" 
                 ConnectionString="<%$ ConnectionStrings:MedicalStudioConnectionString %>" 

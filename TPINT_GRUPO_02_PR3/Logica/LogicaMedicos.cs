@@ -82,5 +82,13 @@ namespace Logica
             DaoMedicos dao = new DaoMedicos();
             return dao.ExisteMedicoConDNI(legajo);
         }
+        public (int provinciaId, int localidadId) ObtenerProvinciaYLocalidadPorDni(string dni)
+        {
+            DaoMedicos dao = new DaoMedicos();
+            int provinciaId = dao.ObtenerProvinciaPorDni(dni);
+            int localidadId = dao.ObtenerLocalidadPorDni(dni);
+
+            return (provinciaId, localidadId);
+        }
     }
 }

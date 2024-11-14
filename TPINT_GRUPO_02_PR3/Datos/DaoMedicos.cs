@@ -181,6 +181,29 @@ namespace Datos
             }
             return false;
         }
+        public int ObtenerProvinciaPorDni(string dni)
+        {
+            string sql = "SELECT DISTINCT FK_ID_PROVINCIA_MED FROM Medicos WHERE FK_DNI_MED = @DNI";
+            sql = sql.Replace("@DNI", dni); //
+            DataTable dt = ds.ObtenerTabla("Medicos", sql);
+            if (dt.Rows.Count > 0)
+            {
+                return Convert.ToInt32(dt.Rows[0]["FK_ID_PROVINCIA_MED"]);
+            }
+            return -1;
+        }
+
+        public int ObtenerLocalidadPorDni(string dni)
+        {
+            string sql = "SELECT DISTINCT FK_ID_LOCALIDAD_MED FROM Medicos WHERE FK_DNI_MED = @DNI";
+            sql = sql.Replace("@DNI", dni);
+            DataTable dt = ds.ObtenerTabla("Medicos", sql);
+            if (dt.Rows.Count > 0)
+            {
+                return Convert.ToInt32(dt.Rows[0]["FK_ID_LOCALIDAD_MED"]);
+            }
+            return -1; 
+        }
     }
 
 }

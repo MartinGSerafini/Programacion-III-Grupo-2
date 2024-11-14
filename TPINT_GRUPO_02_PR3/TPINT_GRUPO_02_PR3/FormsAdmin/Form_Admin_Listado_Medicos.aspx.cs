@@ -20,6 +20,7 @@ namespace TPINT_GRUPO_02_PR3.FormAdmin
             if (!IsPostBack)
             {
                 LblUsuario.Text = Session["NombreUsuario"] as string;
+                grdListadoMedicos.DataBind();
                 CargarGrilla();
             }
         }
@@ -50,22 +51,27 @@ namespace TPINT_GRUPO_02_PR3.FormAdmin
         {
             if (e.Row.RowType == DataControlRowType.DataRow && grdListadoMedicos.EditIndex == e.Row.RowIndex)
             {
-                DropDownList ddlEspecialidades = (DropDownList)e.Row.FindControl("ddlEspecialidades");
-
-                DataRowView rowView = (DataRowView)e.Row.DataItem;
-                if (rowView.Row.Table.Columns.Contains("FK_ID_ESPECIALIDAD_MED"))
+                Label lblDni = (Label)e.Row.FindControl("lblDni");
+                if (lblDni != null)
                 {
-                    int especialidadId = Convert.ToInt32(rowView["FK_ID_ESPECIALIDAD_MED"]);
+                    string dniMedico = lblDni.Text; 
 
-                    ddlEspecialidades.SelectedValue = especialidadId.ToString();
-                }
-                else
-                {
-                    string script = "alert('La columna 'FK_ID_ESPECIALIDAD_MED' no existe en los datos.');";
-                    ClientScript.RegisterStartupScript(this.GetType(), "mensajeExito", script, true);
+                    LogicaMedicos logicaMedicos = new LogicaMedicos();
+                    var (provinciaId, localidadId) = logicaMedicos.ObtenerProvinciaYLocalidadPorDni(dniMedico);
+
+                    DropDownList ddlProvincias = (DropDownList)e.Row.FindControl("ddlProvincias");
+                    DropDownList ddlLocalidades = (DropDownList)e.Row.FindControl("ddlLocalidades");
+
+                    ddlProvincias.SelectedValue = provinciaId.ToString();
+
+                    SqlDataSource2.SelectParameters["ID_PROVINCIA_PRO"].DefaultValue = provinciaId.ToString();
+                    ddlLocalidades.DataBind();
+
+                    ddlLocalidades.SelectedValue = localidadId.ToString();
                 }
             }
         }
+
 
         protected void grdListadoMedicos_RowEditing(object sender, GridViewEditEventArgs e)
         {
@@ -118,9 +124,10 @@ namespace TPINT_GRUPO_02_PR3.FormAdmin
             }
 
             DateTime Nacimiento;
-            if (!DateTime.TryParseExact(((TextBox)grdListadoMedicos.Rows[e.RowIndex].FindControl("txtNacimiento")).Text, "dd-MM-yyyy", null, System.Globalization.DateTimeStyles.None, out Nacimiento))
+            if (!DateTime.TryParseExact(
+                ((TextBox)grdListadoMedicos.Rows[e.RowIndex].FindControl("txtNacimiento")).Text, "yyyy-MM-dd", null, System.Globalization.DateTimeStyles.None, out Nacimiento))
             {
-                MensajeError += "La fecha de nacimiento debe tener un formato dd-MM-yyyy y no estar vacía.\n";
+                MensajeError += "La fecha debe tener un formato yyyy-MM-dd y no estar vacía.\n";
                 e.Cancel = true;
             }
             else if (Nacimiento > DateTime.Today)
@@ -242,25 +249,11 @@ namespace TPINT_GRUPO_02_PR3.FormAdmin
         protected void ddlProvincias_SelectedIndexChanged(object sender, EventArgs e)
         {
             DropDownList ddlProvincias = (DropDownList)sender;
-            GridViewRow row = (GridViewRow)ddlProvincias.NamingContainer;
-            int provinciaSeleccionada = Convert.ToInt32(ddlProvincias.SelectedValue);
-            DropDownList ddlLocalidades = (DropDownList)row.FindControl("ddlLocalidades");
+            DropDownList ddlLocalidades = (DropDownList)ddlProvincias.NamingContainer.FindControl("ddlLocalidades");
 
-            if (provinciaSeleccionada != -1)
-            {
-                SqlDataSource2.SelectParameters["ID_PROVINCIA_PRO"].DefaultValue = provinciaSeleccionada.ToString();
-                ddlLocalidades.DataBind();
+            SqlDataSource2.SelectParameters["ID_PROVINCIA_PRO"].DefaultValue = ddlProvincias.SelectedValue;
 
-                if (ddlLocalidades.Items.FindByValue("-1") == null)
-                {
-                    ddlLocalidades.Items.Insert(0, new ListItem("Seleccione una localidad", "-1"));
-                }
-            }
-            else
-            {
-                ddlLocalidades.Items.Clear();
-                ddlLocalidades.Items.Add(new ListItem("Seleccione una localidad", "-1"));
-            }
+            ddlLocalidades.DataBind();
         }
     }
 }
