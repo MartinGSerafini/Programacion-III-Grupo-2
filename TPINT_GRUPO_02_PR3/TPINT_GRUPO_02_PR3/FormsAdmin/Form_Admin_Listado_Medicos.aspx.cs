@@ -58,9 +58,11 @@ namespace TPINT_GRUPO_02_PR3.FormAdmin
 
                     LogicaMedicos logicaMedicos = new LogicaMedicos();
                     var (provinciaId, localidadId) = logicaMedicos.ObtenerProvinciaYLocalidadPorDni(dniMedico);
+                    int especialidadId = logicaMedicos.ObtenerEspecialidadPorDni(dniMedico);
 
                     DropDownList ddlProvincias = (DropDownList)e.Row.FindControl("ddlProvincias");
                     DropDownList ddlLocalidades = (DropDownList)e.Row.FindControl("ddlLocalidades");
+                    DropDownList ddlEspecialidades = (DropDownList)e.Row.FindControl("ddlEspecialidades");
 
                     ddlProvincias.SelectedValue = provinciaId.ToString();
 
@@ -68,6 +70,7 @@ namespace TPINT_GRUPO_02_PR3.FormAdmin
                     ddlLocalidades.DataBind();
 
                     ddlLocalidades.SelectedValue = localidadId.ToString();
+                    ddlEspecialidades.SelectedValue = especialidadId.ToString();
                 }
             }
         }
@@ -175,12 +178,12 @@ namespace TPINT_GRUPO_02_PR3.FormAdmin
             }
 
             DropDownList ddlEspecialidades = (DropDownList)grdListadoMedicos.Rows[e.RowIndex].FindControl("ddlEspecialidades");
-            if (ddlLocalidades == null || ddlLocalidades.SelectedIndex <= -1)
+            if (ddlEspecialidades == null || ddlEspecialidades.SelectedIndex <= 0)
             {
-                MensajeError += "Seleccione una Localidad.\n";
+                MensajeError += "Seleccione una Especialidad.\n";
                 e.Cancel = true;
             }
-            int Especialidad = Convert.ToInt32(((DropDownList)grdListadoMedicos.Rows[e.RowIndex].FindControl("ddlLocalidades")).SelectedValue);
+            int Especialidad = Convert.ToInt32(ddlEspecialidades.SelectedValue);
 
             string Dias = ((TextBox)grdListadoMedicos.Rows[e.RowIndex].FindControl("txtDias")).Text;
             string Horario = ((TextBox)grdListadoMedicos.Rows[e.RowIndex].FindControl("txtHorarios")).Text;

@@ -90,5 +90,11 @@ namespace Logica
 
             return (provinciaId, localidadId);
         }
+        public int ObtenerEspecialidadPorDni(string dni)
+        {
+            DaoMedicos dao = new DaoMedicos();
+            int especialidadId = dao.ObtenerEspecialidadPorDni(dni);
+            return (especialidadId);
+        }
     }
 }
