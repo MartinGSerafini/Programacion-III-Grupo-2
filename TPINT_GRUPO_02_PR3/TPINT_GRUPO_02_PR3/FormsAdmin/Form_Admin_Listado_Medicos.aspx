@@ -376,17 +376,17 @@
                         <asp:ListItem Value="M.LEGAJO_MED">LEGAJO</asp:ListItem>
                         <asp:ListItem Value="M.FK_DNI_MED">DNI</asp:ListItem>
                         <asp:ListItem Value="M.NOMBRE_MED">NOMBRE</asp:ListItem>
-                        <asp:ListItem Value="M.APELLIDO_MED"></asp:ListItem>
-                        <asp:ListItem Value="M.SEXO_MED">APELLIDO</asp:ListItem>
-                        <asp:ListItem Value="M.NACIONALIDAD_MED">APELLIDO</asp:ListItem>
-                        <asp:ListItem Value="M.NACIMIENTO_MED">SEXO</asp:ListItem>
-                        <asp:ListItem Value="M.DIRECCION_MED">NACIONALIDADFECHA DE NACIMIENTODIRECCIÓN</asp:ListItem>
+                        <asp:ListItem Value="M.APELLIDO_MED">APELLIDO</asp:ListItem>
+                        <asp:ListItem Value="M.SEXO_MED">SEXO</asp:ListItem>
+                        <asp:ListItem Value="M.NACIONALIDAD_MED">NACIONALIDAD</asp:ListItem>
+                        <asp:ListItem Value="M.NACIMIENTO_MED">FECHA DE NACIMIENTO</asp:ListItem>
+                        <asp:ListItem Value="M.DIRECCION_MED">DIRECCIÓN</asp:ListItem>
                         <asp:ListItem Value="L.NOMBRE_LOC">LOCALIDAD</asp:ListItem>
                         <asp:ListItem Value="PRO.NOMBRE_PRO">PROVINCIA</asp:ListItem>
                         <asp:ListItem Value="M.EMAIL_MED">EMAIL</asp:ListItem>
                         <asp:ListItem Value="M.TELEFONO_MED">TELÉFONO</asp:ListItem>
-                        <asp:ListItem></asp:ListItem>
-                        <asp:ListItem></asp:ListItem>
+                        <asp:ListItem Value="H.DIA_HDA">DIAS</asp:ListItem>
+                        <asp:ListItem Value="CAST(H.HORA_INICIO_HDA AS CHAR(5)) + ' - ' + CAST(H.HORA_FIN_HDA AS CHAR(5))">HORARIOS</asp:ListItem>
                     </asp:DropDownList>
                 </td>
             </tr>
