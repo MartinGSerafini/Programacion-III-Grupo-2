@@ -73,7 +73,7 @@ namespace Datos
         {
             DataTable tabla = ds.ObtenerTabla("MEDICOS", "SELECT M.LEGAJO_MED, M.FK_DNI_MED, M.NOMBRE_MED, M.APELLIDO_MED, M.SEXO_MED, " +
                                             "M.NACIONALIDAD_MED, M.NACIMIENTO_MED, M.DIRECCION_MED, L.NOMBRE_LOC, PRO.NOMBRE_PRO, EMAIL_MED, " +
-                                            "TELEFONO_MED, E.NOMBRE_ESP, H.DIA_HDA, " +
+                                            "TELEFONO_MED, E.NOMBRE_ESP, H.DIA_HDA, M.FK_ID_PROVINCIA_MED, M.FK_ID_LOCALIDAD_MED, E.NOMBRE_ESP, M.FK_ID_ESPECIALIDAD_MED, " +
                                             "CAST(H.HORA_INICIO_HDA AS CHAR(5)) + ' - ' + CAST(H.HORA_FIN_HDA AS CHAR(5)) AS Horarios " +
                                             "FROM MEDICOS M INNER JOIN LOCALIDADES L ON M.FK_ID_LOCALIDAD_MED = L.ID_LOCALIDAD_LOC " +
                                             "INNER JOIN PROVINCIAS PRO ON M.FK_ID_PROVINCIA_MED = PRO.ID_PROVINCIA_PRO " +
@@ -87,7 +87,7 @@ namespace Datos
         {
             DataTable tabla = ds.ObtenerTabla("MEDICOS", "SELECT M.LEGAJO_MED, M.FK_DNI_MED, M.NOMBRE_MED, M.APELLIDO_MED, M.SEXO_MED, " +
                                             "M.NACIONALIDAD_MED, M.NACIMIENTO_MED, M.DIRECCION_MED, L.NOMBRE_LOC, PRO.NOMBRE_PRO, M.EMAIL_MED, " +
-                                            "M.TELEFONO_MED, E.NOMBRE_ESP, H.DIA_HDA, " +
+                                            "M.TELEFONO_MED, E.NOMBRE_ESP, H.DIA_HDA, M.FK_ID_PROVINCIA_MED, M.FK_ID_LOCALIDAD_MED, E.NOMBRE_ESP, M.FK_ID_ESPECIALIDAD_MED, " +
                                             "CAST(H.HORA_INICIO_HDA AS CHAR(5)) + ' - ' + CAST(H.HORA_FIN_HDA AS CHAR(5)) AS Horarios " +
                                             "FROM MEDICOS M INNER JOIN LOCALIDADES L ON M.FK_ID_LOCALIDAD_MED = L.ID_LOCALIDAD_LOC " +
                                             "INNER JOIN PROVINCIAS PRO ON M.FK_ID_PROVINCIA_MED = PRO.ID_PROVINCIA_PRO " +

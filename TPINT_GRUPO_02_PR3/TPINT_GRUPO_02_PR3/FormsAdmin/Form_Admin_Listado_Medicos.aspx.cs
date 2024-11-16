@@ -51,27 +51,23 @@ namespace TPINT_GRUPO_02_PR3.FormAdmin
         {
             if (e.Row.RowType == DataControlRowType.DataRow && grdListadoMedicos.EditIndex == e.Row.RowIndex)
             {
-                Label lblDni = (Label)e.Row.FindControl("lblDni");
-                if (lblDni != null)
-                {
-                    string dniMedico = lblDni.Text; 
 
-                    LogicaMedicos logicaMedicos = new LogicaMedicos();
-                    var (provinciaId, localidadId) = logicaMedicos.ObtenerProvinciaYLocalidadPorDni(dniMedico);
-                    int especialidadId = logicaMedicos.ObtenerEspecialidadPorDni(dniMedico);
+                DropDownList ddlProvincias = (DropDownList)e.Row.FindControl("ddlProvincias");
+                DropDownList ddlLocalidades = (DropDownList)e.Row.FindControl("ddlLocalidades");
+                DropDownList ddlEspecialidades = (DropDownList)e.Row.FindControl("ddlEspecialidades");
 
-                    DropDownList ddlProvincias = (DropDownList)e.Row.FindControl("ddlProvincias");
-                    DropDownList ddlLocalidades = (DropDownList)e.Row.FindControl("ddlLocalidades");
-                    DropDownList ddlEspecialidades = (DropDownList)e.Row.FindControl("ddlEspecialidades");
+                DataRowView rowView = (DataRowView)e.Row.DataItem;
+                int provinciaId = Convert.ToInt32(rowView["FK_ID_PROVINCIA_MED"]);
+                int localidadId = Convert.ToInt32(rowView["FK_ID_LOCALIDAD_MED"]);
+                int especialidadId = Convert.ToInt32(rowView["FK_ID_ESPECIALIDAD_MED"]);
 
-                    ddlProvincias.SelectedValue = provinciaId.ToString();
+                ddlProvincias.SelectedValue = provinciaId.ToString();
 
-                    SqlDataSource2.SelectParameters["ID_PROVINCIA_PRO"].DefaultValue = provinciaId.ToString();
-                    ddlLocalidades.DataBind();
+                SqlDataSource2.SelectParameters["ID_PROVINCIA_PRO"].DefaultValue = provinciaId.ToString();
+                ddlLocalidades.DataBind();
 
-                    ddlLocalidades.SelectedValue = localidadId.ToString();
-                    ddlEspecialidades.SelectedValue = especialidadId.ToString();
-                }
+                ddlLocalidades.SelectedValue = localidadId.ToString();
+                ddlEspecialidades.SelectedValue = especialidadId.ToString();
             }
         }
 

@@ -2,6 +2,14 @@
 --DROP DATABASE MedicalStudio
 
 -- Crea la base de datos
+
+DROP DATABASE MedicalStudio;
+GO
+
+ALTER DATABASE MedicalStudio
+SET MULTI_USER;
+GO
+
 CREATE DATABASE MedicalStudio;
 GO
 
