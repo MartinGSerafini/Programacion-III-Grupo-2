@@ -132,5 +132,21 @@ namespace Datos
                 return false;
             }
         }
+        public int ObtenerIdPaciente(string dni)
+        {
+            string sql = "SELECT ID_PACIENTE_PAS FROM PACIENTES WHERE DNI_PAS = " + dni + " AND ESTADO_PAS = 'Activo'";
+
+            SqlCommand cmd = new SqlCommand(sql);
+            cmd.Parameters.AddWithValue("@dni", dni);
+
+            DataTable tabla = ds.ObtenerTabla("PACIENTES", sql);
+
+            if (tabla.Rows.Count > 0)
+            {
+                return Convert.ToInt32(tabla.Rows[0]["ID_PACIENTE_PAS"]);
+            }
+
+            return 0;
+        }
     }
 }

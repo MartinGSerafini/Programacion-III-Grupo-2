@@ -61,7 +61,6 @@ namespace Datos
                 return false;
             }
         }
-
         public DataTable getTablaMedicos()
         {
             DataTable tabla = ds.ObtenerTabla("MEDICOS", "SELECT M.LEGAJO_MED, M.FK_DNI_MED, M.NOMBRE_MED, M.APELLIDO_MED, M.SEXO_MED, " +
@@ -75,7 +74,6 @@ namespace Datos
                                             "WHERE M.ESTADO_MED = 'Activo'");
             return tabla;
         }
-
         public DataTable getTablaMedicosFiltrada(string dato, string filtro)
         {
             DataTable tabla = ds.ObtenerTabla("MEDICOS", "SELECT M.LEGAJO_MED, M.FK_DNI_MED, M.NOMBRE_MED, M.APELLIDO_MED, M.SEXO_MED, " +
@@ -89,7 +87,6 @@ namespace Datos
                                             "WHERE " + filtro + " LIKE '%" + dato + "%' AND M.ESTADO_MED = 'Activo'");
             return tabla;
         }
-
         public DataTable GetMedicosPorEspecialidad(int idEspecialidad)
         {
             string query = "SELECT FK_DNI_MED, NOMBRE_MED + ' ' + APELLIDO_MED AS NOMBRE_COMPLETO FROM Medicos WHERE FK_ID_ESPECIALIDAD_MED = " + idEspecialidad + " AND ESTADO_MED = 'Activo'";
@@ -111,14 +108,12 @@ namespace Datos
             }
             return false;
         }
-
         public void ArmarParametrosMedicosBajaLogica(ref SqlCommand Comando, Medico medico)
         {
             SqlParameter sqlParametros = new SqlParameter();
             sqlParametros = Comando.Parameters.Add("@DNIMEDICO", SqlDbType.Char);
             sqlParametros.Value = medico.getDni();
         }
-
         public void ArmarParametrosMedicosModificacion(ref SqlCommand Comando, Medico medico)
         {
             SqlParameter sqlParametros = new SqlParameter();
@@ -151,14 +146,12 @@ namespace Datos
             sqlParametros = Comando.Parameters.Add("@HORARIO", SqlDbType.Char);
             sqlParametros.Value = medico.getHorario();
         }
-
         public int ActualizarMedico(Medico medico)
         {
             SqlCommand Comando = new SqlCommand();
             ArmarParametrosMedicosModificacion(ref Comando, medico);
             return ds.EjecutarProcedimientoAlmacenado(Comando, "spModificarMedico");
         }
-
         public int bajaLogicaMedico(Medico medico)
         {
             SqlCommand Comando = new SqlCommand();

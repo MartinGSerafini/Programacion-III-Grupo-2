@@ -11,24 +11,22 @@ namespace Logica
 {
     public class LogicaPacientes
     {
+        DaoPacientes dao = new DaoPacientes();
         public DataTable getTabla()
         {
-            DaoPacientes dao = new DaoPacientes();
             return dao.getTablaPacientes();
         }
 
         public DataTable getTablaFiltrada(string dato, string filtro)
         {
-            DaoPacientes dao = new DaoPacientes();
             return dao.getTablaPacientesFiltrada(filtro, dato);
         }
 
         public bool EliminarPaciente(string DNI)
         {
-            DaoPacientes Dao = new DaoPacientes();
             Pacientes paciente = new Pacientes();
             paciente.setDNI(DNI);
-            int op = Dao.bajaLogicaPaciente(paciente);
+            int op = dao.bajaLogicaPaciente(paciente);
             if(op == 1)
             {
                 return true;
@@ -37,8 +35,7 @@ namespace Logica
         }
         public bool ActualizarPaciente(Pacientes paciente)
         {
-            DaoPacientes Dao = new DaoPacientes();
-            int op = Dao.ActualizarPaciente(paciente);
+            int op = dao.ActualizarPaciente(paciente);
             if (op == 1)
             {
                 return true;
@@ -47,13 +44,15 @@ namespace Logica
         }
         public bool VerificarExistenciaDePaciente(string DNI)
         {
-            DaoPacientes dao = new DaoPacientes();
             return dao.ExistePacienteConDNI(DNI);
         }
         public bool AgregarPaciente(Pacientes paciente)
         {
-            DaoPacientes dao = new DaoPacientes();
             return dao.InsertarPaciente(paciente);
+        }
+        public int ObtenerPacientePorDNI(string dni)
+        {
+            return dao.ObtenerIdPaciente(dni);
         }
     }
 }

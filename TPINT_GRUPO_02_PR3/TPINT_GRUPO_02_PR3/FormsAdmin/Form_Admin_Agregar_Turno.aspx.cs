@@ -13,6 +13,7 @@ namespace TPINT_GRUPO_02_PR3.FormsAdmin
 {
     public partial class Form_Admin_Agregar_Turno : System.Web.UI.Page
     {
+        LogicaPacientes logpac = new LogicaPacientes();
         LogicaMedicos logmed = new LogicaMedicos();
         LogicaHorarioAtencion loghor = new LogicaHorarioAtencion();
         LogicaTurnos logtur = new LogicaTurnos();
@@ -35,18 +36,19 @@ namespace TPINT_GRUPO_02_PR3.FormsAdmin
         {
             if (!lblErrorDia.Visible)
             {
-                string dni = txtDNI.Text;
+                int Idpaciente = logpac.ObtenerPacientePorDNI(txtDNI.Text);
                 int especialidad = Convert.ToInt32(ddlespecialidad.SelectedValue);
                 string dniMedico = ddlMedicos.SelectedValue;
                 DateTime fecha = Convert.ToDateTime(txtDia.Text);
-                TimeSpan hora = TimeSpan.Parse(DdlHorario.SelectedValue);
+                string horaSeleccionada = DdlHorario.SelectedItem.Text.Trim();
+                TimeSpan hora = TimeSpan.Parse(horaSeleccionada);
 
                 Turnos turno = new Turnos();
                 try
                 {
+                    turno.SetID_PACIENTE_TUR(Idpaciente);
+                    turno.SetID_ESPECIALIDAD_TUR(especialidad);
                     turno.SetFK_DNI_MEDICO_TUR(dniMedico);
-                    turno.SetID_PACIENTE_TUR(Convert.ToInt32(ddlMedicos.SelectedValue));
-                    turno.SetID_ESPECIALIDAD_TUR(Convert.ToInt32(ddlespecialidad.SelectedValue));
                     turno.SetFECHA_TUR(fecha);
                     turno.SetHORA_TUR(hora);
                     turno.SetOBSERVACION_TUR("");
@@ -146,14 +148,19 @@ namespace TPINT_GRUPO_02_PR3.FormsAdmin
 
                 DateTime horaInicio = loghor.ObtenerHoraInicio(dniMedico);
                 DateTime horaFin = loghor.ObtenerHoraFin(dniMedico);
+                string horaSeleccionada = DdlHorario.SelectedValue;
                 DdlHorario.Items.Clear();
                 DdlHorario.Items.Add(new ListItem("--Seleccione un Horario--", "-1"));
 
                 while (horaInicio < horaFin)
                 {
-                    string horaFormateada = horaInicio.ToString("HH:mm");
+                    string horaFormateada = horaInicio.ToString("HH:mm:ss");
                     DdlHorario.Items.Add(new ListItem(horaFormateada, horaFormateada));
                     horaInicio = horaInicio.AddHours(1);
+                }
+                if (!string.IsNullOrEmpty(horaSeleccionada) && DdlHorario.Items.FindByValue(horaSeleccionada) != null)
+                {
+                    DdlHorario.SelectedValue = horaSeleccionada;
                 }
             }
         }
@@ -236,6 +243,5 @@ namespace TPINT_GRUPO_02_PR3.FormsAdmin
                 .Select(dia => mapaDias[dia.ToLower().Trim()])
                 .ToList();
         }
-
     }
 }

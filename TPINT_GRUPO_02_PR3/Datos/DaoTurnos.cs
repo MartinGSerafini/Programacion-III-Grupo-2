@@ -97,17 +97,18 @@ namespace Datos
 
         public bool InsertarTurno(Turnos turno)
         {
-            string sql = "INSERT INTO TURNOS (ID_TURNO_TUR, FK_DNI_MEDICO_TUR, FK_ID_PACIENTE_TUR, FK_ID_ESPECIALIDAD_TUR, " +
+            string sql = "INSERT INTO TURNOS (FK_DNI_MEDICO_TUR, FK_ID_PACIENTE_TUR, FK_ID_ESPECIALIDAD_TUR, " +
                          "FECHA_TUR, HORA_TUR, ESTADO_TUR, OBSERVACION_TUR) " +
-                         "VALUES (@ID_TURNO, @DNI_MEDICO, @DNI_PACIENTE, @ID_ESPECIALIDAD, @FECHA, @HORA, @ESTADO, @OBSERVACION)";
+                         "VALUES (@DNI_MEDICO, @ID_PACIENTE, @ID_ESPECIALIDAD, @FECHA, @HORA, @ESTADO, @OBSERVACION)";
 
             SqlCommand cmd = new SqlCommand(sql);
-            cmd.Parameters.AddWithValue("@ID_TURNO", turno.GetID_TURNO_TUR());
             cmd.Parameters.AddWithValue("@DNI_MEDICO", turno.GetFK_DNI_MEDICO_TUR());
-            cmd.Parameters.AddWithValue("@DNI_PACIENTE", turno.GetID_PACIENTE_TUR());
+            cmd.Parameters.AddWithValue("@ID_PACIENTE", turno.GetID_PACIENTE_TUR());
             cmd.Parameters.AddWithValue("@ID_ESPECIALIDAD", turno.GetID_ESPECIALIDAD_TUR());
             cmd.Parameters.AddWithValue("@FECHA", turno.GetFECHA_TUR());
-            cmd.Parameters.AddWithValue("@HORA", turno.GetHORA_TUR());
+            var horaParam = new SqlParameter("@HORA", SqlDbType.Time);
+            horaParam.Value = turno.GetHORA_TUR();
+            cmd.Parameters.Add(horaParam);
             cmd.Parameters.AddWithValue("@ESTADO", turno.GetESTADO_TUR());;
             cmd.Parameters.AddWithValue("@OBSERVACION", turno.GetOBSERVACION_TUR());
             AccesoDatos accesoDatos = new AccesoDatos();
