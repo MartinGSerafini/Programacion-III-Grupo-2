@@ -96,5 +96,35 @@ namespace Logica
             int especialidadId = dao.ObtenerEspecialidadPorDni(dni);
             return (especialidadId);
         }
+
+        public DataTable GetTablaMedicosXidEsp(int id)
+        {
+            DaoMedicos dao = new DaoMedicos();
+            return dao.getTablaMedicosXidEsp(id);
+        }
+
+        public string GetDiasMedico(string DNI)
+        {
+            DaoMedicos dao = new DaoMedicos();
+            DataTable tabla = dao.getDiasMedico(DNI);
+
+            if (tabla != null && tabla.Rows.Count > 0)
+            {
+                return tabla.Rows[0]["Dias"].ToString();
+            }
+            return "0";
+        }
+
+        public string GetHorarioMedico(string DNI, string hora)
+        {
+            DaoMedicos dao = new DaoMedicos();
+            DataTable tabla = dao.getDiasMedico(DNI);
+
+            if (tabla != null && tabla.Rows.Count > 0)
+            {
+                return tabla.Rows[0][hora].ToString();
+            }
+            return "0";
+        }
     }
 }

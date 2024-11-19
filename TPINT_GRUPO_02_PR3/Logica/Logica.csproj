@@ -46,6 +46,7 @@
     <Compile Include="LogicaMedicos.cs" />
     <Compile Include="LogicaPacientes.cs" />
     <Compile Include="LogicaProvincias.cs" />
+    <Compile Include="LogicaTurnos.cs" />
     <Compile Include="LogicaUsuarios.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
