@@ -216,6 +216,21 @@ namespace Datos
             }
             return -1;
         }
-    }
 
+        public DataTable getTablaMedicosXidEsp(int id)
+        {
+            DataTable tabla = ds.ObtenerTabla("MEDICOS", "SELECT ID_MEDICO_MED AS IdMedico, FK_DNI_MED AS DNI, NOMBRE_MED + ' ' + APELLIDO_MED AS NombreCompleto " +
+                                                "FROM MEDICOS WHERE FK_ID_ESPECIALIDAD_MED = " + id + " AND ESTADO_MED = 'Activo'");
+            return tabla;
+        }
+
+        public DataTable getDiasMedico(string DNI)
+        {
+            DataTable tabla = ds.ObtenerTabla("HORARIO_ATENCION", "SELECT DIA_HDA AS Dias, HORA_INICIO_HDA AS HoraInicio, HORA_FIN_HDA AS HoraFin " +
+                                                "FROM HORARIO_ATENCION WHERE FK_DNI_MEDICO_HDA = '" + DNI + "'");
+            return tabla;
+        }
+
+        
+    }
 }
