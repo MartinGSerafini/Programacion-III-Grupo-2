@@ -10,9 +10,6 @@ namespace TPINT_GRUPO_02_PR3
 {
     public partial class Form_Agregar_Pacientes : System.Web.UI.Page
     {
-        LogicaProvincias logicaProvincias = new LogicaProvincias();
-        LogicaLocalidades logicaLocalidades = new LogicaLocalidades();
-
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
@@ -40,6 +37,7 @@ namespace TPINT_GRUPO_02_PR3
         }
         private void CargarProvincias()
         {
+            LogicaProvincias logicaProvincias = new LogicaProvincias();
             DataTable dtProvincias = logicaProvincias.getTabla();
             ddlProvincia.DataSource = dtProvincias;
             ddlProvincia.DataTextField = "NombreProvincia";
@@ -50,6 +48,7 @@ namespace TPINT_GRUPO_02_PR3
         }
         private void CargarLocalidades(int idProvincia)
         {
+            LogicaLocalidades logicaLocalidades = new LogicaLocalidades();
             DataTable dtLocalidades = logicaLocalidades.getTablaLocalidades(idProvincia);
             ddlLocalidad.DataSource = dtLocalidades;
             ddlLocalidad.DataTextField = "Nombre";

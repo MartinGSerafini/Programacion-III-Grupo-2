@@ -326,7 +326,7 @@
                         <button>☰</button>
                         <ul>
                             <li><a href="../FormsAdmin/Form_Admin_Listado_Pacientes.aspx">PACIENTES</a></li>
-                            <li><a href="#">TURNOS</a></li>
+                            <li><a href="../FormsAdmin/Form_Admin_Listado_Turnos.aspx">TURNOS</a></li>
                             <li><a href="../FormsAdmin/Form_Admin_Listado_Medicos.aspx">MEDICOS</a></li>
                             <li><a href="#">REPORTES</a></li>
                             <li><a href="<%= ResolveUrl("~/FormsLogins/Form_Login.aspx") %>">CERRAR SESIÓN</a></li>
@@ -526,17 +526,81 @@
                             <asp:Label ID="lbl_it_Especialidad" runat="server" Text='<%# Bind("NOMBRE_ESP") %>'></asp:Label>
                         </ItemTemplate>
                     </asp:TemplateField>
-                    <asp:TemplateField HeaderText="Días">
-                        <EditItemTemplate>
-                            <asp:TextBox ID="txtDias" CssClass="input-style" runat="server" Text='<%# Bind("DIA_HDA") %>'></asp:TextBox>
-                        </EditItemTemplate>
-                        <ItemTemplate>
-                            <asp:Label ID="lbl_it_Dias" runat="server" Text='<%# Bind("DIA_HDA") %>'></asp:Label>
-                        </ItemTemplate>
-                    </asp:TemplateField>
+                   <asp:TemplateField HeaderText="Dias">
+                    <EditItemTemplate>
+                        <asp:CheckBoxList ID="cblDias" CssClass="input-style hidden" runat="server" Width="125px">
+                            <asp:ListItem Text="Lunes" Value="Lunes"></asp:ListItem>
+                            <asp:ListItem Text="Martes" Value="Martes"></asp:ListItem>
+                            <asp:ListItem Text="Miércoles" Value="Miércoles"></asp:ListItem>
+                            <asp:ListItem Text="Jueves" Value="Jueves"></asp:ListItem>
+                            <asp:ListItem Text="Viernes" Value="Viernes"></asp:ListItem>
+                            <asp:ListItem Text="Sábado" Value="Sábado"></asp:ListItem>
+                            <asp:ListItem Text="Domingo" Value="Domingo"></asp:ListItem>
+                        </asp:CheckBoxList>
+                    </EditItemTemplate>
+                    <ItemTemplate>
+                        <asp:Label ID="lbl_it_Dias" runat="server" Text='<%# Bind("DIA_HDA") %>'></asp:Label>
+                    </ItemTemplate>
+                </asp:TemplateField>
                     <asp:TemplateField HeaderText="Horarios">
                         <EditItemTemplate>
-                            <asp:TextBox ID="txtHorarios" CssClass="input-style" runat="server" Text='<%# Bind("Horarios") %>'></asp:TextBox>
+                            Inicio:
+                            <asp:DropDownList ID="ddlHoraInicio" runat="server" CssClass="input-style" Width="100px">
+                                <asp:ListItem Text="Selecciona una hora de inicio" Value="-1" />
+                                <asp:ListItem Text="00:00" Value="0" />
+                                <asp:ListItem Text="01:00" Value="1" />
+                                <asp:ListItem Text="02:00" Value="2" />
+                                <asp:ListItem Text="03:00" Value="3" />
+                                <asp:ListItem Text="04:00" Value="4" />
+                                <asp:ListItem Text="05:00" Value="5" />
+                                <asp:ListItem Text="06:00" Value="6" />
+                                <asp:ListItem Text="07:00" Value="7" />
+                                <asp:ListItem Text="08:00" Value="8" />
+                                <asp:ListItem Text="09:00" Value="9" />
+                                <asp:ListItem Text="10:00" Value="0" />
+                                <asp:ListItem Text="11:00" Value="11" />
+                                <asp:ListItem Text="12:00" Value="12" />
+                                <asp:ListItem Text="13:00" Value="13" />
+                                <asp:ListItem Text="14:00" Value="14" />
+                                <asp:ListItem Text="15:00" Value="15" />
+                                <asp:ListItem Text="16:00" Value="16" />
+                                <asp:ListItem Text="17:00" Value="17" />
+                                <asp:ListItem Text="18:00" Value="18" />
+                                <asp:ListItem Text="19:00" Value="19" />
+                                <asp:ListItem Text="20:00" Value="20" />
+                                <asp:ListItem Text="21:00" Value="21" />
+                                <asp:ListItem Text="22:00" Value="22" />
+                                <asp:ListItem Text="23:00" Value="23" />
+                            </asp:DropDownList>
+                            <br />
+                            Final:
+                            <asp:DropDownList ID="ddlHoraFinal" runat="server" CssClass="input-style" Width="100px">
+                                <asp:ListItem Text="Selecciona una hora final" Value="-1" />
+                                <asp:ListItem Text="00:00" Value="0" />
+                                <asp:ListItem Text="01:00" Value="1" />
+                                <asp:ListItem Text="02:00" Value="2" />
+                                <asp:ListItem Text="03:00" Value="3" />
+                                <asp:ListItem Text="04:00" Value="4" />
+                                <asp:ListItem Text="05:00" Value="5" />
+                                <asp:ListItem Text="06:00" Value="6" />
+                                <asp:ListItem Text="07:00" Value="7" />
+                                <asp:ListItem Text="08:00" Value="8" />
+                                <asp:ListItem Text="09:00" Value="9" />
+                                <asp:ListItem Text="10:00" Value="0" />
+                                <asp:ListItem Text="11:00" Value="11" />
+                                <asp:ListItem Text="12:00" Value="12" />
+                                <asp:ListItem Text="13:00" Value="13" />
+                                <asp:ListItem Text="14:00" Value="14" />
+                                <asp:ListItem Text="15:00" Value="15" />
+                                <asp:ListItem Text="16:00" Value="16" />
+                                <asp:ListItem Text="17:00" Value="17" />
+                                <asp:ListItem Text="18:00" Value="18" />
+                                <asp:ListItem Text="19:00" Value="19" />
+                                <asp:ListItem Text="20:00" Value="20" />
+                                <asp:ListItem Text="21:00" Value="21" />
+                                <asp:ListItem Text="22:00" Value="22" />
+                                <asp:ListItem Text="23:00" Value="23" />
+                            </asp:DropDownList>
                         </EditItemTemplate>
                         <ItemTemplate>
                             <asp:Label ID="lbl_it_Horarios" runat="server" Text='<%# Bind("Horarios") %>'></asp:Label>
@@ -547,15 +611,13 @@
                             <asp:Button ID="btnEditar" runat="server" CommandName="Edit" Text="&#9881;" />
                         </ItemTemplate>
                         <EditItemTemplate>
-                            <asp:Button ID="btnUpdate" runat="server" CommandName="Update" Text="&#10004;" 
-                                OnClientClick="return confirmarEdicion();" />
+                            <asp:Button ID="btnUpdate" runat="server" CommandName="Update" Text="&#10004;" OnClientClick="return confirmarEdicion();" />
                             <asp:Button ID="btnCancel" runat="server" CommandName="Cancel" Text="&#10060;" />
                         </EditItemTemplate>
                     </asp:TemplateField>
                     <asp:TemplateField>
                         <ItemTemplate>
-                            <asp:Button ID="btnEliminar" runat="server" CommandName="Delete" Text="&#128465;" 
-                                OnClientClick="return confirmarEliminacion();" />
+                            <asp:Button ID="btnEliminar" runat="server" CommandName="Delete" Text="&#128465;" OnClientClick="return confirmarEliminacion();" />
                         </ItemTemplate>
                     </asp:TemplateField>
                 </Columns>

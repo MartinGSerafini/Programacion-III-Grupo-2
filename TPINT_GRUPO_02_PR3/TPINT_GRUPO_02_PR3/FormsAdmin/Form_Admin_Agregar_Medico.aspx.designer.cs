@@ -348,22 +348,22 @@ namespace TPINT_GRUPO_02_PR3.FormAdmin
         protected global::System.Web.UI.WebControls.Label lblDias;
 
         /// <summary>
-        /// Control txtHoraInicio.
+        /// Control ddlHoraInicio.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtHoraInicio;
+        protected global::System.Web.UI.WebControls.DropDownList ddlHoraInicio;
 
         /// <summary>
-        /// Control txtHoraFinal.
+        /// Control DdlHoraFinal.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtHoraFinal;
+        protected global::System.Web.UI.WebControls.DropDownList DdlHoraFinal;
 
         /// <summary>
         /// Control RequiredFieldValidator10.

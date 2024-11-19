@@ -51,23 +51,48 @@ namespace TPINT_GRUPO_02_PR3.FormAdmin
         {
             if (e.Row.RowType == DataControlRowType.DataRow && grdListadoMedicos.EditIndex == e.Row.RowIndex)
             {
-
                 DropDownList ddlProvincias = (DropDownList)e.Row.FindControl("ddlProvincias");
                 DropDownList ddlLocalidades = (DropDownList)e.Row.FindControl("ddlLocalidades");
                 DropDownList ddlEspecialidades = (DropDownList)e.Row.FindControl("ddlEspecialidades");
+                CheckBoxList cblDias = (CheckBoxList)e.Row.FindControl("cblDias");
+                DropDownList ddlHoraInicio = (DropDownList)e.Row.FindControl("ddlHoraInicio");
+                DropDownList ddlHoraFinal = (DropDownList)e.Row.FindControl("ddlHoraFinal");
 
                 DataRowView rowView = (DataRowView)e.Row.DataItem;
                 int provinciaId = Convert.ToInt32(rowView["FK_ID_PROVINCIA_MED"]);
                 int localidadId = Convert.ToInt32(rowView["FK_ID_LOCALIDAD_MED"]);
                 int especialidadId = Convert.ToInt32(rowView["FK_ID_ESPECIALIDAD_MED"]);
+                string dias = rowView["DIA_HDA"].ToString();
+                string horarios = rowView["Horarios"].ToString(); 
 
                 ddlProvincias.SelectedValue = provinciaId.ToString();
-
                 SqlDataSource2.SelectParameters["ID_PROVINCIA_PRO"].DefaultValue = provinciaId.ToString();
                 ddlLocalidades.DataBind();
-
                 ddlLocalidades.SelectedValue = localidadId.ToString();
                 ddlEspecialidades.SelectedValue = especialidadId.ToString();
+
+                if (!string.IsNullOrEmpty(dias))
+                {
+                    string[] diasSeleccionados = dias.Split(',');
+                    foreach (var dia in diasSeleccionados)
+                    {
+                        ListItem item = cblDias.Items.FindByValue(dia.Trim());
+                        if (item != null)
+                        {
+                            item.Selected = true;
+                        }
+                    }
+                }
+
+                if (!string.IsNullOrEmpty(horarios))
+                {
+                    string[] horas = horarios.Split('-');
+                    if (horas.Length == 2)
+                    {
+                        string horaInicio = horas[0].Trim(); 
+                        string horaFinal = horas[1].Trim(); 
+                    }
+                }
             }
         }
 
@@ -100,6 +125,7 @@ namespace TPINT_GRUPO_02_PR3.FormAdmin
             string DNI = ((Label)grdListadoMedicos.Rows[e.RowIndex].FindControl("lblDNI")).Text;
             string Legajo = ((Label)grdListadoMedicos.Rows[e.RowIndex].FindControl("lblLegajo")).Text;
             string Nombre = ((TextBox)grdListadoMedicos.Rows[e.RowIndex].FindControl("txtNombre")).Text;
+
             if (string.IsNullOrWhiteSpace(Nombre) || !System.Text.RegularExpressions.Regex.IsMatch(Nombre, @"^[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]+$"))
             {
                 MensajeError += "El Nombre no debe contener números ni estar vacío.\n";
@@ -181,12 +207,49 @@ namespace TPINT_GRUPO_02_PR3.FormAdmin
             }
             int Especialidad = Convert.ToInt32(ddlEspecialidades.SelectedValue);
 
-            string Dias = ((TextBox)grdListadoMedicos.Rows[e.RowIndex].FindControl("txtDias")).Text;
-            string Horario = ((TextBox)grdListadoMedicos.Rows[e.RowIndex].FindControl("txtHorarios")).Text;
+            CheckBoxList cblDias = (CheckBoxList)grdListadoMedicos.Rows[e.RowIndex].FindControl("cblDias");
+            string Dias = string.Join(",", cblDias.Items.Cast<ListItem>()
+                .Where(i => i.Selected)
+                .Select(i => i.Value));
+            if (string.IsNullOrEmpty(Dias))
+            {
+                MensajeError += "Debe seleccionar al menos un día.\n";
+                e.Cancel = true;
+            }
+
+            DropDownList ddlHoraInicio = (DropDownList)grdListadoMedicos.Rows[e.RowIndex].FindControl("ddlHoraInicio");
+            DropDownList ddlHoraFinal = (DropDownList)grdListadoMedicos.Rows[e.RowIndex].FindControl("ddlHoraFinal");
+
+            string horaInicioText = ddlHoraInicio.SelectedItem.Text;
+            string horaFinalText = ddlHoraFinal.SelectedItem.Text;
+
+            string horaInicioValue = ddlHoraInicio.SelectedValue;
+            string horaFinalValue = ddlHoraFinal.SelectedValue;
+
+            if (horaInicioValue != "-1" && horaFinalValue != "-1")
+            {
+                int horaInicioInt = Convert.ToInt32(horaInicioValue); 
+                int horaFinalInt = Convert.ToInt32(horaFinalValue); 
+
+                if (horaInicioInt >= horaFinalInt)
+                {
+                    MensajeError += "La hora de inicio no puede ser mayor o igual a la hora de salida.\n";
+                    e.Cancel = true;
+                }
+            }
+            else
+            {
+                MensajeError += "Debe seleccionar una hora de inicio y una de salida.\n";
+                e.Cancel = true;
+            }
+            string horaInicio = ddlHoraInicio.SelectedItem.Text;
+            string horaFinal = ddlHoraFinal.SelectedItem.Text;
+            string Horario = $"{horaInicio} - {horaFinal}";
 
             if (!string.IsNullOrEmpty(MensajeError))
             {
                 e.Cancel = true;
+
                 string scriptvalidacion = $"alert('{MensajeError.Replace("\n", "\\n")}');";
                 ClientScript.RegisterStartupScript(this.GetType(), "MensajeError", scriptvalidacion, true);
                 return;

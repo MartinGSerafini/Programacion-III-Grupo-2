@@ -11,9 +11,9 @@ namespace Logica
 {
     public class LogicaLocalidades
     {
+        DaoLocalidades dao = new DaoLocalidades();
         public DataTable getTablaLocalidades(int idProvincia)
         {
-            DaoLocalidades dao = new DaoLocalidades();
             return dao.getTablaLocalidades(idProvincia);
         }
         public Localidades getLocalidad(int id)

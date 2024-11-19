@@ -176,7 +176,7 @@
                     <button>☰</button>
                     <ul>
                         <li><a href="../FormsAdmin/Form_Admin_Listado_Pacientes.aspx">PACIENTES</a></li>
-                        <li><a href="#">TURNOS</a></li>
+                        <li><a href="../FormsAdmin/Form_Admin_Listado_Turnos.aspx">TURNOS</a></li>
                         <li><a href="../FormsAdmin/Form_Admin_Listado_Medicos.aspx">MEDICOS</a></li>
                         <li><a href="#">REPORTES</a></li>
                         <li><a href="<%= ResolveUrl("~/FormsLogins/Form_Login.aspx") %>">CERRAR SESIÓN</a></li>
@@ -203,7 +203,7 @@
 
             <div class="button-container">
                 <a href="../FormsAdmin/Form_Admin_Listado_Pacientes.aspx">PACIENTES</a>
-                <a href="#">TURNOS</a>
+                <a href="../FormsAdmin/Form_Admin_Listado_Turnos.aspx">TURNOS</a>
                 <a href="../FormsAdmin/Form_Admin_Listado_Medicos.aspx">MEDICOS</a>
                 <a href="#">REPORTES</a>
             </div>

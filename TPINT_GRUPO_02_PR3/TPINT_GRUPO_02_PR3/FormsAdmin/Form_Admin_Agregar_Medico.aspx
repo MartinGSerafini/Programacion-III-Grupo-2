@@ -254,7 +254,7 @@
                         <button>☰</button>
                         <ul>
                             <li><a href="../FormsAdmin/Form_Admin_Listado_Pacientes.aspx">PACIENTES</a></li>
-                            <li><a href="#">TURNOS</a></li>
+                            <li><a href="../FormsAdmin/Form_Admin_Listado_Turnos.aspx">TURNOS</a></li>
                             <li><a href="../FormsAdmin/Form_Admin_Listado_Medicos.aspx">MEDICOS</a></li>
                             <li><a href="#">REPORTES</a></li>
                             <li><a href="<%= ResolveUrl("~/FormsLogins/Form_Login.aspx") %>">CERRAR SESIÓN</a></li>
@@ -332,13 +332,13 @@
             <td class="auto-style1">Genero:</td>
             <td class="auto-style2">
                 <asp:DropDownList ID="ddlSexo" runat="server" ValidationGroup="VG1" Width="200px">
-                    <asp:ListItem Value="-1">--Seleccione una opción--</asp:ListItem>
+                    <asp:ListItem Value="0">--Seleccione una opción--</asp:ListItem>
                     <asp:ListItem Value="1">M</asp:ListItem>
                     <asp:ListItem Value="2">F</asp:ListItem>
                 </asp:DropDownList>
             </td>
             <td class="auto-style6">
-                <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="ddlSexo" ForeColor="#FFC2C2" InitialValue="--Seleccione una opción--" ValidationGroup="VG1">Seleccione un Genero</asp:RequiredFieldValidator>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="ddlSexo" ForeColor="#FFC2C2" InitialValue="0" ValidationGroup="VG1">Seleccione un Genero</asp:RequiredFieldValidator>
             </td>
         </tr>
         <tr>
@@ -356,7 +356,7 @@
                 <asp:TextBox ID="txtNacimiento" runat="server" TextMode="Date" ValidationGroup="VG1" Width="200px"></asp:TextBox>
             </td>
             <td class="auto-style5">
-                <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ControlToValidate="txtnacionalidad" ForeColor="#FFC2C2" ValidationGroup="VG1">Ingrese una Nacionalidad</asp:RequiredFieldValidator>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ControlToValidate="txtnacionalidad" ForeColor="#FFC2C2" ValidationGroup="VG1">Ingrese una Fecha</asp:RequiredFieldValidator>
             </td>
         </tr>
         <tr>
@@ -371,23 +371,23 @@
         <tr>
             <td class="auto-style1">Provincia:</td>
             <td class="auto-style2">
-                <asp:DropDownList ID="ddlProvincia" runat="server" AutoPostBack="True" OnSelectedIndexChanged="ddlProvincia_SelectedIndexChanged" ValidationGroup="VG1" Width="200px">
-                    <asp:ListItem>--Seleccione la provincia--</asp:ListItem>
+                <asp:DropDownList ID="ddlProvincia" runat="server" AutoPostBack="True" OnSelectedIndexChanged="ddlProvincia_SelectedIndexChanged" ValidationGroup="VG1" Width="210px">
+                    <asp:ListItem Value="0">--Seleccione la provincia--</asp:ListItem>
                 </asp:DropDownList>
             </td>
             <td class="auto-style5">
-                <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ControlToValidate="ddlProvincia" ForeColor="#FFC2C2" InitialValue="--Seleccione la provincia--" ValidationGroup="VG1">Seleccione una Provincia</asp:RequiredFieldValidator>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ControlToValidate="ddlProvincia" ForeColor="#FFC2C2" InitialValue="0" ValidationGroup="VG1">Seleccione una Provincia</asp:RequiredFieldValidator>
             </td>
         </tr>
         <tr>
             <td class="auto-style1">Localidad:</td>
             <td class="auto-style2">
-                <asp:DropDownList ID="ddlLocalidad" runat="server" AutoPostBack="True" ValidationGroup="VG1" Width="200px">
-                    <asp:ListItem>--Seleccione la localidad--</asp:ListItem>
+                <asp:DropDownList ID="ddlLocalidad" runat="server" AutoPostBack="True" ValidationGroup="VG1" Width="210px">
+                    <asp:ListItem Value="-1">--Seleccione la localidad--</asp:ListItem>
                 </asp:DropDownList>
             </td>
             <td class="auto-style5">
-                <asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" ControlToValidate="ddlLocalidad" ForeColor="#FFC2C2" InitialValue="--Seleccione la localidad--" ValidationGroup="VG1">Seleccione una Localidad</asp:RequiredFieldValidator>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" ControlToValidate="ddlLocalidad" ForeColor="#FFC2C2" InitialValue="-1" ValidationGroup="VG1">Seleccione una Localidad</asp:RequiredFieldValidator>
             </td>
         </tr>
         <tr>
@@ -411,12 +411,12 @@
         <tr>
             <td class="auto-style1">Especialidad:</td>
             <td class="auto-style2">
-                <asp:DropDownList ID="ddlEspecialidad" runat="server" ValidationGroup="VG1" Width="200px">
-                    <asp:ListItem>--Seleccione la especialidad--</asp:ListItem>
+                <asp:DropDownList ID="ddlEspecialidad" runat="server" ValidationGroup="VG1" Width="210px">
+                    <asp:ListItem Value="0">--Seleccione la especialidad--</asp:ListItem>
                 </asp:DropDownList>
             </td>
             <td class="auto-style5">
-                <asp:RequiredFieldValidator ID="RequiredFieldValidator9" runat="server" ControlToValidate="ddlEspecialidad" ForeColor="#FFC2C2" InitialValue="--Seleccione la especialidad--" ValidationGroup="VG1">Seleccione una Localidad</asp:RequiredFieldValidator>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator9" runat="server" ControlToValidate="ddlEspecialidad" ForeColor="#FFC2C2" InitialValue="0" ValidationGroup="VG1">Seleccione una Especialidad</asp:RequiredFieldValidator>
             </td>
         </tr>
         <tr>
@@ -439,25 +439,77 @@
         <tr>
             <td class="auto-style1">Horario de atención:</td>
             <td class="auto-style2">
-                De:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <asp:TextBox ID="txtHoraInicio" runat="server" TextMode="Time" ValidationGroup="VG1" Width="200px"></asp:TextBox>
-                <br />
-                Hasta: <asp:TextBox ID="txtHoraFinal" runat="server" TextMode="Time" ValidationGroup="VG1" Width="200px"></asp:TextBox>
-                <br />
+                Inicio:
+                <asp:DropDownList ID="ddlHoraInicio" runat="server" ValidationGroup="VG1" Width="210px">
+                <asp:ListItem Text="Selecciona una hora de inicio" Value="-1" />
+                <asp:ListItem Text="00:00" Value="00:00" />
+                <asp:ListItem Text="01:00" Value="01:00" />
+                <asp:ListItem Text="02:00" Value="02:00" />
+                <asp:ListItem Text="03:00" Value="03:00" />
+                <asp:ListItem Text="04:00" Value="04:00" />
+                <asp:ListItem Text="05:00" Value="05:00" />
+                <asp:ListItem Text="06:00" Value="06:00" />
+                <asp:ListItem Text="07:00" Value="07:00" />
+                <asp:ListItem Text="08:00" Value="08:00" />
+                <asp:ListItem Text="09:00" Value="09:00" />
+                <asp:ListItem Text="10:00" Value="10:00" />
+                <asp:ListItem Text="11:00" Value="11:00" />
+                <asp:ListItem Text="12:00" Value="12:00" />
+                <asp:ListItem Text="13:00" Value="13:00" />
+                <asp:ListItem Text="14:00" Value="14:00" />
+                <asp:ListItem Text="15:00" Value="15:00" />
+                <asp:ListItem Text="16:00" Value="16:00" />
+                <asp:ListItem Text="17:00" Value="17:00" />
+                <asp:ListItem Text="18:00" Value="18:00" />
+                <asp:ListItem Text="19:00" Value="19:00" />
+                <asp:ListItem Text="20:00" Value="20:00" />
+                <asp:ListItem Text="21:00" Value="21:00" />
+                <asp:ListItem Text="22:00" Value="22:00" />
+                <asp:ListItem Text="23:00" Value="23:00" />
+            </asp:DropDownList>
+                Final:
+                    <asp:DropDownList ID="DdlHoraFinal" runat="server" ValidationGroup="VG1" Width="210px">
+                    <asp:ListItem Text="Selecciona una hora de Final" Value="-1" />
+                    <asp:ListItem Text="00:00" Value="00:00" />
+                    <asp:ListItem Text="01:00" Value="01:00" />
+                    <asp:ListItem Text="02:00" Value="02:00" />
+                    <asp:ListItem Text="03:00" Value="03:00" />
+                    <asp:ListItem Text="04:00" Value="04:00" />
+                    <asp:ListItem Text="05:00" Value="05:00" />
+                    <asp:ListItem Text="06:00" Value="06:00" />
+                    <asp:ListItem Text="07:00" Value="07:00" />
+                    <asp:ListItem Text="08:00" Value="08:00" />
+                    <asp:ListItem Text="09:00" Value="09:00" />
+                    <asp:ListItem Text="10:00" Value="10:00" />
+                    <asp:ListItem Text="11:00" Value="11:00" />
+                    <asp:ListItem Text="12:00" Value="12:00" />
+                    <asp:ListItem Text="13:00" Value="13:00" />
+                    <asp:ListItem Text="14:00" Value="14:00" />
+                    <asp:ListItem Text="15:00" Value="15:00" />
+                    <asp:ListItem Text="16:00" Value="16:00" />
+                    <asp:ListItem Text="17:00" Value="17:00" />
+                    <asp:ListItem Text="18:00" Value="18:00" />
+                    <asp:ListItem Text="19:00" Value="19:00" />
+                    <asp:ListItem Text="20:00" Value="20:00" />
+                    <asp:ListItem Text="21:00" Value="21:00" />
+                    <asp:ListItem Text="22:00" Value="22:00" />
+                    <asp:ListItem Text="23:00" Value="23:00" />
+                </asp:DropDownList>
+                <br/>
             </td>
             <td class="auto-style5">
-                <asp:RequiredFieldValidator ID="RequiredFieldValidator10" runat="server" ControlToValidate="txtHoraInicio" ForeColor="#FFC2C2" ValidationGroup="VG1" Width="200px">Ingrese un Horario de Inicio</asp:RequiredFieldValidator>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator10" runat="server" ControlToValidate="ddlHoraInicio" ForeColor="#FFC2C2" ValidationGroup="VG1" Width="200px" InitialValue="-1">Ingrese un Horario de Inicio</asp:RequiredFieldValidator>
                 <br />
-                <asp:RequiredFieldValidator ID="RequiredFieldValidator11" runat="server" ControlToValidate="txtHoraFinal" ForeColor="#FFC2C2" ValidationGroup="VG1" Width="200px">Ingrese un Horario de Salida</asp:RequiredFieldValidator>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator11" runat="server" ControlToValidate="ddlHoraFinal" ForeColor="#FFC2C2" ValidationGroup="VG1" Width="224px" InitialValue="-1">Ingrese un Horario de Salida</asp:RequiredFieldValidator>
                 <br />
-                <asp:CustomValidator 
-                    ID="cvHora" 
-                    runat="server" 
-                    ControlToValidate="txtHoraFinal" 
-                    ErrorMessage="La hora de salida no puede ser menor a la de entrada." 
-                    ClientValidationFunction="validateHora" 
-                    ValidationGroup="VG1" 
-                    ForeColor="#FFC2C2"></asp:CustomValidator>
+                <asp:CustomValidator ID="cvHora" runat="server" 
+                    ControlToValidate="ddlHoraInicio"
+                    ErrorMessage="La hora de inicio debe ser menor que la hora de salida"
+                    OnServerValidate="cvHora_ServerValidate"
+                    ClientValidationFunction="validarHoras"
+                    ForeColor="#FFC2C2"
+                    ValidationGroup="VG1">
+                </asp:CustomValidator>
             </td>
         </tr>
         <tr>

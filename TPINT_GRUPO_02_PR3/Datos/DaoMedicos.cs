@@ -26,7 +26,6 @@ namespace Datos
             }
             return string.Empty;
         }
-
         public bool agregarMedico(Medico medico)
         {
             string sql = "INSERT INTO MEDICOS(FK_DNI_MED, FK_ID_LOCALIDAD_MED, FK_ID_PROVINCIA_MED, FK_ID_ESPECIALIDAD_MED, " +
@@ -63,12 +62,6 @@ namespace Datos
             }
         }
 
-        public void agregarHorario(string dia, string horaIni, string horaFin, string dni)
-        {
-            ds.ejecutarConsulta("INSERT INTO HORARIO_ATENCION (FK_DNI_MEDICO_HDA, DIA_HDA, HORA_INICIO_HDA, HORA_FIN_HDA) " + 
-                "SELECT '" + dni + "', '" + dia + "', '" + horaIni + "', '" + horaFin + "'");
-        }
-
         public DataTable getTablaMedicos()
         {
             DataTable tabla = ds.ObtenerTabla("MEDICOS", "SELECT M.LEGAJO_MED, M.FK_DNI_MED, M.NOMBRE_MED, M.APELLIDO_MED, M.SEXO_MED, " +
@@ -95,6 +88,28 @@ namespace Datos
                                             "INNER JOIN HORARIO_ATENCION H ON M.FK_DNI_MED = H.FK_DNI_MEDICO_HDA " +
                                             "WHERE " + filtro + " LIKE '%" + dato + "%' AND M.ESTADO_MED = 'Activo'");
             return tabla;
+        }
+
+        public DataTable GetMedicosPorEspecialidad(int idEspecialidad)
+        {
+            string query = "SELECT FK_DNI_MED, NOMBRE_MED + ' ' + APELLIDO_MED AS NOMBRE_COMPLETO FROM Medicos WHERE FK_ID_ESPECIALIDAD_MED = " + idEspecialidad + " AND ESTADO_MED = 'Activo'";
+            SqlParameter[] parameters = new SqlParameter[]
+            {
+                new SqlParameter("@IdEspecialidad", idEspecialidad)
+            };
+            return ds.ObtenerTabla("Medicos", query);
+        }
+        public bool ExisteMedico(string columna, string dato)
+        {
+            string sql = "SELECT COUNT(*) FROM MEDICOS WHERE'" + columna + "' = '" + dato + "'";
+
+            DataTable tabla = ds.ObtenerTabla("MEDICOS", sql);
+
+            if (tabla.Rows.Count > 0)
+            {
+                return Convert.ToInt32(tabla.Rows[0][0]) > 0;
+            }
+            return false;
         }
 
         public void ArmarParametrosMedicosBajaLogica(ref SqlCommand Comando, Medico medico)
@@ -150,72 +165,5 @@ namespace Datos
             ArmarParametrosMedicosBajaLogica(ref Comando, medico);
             return ds.EjecutarProcedimientoAlmacenado(Comando, "spBajaLogicaMedico");
         }
-
-        public DataTable getTablaEspecialidades()
-        {
-            DataTable tabla = ds.ObtenerTabla("ESPECIALIDADES", "SELECT ID_ESPECIALIDAD_ESP AS IDEspecialidad, NOMBRE_ESP AS Nombre FROM ESPECIALIDADES");
-            return tabla;
-        }
-
-        public bool ExisteMedicoConDNI(string DNI)
-        {
-            string sql = "SELECT COUNT(*) FROM USUARIOS WHERE FK_DNI_USU = '" + DNI + "'";
-
-            DataTable tabla = ds.ObtenerTabla("USUARIOS", sql);
-
-            if (tabla.Rows.Count > 0)
-            {
-                return Convert.ToInt32(tabla.Rows[0][0]) > 0;
-            }
-            return false;
-        }
-        public bool ExisteMedicoConLegajo(string legajo)
-        {
-            string sql = "SELECT COUNT(*) FROM MEDICOS WHERE LEGAJO_MED = '" + legajo + "'";
-
-            DataTable tabla = ds.ObtenerTabla("MEDICOS", sql);
-
-            if (tabla.Rows.Count > 0)
-            {
-                return Convert.ToInt32(tabla.Rows[0][0]) > 0;
-            }
-            return false;
-        }
-        public int ObtenerProvinciaPorDni(string dni)
-        {
-            string sql = "SELECT DISTINCT FK_ID_PROVINCIA_MED FROM Medicos WHERE FK_DNI_MED = @DNI";
-            sql = sql.Replace("@DNI", dni); //
-            DataTable dt = ds.ObtenerTabla("Medicos", sql);
-            if (dt.Rows.Count > 0)
-            {
-                return Convert.ToInt32(dt.Rows[0]["FK_ID_PROVINCIA_MED"]);
-            }
-            return -1;
-        }
-
-        public int ObtenerLocalidadPorDni(string dni)
-        {
-            string sql = "SELECT DISTINCT FK_ID_LOCALIDAD_MED FROM Medicos WHERE FK_DNI_MED = @DNI";
-            sql = sql.Replace("@DNI", dni);
-            DataTable dt = ds.ObtenerTabla("Medicos", sql);
-            if (dt.Rows.Count > 0)
-            {
-                return Convert.ToInt32(dt.Rows[0]["FK_ID_LOCALIDAD_MED"]);
-            }
-            return -1; 
-        }
-        public int ObtenerEspecialidadPorDni(string dni)
-        {
-            string sql = "SELECT DISTINCT FK_ID_ESPECIALIDAD_MED FROM Medicos WHERE FK_DNI_MED = @DNI";
-            sql = sql.Replace("@DNI", dni);
-            DataTable dt = ds.ObtenerTabla("Medicos", sql); 
-
-            if (dt.Rows.Count > 0)
-            {
-                return Convert.ToInt32(dt.Rows[0]["FK_ID_ESPECIALIDAD_MED"]);
-            }
-            return -1;
-        }
     }
-
 }

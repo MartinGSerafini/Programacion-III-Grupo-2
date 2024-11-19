@@ -12,6 +12,9 @@ namespace TPINT_GRUPO_02_PR3.FormAdmin
 {
     public partial class Agregar_Medico : System.Web.UI.Page
     {
+        LogicaMedicos logicaMed = new LogicaMedicos();
+        LogicaUsuarios logicaUsu = new LogicaUsuarios();
+        LogicaHorarioAtencion logicahor = new LogicaHorarioAtencion();
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
@@ -20,9 +23,22 @@ namespace TPINT_GRUPO_02_PR3.FormAdmin
                 LblUsuario.Text = Session["NombreUsuario"] as string;
                 CargarProvincias();
                 CargarEspecialidades();
+                CargarFechaMax();
             }
         }
+        private void CargarFechaMax()
+        {
+            txtNacimiento.Attributes["max"] = DateTime.Today.ToString("yyyy-MM-dd");
+        }
 
+        protected void cvHora_ServerValidate(object source, ServerValidateEventArgs args)
+        {
+            string horaInicio = ddlHoraInicio.SelectedValue;
+            string horaFin = DdlHoraFinal.SelectedValue;
+            TimeSpan HoraInicio = TimeSpan.Parse(horaInicio);
+            TimeSpan HoraFinal = TimeSpan.Parse(horaFin);
+            args.IsValid = HoraInicio < HoraFinal;
+        }
         protected void btnAgregar_Click(object sender, EventArgs e)
         {
             if (cblDias.SelectedItem == null)
@@ -30,12 +46,9 @@ namespace TPINT_GRUPO_02_PR3.FormAdmin
                 lblDias.Visible = true;
                 return;
             }
+            string columna = "LEGAJO_MED";
+            string dato = txtLegajo.Text.Trim();
 
-            string dni = txtDNI.Text.Trim();
-            string legajo = txtLegajo.Text.Trim();
-
-            LogicaMedicos logicaMed = new LogicaMedicos();
-            LogicaUsuarios logicaUsu = new LogicaUsuarios();
             List<string> dias = new List<string>();
 
             foreach (ListItem item in cblDias.Items)
@@ -45,9 +58,11 @@ namespace TPINT_GRUPO_02_PR3.FormAdmin
                     dias.Add(item.Text);
                 }
             }
-            if (!logicaMed.VerificarExistenciaDeMedico(dni))
+            if (!logicaMed.VerificarExistenciaDeMedico(columna, dato))
             {
-                if (!logicaMed.VerificarExistenciaDeMedico2(legajo))
+                columna = "FK_DNI_MED";
+                dato = txtDNI.Text.Trim();
+                if (!logicaMed.VerificarExistenciaDeMedico(columna, dato))
                 {
                     Medico Med = new Medico();
                     Med.setLegajo(txtLegajo.Text);
@@ -67,8 +82,8 @@ namespace TPINT_GRUPO_02_PR3.FormAdmin
                     bool validMedico = logicaMed.AgregarMedico(Med);
                     if (validMedico)
                     {
-                        logicaUsu.AgregarUsuario(2, dni, txtContraseña.Text);
-                        logicaMed.AgregarHorario(dias, txtHoraInicio.Text, txtHoraFinal.Text, dni);
+                        logicaUsu.AgregarUsuario(2, dato, txtContraseña.Text);
+                        logicahor.AgregarHorario(dias, ddlHoraInicio.Text, DdlHoraFinal.Text, dato);
                         string script = "alert('El Medico fue Ingresado al Sistema.');";
                         ClientScript.RegisterStartupScript(this.GetType(), "mensajeExito", script, true);
                         limpiarCampos();
@@ -139,8 +154,8 @@ namespace TPINT_GRUPO_02_PR3.FormAdmin
 
         private void CargarEspecialidades()
         {
-            LogicaMedicos logica = new LogicaMedicos();
-            DataTable dtEspecialidades = logica.getTabla();
+            LogicaEspecialidades logica = new LogicaEspecialidades();
+            DataTable dtEspecialidades = logica.ObtenerTabla();
             ddlEspecialidad.DataSource = dtEspecialidades;
             ddlEspecialidad.DataTextField = "Nombre";
             ddlEspecialidad.DataValueField = "IDEspecialidad";
@@ -159,8 +174,8 @@ namespace TPINT_GRUPO_02_PR3.FormAdmin
             txtDireccion.Text = "";
             txtCorreo.Text = "";
             txtTelefono.Text = "";
-            txtHoraInicio.Text = "";
-            txtHoraFinal.Text = "";
+            ddlHoraInicio.SelectedIndex = -1;
+            DdlHoraFinal.SelectedIndex = -1;
             txtContraseña.Text = "";
             txtRepetirContraseña.Text = "";
             ddlSexo.SelectedIndex = 0;

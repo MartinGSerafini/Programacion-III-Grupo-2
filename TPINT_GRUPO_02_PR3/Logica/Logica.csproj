@@ -41,6 +41,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="LogicaHorarioAtencion.cs" />
+    <Compile Include="LogicaEspecialidades.cs" />
+    <Compile Include="LogicaTurnos.cs" />
     <Compile Include="LogicaAdministradores.cs" />
     <Compile Include="LogicaLocalidades.cs" />
     <Compile Include="LogicaMedicos.cs" />

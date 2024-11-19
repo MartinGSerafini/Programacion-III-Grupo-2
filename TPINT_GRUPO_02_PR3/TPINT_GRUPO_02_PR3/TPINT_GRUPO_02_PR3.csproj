@@ -69,6 +69,8 @@
   <ItemGroup>
     <Content Include="FormsAdmin\Form_Admin_Agregar_Medico.aspx" />
     <Content Include="FormsAdmin\Form_Admin_Listado_Medicos.aspx" />
+    <Content Include="FormsAdmin\Form_Admin_Agregar_Turno.aspx" />
+    <Content Include="FormsAdmin\Form_Admin_Listado_Turnos.aspx" />
     <Content Include="FormsLogins\Form_Login.aspx" />
     <Content Include="FormsAdmin\Form_Menu_Administrador.aspx" />
     <Content Include="FormsAdmin\Form_Admin_Listado_Pacientes.aspx" />
@@ -90,6 +92,20 @@
     </Compile>
     <Compile Include="FormsAdmin\Form_Admin_Listado_Medicos.aspx.designer.cs">
       <DependentUpon>Form_Admin_Listado_Medicos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FormsAdmin\Form_Admin_Agregar_Turno.aspx.cs">
+      <DependentUpon>Form_Admin_Agregar_Turno.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FormsAdmin\Form_Admin_Agregar_Turno.aspx.designer.cs">
+      <DependentUpon>Form_Admin_Agregar_Turno.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FormsAdmin\Form_Admin_Listado_Turnos.aspx.cs">
+      <DependentUpon>Form_Admin_Listado_Turnos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FormsAdmin\Form_Admin_Listado_Turnos.aspx.designer.cs">
+      <DependentUpon>Form_Admin_Listado_Turnos.aspx</DependentUpon>
     </Compile>
     <Compile Include="FormsLogins\Form_Login.aspx.cs">
       <DependentUpon>Form_Login.aspx</DependentUpon>

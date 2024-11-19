@@ -42,6 +42,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Administradores.cs" />
+    <Compile Include="HorarioAtencion.cs" />
+    <Compile Include="Especialidades.cs" />
+    <Compile Include="Turnos.cs" />
     <Compile Include="Localidades.cs" />
     <Compile Include="Medicos.cs" />
     <Compile Include="Pacientes.cs" />

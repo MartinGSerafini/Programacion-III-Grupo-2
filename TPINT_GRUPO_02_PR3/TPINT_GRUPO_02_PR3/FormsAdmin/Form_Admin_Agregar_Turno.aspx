@@ -1,11 +1,11 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Form_Admin_Agregar_Pacientes.aspx.cs" Inherits="TPINT_GRUPO_02_PR3.Form_Agregar_Pacientes" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Form_Admin_Agregar_Turno.aspx.cs" Inherits="TPINT_GRUPO_02_PR3.FormsAdmin.Form_Admin_Agregar_Turno" %>
 
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-<title></title>
+    <title></title>
     <style type="text/css">
         /* Estilos generales */
         body {
@@ -190,8 +190,8 @@
                     </div>
                 </div>
                 <div class="admin-links">
-                    <asp:HyperLink ID="hlAgregarPaciente" runat="server" NavigateUrl="~/FormsAdmin/Form_Admin_Agregar_Pacientes.aspx" CssClass="btn-search">AGREGAR PACIENTE</asp:HyperLink>
-                    <asp:HyperLink ID="hlListadoPacientes" runat="server" NavigateUrl="~/FormsAdmin/Form_Admin_Listado_Pacientes.aspx" CssClass="btn-search">LISTAR PACIENTES</asp:HyperLink>
+                    <asp:HyperLink ID="hlAgregarPaciente" runat="server" NavigateUrl="~/FormsAdmin/Form_Admin_Agregar_Turno.aspx" CssClass="btn-search">AGREGAR TURNO</asp:HyperLink>
+                    <asp:HyperLink ID="hlListadoPacientes" runat="server" NavigateUrl="~/FormsAdmin/Form_Admin_Listado_Turnos.aspx.aspx" CssClass="btn-search">LISTAR TURNOS</asp:HyperLink>
                 </div>
                 <div class="user-info">
                     <asp:HyperLink ID="HLInstagram" runat="server" NavigateUrl="https://www.instagram.com/medical_studio_2024/" Target="_blank">
@@ -209,14 +209,14 @@
         <div class="container">
         <table align="center">
             <tr>
-                <td style="font-weight: bold;font-size: 40px" class="auto-style8">Carga de Pacientes<br />
+                <td style="font-weight: bold;font-size: 40px" class="auto-style8">Carga de Turnos<br />
                     <br/>
                 </td>
             </tr>
         </table>
         <table align="center" class="auto-style10">
             <tr>
-                <td class="auto-style12" style="width: 50%;">DNI: </td>
+                <td class="auto-style12" style="width: 50%;">DNI de Paciente: </td>
                 <td class="auto-style9" style="width: 50%;">
                     <asp:TextBox ID="txtDNI" runat="server" Height="18px" Width="215px" MaxLength="8" ValidationGroup="VG1"></asp:TextBox>
                 </td>
@@ -227,141 +227,63 @@
                     &nbsp;<asp:RegularExpressionValidator ID="RevDni" runat="server" ControlToValidate="txtDNI" CssClass="validator-message" ValidationExpression="^\d{8}$" ValidationGroup="VG1" ForeColor="#FFC2C2" Display="Dynamic" Text="Debe ingresar 8 Números" />
                 </td>
             </tr>
-            <tr>
-                <td class="auto-style12" style="width: 50%;">Nombre: </td>
-                <td class="auto-style9" style="width: 50%;">
-                    <asp:TextBox ID="txtNombre" runat="server" Height="18px" Width="215px" MaxLength="30" ValidationGroup="VG1"></asp:TextBox>
-                </td>
-            </tr>
-            <tr>
-                <td colspan="2" class="validator">
-                    <asp:RequiredFieldValidator ID="RfvNombre" runat="server" ControlToValidate="txtNombre" CssClass="validator-message" ValidationGroup="VG1" ForeColor="#FFC2C2" Display="Dynamic">Ingrese un Nombre</asp:RequiredFieldValidator>
-                    <br />
-                </td>
-            </tr>
-            <tr>
-                <td class="auto-style12" style="width: 50%;">Apellido: </td>
-                <td class="auto-style9" style="width: 50%;">
-                    <asp:TextBox ID="txtApellido" runat="server" Height="18px" Width="215px" MaxLength="30" ValidationGroup="VG1"></asp:TextBox>
-                </td>
-            </tr>
-            <tr>
-                <td colspan="2" class="validator">
-                    <asp:RequiredFieldValidator ID="RfvApellido" runat="server" ControlToValidate="txtApellido" CssClass="validator-message" ValidationGroup="VG1" ForeColor="#FFC2C2" Display="Dynamic">Ingrese un Apellido</asp:RequiredFieldValidator>
-                    <br />
-                </td>
-            </tr>
 
             <tr>
-                <td class="auto-style12" style="width: 50%;">Genero: </td>
+                <td class="auto-style12" style="width: 50%;">Especialidad: </td>
                 <td class="auto-style9" style="width: 50%;">
-                    <asp:DropDownList ID="ddlSexo" runat="server" CssClass="dropdown-filter" Height="21px" Width="222px" ValidationGroup="VG1">
-                        <asp:ListItem Value="-1">--Seleccione una opción--</asp:ListItem>
+                    <asp:DropDownList ID="ddlespecialidad" runat="server" AutoPostBack="True" OnSelectedIndexChanged="ddlespecialidad_SelectedIndexChanged" ValidationGroup="VG1" Width="221px">
+                        <asp:ListItem Value="-1">--Seleccione una especialidad--</asp:ListItem>
                     </asp:DropDownList>
                 </td>
             </tr>
             <tr>
                 <td colspan="2" class="validator">
-                    <asp:RequiredFieldValidator ID="RfvSexo" runat="server" ControlToValidate="ddlSexo" CssClass="validator-message" InitialValue="-1" ValidationGroup="VG1" ForeColor="#FFC2C2" Display="Dynamic">Seleccione un Genero</asp:RequiredFieldValidator>
+                    <asp:RequiredFieldValidator ID="RfvEspecialidad" runat="server" ControlToValidate="ddlespecialidad" CssClass="validator-message" InitialValue="-1" ValidationGroup="VG1" ForeColor="#FFC2C2" Display="Dynamic">Seleccione una especialidad</asp:RequiredFieldValidator>
                     <br />
                 </td>
             </tr>
 
             <tr>
-                <td class="auto-style12" style="width: 50%;">Nacionalidad: </td>
+                <td class="auto-style12" style="width: 50%;">Medico: </td>
                 <td class="auto-style9" style="width: 50%;">
-                    <asp:TextBox ID="TxbNacionalidad" runat="server" Height="18px" Width="215px" MaxLength="30" ValidationGroup="VG1"></asp:TextBox>
-                </td>
-            </tr>
-            <tr>
-                <td colspan="2" class="validator">
-                    <asp:RequiredFieldValidator ID="RfvNacionalidad" runat="server" ControlToValidate="TxbNacionalidad" CssClass="validator-message" ValidationGroup="VG1" ForeColor="#FFC2C2" Display="Dynamic">Ingrese una Nacionalidad</asp:RequiredFieldValidator>
-                    <br />
-                </td>
-            </tr>
-
-            <tr>
-                <td class="auto-style12" style="width: 50%;">Dirección: </td>
-                <td class="auto-style9" style="width: 50%;">
-                    <asp:TextBox ID="txtDirección" runat="server" Height="18px" Width="215px" MaxLength="40" ValidationGroup="VG1" Display="Dynamic"></asp:TextBox>
-                </td>
-            </tr>
-            <tr>
-                <td colspan="2" class="auto-style12">
-                    <asp:RequiredFieldValidator ID="RfvDirección" runat="server" ControlToValidate="txtDirección" CssClass="validator-message" ValidationGroup="VG1" ForeColor="#FFC2C2" Display="Dynamic">Ingrese una Dirección</asp:RequiredFieldValidator>
-                    <br />
-                </td>
-            </tr>
-
-            <tr>
-                <td class="auto-style12" style="width: 50%;">Provincia: </td>
-                <td class="auto-style9" style="width: 50%;">
-                    <asp:DropDownList ID="ddlProvincia" runat="server" Height="23px" CssClass="dropdown-filter" Width="222px" AutoPostBack="True" OnSelectedIndexChanged="ddlProvincia_SelectedIndexChanged" ValidationGroup="VG1">
-                        <asp:ListItem Value="0">--Seleccione una provincia--</asp:ListItem>
+                    <asp:DropDownList ID="ddlMedicos" runat="server" Height="23px" CssClass="dropdown-filter" Width="222px" ValidationGroup="VG1" OnSelectedIndexChanged="ddlMedicos_SelectedIndexChanged" AutoPostBack="True">
+                        <asp:ListItem Value="-1">--Seleccione un Medico--</asp:ListItem>
                     </asp:DropDownList>
                 </td>
             </tr>
             <tr>
                 <td colspan="2" class="validator">
-                    <asp:RequiredFieldValidator ID="RfvProvincia" runat="server" ControlToValidate="ddlProvincia" CssClass="validator-message" InitialValue="0" ValidationGroup="VG1" ForeColor="#FFC2C2" Display="Dynamic">Seleccione una Provincia</asp:RequiredFieldValidator>
+                    <asp:RequiredFieldValidator ID="RfvProvincia" runat="server" ControlToValidate="ddlMedicos" CssClass="validator-message" InitialValue="-1" ValidationGroup="VG1" ForeColor="#FFC2C2" Display="Dynamic">Seleccione un Medico</asp:RequiredFieldValidator>
                     <br />
                 </td>
             </tr>
-
             <tr>
-                <td class="auto-style12" style="width: 50%;">Localidad: </td>
+                <td class="auto-style12" style="width: 50%;">Día:</td>
                 <td class="auto-style9" style="width: 50%;">
-                    <asp:DropDownList ID="ddlLocalidad" runat="server" Height="23px" Width="222px" ValidationGroup="VG1">
-                        <asp:ListItem Value="0">--Seleccione una localidad--</asp:ListItem>
+                    <asp:TextBox ID="txtDia" runat="server" type="date" Height="18px" Width="215px" MaxLength="8" ValidationGroup="VG1" OnTextChanged="txtDia_TextChanged" AutoPostBack="true"></asp:TextBox>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" class="validator">
+                    <asp:Label ID="lblErrorDia" runat="server" ForeColor="#FFC2C2" Visible="False"></asp:Label>
+                </td>
+            </tr>
+            <tr>
+                <td class="auto-style12" style="width: 50%;">Horario: </td>
+                <td class="auto-style9" style="width: 50%;">
+                    <asp:DropDownList ID="DdlHorario" runat="server" Height="23px" CssClass="dropdown-filter" Width="222px" ValidationGroup="VG1" OnSelectedIndexChanged="ddlMedicos_SelectedIndexChanged">
+                        <asp:ListItem Value="-1">--Seleccione un Horario--</asp:ListItem>
                     </asp:DropDownList>
                 </td>
             </tr>
             <tr>
                 <td colspan="2" class="validator">
-                    <asp:RequiredFieldValidator ID="RfvLocalidad" runat="server" ControlToValidate="ddlLocalidad" CssClass="validator-message" InitialValue="0" ValidationGroup="VG1" ForeColor="#FFC2C2" Display="Dynamic">Seleccione una Localidad</asp:RequiredFieldValidator>
+                    <asp:RequiredFieldValidator ID="RdvHorario" runat="server" ControlToValidate="DdlHorario" CssClass="validator-message" InitialValue="-1" ValidationGroup="VG1" ForeColor="#FFC2C2" Display="Dynamic">Seleccione un Horario</asp:RequiredFieldValidator>
                     <br />
                 </td>
-            </tr>
-
-            <tr>
-                <td class="auto-style12" style="width: 50%;">Nacimiento: </td>
-                <td class="auto-style9" style="width: 50%;">
-                    <asp:TextBox ID="txtNacimiento" runat="server" type="date" Height="18px" Width="215px" ValidationGroup="VG1"></asp:TextBox>
-                </td>
-            </tr>
-            <tr>
-                <td colspan="2" class="validator">
-                    <asp:RequiredFieldValidator ID="RfvNacimiento" runat="server" ControlToValidate="txtNacimiento" CssClass="validator-message" ValidationGroup="VG1" ForeColor="#FFC2C2" Display="Dynamic">Ingrese una Fecha</asp:RequiredFieldValidator>
-                    <br />
-                </td>
-            </tr>
-
-            <tr>
-                <td class="auto-style12" style="width: 50%;">Correo: </td>
-                <td class="auto-style9" style="width: 50%;">
-                    <asp:TextBox ID="txtCorreo" runat="server" Height="18px" Width="215px" MaxLength="50" ValidationGroup="VG1"></asp:TextBox>
-                </td>
-            </tr>
-            <tr>
-                <td colspan="2" class="validator">
-                    <asp:RequiredFieldValidator ID="RfvCorreo" runat="server" ControlToValidate="txtCorreo" CssClass="validator-message" ValidationGroup="VG1" ForeColor="#FFC2C2" Display="Dynamic">Ingrese un Correo</asp:RequiredFieldValidator>
-                    <br />
-                </td>
-            </tr>
-
-            <tr>
-                <td class="auto-style12" style="width: 50%;">Telefono: </td>
-                <td class="auto-style9" style="width: 50%;">
-                    <asp:TextBox ID="txtTelefono" runat="server" Height="18px" Width="215px" MaxLength="15" ValidationGroup="VG1"></asp:TextBox>
-                </td>
-            </tr>
-            <tr>
-                <td colspan="2" class="validator">
-                    <asp:RequiredFieldValidator ID="RfvTelefono" runat="server" ControlToValidate="txtTelefono" CssClass="validator-message" ValidationGroup="VG1" ForeColor="#FFC2C2" Display="Dynamic">Ingrese un Teléfono</asp:RequiredFieldValidator>
-                    <br />
-                </td>
-            </tr>
+            </tr>  
         </table>
+        <br />
         <table align="center" class="admin-links">
             <tr>
                 <td class="link">
@@ -374,7 +296,7 @@
                     function ConfirmarIngreso() {
                         var isValid = Page_ClientValidate("VG1");
                         if (isValid) {
-                            var resultado = confirm("¿Esta seguro de querer ingresar el paciente en el sistema?");
+                            var resultado = confirm("¿Esta seguro de querer ingresar el Turno en el sistema?");
                             if (resultado) {
                                 return true;
                             } else {
@@ -392,3 +314,4 @@
 </form>
 </body>
 </html>
+

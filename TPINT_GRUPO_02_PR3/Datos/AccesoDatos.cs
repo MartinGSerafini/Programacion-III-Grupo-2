@@ -14,7 +14,6 @@ namespace Datos
         public AccesoDatos()
         {
         }
-
         public int ejecutarConsulta(string consulta)
         {
             SqlConnection conexion = new SqlConnection(ruta);
