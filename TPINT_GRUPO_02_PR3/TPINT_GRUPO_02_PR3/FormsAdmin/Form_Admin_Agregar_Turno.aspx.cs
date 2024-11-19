@@ -236,5 +236,6 @@ namespace TPINT_GRUPO_02_PR3.FormsAdmin
                 .Select(dia => mapaDias[dia.ToLower().Trim()])
                 .ToList();
         }
+
     }
 }
