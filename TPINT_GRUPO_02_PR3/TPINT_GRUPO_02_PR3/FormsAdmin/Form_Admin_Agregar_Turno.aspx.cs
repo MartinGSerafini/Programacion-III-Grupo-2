@@ -52,7 +52,7 @@ namespace TPINT_GRUPO_02_PR3.FormsAdmin
                     turno.SetFECHA_TUR(fecha);
                     turno.SetHORA_TUR(hora);
                     turno.SetOBSERVACION_TUR("");
-                    turno.SetESTADO_TUR("");
+                    turno.SetESTADO_TUR("Activo");
 
                     if (logtur.AgregarTurno(turno))
                     {

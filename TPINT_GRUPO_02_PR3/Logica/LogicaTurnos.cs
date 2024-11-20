@@ -24,9 +24,7 @@ namespace Logica
 
         public bool EliminarTurno(int IdTurno)
         {
-            Turnos turno = new Turnos();
-            turno.SetID_TURNO_TUR(IdTurno);
-            int op = dao.bajaLogicaTurno(turno);
+            int op = dao.bajaLogicaTurno(IdTurno);
             if (op == 1)
             {
                 return true;

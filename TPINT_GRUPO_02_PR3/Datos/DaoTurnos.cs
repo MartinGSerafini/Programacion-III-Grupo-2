@@ -17,7 +17,7 @@ namespace Datos
         public DataTable getTablaTurnos()
         {
             DataTable tabla = ds.ObtenerTabla("TURNOS", "SELECT T.ID_TURNO_TUR, T.FK_DNI_MEDICO_TUR, T.FK_ID_PACIENTE_TUR, T.FK_ID_ESPECIALIDAD_TUR, " +
-                "T.FECHA_TUR, T.HORA_TUR, T.ESTADO_TUR, T.OBSERVACION_TUR " +
+                "T.FECHA_TUR, T.HORA_TUR, T.ESTADO_TUR, T.OBSERVACION_TUR, M.NOMBRE_MED, M.APELLIDO_MED, P.DNI_PAS, E.NOMBRE_ESP " +
                 "FROM TURNOS T INNER JOIN MEDICOS M ON M.FK_DNI_MED = T.FK_DNI_MEDICO_TUR " +
                 "INNER JOIN PACIENTES P ON P.ID_PACIENTE_PAS = T.FK_ID_PACIENTE_TUR " +
                 "INNER JOIN ESPECIALIDADES E ON E.ID_ESPECIALIDAD_ESP = T.FK_ID_ESPECIALIDAD_TUR " +
@@ -28,25 +28,27 @@ namespace Datos
         public DataTable getTablaTurnosFiltrada(string filtro, string dato)
         {
             string cons = "SELECT T.ID_TURNO_TUR, T.FK_DNI_MEDICO_TUR, T.FK_ID_PACIENTE_TUR, T.FK_ID_ESPECIALIDAD_TUR, " +
-                "T.FECHA_TUR, T.HORA_TUR, T.ESTADO_TUR, T.OBSERVACION_TUR " +
+                "T.FECHA_TUR, T.HORA_TUR, T.ESTADO_TUR, T.OBSERVACION_TUR, M.NOMBRE_MED, M.APELLIDO_MED, P.DNI_PAS, E.NOMBRE_ESP " +
                 "FROM TURNOS T INNER JOIN MEDICOS M ON M.FK_DNI_MED = T.FK_DNI_MEDICO_TUR " +
                 "INNER JOIN PACIENTES P ON P.ID_PACIENTE_PAS = T.FK_ID_PACIENTE_TUR " +
+                "INNER JOIN ESPECIALIDADES E ON E.ID_ESPECIALIDAD_ESP = T.FK_ID_ESPECIALIDAD_TUR " +
                 "WHERE " + filtro + " LIKE '" + dato + "%' AND T.ESTADO_TUR = 'Activo'";
 
             return ds.ObtenerTabla("TURNOS", cons);
         }
 
-        public void ArmarParametrosTurnosBajaLogica(ref SqlCommand Comando, Turnos turno)
+
+        public void ArmarParametrosTurnosBajaLogica(ref SqlCommand Comando, int IDTurno)
         {
             SqlParameter sqlParametros = new SqlParameter();
-            sqlParametros = Comando.Parameters.Add("@ID_TURNO_TUR", SqlDbType.Char);
-            sqlParametros.Value = turno.GetID_TURNO_TUR();
+            sqlParametros = Comando.Parameters.Add("@IDTURNO", SqlDbType.Char);
+            sqlParametros.Value = IDTurno;
         }
 
-        public int bajaLogicaTurno(Turnos turno)
+        public int bajaLogicaTurno(int IDTurno)
         {
             SqlCommand Comando = new SqlCommand();
-            ArmarParametrosTurnosBajaLogica(ref Comando, turno);
+            ArmarParametrosTurnosBajaLogica(ref Comando, IDTurno);
             return ds.EjecutarProcedimientoAlmacenado(Comando, "spBajaLogicaTurno");
         }
 
