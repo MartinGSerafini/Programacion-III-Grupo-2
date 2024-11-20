@@ -191,7 +191,7 @@
                 </div>
                 <div class="admin-links">
                     <asp:HyperLink ID="hlAgregarPaciente" runat="server" NavigateUrl="~/FormsAdmin/Form_Admin_Agregar_Turno.aspx" CssClass="btn-search">AGREGAR TURNO</asp:HyperLink>
-                    <asp:HyperLink ID="hlListadoPacientes" runat="server" NavigateUrl="~/FormsAdmin/Form_Admin_Listado_Turnos.aspx.aspx" CssClass="btn-search">LISTAR TURNOS</asp:HyperLink>
+                    <asp:HyperLink ID="hlListadoPacientes" runat="server" NavigateUrl="~/FormsAdmin/Form_Admin_Listado_Turnos.aspx" CssClass="btn-search">LISTAR TURNOS</asp:HyperLink>
                 </div>
                 <div class="user-info">
                     <asp:HyperLink ID="HLInstagram" runat="server" NavigateUrl="https://www.instagram.com/medical_studio_2024/" Target="_blank">

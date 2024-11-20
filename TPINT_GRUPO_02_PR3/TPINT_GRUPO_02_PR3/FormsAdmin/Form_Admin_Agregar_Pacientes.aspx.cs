@@ -108,19 +108,9 @@ namespace TPINT_GRUPO_02_PR3
                 bool resultado = log.AgregarPaciente(Pac);
                 if (resultado)
                 {
-                    txtDNI.Text = "";
-                    txtNombre.Text = "";
-                    txtApellido.Text = "";
-                    ddlSexo.SelectedIndex = -1;
-                    ddlLocalidad.SelectedIndex = -1;
-                    ddlProvincia.SelectedIndex = -1;
-                    TxbNacionalidad.Text = "";
-                    txtNacimiento.Text = "";
-                    txtDirección.Text = "";
-                    txtCorreo.Text = "";
-                    txtTelefono.Text = "";
                     string script = "alert('El paciente fue Ingresado al Sistema.');";
                     ClientScript.RegisterStartupScript(this.GetType(), "mensajeExito", script, true);
+                    limpiarCampos();
                 }
                 else
                 {
@@ -128,6 +118,20 @@ namespace TPINT_GRUPO_02_PR3
                     ClientScript.RegisterStartupScript(this.GetType(), "mensajeError", script, true);
                 }
             }
+        }
+        private void limpiarCampos()
+        {
+            txtDNI.Text = "";
+            txtNombre.Text = "";
+            txtApellido.Text = "";
+            ddlSexo.SelectedIndex = -1;
+            ddlLocalidad.SelectedIndex = -1;
+            ddlProvincia.SelectedIndex = -1;
+            TxbNacionalidad.Text = "";
+            txtNacimiento.Text = "";
+            txtDirección.Text = "";
+            txtCorreo.Text = "";
+            txtTelefono.Text = "";
         }
     }
 }

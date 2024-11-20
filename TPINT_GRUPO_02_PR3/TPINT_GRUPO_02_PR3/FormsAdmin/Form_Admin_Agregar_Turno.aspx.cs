@@ -52,17 +52,19 @@ namespace TPINT_GRUPO_02_PR3.FormsAdmin
                     turno.SetFECHA_TUR(fecha);
                     turno.SetHORA_TUR(hora);
                     turno.SetOBSERVACION_TUR("");
-                    turno.SetESTADO_TUR("Activo");
+                    turno.SetESTADO_TUR("");
 
                     if (logtur.AgregarTurno(turno))
                     {
                         string script = "alert('El Turno fue agregado con exito');";
                         ClientScript.RegisterStartupScript(this.GetType(), "mensajeError", script, true);
+                        limpiarCampos();
                     }
                     else
                     {
                         string script = "alert('El Turno no pudo ser agregado al sistema');";
                         ClientScript.RegisterStartupScript(this.GetType(), "mensajeError", script, true);
+                        return;
                     }
                 }
                 catch (Exception)
@@ -71,6 +73,7 @@ namespace TPINT_GRUPO_02_PR3.FormsAdmin
             }
             else
             {
+                return;
             }
         }
         private void CargarEspecialidades()
@@ -242,6 +245,14 @@ namespace TPINT_GRUPO_02_PR3.FormsAdmin
                 .Split(',')
                 .Select(dia => mapaDias[dia.ToLower().Trim()])
                 .ToList();
+        }
+        private void limpiarCampos()
+        {
+            txtDNI.Text = "";
+            ddlespecialidad.SelectedValue = "-1";
+            ddlMedicos.SelectedValue = "-1";
+            txtDia.Text = "";
+            DdlHorario.SelectedValue = "-1";
         }
     }
 }

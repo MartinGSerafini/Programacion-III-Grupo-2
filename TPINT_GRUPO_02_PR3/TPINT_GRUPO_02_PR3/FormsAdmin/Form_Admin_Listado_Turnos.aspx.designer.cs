@@ -11,7 +11,7 @@ namespace TPINT_GRUPO_02_PR3.FormsAdmin
 {
 
 
-    public partial class WebForm2
+    public partial class Form_Admin_Listado_Turnos
     {
 
         /// <summary>

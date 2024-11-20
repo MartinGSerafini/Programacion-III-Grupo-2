@@ -39,14 +39,12 @@ namespace TPINT_GRUPO_02_PR3.FormAdmin
             grdListadoMedicos.DataBind();
             dt = tabla;
         }
-
         protected void CargarGrilla()
         {
             DataTable tabla = dt ?? log.GetTablaMedicos();
             grdListadoMedicos.DataSource = tabla;
             grdListadoMedicos.DataBind();
         }
-
         protected void grdListadoMedicos_RowDataBound(object sender, GridViewRowEventArgs e)
         {
             if (e.Row.RowType == DataControlRowType.DataRow && grdListadoMedicos.EditIndex == e.Row.RowIndex)
@@ -95,8 +93,6 @@ namespace TPINT_GRUPO_02_PR3.FormAdmin
                 }
             }
         }
-
-
         protected void grdListadoMedicos_RowEditing(object sender, GridViewEditEventArgs e)
         {
             grdListadoMedicos.EditIndex = e.NewEditIndex;
@@ -118,7 +114,6 @@ namespace TPINT_GRUPO_02_PR3.FormAdmin
                 }
             }
         }
-
         protected void grdListadoMedicos_RowUpdating(object sender, GridViewUpdateEventArgs e)
         {
             string MensajeError = "";
@@ -283,7 +278,6 @@ namespace TPINT_GRUPO_02_PR3.FormAdmin
             string script = "alert('El Registro fue Modificado con Exito.');";
             ClientScript.RegisterStartupScript(this.GetType(), "mensajeExito", script, true);
         }
-
         protected void grdListadoMedicos_RowDeleting(object sender, GridViewDeleteEventArgs e)
         {
             string s_DNIMedico = ((Label)grdListadoMedicos.Rows[e.RowIndex].FindControl("lbl_it_DNI")).Text;
@@ -301,13 +295,11 @@ namespace TPINT_GRUPO_02_PR3.FormAdmin
 
             CargarGrilla();
         }
-
         protected void grdListadoMedicos_RowCancelingEdit(object sender, GridViewCancelEditEventArgs e)
         {
             grdListadoMedicos.EditIndex = -1;
             CargarGrilla();
         }
-
         protected void ddlProvincias_SelectedIndexChanged(object sender, EventArgs e)
         {
             DropDownList ddlProvincias = (DropDownList)sender;

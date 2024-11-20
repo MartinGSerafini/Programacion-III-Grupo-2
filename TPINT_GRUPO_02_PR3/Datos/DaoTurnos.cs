@@ -16,42 +16,34 @@ namespace Datos
 
         public DataTable getTablaTurnos()
         {
-            DataTable tabla = ds.ObtenerTabla("TURNOS", "SELECT T.ID_TURNO_TUR, T.FK_DNI_MEDICO_TUR, T.FK_ID_PACIENTE_TUR, T.FK_ID_ESPECIALIDAD_TUR, " +
-                "T.FECHA_TUR, T.HORA_TUR, T.ESTADO_TUR, T.OBSERVACION_TUR, M.NOMBRE_MED, M.APELLIDO_MED, P.DNI_PAS, E.NOMBRE_ESP " +
+            DataTable tabla = ds.ObtenerTabla("TURNOS", "SELECT P.DNI_PAS AS DNI_PACIENTE, P.NOMBRE_PAS + ' ' + P.APELLIDO_PAS AS NOMBRE_PACIENTE, M.NOMBRE_MED + ' ' + M.APELLIDO_MED AS NOMBRE_MEDICO, E.NOMBRE_ESP, T.FECHA_TUR, T.HORA_TUR " +
                 "FROM TURNOS T INNER JOIN MEDICOS M ON M.FK_DNI_MED = T.FK_DNI_MEDICO_TUR " +
                 "INNER JOIN PACIENTES P ON P.ID_PACIENTE_PAS = T.FK_ID_PACIENTE_TUR " +
                 "INNER JOIN ESPECIALIDADES E ON E.ID_ESPECIALIDAD_ESP = T.FK_ID_ESPECIALIDAD_TUR " +
-                "WHERE T.ESTADO_TUR = 'Activo'");
+                "WHERE T.ESTADO_TUR = ''");
             return tabla;
         }
-
         public DataTable getTablaTurnosFiltrada(string filtro, string dato)
         {
-            string cons = "SELECT T.ID_TURNO_TUR, T.FK_DNI_MEDICO_TUR, T.FK_ID_PACIENTE_TUR, T.FK_ID_ESPECIALIDAD_TUR, " +
-                "T.FECHA_TUR, T.HORA_TUR, T.ESTADO_TUR, T.OBSERVACION_TUR, M.NOMBRE_MED, M.APELLIDO_MED, P.DNI_PAS, E.NOMBRE_ESP " +
+            string cons = "SELECT P.DNI_PAS AS DNI_PACIENTE, P.NOMBRE_PAS + ' ' + P.APELLIDO_PAS AS NOMBRE_PACIENTE, M.NOMBRE_MED + ' ' + M.APELLIDO_MED AS NOMBRE_MEDICO, E.NOMBRE_ESP, T.FECHA_TUR, T.HORA_TUR " +
                 "FROM TURNOS T INNER JOIN MEDICOS M ON M.FK_DNI_MED = T.FK_DNI_MEDICO_TUR " +
                 "INNER JOIN PACIENTES P ON P.ID_PACIENTE_PAS = T.FK_ID_PACIENTE_TUR " +
                 "INNER JOIN ESPECIALIDADES E ON E.ID_ESPECIALIDAD_ESP = T.FK_ID_ESPECIALIDAD_TUR " +
-                "WHERE " + filtro + " LIKE '" + dato + "%' AND T.ESTADO_TUR = 'Activo'";
-
+                "WHERE " + filtro + " LIKE '%" + dato + "%' AND T.ESTADO_TUR = ''";
             return ds.ObtenerTabla("TURNOS", cons);
         }
-
-
         public void ArmarParametrosTurnosBajaLogica(ref SqlCommand Comando, int IDTurno)
         {
             SqlParameter sqlParametros = new SqlParameter();
             sqlParametros = Comando.Parameters.Add("@IDTURNO", SqlDbType.Char);
             sqlParametros.Value = IDTurno;
         }
-
         public int bajaLogicaTurno(int IDTurno)
         {
             SqlCommand Comando = new SqlCommand();
             ArmarParametrosTurnosBajaLogica(ref Comando, IDTurno);
             return ds.EjecutarProcedimientoAlmacenado(Comando, "spBajaLogicaTurno");
         }
-
         public void ArmarParametrosPacientesModificacion(ref SqlCommand Comando, Turnos turno)
         {
             SqlParameter sqlParametros = new SqlParameter();
@@ -72,13 +64,11 @@ namespace Datos
             sqlParametros = Comando.Parameters.Add("@OBSERVACION_TUR", SqlDbType.Date);
             sqlParametros.Value = turno.GetOBSERVACION_TUR();
         }
-        
         public int ActualizarTurno(Turnos turno)
         {
             SqlCommand Comando = new SqlCommand();
             return ds.EjecutarProcedimientoAlmacenado(Comando, "spModificarTurno");
         }
-
         public List<TimeSpan> ObtenerHorariosOcupados(string dniMedico, DateTime fecha)
         {
             string fechaSql = fecha.ToString("yyyy-MM-dd");
@@ -96,7 +86,6 @@ namespace Datos
 
             return horariosOcupados;
         }
-
         public bool InsertarTurno(Turnos turno)
         {
             string sql = "INSERT INTO TURNOS (FK_DNI_MEDICO_TUR, FK_ID_PACIENTE_TUR, FK_ID_ESPECIALIDAD_TUR, " +

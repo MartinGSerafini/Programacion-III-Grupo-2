@@ -1,15 +1,17 @@
-﻿using System;
+﻿using Entidades;
+using Logica;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using Logica;
 
 namespace TPINT_GRUPO_02_PR3.FormsAdmin
 {
-    public partial class WebForm2 : System.Web.UI.Page
+    public partial class Form_Admin_Listado_Turnos : System.Web.UI.Page
     {
         LogicaPacientes logpac = new LogicaPacientes();
         LogicaMedicos logmed = new LogicaMedicos();
@@ -24,30 +26,27 @@ namespace TPINT_GRUPO_02_PR3.FormsAdmin
                 CargarGrilla();
             }
         }
-
         protected void btnBuscar_Click(object sender, EventArgs e)
         {
-            string categoria = txtBuscador.Text;
+            string texto = txtBuscador.Text;
             string filtro = ddlFiltros.SelectedValue;
-            if (filtro == "-1")
+            if (texto == "")
             {
-                string script = "alert('Por favor, seleccione una categoría válida.');";
-                ClientScript.RegisterStartupScript(this.GetType(), "mensajeExito", script, true);
+                CargarGrilla();
+                ddlFiltros.SelectedValue = "-1";
                 return;
             }
-            DataTable tabla = logtur.getTablaFiltrada(categoria, filtro);
+            DataTable tabla = logtur.getTablaFiltrada(texto, filtro);
             GrdTurnos.DataSource = tabla;
             GrdTurnos.DataBind();
             dt = tabla;
         }
-
         protected void CargarGrilla()
         {
             DataTable tabla = dt ?? logtur.getTabla();
             GrdTurnos.DataSource = tabla;
             GrdTurnos.DataBind();
         }
-
         protected void GrdTurnos_RowDeleting(object sender, GridViewDeleteEventArgs e)
         {
             int s_IDTurno = Convert.ToInt32(((Label)GrdTurnos.Rows[e.RowIndex].FindControl("lbl_it_ID")).Text);
@@ -59,10 +58,9 @@ namespace TPINT_GRUPO_02_PR3.FormsAdmin
             }
             else
             {
-                string script = "alert('El Registro no se puedo Eliminar.');";
+                string script = "alert('El Registro no se pudo Eliminar.');";
                 ClientScript.RegisterStartupScript(this.GetType(), "mensajeExito", script, true);
             }
-
             CargarGrilla();
         }
     }

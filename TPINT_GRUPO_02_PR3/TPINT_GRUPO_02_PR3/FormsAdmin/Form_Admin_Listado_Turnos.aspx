@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Form_Admin_Listado_Turnos.aspx.cs" Inherits="TPINT_GRUPO_02_PR3.FormsAdmin.WebForm2" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Form_Admin_Listado_Turnos.aspx.cs" Inherits="TPINT_GRUPO_02_PR3.FormsAdmin.Form_Admin_Listado_Turnos" %>
 
 <!DOCTYPE html>
 
@@ -7,7 +7,6 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title></title>
         <style type="text/css">
-        /* Estilos generales */
         body {
             background-color: #4C1766;
             display: flex;
@@ -290,13 +289,13 @@
         }
 
         .auto-style5 {
-            width: 59%;
+            width: 76%;
             border-spacing: 8px;
             font-family: Arial, sans-serif;
         }
 
         .auto-style6 {
-            width: 87px;
+            width: 119px;
         }
         /* Clase para el DropDownList */
         .dropdown-filter {
@@ -319,21 +318,21 @@
 </head>
 <body>
     <form id="form1" runat="server">
-                <div class="wrapper">
-        <div class="header">
-            <div class="menu-left">
-                <img src="../Imagenes/Logo_MS.png" alt="Logo" />
-                <div class="menu-dropdown">
-                    <button>☰</button>
-                    <ul>
-                        <li><a href="../FormsAdmin/Form_Admin_Listado_Pacientes.aspx">PACIENTES</a></li>
-                        <li><a href="../FormsAdmin/Form_Admin_Listado_Turnos.aspx">TURNOS</a></li>
-                        <li><a href="../FormsAdmin/Form_Admin_Listado_Medicos.aspx">MEDICOS</a></li>
-                        <li><a href="#">REPORTES</a></li>
-                        <li><a href="<%= ResolveUrl("~/FormsLogins/Form_Login.aspx") %>">CERRAR SESIÓN</a></li>
-                    </ul>
+        <div class="wrapper">
+            <div class="header">
+                <div class="menu-left">
+                    <img src="../Imagenes/Logo_MS.png" alt="Logo" />
+                    <div class="menu-dropdown">
+                        <button>☰</button>
+                        <ul>
+                            <li><a href="../FormsAdmin/Form_Admin_Listado_Pacientes.aspx">PACIENTES</a></li>
+                            <li><a href="../FormsAdmin/Form_Admin_Listado_Turnos.aspx">TURNOS</a></li>
+                            <li><a href="../FormsAdmin/Form_Admin_Listado_Medicos.aspx">MEDICOS</a></li>
+                            <li><a href="#">REPORTES</a></li>
+                            <li><a href="<%= ResolveUrl("~/FormsLogins/Form_Login.aspx") %>">CERRAR SESIÓN</a></li>
+                        </ul>
+                    </div>
                 </div>
-            </div>
             <div class="admin-links">
                 <asp:HyperLink ID="hlAgregarPaciente" runat="server" NavigateUrl="~/FormsAdmin/Form_Admin_Agregar_Turno.aspx" CssClass="btn-search">CARGAR TURNO</asp:HyperLink>
                 <asp:HyperLink ID="hlListadoPacientes" runat="server" NavigateUrl="~/FormsAdmin/Form_Admin_Listado_Turnos.aspx" CssClass="btn-search">LISTAR TURNOS</asp:HyperLink>
@@ -368,38 +367,40 @@
             <asp:Button ID="btnBuscar" runat="server" Text="Buscar" CssClass="btn-search" OnClick="btnBuscar_Click" />
         </td>
         <td class="auto-style6">
-            <asp:Label ID="Label1" runat="server" Text="FILTRAR POR:" Style="font-weight: bold; font-size: 15px; color: #d1c4e9; white-space: nowrap;"></asp:Label>
+            <asp:Label ID="Label1" runat="server" Text="Filtrar Por:" Style="font-weight: bold; font-size: 15px; color: #d1c4e9; white-space: nowrap;"></asp:Label>
 
         </td>
         <td>
             <asp:DropDownList ID="ddlFiltros" runat="server" CssClass="dropdown-filter">
                 <asp:ListItem Value="-1">SELECCIONE UNA CATEGORÍA</asp:ListItem>
-                <asp:ListItem Value="NOMBRE_MED + APELLIDO_MED">NOMBRE MÉDICO</asp:ListItem>
-                <asp:ListItem Value="DNI_PAS">DNI PACIENTE</asp:ListItem>
-                <asp:ListItem Value="NOMBRE_ESP">ESPECIALIDAD</asp:ListItem>
-                <asp:ListItem Value="FECHA_TUR">FECHA</asp:ListItem>
+                <asp:ListItem Value="DNI_PAS">DNI del Paciente</asp:ListItem>
+                <asp:ListItem Value="NOMBRE_PAS">Nombre del Paciente</asp:ListItem>
+                <asp:ListItem Value="NOMBRE_MED">Nombre del Medico</asp:ListItem>
+                <asp:ListItem Value="NOMBRE_ESP">Especialidad</asp:ListItem>
+                <asp:ListItem Value="FECHA_TUR">Fecha</asp:ListItem>
+                <asp:ListItem Value="HORA_TUR">Horario</asp:ListItem>
             </asp:DropDownList>
         </td>
     </tr>
 </table>
         <br />
-                <asp:GridView ID="GrdTurnos" runat="server" AutoGenerateColumns="False" CssClass="table-style" OnRowDeleting="GrdTurnos_RowDeleting">
-    <Columns>
-        <asp:TemplateField HeaderText="ID TURNO">
-    <ItemTemplate>
-        <asp:Label ID="lbl_it_ID" runat="server" Text='<%# Bind("ID_TURNO_TUR") %>'></asp:Label>
-    </ItemTemplate>
-</asp:TemplateField>
-
-        <asp:TemplateField HeaderText="DNI PACIENTE">
+        <asp:GridView ID="GrdTurnos" runat="server" AutoGenerateColumns="False" CssClass="table-style" OnRowDeleting="GrdTurnos_RowDeleting">
+            <Columns>
+                <asp:TemplateField HeaderText="Dni del Paciente">
             <ItemTemplate>
-                <asp:Label ID="lbl_it_DNI" runat="server" Text='<%# Bind("DNI_PAS") %>'></asp:Label>
+                <asp:Label ID="lbl_it_ID" runat="server" Text='<%# Bind("DNI_PACIENTE") %>'></asp:Label>
+            </ItemTemplate>
+        </asp:TemplateField>
+
+        <asp:TemplateField HeaderText="Nombre del Paciente">
+            <ItemTemplate>
+                <asp:Label ID="lbl_it_DNI" runat="server" Text='<%# Bind("NOMBRE_PACIENTE") %>'></asp:Label>
             </ItemTemplate>
         </asp:TemplateField>
         
-        <asp:TemplateField HeaderText="Nombre Médico">
+        <asp:TemplateField HeaderText="Nombre del Médico">
             <ItemTemplate>
-                <asp:Label ID="lbl_it_Nombre" runat="server" Text='<%# Eval("NOMBRE_MED") + " " + Eval("APELLIDO_MED") %>'></asp:Label>
+                <asp:Label ID="lbl_it_Nombre" runat="server" Text='<%# Bind("NOMBRE_MEDICO") %>'></asp:Label>
             </ItemTemplate>
         </asp:TemplateField>
         
