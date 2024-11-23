@@ -48,5 +48,22 @@ namespace Logica
         {
             return dao.InsertarTurno(Turno);
         }
+        public DataTable GetTablaTurnosXMedicos(string dni)
+        {
+            return dao.getTablaTurnosXMedicos(dni);
+        }
+        public DataTable GetTablaTurnosXMedicosFiltrada(string dni, string dato, string filtro)
+        {
+            return dao.getTablaTurnosXMedicosFiltrada(dni, filtro, dato);
+        }
+        public bool ActualizarTurnoXmedico(TurnosXmedicos Turno)
+        {
+            int op = dao.actualizarTurnoXmedico(Turno);
+            if(op == 1)
+            {
+                return true;
+            }
+            else { return false; }
+        }
     }
 }
