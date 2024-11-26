@@ -5,7 +5,6 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Runtime.InteropServices;
 
 namespace Datos
 {
@@ -128,36 +127,6 @@ namespace Datos
             }
         }
 
-        public int ejecutarContadorDeEstadoTurnos(string consulta)
-        {
-            SqlConnection conexion = ObtenerConexion();
-            SqlCommand command = new SqlCommand(consulta, conexion);
-            object result = command.ExecuteScalar();
-            int resultado = (int)command.ExecuteScalar();
-            resultado = result != null ? Convert.ToInt32(result) : 0;
-            return resultado;
-        }
-
-        public DataTable obtenerCantidadEspecialidadesXturnos(string consulta)
-        {
-            DataTable dt = new DataTable();
-
-            SqlConnection conexion = ObtenerConexion();
-            SqlCommand command = new SqlCommand(consulta, conexion);
-            SqlDataAdapter adapter = ObtenerAdaptador(consulta, conexion);
-
-            adapter.Fill(dt);
-            return dt;
-        }
-
-        public string obtenerEspecialidadReporte(string consulta)
-        {
-            SqlConnection conexion = ObtenerConexion();
-            SqlCommand command = new SqlCommand(consulta, conexion);
-            object result = command.ExecuteScalar();
-            string resultado = result.ToString();
-            return resultado;
-        }
     }
 }
 
