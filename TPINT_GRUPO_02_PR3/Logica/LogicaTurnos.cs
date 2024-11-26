@@ -65,5 +65,33 @@ namespace Logica
             }
             else { return false; }
         }
+
+        public int cantidadTurnosEstado(string estado)
+        {
+            DaoTurnos dao = new DaoTurnos();
+            int cantidad = dao.contarTurnosPresentes(estado);
+            return cantidad;
+        }
+
+        public DataTable EspecialidadesXturnosReportes()
+        {
+            DaoTurnos dao = new DaoTurnos();
+            DataTable dt = dao.obtenerEspecialidadesXturnos();
+            return dt;
+        }
+
+        public string devolverEspecialidadMax()
+        {
+            DaoTurnos dao = new DaoTurnos();
+            string espe = dao.obtenerEspecialidadMaxReporte();
+            return espe;
+        }
+
+        public string devolverEspecialidadMin()
+        {
+            DaoTurnos dao = new DaoTurnos();
+            string espe = dao.obtenerEspecialidadMinReporte();
+            return espe;
+        }
     }
 }

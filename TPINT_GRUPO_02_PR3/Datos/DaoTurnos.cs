@@ -144,5 +144,33 @@ namespace Datos
                 return false;
             }
         }
+
+        public int contarTurnosPresentes(string estado)
+        {
+            string sql = "SELECT COUNT(ESTADO_TUR) FROM TURNOS WHERE ESTADO_TUR = '" + estado + "'";
+            int cantidad = ds.ejecutarContadorDeEstadoTurnos(sql);
+            return cantidad;
+        }
+
+        public DataTable obtenerEspecialidadesXturnos()
+        {
+            string sql = "SELECT ESPECIALIDADES.NOMBRE_ESP AS Especialidad, ISNULL(COUNT(TURNOS.FK_ID_ESPECIALIDAD_TUR), 0)AS Cantidad FROM ESPECIALIDADES LEFT JOIN TURNOS ON TURNOS.FK_ID_ESPECIALIDAD_TUR = ESPECIALIDADES.ID_ESPECIALIDAD_ESP GROUP BY ESPECIALIDADES.NOMBRE_ESP ORDER BY CANTIDAD DESC;";
+            DataTable dt = ds.obtenerCantidadEspecialidadesXturnos(sql);
+            return dt;
+        }
+
+        public string obtenerEspecialidadMaxReporte()
+        {
+            string sql = "SELECT TOP 1 NOMBRE_ESP AS EspecialidadMax FROM(SELECT ESPECIALIDADES.NOMBRE_ESP, ISNULL(COUNT(TURNOS.FK_ID_ESPECIALIDAD_TUR), 0) AS CANTIDAD FROM ESPECIALIDADES LEFT JOIN TURNOS ON TURNOS.FK_ID_ESPECIALIDAD_TUR = ESPECIALIDADES.ID_ESPECIALIDAD_ESP GROUP BY ESPECIALIDADES.NOMBRE_ESP) AS TEMP ORDER BY CANTIDAD DESC";
+            string espe = ds.obtenerEspecialidadReporte(sql);
+            return espe;
+        }
+
+        public string obtenerEspecialidadMinReporte()
+        {
+            string sql = "SELECT TOP 1 NOMBRE_ESP AS EspecialidadMin FROM(SELECT ESPECIALIDADES.NOMBRE_ESP, ISNULL(COUNT(TURNOS.FK_ID_ESPECIALIDAD_TUR), 0) AS CANTIDAD FROM ESPECIALIDADES LEFT JOIN TURNOS ON TURNOS.FK_ID_ESPECIALIDAD_TUR = ESPECIALIDADES.ID_ESPECIALIDAD_ESP GROUP BY ESPECIALIDADES.NOMBRE_ESP ) AS TEMP ORDER BY CANTIDAD ASC";
+            string espe = ds.obtenerEspecialidadReporte(sql);
+            return espe;
+        }
     }
 }
