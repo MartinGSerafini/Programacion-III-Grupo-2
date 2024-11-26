@@ -391,7 +391,7 @@
 </table>
         <br />
 
-        <asp:GridView ID="GrdPacientes" runat="server" AutoGenerateColumns="False" CssClass="table-style" OnRowDeleting="GrdPacientes_RowDeleting" OnRowEditing="GrdPacientes_RowEditing" OnRowCancelingEdit="GrdPacientes_RowCancelingEdit" OnRowUpdating="GrdPacientes_RowUpdating" OnRowDataBound="GrdPacientes_RowDataBound">
+        <asp:GridView ID="GrdPacientes" runat="server" AutoGenerateColumns="False" CssClass="table-style" OnRowDeleting="GrdPacientes_RowDeleting" OnRowEditing="GrdPacientes_RowEditing" OnRowCancelingEdit="GrdPacientes_RowCancelingEdit" OnRowUpdating="GrdPacientes_RowUpdating" OnRowDataBound="GrdPacientes_RowDataBound" AllowPaging="True" OnPageIndexChanging="GrdPacientes_PageIndexChanging">
     <Columns>
         <asp:TemplateField HeaderText="DNI">
             <EditItemTemplate>

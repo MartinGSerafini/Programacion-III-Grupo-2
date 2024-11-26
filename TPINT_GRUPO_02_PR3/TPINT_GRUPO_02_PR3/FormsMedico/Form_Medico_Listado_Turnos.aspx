@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Form_Admin_Listado_Turnos.aspx.cs" Inherits="TPINT_GRUPO_02_PR3.FormsAdmin.Form_Admin_Listado_Turnos" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Form_Medico_Listado_Turnos.aspx.cs" Inherits="TPINT_GRUPO_02_PR3.FormsMedico.Form_Medico_Listado_Turnos" %>
 
 <!DOCTYPE html>
 
@@ -289,7 +289,7 @@
         }
 
         .auto-style5 {
-            width: 76%;
+            width: 81%;
             border-spacing: 8px;
             font-family: Arial, sans-serif;
         }
@@ -309,6 +309,8 @@
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
             width: 250px; 
         }
+
+        /* Cambiar color cuando el mouse pasa por encima */
         .dropdown-filter:hover {
             background-color: #d1c4e9;
         }
@@ -323,18 +325,10 @@
                     <div class="menu-dropdown">
                         <button>☰</button>
                         <ul>
-                            <li><a href="../FormsAdmin/Form_Admin_Listado_Pacientes.aspx">PACIENTES</a></li>
-                            <li><a href="../FormsAdmin/Form_Admin_Listado_Turnos.aspx">TURNOS</a></li>
-                            <li><a href="../FormsAdmin/Form_Admin_Listado_Medicos.aspx">MEDICOS</a></li>
-                            <li><a href="#">REPORTES</a></li>
                             <li><a href="<%= ResolveUrl("~/FormsLogins/Form_Login.aspx") %>">CERRAR SESIÓN</a></li>
                         </ul>
                     </div>
                 </div>
-            <div class="admin-links">
-                <asp:HyperLink ID="hlAgregarPaciente" runat="server" NavigateUrl="~/FormsAdmin/Form_Admin_Agregar_Turno.aspx" CssClass="btn-search">CARGAR TURNO</asp:HyperLink>
-                <asp:HyperLink ID="hlListadoPacientes" runat="server" NavigateUrl="~/FormsAdmin/Form_Admin_Listado_Turnos.aspx" CssClass="btn-search">LISTAR TURNOS</asp:HyperLink>
-            </div>
             <div class="user-info">
                 <asp:HyperLink ID="HLInstagram" runat="server" NavigateUrl="https://www.instagram.com/medical_studio_2024/" Target="_blank">
                     <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram" style="width: 30px; height: 30px;"/>
@@ -362,7 +356,7 @@
             <asp:TextBox ID="txtBuscador" runat="server" CssClass="input-search" Width="220px"></asp:TextBox>
         </td>
         <td>
-            <asp:Button ID="btnBuscar" runat="server" Text="Buscar" CssClass="btn-search" OnClick="btnBuscar_Click" />
+            <asp:Button ID="btnBuscar" runat="server" Text="Buscar" CssClass="btn-search" />
         </td>
         <td class="auto-style6">
             <asp:Label ID="Label1" runat="server" Text="Filtrar Por:" Style="font-weight: bold; font-size: 15px; color: #d1c4e9; white-space: nowrap;"></asp:Label>
@@ -374,16 +368,16 @@
                 <asp:ListItem Value="ID_TURNO_TUR">ID del Turno</asp:ListItem>
                 <asp:ListItem Value="DNI_PAS">DNI del Paciente</asp:ListItem>
                 <asp:ListItem Value="NOMBRE_PAS">Nombre del Paciente</asp:ListItem>
-                <asp:ListItem Value="NOMBRE_MED">Nombre del Medico</asp:ListItem>
-                <asp:ListItem Value="NOMBRE_ESP">Especialidad</asp:ListItem>
                 <asp:ListItem Value="FECHA_TUR">Fecha</asp:ListItem>
                 <asp:ListItem Value="HORA_TUR">Horario</asp:ListItem>
+                <asp:ListItem Value="OBSERVACION_TUR">Observacion</asp:ListItem>
+                <asp:ListItem Value="ESTADO_TUR">Estado</asp:ListItem>
             </asp:DropDownList>
         </td>
     </tr>
 </table>
         <br />
-        <asp:GridView ID="GrdTurnos" runat="server" AutoGenerateColumns="False" CssClass="table-style" OnRowDeleting="GrdTurnos_RowDeleting" AllowPaging="True" OnPageIndexChanging="GrdTurnos_PageIndexChanging">
+                <asp:GridView ID="GrdTurnos" runat="server" AutoGenerateColumns="False" CssClass="table-style" OnRowCancelingEdit="GrdTurnos_RowCancelingEdit" OnRowDataBound="GrdTurnos_RowDataBound" OnRowEditing="GrdTurnos_RowEditing" OnRowUpdating="GrdTurnos_RowUpdating" DataKeyNames="ID_TURNO_TUR" AllowPaging="True" OnPageIndexChanging="GrdTurnos_PageIndexChanging">
             <Columns>
         <asp:TemplateField HeaderText="ID del Turno">
             <ItemTemplate>
@@ -419,26 +413,46 @@
                 <asp:Label ID="lbl_it_Fecha" runat="server" Text='<%# Eval("FECHA_TUR", "{0:dd/MM/yyyy}") %>'></asp:Label>
             </ItemTemplate>
         </asp:TemplateField>
-        
         <asp:TemplateField HeaderText="Horario">
             <ItemTemplate>
                 <asp:Label ID="lbl_it_Horario" runat="server" Text='<%# Eval("HORA_TUR") %>'></asp:Label>
             </ItemTemplate>
         </asp:TemplateField>
-
+        <asp:TemplateField HeaderText="Observacion">
+            <ItemTemplate>
+                <asp:Label ID="lbl_it_Observacion" runat="server" Text='<%# Eval("OBSERVACION_TUR") %>'></asp:Label>
+            </ItemTemplate>
+            <EditItemTemplate>
+                <asp:TextBox ID="txtObservacion" runat="server" Text='<%# Bind("OBSERVACION_TUR") %>'></asp:TextBox>
+            </EditItemTemplate>
+        </asp:TemplateField>
+        <asp:TemplateField HeaderText="Estado">
+            <ItemTemplate>
+                <asp:Label ID="lbl_it_Estado" runat="server" Text='<%# Eval("ESTADO_TUR") %>'></asp:Label>
+            </ItemTemplate>
+            <EditItemTemplate>
+                <asp:DropDownList ID="ddlEstado" runat="server" Enabled="false">
+                    <asp:ListItem Text="Presente" Value="0"></asp:ListItem>
+                    <asp:ListItem Text="Ausente" Value="1"></asp:ListItem>
+                </asp:DropDownList>
+            </EditItemTemplate>
+        </asp:TemplateField>
         <asp:TemplateField>
             <ItemTemplate>
-                <asp:Button ID="btnEliminar" runat="server" CommandName="Delete" Text="&#128465;" 
-                    OnClientClick="return confirmarEliminacion();" />
+                <asp:Button ID="btnEditar" runat="server" CommandName="Edit" Text="&#9881;" />
             </ItemTemplate>
+            <EditItemTemplate>
+                <asp:Button ID="btnUpdate" runat="server" CommandName="Update" Text="&#10004;" OnClientClick="return confirmarEdicion();" />
+                <asp:Button ID="btnCancel" runat="server" CommandName="Cancel" Text="&#10060;" />
+            </EditItemTemplate>
         </asp:TemplateField>
     </Columns>
 </asp:GridView>
-        <script type="text/javascript">
-            function confirmarEliminacion() {
-                return confirm("¿Estás seguro de que deseas eliminar este registro?");
-            }
-        </script>
+            <script type="text/javascript">
+                function confirmarEdicion() {
+                    return confirm("¿Estás seguro de que deseas actualizar este registro?");
+                }
+            </script>
     </div>
     </div>
     </form>

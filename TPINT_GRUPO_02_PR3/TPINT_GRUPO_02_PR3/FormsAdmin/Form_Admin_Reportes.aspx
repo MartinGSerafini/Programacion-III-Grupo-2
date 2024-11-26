@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Form_Admin_Listado_Turnos.aspx.cs" Inherits="TPINT_GRUPO_02_PR3.FormsAdmin.Form_Admin_Listado_Turnos" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Form_Admin_Reportes.aspx.cs" Inherits="TPINT_GRUPO_02_PR3.FormsAdmin.Form_Admin_Reportes" %>
 
 <!DOCTYPE html>
 
@@ -6,7 +6,7 @@
 <head runat="server">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title></title>
-        <style type="text/css">
+            <style type="text/css">
         body {
             background-color: #4C1766;
             display: flex;
@@ -18,23 +18,18 @@
             color: #FFFFFF;
             flex-wrap: wrap;
         }
-
-        /* Contenedor principal */
         .wrapper {
             display: inline-block;
             text-align: center;
         }
-
-        /* Encabezado */
         .header, .container {
             width: 100%; 
             max-width: 100vw;
             box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
             border-radius: 15px;
         }
-
         .header {
-            width: 103%;
+            width: 106%;
             background-color: #3A104D;
             padding: 20px;
             display: flex;
@@ -49,8 +44,8 @@
             background-color: #6C2C91;
             padding: 40px;
             border-radius: 15px;
-            width: 100%; /* Igual al ancho del header */
-            max-width: 100vw; /* Se asegura de no exceder el 100% de la ventana */
+            width: 100%;
+            max-width: 100vw;
             text-align: center;
             box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
         }
@@ -237,24 +232,6 @@
         .table-style button:hover {
             background-color: #7e57c2; /* Morado oscuro al pasar el mouse */
         }
-        .search-table {
-            width: 100%;
-            border-spacing: 8px;
-            font-family: Arial, sans-serif;
-        }
-
-        .input-search {
-            padding: 8px;
-            font-weight: bold;
-            font-size: 15px;
-            color: #4a148c; /* Morado oscuro */
-            border: 1px solid #9575cd; /* Borde morado */
-            border-radius: 4px;
-            background-color: #ede7f6; /* Fondo lila claro */
-            width: 100%;
-            box-sizing: border-box;
-        }
-
         .btn-search {
             background-color: #7e57c2; /* Morado medio */
             color: #ffffff; /* Texto blanco */
@@ -288,15 +265,6 @@
             box-sizing: border-box;
         }
 
-        .auto-style5 {
-            width: 76%;
-            border-spacing: 8px;
-            font-family: Arial, sans-serif;
-        }
-
-        .auto-style6 {
-            width: 119px;
-        }
         /* Clase para el DropDownList */
         .dropdown-filter {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -309,31 +277,34 @@
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
             width: 250px; 
         }
+
         .dropdown-filter:hover {
             background-color: #d1c4e9;
         }
-</style>
+                .auto-style5 {
+                    width: 208px;
+                }
+                .auto-style6 {
+                    width: 250px;
+                }
+                </style>
 </head>
 <body>
     <form id="form1" runat="server">
         <div class="wrapper">
-            <div class="header">
-                <div class="menu-left">
-                    <img src="../Imagenes/Logo_MS.png" alt="Logo" />
-                    <div class="menu-dropdown">
-                        <button>☰</button>
-                        <ul>
-                            <li><a href="../FormsAdmin/Form_Admin_Listado_Pacientes.aspx">PACIENTES</a></li>
-                            <li><a href="../FormsAdmin/Form_Admin_Listado_Turnos.aspx">TURNOS</a></li>
-                            <li><a href="../FormsAdmin/Form_Admin_Listado_Medicos.aspx">MEDICOS</a></li>
-                            <li><a href="#">REPORTES</a></li>
-                            <li><a href="<%= ResolveUrl("~/FormsLogins/Form_Login.aspx") %>">CERRAR SESIÓN</a></li>
-                        </ul>
-                    </div>
+        <div class="header">
+            <div class="menu-left">
+                <img src="../Imagenes/Logo_MS.png" alt="Logo" />
+                <div class="menu-dropdown">
+                    <button>☰</button>
+                    <ul>
+                        <li><a href="../FormsAdmin/Form_Admin_Listado_Pacientes.aspx">PACIENTES</a></li>
+                        <li><a href="../FormsAdmin/Form_Admin_Listado_Turnos.aspx">TURNOS</a></li>
+                        <li><a href="../FormsAdmin/Form_Admin_Listado_Medicos.aspx">MEDICOS</a></li>
+                        <li><a href="#">REPORTES</a></li>
+                        <li><a href="<%= ResolveUrl("~/FormsLogins/Form_Login.aspx") %>">CERRAR SESIÓN</a></li>
+                    </ul>
                 </div>
-            <div class="admin-links">
-                <asp:HyperLink ID="hlAgregarPaciente" runat="server" NavigateUrl="~/FormsAdmin/Form_Admin_Agregar_Turno.aspx" CssClass="btn-search">CARGAR TURNO</asp:HyperLink>
-                <asp:HyperLink ID="hlListadoPacientes" runat="server" NavigateUrl="~/FormsAdmin/Form_Admin_Listado_Turnos.aspx" CssClass="btn-search">LISTAR TURNOS</asp:HyperLink>
             </div>
             <div class="user-info">
                 <asp:HyperLink ID="HLInstagram" runat="server" NavigateUrl="https://www.instagram.com/medical_studio_2024/" Target="_blank">
@@ -348,98 +319,115 @@
                 <asp:Label ID="LblUsuario" runat="server" CssClass="username"></asp:Label>
             </div>
         </div>
-    <div class="container">
-        <table align="center">
-            <tr>
-                <td style="font-weight: bold;font-size: 40px" class="auto-style7">Administrador de Turnos<br/>
-                &nbsp;</td>
-            </tr>
-        </table>
-        
-       <table align="center" class="auto-style5">
+        <div class="container">
+            <h1>Porcentaje de Turnos Ausentes y Presentes</h1>
+            <div>
+            <table align="center" class="auto-style7">
+                <tr>
+                    <td style="text-align: left;">Fecha Inicio:</td>
+                    <td style="text-align: left;" class="auto-style5">
+                        <asp:TextBox ID="TxtFechaInicio" runat="server" TextMode="Date" Width="200px"></asp:TextBox>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="text-align: left;">Fecha Final:</td>
+                    <td style="text-align: left;" class="auto-style5">
+                        <asp:TextBox ID="TxtFechaFinal" runat="server" TextMode="Date" Width="200px"></asp:TextBox>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="3">&nbsp;</td>
+                </tr>
+                <tr>
+                    <td colspan="3" style="text-align: center;">
+                        <asp:Button ID="BtnGenerarReporteN1" runat="server" Text="Generar Reporte" CssClass="btn-search" Width="155px" Height="40px" OnClick="BtnGenerarReporteN1_Click" />
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="3">&nbsp;</td>
+                </tr>
+                <tr>
+                    <td style="text-align: left;">
+                        <asp:Label ID="LblCantTurnos" runat="server" Text="Cantidad de Turnos Totales:" Visible="False"></asp:Label>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="text-align: left;">
+                        <asp:Label ID="LblCantPresentes" runat="server" Text="Porcentaje de Pacientes Presentes:" Visible="False"></asp:Label>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="text-align: left;">
+                        <asp:Label ID="LblCantAusentes" runat="server" Text="Porcentaje de Pacientes Ausentes:" Visible="False"></asp:Label>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="3">&nbsp;</td>
+                </tr>
+                <tr>
+                    <td style="text-align: left;">
+                        <asp:Label ID="LblListPresentes" runat="server" Text="Lista de Pacientes Presentes: " Visible="False"></asp:Label>
+                    </td>
+                    <td style="text-align: left;" class="auto-style5">
+                        <asp:DropDownList ID="DdlPrensentes" runat="server" Width="200px" Visible="False">
+                        </asp:DropDownList>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="text-align: left;">
+                        <asp:Label ID="LblListAusentes" runat="server" Text="Lista de Pacientes Ausentes:" Visible="False"></asp:Label>
+                    </td>
+                    <td style="text-align: left;" class="auto-style5">
+                        <asp:DropDownList ID="DdlAusentes" runat="server" Width="200px" Visible="False">
+                        </asp:DropDownList>
+                    </td>
+                </tr>
+                </table>
+            <h1>Porcentaje de Turnos por Hora</h1>
+            <table align="center" class="auto-style7">
     <tr>
-        <td>
-            <asp:TextBox ID="txtBuscador" runat="server" CssClass="input-search" Width="220px"></asp:TextBox>
+        <td style="text-align: left;" class="auto-style6">Fecha Inicio:</td>
+        <td style="text-align: left;" class="auto-style5">
+            <asp:TextBox ID="TxtFechaInicio2" runat="server" TextMode="Date" Width="200px"></asp:TextBox>
         </td>
-        <td>
-            <asp:Button ID="btnBuscar" runat="server" Text="Buscar" CssClass="btn-search" OnClick="btnBuscar_Click" />
+    </tr>
+    <tr>
+        <td style="text-align: left;" class="auto-style6">Fecha Final:</td>
+        <td style="text-align: left;" class="auto-style5">
+            <asp:TextBox ID="TxtFechaFinal2" runat="server" TextMode="Date" Width="200px"></asp:TextBox>
         </td>
-        <td class="auto-style6">
-            <asp:Label ID="Label1" runat="server" Text="Filtrar Por:" Style="font-weight: bold; font-size: 15px; color: #d1c4e9; white-space: nowrap;"></asp:Label>
-
+    </tr>
+    <tr>
+        <td colspan="3">&nbsp;</td>
+    </tr>
+    <tr>
+        <td colspan="3" style="text-align: center;">
+            <asp:Button ID="BtnGenerarReporteN2" runat="server" Text="Generar Reporte" CssClass="btn-search" Width="155px" Height="40px" OnClick="BtnGenerarReporteN2_Click" />
         </td>
-        <td>
-            <asp:DropDownList ID="ddlFiltros" runat="server" CssClass="dropdown-filter">
-                <asp:ListItem Value="-1">SELECCIONE UNA CATEGORÍA</asp:ListItem>
-                <asp:ListItem Value="ID_TURNO_TUR">ID del Turno</asp:ListItem>
-                <asp:ListItem Value="DNI_PAS">DNI del Paciente</asp:ListItem>
-                <asp:ListItem Value="NOMBRE_PAS">Nombre del Paciente</asp:ListItem>
-                <asp:ListItem Value="NOMBRE_MED">Nombre del Medico</asp:ListItem>
-                <asp:ListItem Value="NOMBRE_ESP">Especialidad</asp:ListItem>
-                <asp:ListItem Value="FECHA_TUR">Fecha</asp:ListItem>
-                <asp:ListItem Value="HORA_TUR">Horario</asp:ListItem>
+    </tr>
+    <tr>
+        <td colspan="3">&nbsp;</td>
+    </tr>
+    <tr>
+        <td style="text-align: left;" class="auto-style6">
+            <asp:Label ID="LblCantTurnos2" runat="server" Text="Cantidad de Turnos Totales:" Visible="False"></asp:Label>
+        </td>
+    </tr>
+    <tr>
+        <td colspan="3">&nbsp;</td>
+    </tr>
+    <tr>
+        <td style="text-align: left;" class="auto-style6">
+            <asp:Label ID="LblTurnosxHoras" runat="server" Text="Porcentaje de Turnos por Horas: " Visible="False"></asp:Label>
+        </td>
+        <td style="text-align: left;" class="auto-style5">
+            <asp:DropDownList ID="DdlTurnosxHoras" runat="server" Width="200px" Visible="False">
             </asp:DropDownList>
         </td>
     </tr>
-</table>
-        <br />
-        <asp:GridView ID="GrdTurnos" runat="server" AutoGenerateColumns="False" CssClass="table-style" OnRowDeleting="GrdTurnos_RowDeleting" AllowPaging="True" OnPageIndexChanging="GrdTurnos_PageIndexChanging">
-            <Columns>
-        <asp:TemplateField HeaderText="ID del Turno">
-            <ItemTemplate>
-                <asp:Label ID="lbl_it_IDTurno" runat="server" Text='<%# Bind("ID_TURNO_TUR") %>'></asp:Label>
-            </ItemTemplate>
-        </asp:TemplateField> 
-        <asp:TemplateField HeaderText="Dni del Paciente">
-            <ItemTemplate>
-                <asp:Label ID="lbl_it_DNIPaciente" runat="server" Text='<%# Bind("DNI_PACIENTE") %>'></asp:Label>
-            </ItemTemplate>
-        </asp:TemplateField>
-
-        <asp:TemplateField HeaderText="Nombre del Paciente">
-            <ItemTemplate>
-                <asp:Label ID="lbl_it_NombrePaciente" runat="server" Text='<%# Bind("NOMBRE_PACIENTE") %>'></asp:Label>
-            </ItemTemplate>
-        </asp:TemplateField>
-        
-        <asp:TemplateField HeaderText="Nombre del Médico">
-            <ItemTemplate>
-                <asp:Label ID="lbl_it_NombreMedico" runat="server" Text='<%# Bind("NOMBRE_MEDICO") %>'></asp:Label>
-            </ItemTemplate>
-        </asp:TemplateField>
-        
-        <asp:TemplateField HeaderText="Especialidad">
-            <ItemTemplate>
-                <asp:Label ID="lbl_it_Especialidad" runat="server" Text='<%# Bind("NOMBRE_ESP") %>'></asp:Label>
-            </ItemTemplate>
-        </asp:TemplateField>
-        
-        <asp:TemplateField HeaderText="Fecha">
-            <ItemTemplate>
-                <asp:Label ID="lbl_it_Fecha" runat="server" Text='<%# Eval("FECHA_TUR", "{0:dd/MM/yyyy}") %>'></asp:Label>
-            </ItemTemplate>
-        </asp:TemplateField>
-        
-        <asp:TemplateField HeaderText="Horario">
-            <ItemTemplate>
-                <asp:Label ID="lbl_it_Horario" runat="server" Text='<%# Eval("HORA_TUR") %>'></asp:Label>
-            </ItemTemplate>
-        </asp:TemplateField>
-
-        <asp:TemplateField>
-            <ItemTemplate>
-                <asp:Button ID="btnEliminar" runat="server" CommandName="Delete" Text="&#128465;" 
-                    OnClientClick="return confirmarEliminacion();" />
-            </ItemTemplate>
-        </asp:TemplateField>
-    </Columns>
-</asp:GridView>
-        <script type="text/javascript">
-            function confirmarEliminacion() {
-                return confirm("¿Estás seguro de que deseas eliminar este registro?");
-            }
-        </script>
-    </div>
+    </table>
+            </div>
+       </div>
     </div>
     </form>
 </body>

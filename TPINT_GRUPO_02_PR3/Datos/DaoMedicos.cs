@@ -13,19 +13,6 @@ namespace Datos
     {
         AccesoDatos ds = new AccesoDatos();
 
-        public string GetNombreYApellidoMedico(string dniMedico)
-        {
-            string consulta = "SELECT NOMBRE_MED, APELLIDO_MED FROM Medicos WHERE FK_DNI_MED = '" + dniMedico + "'";
-            DataTable tabla = ds.ObtenerTabla("Medicos", consulta);
-
-            if (tabla.Rows.Count > 0)
-            {
-                string nombreMedico = tabla.Rows[0]["NOMBRE_MED"].ToString();
-                string apellidoMedico = tabla.Rows[0]["APELLIDO_MED"].ToString();
-                return nombreMedico + " " + apellidoMedico;
-            }
-            return string.Empty;
-        }
         public bool agregarMedico(Medico medico)
         {
             string sql = "INSERT INTO MEDICOS(FK_DNI_MED, FK_ID_LOCALIDAD_MED, FK_ID_PROVINCIA_MED, FK_ID_ESPECIALIDAD_MED, " +
@@ -95,6 +82,29 @@ namespace Datos
                 new SqlParameter("@IdEspecialidad", idEspecialidad)
             };
             return ds.ObtenerTabla("Medicos", query);
+        }
+        public string GetNombreYApellidoMedico(string dniMedico)
+        {
+            string consulta = "SELECT NOMBRE_MED, APELLIDO_MED FROM Medicos WHERE FK_DNI_MED = '" + dniMedico + "'";
+            DataTable tabla = ds.ObtenerTabla("Medicos", consulta);
+
+            if (tabla.Rows.Count > 0)
+            {
+                string nombreMedico = tabla.Rows[0]["NOMBRE_MED"].ToString();
+                string apellidoMedico = tabla.Rows[0]["APELLIDO_MED"].ToString();
+                return nombreMedico + " " + apellidoMedico;
+            }
+            return string.Empty;
+        }
+        public int GetIdMedicoPorNombreApellido(string nombreMedico)
+        {
+            string consulta = "SELECT ID_MEDICO_MED FROM MEDICOS WHERE NOMBRE_MED + ' ' + APELLIDO_MED = '" + nombreMedico + "' AND ESTADO_MED = 'Activo'";
+            DataTable tabla = ds.ObtenerTabla("Medicos", consulta);
+            if (tabla.Rows.Count > 0)
+            {
+                return Convert.ToInt32(tabla.Rows[0]["ID_MEDICO_MED"]);
+            }
+            return -1;
         }
         public bool ExisteMedico(string columna, string dato)
         {

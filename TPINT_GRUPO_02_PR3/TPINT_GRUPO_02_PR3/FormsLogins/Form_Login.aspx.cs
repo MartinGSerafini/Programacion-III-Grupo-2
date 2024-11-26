@@ -52,7 +52,7 @@ namespace TPINT_GRUPO_02_PR3.Formularios
                         TxbUsuario.Text = "";
                         TxbContra.Text = "";
                         Session["NombreUsuario"] = NombreUsuario;
-                        Response.Redirect("/FormsMedico/Form_Medico_Turnos.aspx");
+                        Response.Redirect("/FormsMedico/Form_Medico_Listado_Turnos.aspx");
                     }
                 }
             }

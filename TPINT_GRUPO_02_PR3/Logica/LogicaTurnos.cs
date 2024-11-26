@@ -16,12 +16,18 @@ namespace Logica
         {
             return dao.getTablaTurnos();
         }
-
         public DataTable getTablaFiltrada(string dato, string filtro)
         {
             return dao.getTablaTurnosFiltrada(filtro, dato);
         }
-
+        public DataTable getTabla2(int idmedico)
+        {
+            return dao.getTablaTurnos2(idmedico);
+        }
+        public DataTable getTablaFiltrada2(string dato, string filtro, int idmedico)
+        {
+            return dao.getTablaTurnosFiltrada2(filtro, dato, idmedico);
+        }
         public bool EliminarTurno(int IdTurno)
         {
             int op = dao.bajaLogicaTurno(IdTurno);

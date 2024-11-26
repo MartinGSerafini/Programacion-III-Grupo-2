@@ -41,6 +41,10 @@ namespace Logica
         {
             return dao.GetNombreYApellidoMedico(dniMedico);
         }
+        public int GetIdMedicoPorNombreApellido(string NombreMedico)
+        {
+            return dao.GetIdMedicoPorNombreApellido(NombreMedico);
+        }
         public DataTable getTablaFiltrada(string dato, string filtro)
         {
             return dao.getTablaMedicosFiltrada(dato, filtro);

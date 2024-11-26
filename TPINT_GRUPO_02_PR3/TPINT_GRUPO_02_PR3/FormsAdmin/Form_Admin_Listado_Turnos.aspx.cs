@@ -49,18 +49,25 @@ namespace TPINT_GRUPO_02_PR3.FormsAdmin
         }
         protected void GrdTurnos_RowDeleting(object sender, GridViewDeleteEventArgs e)
         {
-            int s_IDTurno = Convert.ToInt32(((Label)GrdTurnos.Rows[e.RowIndex].FindControl("lbl_it_ID")).Text);
+            int s_IDTurno = Convert.ToInt32(((Label)GrdTurnos.Rows[e.RowIndex].FindControl("lbl_it_IDTurno")).Text);
 
             if (logtur.EliminarTurno(s_IDTurno))
             {
-                string script = "alert('El Registro fue Eliminiado con Exito.');";
+                string script = "alert('El Turno fue Eliminiado con Exito.');";
                 ClientScript.RegisterStartupScript(this.GetType(), "mensajeExito", script, true);
             }
             else
             {
-                string script = "alert('El Registro no se pudo Eliminar.');";
+                string script = "alert('El Turno no se pudo Eliminar.');";
                 ClientScript.RegisterStartupScript(this.GetType(), "mensajeExito", script, true);
             }
+            CargarGrilla();
+        }
+
+        protected void GrdTurnos_PageIndexChanging(object sender, GridViewPageEventArgs e)
+        {
+            GrdTurnos.PageIndex = e.NewPageIndex;
+
             CargarGrilla();
         }
     }

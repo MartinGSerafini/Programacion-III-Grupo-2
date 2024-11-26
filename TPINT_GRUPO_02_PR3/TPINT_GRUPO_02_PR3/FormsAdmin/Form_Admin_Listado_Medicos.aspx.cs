@@ -309,5 +309,12 @@ namespace TPINT_GRUPO_02_PR3.FormAdmin
 
             ddlLocalidades.DataBind();
         }
+
+        protected void grdListadoMedicos_PageIndexChanging(object sender, GridViewPageEventArgs e)
+        {
+            grdListadoMedicos.PageIndex = e.NewPageIndex;
+
+            CargarGrilla();
+        }
     }
 }

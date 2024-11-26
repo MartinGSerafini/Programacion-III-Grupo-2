@@ -17,7 +17,6 @@ namespace TPINT_GRUPO_02_PR3
     {
         LogicaPacientes log = new LogicaPacientes();
         DataTable dt = null;
-
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
@@ -26,7 +25,6 @@ namespace TPINT_GRUPO_02_PR3
                 CargarGrilla();
             }
         }
-
         protected void btnBuscar_Click(object sender, EventArgs e)
         {
             string categoria = txtBuscador.Text;
@@ -42,14 +40,12 @@ namespace TPINT_GRUPO_02_PR3
             GrdPacientes.DataBind();
             dt = tabla; 
         }
-
         protected void CargarGrilla()
         {
             DataTable tabla = dt ?? log.getTabla();
             GrdPacientes.DataSource = tabla;
             GrdPacientes.DataBind();
         }
-
         protected void GrdPacientes_RowDataBound(object sender, GridViewRowEventArgs e)
         {
             if (e.Row.RowType == DataControlRowType.DataRow && GrdPacientes.EditIndex == e.Row.RowIndex)
@@ -206,7 +202,6 @@ namespace TPINT_GRUPO_02_PR3
             string script = "alert('El Registro fue Modificado con Exito.');";
             ClientScript.RegisterStartupScript(this.GetType(), "mensajeExito", script, true);
         }
-
         protected void GrdPacientes_RowDeleting(object sender, GridViewDeleteEventArgs e)
         {
             string s_DNIPaciente = ((Label)GrdPacientes.Rows[e.RowIndex].FindControl("lbl_it_DNI")).Text;
@@ -224,13 +219,11 @@ namespace TPINT_GRUPO_02_PR3
 
             CargarGrilla();
         }
-
         protected void GrdPacientes_RowCancelingEdit(object sender, GridViewCancelEditEventArgs e)
         {
             GrdPacientes.EditIndex = -1;
             CargarGrilla();
         }
-
         protected void ddlProvincias_SelectedIndexChanged(object sender, EventArgs e)
         {
             DropDownList ddlProvincias = (DropDownList)sender;
@@ -253,6 +246,12 @@ namespace TPINT_GRUPO_02_PR3
                 ddlLocalidades.Items.Clear();
                 ddlLocalidades.Items.Add(new ListItem("Seleccione una localidad", "-1"));
             }
+        }
+        protected void GrdPacientes_PageIndexChanging(object sender, GridViewPageEventArgs e)
+        {
+            GrdPacientes.PageIndex = e.NewPageIndex;
+
+            CargarGrilla();
         }
     }
 }

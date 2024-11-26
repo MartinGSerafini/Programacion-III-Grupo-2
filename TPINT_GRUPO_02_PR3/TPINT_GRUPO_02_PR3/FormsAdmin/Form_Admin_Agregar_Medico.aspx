@@ -201,27 +201,6 @@
     .btn-search:hover {
         background-color: #5e35b1; /* Morado oscuro al pasar el mouse */
     }
-        .auto-style1 {
-            width: 7%;
-        }
-        .auto-style2 {
-            width: 9%;
-        }
-        .auto-style3 {
-            width: 7%;
-            height: 26px;
-        }
-        .auto-style4 {
-            width: 9%;
-            height: 26px;
-        }
-        .auto-style5 {
-            width: 24%;
-            height: 26px;
-        }
-        .auto-style6 {
-            width: 24%;
-        }
         .auto-style7 {
             width: 438px;
         }
@@ -537,8 +516,8 @@
             <asp:Button ID="btnAtras" runat="server" Text="Atrás" CssClass="btn-search" Width="122px" OnClick="btnAtras_Click" Height="40px" />
         </td>
         <td class="link">
-    <asp:Button ID="BtnAgregar" runat="server" Text="Agregar" CssClass="btn-search" Width="121px" ValidationGroup="VG1" OnClick="btnAgregar_Click" Height="40px" OnClientClick="return ConfirmarIngreso();" />
-</td>
+            <asp:Button ID="BtnAgregar" runat="server" Text="Agregar" CssClass="btn-search" Width="121px" ValidationGroup="VG1" OnClick="btnAgregar_Click" Height="40px" OnClientClick="return ConfirmarIngreso();" />
+        </td>
 
 <script type="text/javascript">
     function ConfirmarIngreso() {
