@@ -58,7 +58,7 @@ namespace TPINT_GRUPO_02_PR3.FormAdmin
                 }
             }
             string dni = txtDNI.Text.Trim();
-            if (logUsu.VerificarExistenciaDeDni(dni) || logpas.VerificarExistenciaDePaciente(dni))
+            if (!logUsu.VerificarExistenciaDeDni(dni) || !logpas.VerificarExistenciaDePaciente(dni))
             {
                 string legajo = txtLegajo.Text.Trim();
                 if (!logMed.VerificarExistenciaDeLegajo(legajo))
