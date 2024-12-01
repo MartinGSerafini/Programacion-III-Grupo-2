@@ -70,7 +70,7 @@ namespace TPINT_GRUPO_02_PR3
         private void CargarFechaMax()
         {
             txtNacimiento.Attributes["max"] = DateTime.Today.ToString("yyyy-MM-dd");
-        }
+        } 
 
         protected void btnAtras_Click(object sender, EventArgs e)
         {
