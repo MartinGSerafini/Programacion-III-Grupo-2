@@ -25,7 +25,6 @@ namespace TPINT_GRUPO_02_PR3
                 CargarFechaMax();
             }
         }
-
         protected void ddlProvincia_SelectedIndexChanged(object sender, EventArgs e)
         {
             int idProvincia = Convert.ToInt32(ddlProvincia.SelectedValue);
@@ -70,7 +69,7 @@ namespace TPINT_GRUPO_02_PR3
         private void CargarFechaMax()
         {
             txtNacimiento.Attributes["max"] = DateTime.Today.ToString("yyyy-MM-dd");
-        } 
+        }
 
         protected void btnAtras_Click(object sender, EventArgs e)
         {
@@ -80,7 +79,7 @@ namespace TPINT_GRUPO_02_PR3
         protected void BtnAgregar_Click(object sender, EventArgs e)
         {
             string dni = txtDNI.Text.Trim();
-            if (!logUsu.VerificarExistenciaDeDni(dni) && !logpas.VerificarExistenciaDePaciente(dni))
+            if (logUsu.VerificarExistenciaDeDni(dni) || logpas.VerificarExistenciaDePaciente(dni))
             {
                 string script = "alert('El DNI ya está registrado en la Base de Datos. No se puede agregar el paciente.');";
                 ClientScript.RegisterStartupScript(this.GetType(), "mensajeError", script, true);
