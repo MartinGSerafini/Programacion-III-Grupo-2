@@ -13,7 +13,7 @@ namespace Datos
     public class DaoReportes
     {
         AccesoDatos ds = new AccesoDatos();
-        public int CortarTurnos(DateTime fechaInicio, DateTime fechaFin)
+        public int ContarTurnos(DateTime fechaInicio, DateTime fechaFin)
         {
             int cantturnos = 0;
             string consulta = $"SELECT COUNT(*) FROM TURNOS WHERE FECHA_TUR BETWEEN '{fechaInicio:yyyy-MM-dd}' AND '{fechaFin:yyyy-MM-dd}'";
