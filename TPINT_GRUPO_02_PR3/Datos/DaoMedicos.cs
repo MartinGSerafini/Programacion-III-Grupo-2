@@ -108,9 +108,9 @@ namespace Datos
             }
             return -1;
         }
-        public bool ExisteMedico(string columna, string dato)
+        public bool ExisteLegajo(string legajo)
         {
-            string sql = "SELECT COUNT(*) FROM MEDICOS WHERE'" + columna + "' = '" + dato + "'";
+            string sql = "SELECT COUNT(*) FROM MEDICOS WHERE LEGAJO_MED = '" + legajo + "'";
 
             DataTable tabla = ds.ObtenerTabla("MEDICOS", sql);
 

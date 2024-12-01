@@ -10,6 +10,11 @@ namespace TPINT_GRUPO_02_PR3
 {
     public partial class Form_Agregar_Pacientes : System.Web.UI.Page
     {
+        LogicaPacientes logpas = new LogicaPacientes();
+        LogicaUsuarios logUsu = new LogicaUsuarios();
+        LogicaProvincias logPro = new LogicaProvincias();
+        LogicaLocalidades logLoc = new LogicaLocalidades();
+
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
@@ -37,8 +42,7 @@ namespace TPINT_GRUPO_02_PR3
         }
         private void CargarProvincias()
         {
-            LogicaProvincias logicaProvincias = new LogicaProvincias();
-            DataTable dtProvincias = logicaProvincias.getTabla();
+            DataTable dtProvincias = logPro.getTabla();
             ddlProvincia.DataSource = dtProvincias;
             ddlProvincia.DataTextField = "NombreProvincia";
             ddlProvincia.DataValueField = "IdProvincia";
@@ -48,8 +52,7 @@ namespace TPINT_GRUPO_02_PR3
         }
         private void CargarLocalidades(int idProvincia)
         {
-            LogicaLocalidades logicaLocalidades = new LogicaLocalidades();
-            DataTable dtLocalidades = logicaLocalidades.getTablaLocalidades(idProvincia);
+            DataTable dtLocalidades = logLoc.getTablaLocalidades(idProvincia);
             ddlLocalidad.DataSource = dtLocalidades;
             ddlLocalidad.DataTextField = "Nombre";
             ddlLocalidad.DataValueField = "IDLocalidad";
@@ -77,12 +80,9 @@ namespace TPINT_GRUPO_02_PR3
         protected void BtnAgregar_Click(object sender, EventArgs e)
         {
             string dni = txtDNI.Text.Trim();
-
-            LogicaPacientes logica = new LogicaPacientes();
-            if (logica.VerificarExistenciaDePaciente(dni))
+            if (!logUsu.VerificarExistenciaDeDni(dni) && !logpas.VerificarExistenciaDePaciente(dni))
             {
-
-                string script = "alert('El DNI ya está registrado. No se puede agregar el paciente.');";
+                string script = "alert('El DNI ya está registrado en la Base de Datos. No se puede agregar el paciente.');";
                 ClientScript.RegisterStartupScript(this.GetType(), "mensajeError", script, true);
                 return; 
             }
@@ -103,9 +103,7 @@ namespace TPINT_GRUPO_02_PR3
                     Pac.setTelefono(txtTelefono.Text);
                     Pac.setEstado("Activo");
                 };
-
-                LogicaPacientes log = new LogicaPacientes();
-                bool resultado = log.AgregarPaciente(Pac);
+                bool resultado = logpas.AgregarPaciente(Pac);
                 if (resultado)
                 {
                     string script = "alert('El paciente fue Ingresado al Sistema.');";

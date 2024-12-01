@@ -53,10 +53,10 @@ namespace Logica
         {
             return dao.GetMedicosPorEspecialidad(idEspecialidad);
         }
-        public bool VerificarExistenciaDeMedico(string columna, string dato)
+        public bool VerificarExistenciaDeLegajo(string legajo)
         {
             DaoMedicos dao = new DaoMedicos();
-            return dao.ExisteMedico(columna, dato);
+            return dao.ExisteLegajo(legajo);
         }
         public DataTable GetTablaMedicos()
         {

@@ -75,5 +75,17 @@ namespace Datos
 
             return ds.EjecutarProcedimientoAlmacenado(comando, "spActualizarContraseñaUsuario");
         }
+        public bool ExisteDni(string dni)
+        {
+            string sql = "SELECT COUNT(*) FROM USUARIOS WHERE FK_DNI_USU = '" + dni + "'";
+
+            DataTable tabla = ds.ObtenerTabla("USUARIOS", sql);
+
+            if (tabla.Rows.Count > 0)
+            {
+                return Convert.ToInt32(tabla.Rows[0][0]) > 0;
+            }
+            return false;
+        }
     }
 }

@@ -12,9 +12,10 @@ namespace TPINT_GRUPO_02_PR3.FormAdmin
 {
     public partial class Agregar_Medico : System.Web.UI.Page
     {
-        LogicaMedicos logicaMed = new LogicaMedicos();
-        LogicaUsuarios logicaUsu = new LogicaUsuarios();
-        LogicaHorarioAtencion logicahor = new LogicaHorarioAtencion();
+        LogicaMedicos logMed = new LogicaMedicos();
+        LogicaUsuarios logUsu = new LogicaUsuarios();
+        LogicaHorarioAtencion loghor = new LogicaHorarioAtencion();
+        LogicaPacientes logpas = new LogicaPacientes();
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
@@ -30,7 +31,6 @@ namespace TPINT_GRUPO_02_PR3.FormAdmin
         {
             txtNacimiento.Attributes["max"] = DateTime.Today.ToString("yyyy-MM-dd");
         }
-
         protected void cvHora_ServerValidate(object source, ServerValidateEventArgs args)
         {
             string horaInicio = ddlHoraInicio.SelectedValue;
@@ -46,7 +46,6 @@ namespace TPINT_GRUPO_02_PR3.FormAdmin
                 lblDias.Visible = true;
                 return;
             }
-            string columna = "LEGAJO_MED";
             string dato = txtLegajo.Text.Trim();
 
             List<string> dias = new List<string>();
@@ -58,11 +57,11 @@ namespace TPINT_GRUPO_02_PR3.FormAdmin
                     dias.Add(item.Text);
                 }
             }
-            if (!logicaMed.VerificarExistenciaDeMedico(columna, dato))
+            string dni = txtDNI.Text.Trim();
+            if (!logUsu.VerificarExistenciaDeDni(dni) && !logpas.VerificarExistenciaDePaciente(dni))
             {
-                columna = "FK_DNI_MED";
-                dato = txtDNI.Text.Trim();
-                if (!logicaMed.VerificarExistenciaDeMedico(columna, dato))
+                string legajo = txtLegajo.Text.Trim();
+                if (!logMed.VerificarExistenciaDeLegajo(legajo))
                 {
                     Medico Med = new Medico();
                     Med.setLegajo(txtLegajo.Text);
@@ -79,11 +78,11 @@ namespace TPINT_GRUPO_02_PR3.FormAdmin
                     Med.setTelefono(txtTelefono.Text);
                     Med.setEspecialidad(Convert.ToInt32(ddlEspecialidad.SelectedValue));
                     Med.setEstado("Activo");
-                    bool validMedico = logicaMed.AgregarMedico(Med);
+                    bool validMedico = logMed.AgregarMedico(Med);
                     if (validMedico)
                     {
-                        logicaUsu.AgregarUsuario(2, dato, txtContraseña.Text);
-                        logicahor.AgregarHorario(dias, ddlHoraInicio.Text, DdlHoraFinal.Text, dato);
+                        logUsu.AgregarUsuario(2, dni, txtContraseña.Text);
+                        loghor.AgregarHorario(dias, ddlHoraInicio.Text, DdlHoraFinal.Text, dni);
                         string script = "alert('El Medico fue Ingresado al Sistema.');";
                         ClientScript.RegisterStartupScript(this.GetType(), "mensajeExito", script, true);
                         limpiarCampos();
@@ -103,7 +102,7 @@ namespace TPINT_GRUPO_02_PR3.FormAdmin
             }
             else
             {
-                string script = "alert('El DNI ya está registrado. No se puede agregar el Medico.');";
+                string script = "alert('El DNI ya está registrado en la Base de Datos. No se puede agregar el Medico.');";
                 ClientScript.RegisterStartupScript(this.GetType(), "mensajeError", script, true);
                 return;
             }
