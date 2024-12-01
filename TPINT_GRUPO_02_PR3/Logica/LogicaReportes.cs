@@ -14,7 +14,7 @@ namespace Logica
         private DaoReportes dao = new DaoReportes();
         public int ObtenerTotalTurnos(DateTime fechaInicio, DateTime fechaFin)
         {
-            return dao.CortarTurnos(fechaInicio, fechaFin);
+            return dao.ContarTurnos(fechaInicio, fechaFin);
         }
         public int ObtenerTotalTurnosPresentes(DateTime fechaInicio, DateTime fechaFin)
         {

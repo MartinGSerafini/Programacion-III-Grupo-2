@@ -353,7 +353,7 @@
                 <a href="../FormsAdmin/Form_Admin_Listado_Pacientes.aspx">PACIENTES</a>
                 <a href="../FormsAdmin/Form_Admin_Listado_Turnos.aspx">TURNOS</a>
                 <a href="../FormsAdmin/Form_Admin_Listado_Medicos.aspx">MEDICOS</a>
-                <a href="#">REPORTES</a>
+                <a href="../FormsAdmin/Form_Admin_Reportes.aspx">REPORTES</a>
             </div>
         </div>
        </div>
