@@ -606,6 +606,22 @@
                             <asp:Label ID="lbl_it_Horarios" runat="server" Text='<%# Bind("Horarios") %>'></asp:Label>
                         </ItemTemplate>
                     </asp:TemplateField>
+                    <asp:TemplateField HeaderText="Usuario">
+                    <ItemTemplate>
+                        <asp:Label ID="lblUsuario" runat="server" Text='<%# Eval("Usuario") %>'></asp:Label>
+                    </ItemTemplate>
+                    <EditItemTemplate>
+                        <asp:Label ID="lblUsuarioEdit" runat="server" Text='<%# Bind("Usuario") %>'></asp:Label>
+                    </EditItemTemplate>
+                </asp:TemplateField>
+                    <asp:TemplateField HeaderText="Contraseña">
+                        <ItemTemplate>
+                            <asp:Label ID="lblContraseña" runat="server" Text='<%# Eval("Contraseña") %>'></asp:Label>
+                        </ItemTemplate>
+                        <EditItemTemplate>
+                            <asp:TextBox ID="txtContraseña" runat="server" Text='<%# Bind("Contraseña") %>'></asp:TextBox>
+                        </EditItemTemplate>
+                    </asp:TemplateField>
                     <asp:TemplateField>
                         <ItemTemplate>
                             <asp:Button ID="btnEditar" runat="server" CommandName="Edit" Text="&#9881;" />

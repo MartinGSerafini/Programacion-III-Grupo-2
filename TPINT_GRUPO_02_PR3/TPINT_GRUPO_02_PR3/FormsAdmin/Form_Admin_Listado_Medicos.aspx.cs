@@ -3,6 +3,7 @@ using Logica;
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Web;
@@ -14,6 +15,7 @@ namespace TPINT_GRUPO_02_PR3.FormAdmin
     public partial class ListadoMedicos : System.Web.UI.Page
     {
         LogicaMedicos log = new LogicaMedicos();
+        LogicaUsuarios logusu = new LogicaUsuarios();
         DataTable dt = null;
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -55,13 +57,15 @@ namespace TPINT_GRUPO_02_PR3.FormAdmin
                 CheckBoxList cblDias = (CheckBoxList)e.Row.FindControl("cblDias");
                 DropDownList ddlHoraInicio = (DropDownList)e.Row.FindControl("ddlHoraInicio");
                 DropDownList ddlHoraFinal = (DropDownList)e.Row.FindControl("ddlHoraFinal");
+                TextBox txtContraseña = (TextBox)e.Row.FindControl("txtContraseña");
 
                 DataRowView rowView = (DataRowView)e.Row.DataItem;
                 int provinciaId = Convert.ToInt32(rowView["FK_ID_PROVINCIA_MED"]);
                 int localidadId = Convert.ToInt32(rowView["FK_ID_LOCALIDAD_MED"]);
                 int especialidadId = Convert.ToInt32(rowView["FK_ID_ESPECIALIDAD_MED"]);
                 string dias = rowView["DIA_HDA"].ToString();
-                string horarios = rowView["Horarios"].ToString(); 
+                string horarios = rowView["Horarios"].ToString();
+                string contraseña = rowView["Contraseña"].ToString();
 
                 ddlProvincias.SelectedValue = provinciaId.ToString();
                 SqlDataSource2.SelectParameters["ID_PROVINCIA_PRO"].DefaultValue = provinciaId.ToString();
@@ -241,6 +245,14 @@ namespace TPINT_GRUPO_02_PR3.FormAdmin
             string horaFinal = ddlHoraFinal.SelectedItem.Text;
             string Horario = $"{horaInicio} - {horaFinal}";
 
+            TextBox txtContraseña = (TextBox)grdListadoMedicos.Rows[e.RowIndex].FindControl("txtContraseña");
+            string nuevaContraseña = txtContraseña.Text;
+            if (string.IsNullOrWhiteSpace(nuevaContraseña))
+            {
+                MensajeError += "La contraseña no debe estar vacía.";
+                e.Cancel = true;
+            }
+
             if (!string.IsNullOrEmpty(MensajeError))
             {
                 e.Cancel = true;
@@ -271,6 +283,7 @@ namespace TPINT_GRUPO_02_PR3.FormAdmin
             };
 
             log.ActualizarMedico(Med);
+            logusu.ActualizarContraseña(DNI, nuevaContraseña);
 
             grdListadoMedicos.EditIndex = -1;
             CargarGrilla();

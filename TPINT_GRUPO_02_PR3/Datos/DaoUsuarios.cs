@@ -13,7 +13,6 @@ namespace Datos
     public class DaoUsuarios
     {
         AccesoDatos ds = new AccesoDatos();
-
         public Usuarios getUsuario(Usuarios usu)
         {
             DataTable tabla = ds.ObtenerTabla("USUARIOS", "SELECT * FROM USUARIOS WHERE FK_DNI_USU = " + usu.getDNIusuario());
@@ -24,19 +23,16 @@ namespace Datos
             usu.setFECHA_CREACION(Convert.ToDateTime(tabla.Rows[0][4].ToString()));
             return usu;
         }
-
         public Boolean existeUsuario(Usuarios usu)
         {
             string consulta = "SELECT * FROM USUARIOS WHERE FK_DNI_USU = '" + usu.getDNIusuario() + "'";
             return ds.existe(consulta);
         }
-
         public int TipoDeUsuario(Usuarios usu)
         {
             string consulta = "SELECT FK_ID_TIPO_USUARIO_USU FROM USUARIOS WHERE FK_DNI_USU = '" + usu.getDNIusuario() + "'";
             return ds.BuscarTipoUsuario(consulta);
         }
-
         public string GetNombreUsuario(Usuarios usu)
         {
             string consulta = "";
@@ -65,12 +61,19 @@ namespace Datos
 
             return string.Empty;
         }
-
         public int agregarUsuario(int tipo, string dni, string contra)
         {
             int filas = ds.ejecutarConsulta("INSERT INTO USUARIOS(FK_ID_TIPO_USUARIO_USU,FK_DNI_USU,CONTRA_USU,FECHA_CREACION_USU)" +
                                             "SELECT " + tipo + ", '" + dni + "', '" + contra + "', GETDATE();");
             return filas;
+        }
+        public int ActualizarContraseña(string dni, string nuevaContraseña)
+        {
+            SqlCommand comando = new SqlCommand();
+            comando.Parameters.AddWithValue("@DNI_USU", dni);
+            comando.Parameters.AddWithValue("@CONTRA_USU", nuevaContraseña);
+
+            return ds.EjecutarProcedimientoAlmacenado(comando, "spActualizarContraseñaUsuario");
         }
     }
 }

@@ -53,11 +53,12 @@ namespace Datos
             DataTable tabla = ds.ObtenerTabla("MEDICOS", "SELECT M.LEGAJO_MED, M.FK_DNI_MED, M.NOMBRE_MED, M.APELLIDO_MED, M.SEXO_MED, " +
                                             "M.NACIONALIDAD_MED, M.NACIMIENTO_MED, M.DIRECCION_MED, L.NOMBRE_LOC, PRO.NOMBRE_PRO, EMAIL_MED, " +
                                             "TELEFONO_MED, E.NOMBRE_ESP, H.DIA_HDA, M.FK_ID_PROVINCIA_MED, M.FK_ID_LOCALIDAD_MED, E.NOMBRE_ESP, M.FK_ID_ESPECIALIDAD_MED, " +
-                                            "CAST(H.HORA_INICIO_HDA AS CHAR(5)) + ' - ' + CAST(H.HORA_FIN_HDA AS CHAR(5)) AS Horarios " +
+                                            "CAST(H.HORA_INICIO_HDA AS CHAR(5)) + ' - ' + CAST(H.HORA_FIN_HDA AS CHAR(5)) AS Horarios, U.FK_DNI_USU AS Usuario, U.CONTRA_USU AS Contraseña " +
                                             "FROM MEDICOS M INNER JOIN LOCALIDADES L ON M.FK_ID_LOCALIDAD_MED = L.ID_LOCALIDAD_LOC " +
                                             "INNER JOIN PROVINCIAS PRO ON M.FK_ID_PROVINCIA_MED = PRO.ID_PROVINCIA_PRO " +
                                             "INNER JOIN ESPECIALIDADES E ON M.FK_ID_ESPECIALIDAD_MED = E.ID_ESPECIALIDAD_ESP " +
                                             "INNER JOIN HORARIO_ATENCION H ON M.FK_DNI_MED = H.FK_DNI_MEDICO_HDA " +
+                                            "INNER JOIN USUARIOS U ON M.FK_DNI_MED = U.FK_DNI_USU " +
                                             "WHERE M.ESTADO_MED = 'Activo'");
             return tabla;
         }
@@ -66,11 +67,12 @@ namespace Datos
             DataTable tabla = ds.ObtenerTabla("MEDICOS", "SELECT M.LEGAJO_MED, M.FK_DNI_MED, M.NOMBRE_MED, M.APELLIDO_MED, M.SEXO_MED, " +
                                             "M.NACIONALIDAD_MED, M.NACIMIENTO_MED, M.DIRECCION_MED, L.NOMBRE_LOC, PRO.NOMBRE_PRO, M.EMAIL_MED, " +
                                             "M.TELEFONO_MED, E.NOMBRE_ESP, H.DIA_HDA, M.FK_ID_PROVINCIA_MED, M.FK_ID_LOCALIDAD_MED, E.NOMBRE_ESP, M.FK_ID_ESPECIALIDAD_MED, " +
-                                            "CAST(H.HORA_INICIO_HDA AS CHAR(5)) + ' - ' + CAST(H.HORA_FIN_HDA AS CHAR(5)) AS Horarios " +
+                                            "CAST(H.HORA_INICIO_HDA AS CHAR(5)) + ' - ' + CAST(H.HORA_FIN_HDA AS CHAR(5)) AS Horarios, U.FK_DNI_USU AS Usuario, U.CONTRA_USU AS Contraseña " +
                                             "FROM MEDICOS M INNER JOIN LOCALIDADES L ON M.FK_ID_LOCALIDAD_MED = L.ID_LOCALIDAD_LOC " +
                                             "INNER JOIN PROVINCIAS PRO ON M.FK_ID_PROVINCIA_MED = PRO.ID_PROVINCIA_PRO " +
                                             "INNER JOIN ESPECIALIDADES E ON M.FK_ID_ESPECIALIDAD_MED = E.ID_ESPECIALIDAD_ESP " +
                                             "INNER JOIN HORARIO_ATENCION H ON M.FK_DNI_MED = H.FK_DNI_MEDICO_HDA " +
+                                            "INNER JOIN USUARIOS U ON M.FK_DNI_MED = U.FK_DNI_USU " +
                                             "WHERE " + filtro + " LIKE '%" + dato + "%' AND M.ESTADO_MED = 'Activo'");
             return tabla;
         }
