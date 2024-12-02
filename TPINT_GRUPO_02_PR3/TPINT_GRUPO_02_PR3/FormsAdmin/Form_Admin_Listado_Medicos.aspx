@@ -557,7 +557,7 @@
                                 <asp:ListItem Text="07:00" Value="7" />
                                 <asp:ListItem Text="08:00" Value="8" />
                                 <asp:ListItem Text="09:00" Value="9" />
-                                <asp:ListItem Text="10:00" Value="0" />
+                                <asp:ListItem Text="10:00" Value="10" />
                                 <asp:ListItem Text="11:00" Value="11" />
                                 <asp:ListItem Text="12:00" Value="12" />
                                 <asp:ListItem Text="13:00" Value="13" />
@@ -586,7 +586,7 @@
                                 <asp:ListItem Text="07:00" Value="7" />
                                 <asp:ListItem Text="08:00" Value="8" />
                                 <asp:ListItem Text="09:00" Value="9" />
-                                <asp:ListItem Text="10:00" Value="0" />
+                                <asp:ListItem Text="10:00" Value="10" />
                                 <asp:ListItem Text="11:00" Value="11" />
                                 <asp:ListItem Text="12:00" Value="12" />
                                 <asp:ListItem Text="13:00" Value="13" />

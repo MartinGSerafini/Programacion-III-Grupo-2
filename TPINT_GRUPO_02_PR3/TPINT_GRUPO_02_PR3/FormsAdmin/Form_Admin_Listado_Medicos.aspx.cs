@@ -91,8 +91,8 @@ namespace TPINT_GRUPO_02_PR3.FormAdmin
                     string[] horas = horarios.Split('-');
                     if (horas.Length == 2)
                     {
-                        string horaInicio = horas[0].Trim(); 
-                        string horaFinal = horas[1].Trim(); 
+                        ddlHoraInicio.SelectedValue = ddlHoraInicio.Items.FindByText(horas[0].Trim()).Value;
+                        ddlHoraFinal.SelectedValue = ddlHoraFinal.Items.FindByText(horas[1].Trim()).Value; 
                     }
                 }
             }
