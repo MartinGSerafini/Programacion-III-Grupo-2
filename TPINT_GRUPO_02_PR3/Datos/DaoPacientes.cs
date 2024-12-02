@@ -31,7 +31,7 @@ namespace Datos
                            "P.NACIONALIDAD_PAS, P.NACIMIENTO_PAS, P.DIRECCION_PAS, L.NOMBRE_LOC, PRO.NOMBRE_PRO, P.EMAIL_PAS, P.TELEFONO_PAS " +
                            "FROM PACIENTES P INNER JOIN LOCALIDADES L ON P.FK_ID_LOCALIDAD_PAS = L.ID_LOCALIDAD_LOC " +
                            "INNER JOIN PROVINCIAS PRO ON P.FK_ID_PROVINCIA_PAS = PRO.ID_PROVINCIA_PRO " +
-                           "WHERE " + filtro + " LIKE '" + dato + "%' AND P.ESTADO_PAS = 'Activo'";
+                           "WHERE " + filtro + " LIKE '%" + dato + "%' AND P.ESTADO_PAS = 'Activo'";
 
             return ds.ObtenerTabla("PACIENTES", cons);
         }
