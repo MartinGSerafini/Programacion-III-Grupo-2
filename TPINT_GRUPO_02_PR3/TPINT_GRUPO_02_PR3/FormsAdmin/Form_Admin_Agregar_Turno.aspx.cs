@@ -8,6 +8,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data.SqlClient;
+using System.Net;
 
 namespace TPINT_GRUPO_02_PR3.FormsAdmin
 {
@@ -43,6 +44,11 @@ namespace TPINT_GRUPO_02_PR3.FormsAdmin
                 string horaSeleccionada = DdlHorario.SelectedItem.Text.Trim();
                 TimeSpan hora = TimeSpan.Parse(horaSeleccionada);
 
+                if(!logpac.VerificarExistenciaDePaciente(txtDNI.Text)){
+                    string script = "alert('El DNI ingresado no Coincide con Ningun Paciente de la Base de Datos');";
+                    ClientScript.RegisterStartupScript(this.GetType(), "mensajeError", script, true);
+                    return;
+                }
                 Turnos turno = new Turnos();
                 try
                 {
