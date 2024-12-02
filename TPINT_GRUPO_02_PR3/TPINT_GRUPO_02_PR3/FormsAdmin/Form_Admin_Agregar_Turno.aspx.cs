@@ -32,7 +32,7 @@ namespace TPINT_GRUPO_02_PR3.FormsAdmin
         protected void btnAtras_Click(object sender, EventArgs e)
         {
             Response.Redirect("Form_Menu_Administrador.aspx");
-        }
+        }  
         protected void BtnAgregar_Click(object sender, EventArgs e)
         {
             if (!lblErrorDia.Visible)
